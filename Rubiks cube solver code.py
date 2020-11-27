@@ -40,6 +40,8 @@ camera = PiCamera()
 res = 720
 camera.resolution = (res, res)
 
+faceColors = ["pink", "pink", "pink", "pink", "pink", "pink", "pink", "pink", "pink"]
+
 def Yturn():
     for i in range(128):
     #512 is one revolution
@@ -58,7 +60,7 @@ def Yprimeturn():
 
 def colorfinder():
     counter = 1
-    faceColors = ["pink", "pink", "pink", "pink", "pink", "pink", "pink", "pink", "pink"]
+    #faceColors = ["pink", "pink", "pink", "pink", "pink", "pink", "pink", "pink", "pink"]
     camera.capture("/home/pi/Desktop/cube.jpg")
     while counter <= 9:
         
@@ -104,7 +106,7 @@ def colorfinder():
 
         
         #yellow color
-        low_yellow = np.array([25, 70, 120])
+        low_yellow = np.array([20, 100, 100])
         high_yellow = np.array([30, 255, 255])
         yellow_mask = cv2.inRange(hsv_img, low_yellow, high_yellow)
         contours2, _ = cv2.findContours(yellow_mask, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
@@ -164,7 +166,7 @@ def mainCubeChecker():
     D = yellowFace[6]
     c = yellowFace[7]
     C = yellowFace[8]
-    #print(yellowFace)
+    print(yellowFace)
     #rotate Cube to Red side
     colorfinder()
     redFace = faceColors
@@ -177,4 +179,4 @@ def mainCubeChecker():
     H = redFace[6]
     g = redFace[7]
     G = redFace[8]
-#mainCubeChecker()
+mainCubeChecker()
