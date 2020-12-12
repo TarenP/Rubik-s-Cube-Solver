@@ -5,12 +5,22 @@ from PIL import Image
 import RPi.GPIO as GPIO
 import time
 
+#servo setup
+GPIO.setmode(GPIO.BOARD)
+GPIO.setup(11, GPIO.OUT)
+GPIO.setup(13, GPIO.OUT)
+
+servo1 = GPIO.PWM(11, 50)
+servo2 = GPIO.PWM(13, 50)
+servo1.start(0)
+servo2.start(0)
+
 
 #Motor setup
-GPIO.setmode(GPIO.BCM)
-GPIO.setwarnings(False)
 
-ControlPin = [10,9,11,25]
+
+
+ControlPin = [22,23,21,19]
 
 for pin in ControlPin:
     GPIO.setup(pin,GPIO.OUT)
@@ -34,11 +44,31 @@ SeqC = [ [0,0,0,1],
          [1,1,0,0],
          [1,0,0,0],
          [1,0,0,1] ]
+GPIO.setwarnings(False)
 #camera setup
 camera = PiCamera()
 #Res must be divisible by 3
 res = 720
 camera.resolution = (res, res)
+
+faceColors = ["pink", "pink", "pink", "pink", "pink", "pink", "pink", "pink", "pink"]
+
+def Xturn():
+
+    duty = 120/18 + 2
+    GPIO.output(13, True)
+    servo2.ChangeDutyCycle(duty)
+    time.sleep(1)
+    GPIO.output(13, False)
+    servo2.ChangeDutyCycle(0)
+    time.sleep(2)
+    duty = 180/18 + 2
+    GPIO.output(13, True)
+    servo2.ChangeDutyCycle(duty)
+    time.sleep(1)
+    GPIO.output(13, False)
+    servo2.ChangeDutyCycle(0)
+    servo2.stop()
 
 def Yturn():
     for i in range(128):
@@ -46,7 +76,7 @@ def Yturn():
         for halfstep in range(8):
             for pin in range(4):
                 GPIO.output(ControlPin[pin], Seq[halfstep][pin])
-            time.sleep(0.001)
+            time.sleep(0.01)
             
 def Yprimeturn():
     for i in range(128):
@@ -58,7 +88,7 @@ def Yprimeturn():
 
 def colorfinder():
     counter = 1
-    faceColors = ["pink", "pink", "pink", "pink", "pink", "pink", "pink", "pink", "pink"]
+    #faceColors = ["pink", "pink", "pink", "pink", "pink", "pink", "pink", "pink", "pink"]
     camera.capture("/home/pi/Desktop/cube.jpg")
     while counter <= 9:
         
@@ -67,23 +97,23 @@ def colorfinder():
         
         
         if counter == 1:
-            im_crop = im.crop((0, 0, res/3, res/3))
+            im_crop = im.crop((80, 80, (res/3)-80, (res/3)-80))
         if counter == 2:
-             im_crop = im.crop((res/3, 0, (res/3) + (res/3), res/3))
+             im_crop = im.crop(((res/3)+80, 80, (res/3) + (res/3)-80, (res/3)-80))
         if counter == 3:
-             im_crop = im.crop(((res/3) + (res/3), 0, res, res/3))
+             im_crop = im.crop(((res/3) + (res/3) + 80, 80, res-80, (res/3)-80))
         if counter == 4:
-             im_crop = im.crop((0, res/3, res/3, (res/3) + (res/3)))
+             im_crop = im.crop((80, (res/3)+80, (res/3)-80, (res/3) + (res/3) - 80))
         if counter == 5:
-             im_crop = im.crop((res/3, res/3, (res/3) + (res/3), (res/3) + (res/3)))
+             im_crop = im.crop(((res/3)+80, (res/3)+80, (res/3) + (res/3) - 80, (res/3) + (res/3)-80))
         if counter == 6:
-             im_crop = im.crop(((res/3) + (res/3), res/3, (res/3) + (res/3) + (res/3), (res/3) + (res/3)))
+             im_crop = im.crop(((res/3) + (res/3) + 80, (res/3) + 80, (res/3) + (res/3) + (res/3) -80, (res/3) + (res/3) - 80))
         if counter == 7:
-             im_crop = im.crop((0, (res/3) + (res/3), res/3, res))
+             im_crop = im.crop((80, (res/3) + (res/3) + 80, (res/3) - 80, res - 80))
         if counter == 8:
-             im_crop = im.crop((res/3, (res/3) + (res/3), (res/3) + (res/3), res))
+             im_crop = im.crop(((res/3) + 80, (res/3) + (res/3) + 80, (res/3) + (res/3) - 80, res - 80))
         if counter == 9:
-             im_crop = im.crop(((res/3) + (res/3), (res/3) + (res/3), res, res))
+             im_crop = im.crop(((res/3) + (res/3) + 80, (res/3) + (res/3) + 80, res - 80, res - 80))
         im_crop.save("/home/pi/Desktop/cubecropped.jpg")
         img = cv2.imread("/home/pi/Desktop/cubecropped.jpg")
         hsv_img = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
@@ -104,8 +134,8 @@ def colorfinder():
 
         
         #yellow color
-        low_yellow = np.array([25, 70, 120])
-        high_yellow = np.array([30, 255, 255])
+        low_yellow = np.array([23, 108, 90])
+        high_yellow = np.array([40, 255, 255])
         yellow_mask = cv2.inRange(hsv_img, low_yellow, high_yellow)
         contours2, _ = cv2.findContours(yellow_mask, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
         contours2 = sorted(contours2, key=lambda x:cv2.contourArea(x), reverse=True)
@@ -116,8 +146,8 @@ def colorfinder():
                 faceColors[counter-1] = "yellow"
         
         #blue color
-        low_blue = np.array([90, 60, 0])
-        high_blue = np.array([121, 255, 255])
+        low_blue = np.array([106, 239, 215])
+        high_blue = np.array([128, 255, 255])
         blue_mask = cv2.inRange(hsv_img, low_blue, high_blue)
         contours3, _ = cv2.findContours(blue_mask, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
         contours3 = sorted(contours3, key=lambda x:cv2.contourArea(x), reverse=True)
@@ -128,8 +158,8 @@ def colorfinder():
                 faceColors[counter-1] = "blue"
                 
         #green color
-        low_green = np.array([40, 70, 80])
-        high_green = np.array([70, 255, 255])
+        low_green = np.array([36, 171, 159])
+        high_green = np.array([71, 255, 255])
         green_mask = cv2.inRange(hsv_img, low_green, high_green)
         contours4, _ = cv2.findContours(green_mask, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
         contours4 = sorted(contours4, key=lambda x:cv2.contourArea(x), reverse=True)
@@ -139,14 +169,41 @@ def colorfinder():
             if area4 > 5000:
                faceColors[counter-1] = "green"
                 
+        #Orange color
+        low_orange = np.array([0, 167, 112])
+        high_orange = np.array([10, 255, 255])
+        orange_mask = cv2.inRange(hsv_img, low_orange, high_orange)
+        contours5, _ = cv2.findContours(orange_mask, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
+        contours5 = sorted(contours5, key=lambda x:cv2.contourArea(x), reverse=True)
+         
+        for cnt in contours5:
+            area5 = cv2.contourArea(cnt)
+            if area5 > 5000:
+               faceColors[counter-1] = "Orange"
+        
+        
+#         #White color
+#         low_white = np.array([110, 100, 100])
+#         high_white = np.array([130, 255, 255])
+#         white_mask = cv2.inRange(hsv_img, low_white, high_white)
+#         contours6, _ = cv2.findContours(white_mask, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
+#         contours6 = sorted(contours6, key=lambda x:cv2.contourArea(x), reverse=True)
+#          
+#         for cnt in contours6:
+#             area6 = cv2.contourArea(cnt)
+#             if area6 > 5000:
+        if faceColors[counter-1]=="pink":
+            
+            faceColors[counter-1] = "white"
                 
+        
         counter+=1
                 
         cv2.imshow("Frame", img)
-        cv2.imshow("RedMask", red_mask)
-        cv2.imshow("YellowMask", yellow_mask)
-        cv2.imshow("GreenMask", green_mask)
-        cv2.imshow("BlueMask", blue_mask)
+#         cv2.imshow("RedMask", red_mask)
+#         cv2.imshow("YellowMask", yellow_mask)
+#         cv2.imshow("GreenMask", green_mask)
+#         cv2.imshow("BlueMask", blue_mask)
         key =cv2.waitKey(1)
         
         if key== 27:
@@ -164,7 +221,7 @@ def mainCubeChecker():
     D = yellowFace[6]
     c = yellowFace[7]
     C = yellowFace[8]
-    #print(yellowFace)
+    print(yellowFace)
     #rotate Cube to Red side
     colorfinder()
     redFace = faceColors
@@ -177,4 +234,10 @@ def mainCubeChecker():
     H = redFace[6]
     g = redFace[7]
     G = redFace[8]
+    
+    
 #mainCubeChecker()
+Xturn()
+#Yturn()
+time.sleep(2)
+Yprimeturn()
