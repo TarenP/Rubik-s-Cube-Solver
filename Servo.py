@@ -26,8 +26,8 @@ def SetAngle2(angle):
     time.sleep(1)
     GPIO.output(13, False)
     servo2.ChangeDutyCycle(0)
-SetAngle1(0)
-SetAngle2(0)
+SetAngle1(70)
+SetAngle2(180)#120
 servo1.stop()
 servo2.stop()
 GPIO.cleanup()
