@@ -321,13 +321,13 @@ def colorMapper():
 
 def cornerAssigner():
     mAQN = [A, Q, N]
-    mBJM = [B, J, M]
+"""     mBJM = [B, J, M]
     mDRE = [D, R, E]
     mCFI = [C, F, I]
     mHSU = [H, S, U]
     mGLV = [G, L, V]
     mXTO = [X, T, O]
-    mWKP = [W, K, P]
+    mWKP = [W, K, P] """
 
 #Pass in any corner, it will do the algo to get that specific corner to where it should go.
 def cornerSwapper():
@@ -360,6 +360,7 @@ def cornerSwapper():
             AlteredYPermutation()
 
         #Swap with an unsolved corner because it is in the bank place and cannot be solved
+ 
     elif(bankCorner == corner2):
         index = BJM.index(A)
         if (index == 0):
@@ -483,11 +484,28 @@ def cornerSwapper():
 #use "list".sort() method for comparing the two corners.
 
 
+def CornerChecker():
+
 def main():
     colorfinder()
     colorMapper()
     cornerAssigner()
     cornerSwapper()
+    CornerChecker()
+    cornerSwapper()
+    CornerChecker()
+    cornerSwapper()
+    CornerChecker()
+    cornerSwapper()
+    CornerChecker()
+    cornerSwapper()
+    CornerChecker()
+    cornerSwapper()
+    CornerChecker()
+    cornerSwapper()
+    CornerChecker()
+    cornerSwapper()
+    CornerChecker()
     #Figure out new bank corner colors every time we swap
 
 
