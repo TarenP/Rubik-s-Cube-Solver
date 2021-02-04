@@ -5,6 +5,8 @@ from PIL import Image
 import RPi.GPIO as GPIO
 import time
 
+##Yellow face starts facing up/ towards camera
+
 
 #Motor setup
 GPIO.setmode(GPIO.BCM)
@@ -166,6 +168,17 @@ def mainCubeChecker():
     C = yellowFace[8]
     #print(yellowFace)
     #rotate Cube to Red side
+    colorfinder()
+    redFace = faceColors
+    E = redFace[0]
+    e = redFace[1]
+    F = redFace[2]
+    h = redFace[3]
+    front = redFace[4]
+    f = redFace[5]
+    H = redFace[6]
+    g = redFace[7]
+    G = redFace[8]
     colorfinder()
     redFace = faceColors
     E = redFace[0]
