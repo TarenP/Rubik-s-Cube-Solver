@@ -94,6 +94,23 @@ def Yprimeturn():
         GPIO.output(STEP4, GPIO.LOW)
         sleep(delay)
 
+def AlteredYPermutation():
+    Rturn()
+    Uprimeturn()
+    Rprimeturn()
+    Uprimeturn()
+    Rturn()
+    Uturn()
+    Rprimeturn()
+    Fprimeturn()
+    Rturn()
+    Uturn()
+    Rprimeturn()
+    Uprimeturn()
+    Rprimeturn()
+    Fturn()
+    Rturn()
+
 def colorfinder():
     counter = 1
     #faceColors = ["pink", "pink", "pink", "pink", "pink", "pink", "pink", "pink", "pink"]
