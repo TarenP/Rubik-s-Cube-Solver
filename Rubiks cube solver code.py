@@ -3,45 +3,53 @@ import numpy as np
 from picamera import PiCamera
 from PIL import Image
 import RPi.GPIO as GPIO
-import time
+from time import sleep
 
+<<<<<<< Updated upstream
 ##Yellow face starts facing up/ towards camera
 
 
 #Motor setup
 GPIO.setmode(GPIO.BCM)
 GPIO.setwarnings(False)
+=======
 
-ControlPin = [10,9,11,25]
+##Yellow face starts facing up/ towards camera
+#Red face starts facing forwards
 
-for pin in ControlPin:
-    GPIO.setup(pin,GPIO.OUT)
-    GPIO.output(pin,0)
-#clockwise
-Seq = [ [1,0,0,1],
-        [1,0,0,0],
-        [1,1,0,0],
-        [0,1,0,0],
-        [0,1,1,0],
-        [0,0,1,0],
-        [0,0,1,1],
-        [0,0,0,1] ]
-#counter clockwise
-SeqC = [ [0,0,0,1],
-         [0,0,1,1],
-         [0,0,1,0],
-         [0,1,1,0],
-         [0,1,0,0],
-         [0,1,0,0],
-         [1,1,0,0],
-         [1,0,0,0],
-         [1,0,0,1] ]
+
+DIR = 20
+STEP = 21
+DIR3 = 19
+STEP3 = 26
+DIR2 = 13
+STEP2 = 6
+DIR4 = 
+STEP4 = 
+
+CW = 1
+CCW = 0
+#SPR = 200
+
+GPIO.setmode(GPIO.BCM)
+GPIO.setup(DIR, GPIO.OUT)
+GPIO.setup(STEP, GPIO.OUT)
+GPIO.setup(DIR3, GPIO.OUT)
+GPIO.setup(STEP3, GPIO.OUT)
+GPIO.setup(DIR2, GPIO.OUT)
+GPIO.setup(STEP2, GPIO.OUT)
+GPIO.setup(DIR4, GPIO.OUT)
+GPIO.setup(STEP4, GPIO.OUT)
+>>>>>>> Stashed changes
+
+
 #camera setup
 camera = PiCamera()
 #Res must be divisible by 3
 res = 720
 camera.resolution = (res, res)
 
+<<<<<<< Updated upstream
 def Yturn():
     for i in range(128):
     #512 is one revolution
@@ -57,6 +65,65 @@ def Yprimeturn():
             for pin in range(4):
                 GPIO.output(ControlPin[pin], SeqC[halfstep][pin])
             time.sleep(0.001)
+=======
+faceColors = ["pink", "pink", "pink", "pink", "pink", "pink", "pink", "pink", "pink"]
+
+#Solved cube corners for reference
+AQN = ["yellow", "blue", "orange"]
+BJM = ["yellow", "green", "orange"]
+DRE = ["yellow", "blue", "red"]
+CFI = ["yellow", "red", "green"]
+HSU = ["red", "blue", "white"]
+GLV = ["red", "green", "white"]
+XTO = ["white", "blue", "orange"]
+WKP = ["white", "green", "orange"]
+
+def Xturn():
+    GPIO.output(DIR, CW)
+    GPIO.output(DIR3, CW)
+    for x in range(200):
+        GPIO.output(STEP, GPIO.HIGH)
+        GPIO.output(STEP3, GPIO.HIGH)
+        sleep(delay)
+        GPIO.output(STEP, GPIO.LOW)
+        GPIO.output(STEP3, GPIO.LOW)
+        sleep(delay)
+
+def Xprimeturn():
+    GPIO.output(DIR, CCW)
+    GPIO.output(DIR3, CCW)
+    for x in range(200):
+        GPIO.output(STEP, GPIO.HIGH)
+        GPIO.output(STEP3, GPIO.HIGH)
+        sleep(delay)
+        GPIO.output(STEP, GPIO.LOW)
+        GPIO.output(STEP3, GPIO.LOW)
+        sleep(delay)
+
+def Yturn():
+    GPIO.output(DIR2, CW)
+    GPIO.output(DIR4, CW)
+    for x in range(200):
+        GPIO.output(STEP2, GPIO.HIGH)
+        GPIO.output(STEP4, GPIO.HIGH)
+        sleep(delay)
+        GPIO.output(STEP2, GPIO.LOW)
+        GPIO.output(STEP4, GPIO.LOW)
+        sleep(delay)       
+
+def Yprimeturn():
+    GPIO.output(DIR2, CW)
+    GPIO.output(DIR4, CW)
+    for x in range(200):
+        GPIO.output(STEP2, GPIO.HIGH)
+        GPIO.output(STEP4, GPIO.HIGH)
+        sleep(delay)
+        GPIO.output(STEP2, GPIO.LOW)
+        GPIO.output(STEP4, GPIO.LOW)
+        sleep(delay)     
+
+
+>>>>>>> Stashed changes
 
 def colorfinder():
     counter = 1
