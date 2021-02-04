@@ -50,14 +50,13 @@ GLV = ["red", "green", "white"]
 XTO = ["white", "blue", "orange"]
 WKP = ["white", "green", "orange"]
 
-solvedC1 = False
-SolvedC2 = False
+solvedC2 = False
 solvedC3 = False
-SolvedC4 = False
+solvedC4 = False
 solvedC5 = False
 solvedC6 = False
 solvedC7 = False
-SolvedC8 = False
+solvedC8 = False
 
 def Xturn():
     GPIO.output(DIR, CW)
@@ -321,13 +320,13 @@ def colorMapper():
 
 def cornerAssigner():
     mAQN = [A, Q, N]
-"""     mBJM = [B, J, M]
+    mBJM = [B, J, M]
     mDRE = [D, R, E]
     mCFI = [C, F, I]
     mHSU = [H, S, U]
     mGLV = [G, L, V]
     mXTO = [X, T, O]
-    mWKP = [W, K, P] """
+    mWKP = [W, K, P]
 
 #Pass in any corner, it will do the algo to get that specific corner to where it should go.
 def cornerSwapper():
@@ -351,14 +350,38 @@ def cornerSwapper():
     corner8 = WKP
     corner8.sort()
 
+    #checking if anycorners are already solved
+    if (mBJM == BJM):
+        solvedC2 = True
+    if (mDRE == DRE):
+        solvedC3 = True
+    if (mCFI == CFI):
+        solvedC4 = True
+    if (mHSU == HSU):
+        solvedC5 = True
+    if (mGLV == GLV):
+        solvedC6 = True
+    if (mXTO == XTO):
+        solvedC7 = True
+    if (mWKP == WKP):
+        solvedC8 = True
+
     if (bankCorner == corner1):
         index = AQN.index(A)
         if (index == 0 and solvedC2 == True and SolvedC3 == True and solvedC4 == True and SolvedC5 == True and solvedC6 == True and SolvedC7 == True and solvedC8 == True):
             print("already set")
             solvedC1 = True
-        else:
+        elif (solvedC2 == False):
+            Rturn()
+            Dprimeturn()
             AlteredYPermutation()
-
+        elif(solvedC3 == False):
+            Fturn()
+            Rprimeturn()
+            AlteredYPermutation()
+        elif(solvedC4 == False):
+            Fturn()
+            AlteredYPermutation()
         #Swap with an unsolved corner because it is in the bank place and cannot be solved
  
     elif(bankCorner == corner2):
@@ -485,7 +508,7 @@ def cornerSwapper():
 
 
 def CornerChecker():
-
+    
 def main():
     colorfinder()
     colorMapper()
