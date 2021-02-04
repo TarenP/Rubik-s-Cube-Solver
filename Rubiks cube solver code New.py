@@ -11,8 +11,8 @@ DIR3 = 19
 STEP3 = 26
 DIR2 = 13
 STEP2 = 6
-DIR4 = 
-STEP4 = 
+DIR4 = 231321214
+STEP4 = 3231323121
 
 CW = 1
 CCW = 0
@@ -49,6 +49,15 @@ HSU = ["red", "blue", "white"]
 GLV = ["red", "green", "white"]
 XTO = ["white", "blue", "orange"]
 WKP = ["white", "green", "orange"]
+
+solvedC1 = False
+SolvedC2 = False
+solvedC3 = False
+SolvedC4 = False
+solvedC5 = False
+SolvedC6 = False
+solvedC7 = False
+SolvedC8 = False
 
 def Xturn():
     GPIO.output(DIR, CW)
@@ -343,6 +352,9 @@ def cornerSwapper():
     corner8.sort()
 
     if (bankCorner == corner1):
+        index = AQN.index(A)
+        if (index == 0 and solvedC2 == True and SolvedC3 == True and solvedC4 == True and SolvedC5 == True and solvedC6 == True and SolvedC7 == True and solvedC8 == True):
+            print("already set")
         #Swap with an unsolved corner because it is in the bank place and cannot be solved
     else if(bankCorner == corner2):
         index = BJM.index(A)
@@ -428,6 +440,20 @@ def cornerSwapper():
         else:
             Dprimeturn()
             Rturn()
+            AlteredYPermutation()
+
+    else (bankCorner == corner8):
+        index = WKP.index(A)
+        if (index == 0):
+            Dturn()
+            Dturn()
+            Fprimeturn()
+            AlteredYPermutation()
+        if (index == 1):
+            Rturn()
+            AlteredYPermutation()
+        else:
+            Dprimeturn()
             AlteredYPermutation()
 #use "list".sort() method for comparing the two corners.
 
