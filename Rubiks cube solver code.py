@@ -5,8 +5,38 @@ from PIL import Image
 import RPi.GPIO as GPIO
 import time
 
+<<<<<<< Updated upstream
 ##Yellow face starts facing up/ towards camera
 
+=======
+
+##Yellow face starts facing up/ towards camera
+#Red face starts facing forwards
+
+
+DIR = 20
+STEP = 21
+DIR3 = 19
+STEP3 = 26
+DIR2 = 13
+STEP2 = 6
+DIR4 = 
+STEP4 = 
+
+CW = 1
+CCW = 0
+#SPR = 200
+
+GPIO.setmode(GPIO.BCM)
+GPIO.setup(DIR, GPIO.OUT)
+GPIO.setup(STEP, GPIO.OUT)
+GPIO.setup(DIR3, GPIO.OUT)
+GPIO.setup(STEP3, GPIO.OUT)
+GPIO.setup(DIR2, GPIO.OUT)
+GPIO.setup(STEP2, GPIO.OUT)
+GPIO.setup(DIR4, GPIO.OUT)
+GPIO.setup(STEP4, GPIO.OUT)
+>>>>>>> Stashed changes
 
 #Motor setup
 GPIO.setmode(GPIO.BCM)
@@ -42,6 +72,7 @@ camera = PiCamera()
 res = 720
 camera.resolution = (res, res)
 
+<<<<<<< Updated upstream
 def Yturn():
     for i in range(128):
     #512 is one revolution
@@ -57,6 +88,64 @@ def Yprimeturn():
             for pin in range(4):
                 GPIO.output(ControlPin[pin], SeqC[halfstep][pin])
             time.sleep(0.001)
+=======
+faceColors = ["pink", "pink", "pink", "pink", "pink", "pink", "pink", "pink", "pink"]
+
+#Solved cube corners for reference
+AQN = ["yellow", "blue", "orange"]
+BJM = ["yellow", "green", "orange"]
+DRE = ["yellow", "blue", "red"]
+CFI = ["yellow", "red", "green"]
+HSU = ["red", "blue", "white"]
+GLV = ["red", "green", "white"]
+XTO = ["white", "blue", "orange"]
+WKP = ["white", "green", "orange"]
+
+def Xturn():
+    GPIO.output(DIR, CW)
+    GPIO.output(DIR3, CW)
+    for x in range(200):
+        GPIO.output(STEP, GPIO.HIGH)
+        GPIO.output(STEP3, GPIO.HIGH)
+        sleep(delay)
+        GPIO.output(STEP, GPIO.LOW)
+        GPIO.output(STEP3, GPIO.LOW)
+        sleep(delay)
+
+def Xprimeturn():
+    GPIO.output(DIR, CCW)
+    GPIO.output(DIR3, CCW)
+    for x in range(200):
+        GPIO.output(STEP, GPIO.HIGH)
+        GPIO.output(STEP3, GPIO.HIGH)
+        sleep(delay)
+        GPIO.output(STEP, GPIO.LOW)
+        GPIO.output(STEP3, GPIO.LOW)
+        sleep(delay)
+
+def Yturn():
+    GPIO.output(DIR2, CW)
+    GPIO.output(DIR4, CW)
+    for x in range(200):
+        GPIO.output(STEP2, GPIO.HIGH)
+        GPIO.output(STEP4, GPIO.HIGH)
+        sleep(delay)
+        GPIO.output(STEP2, GPIO.LOW)
+        GPIO.output(STEP4, GPIO.LOW)
+        sleep(delay)       
+
+def Yprimeturn():
+    GPIO.output(DIR2, CW)
+    GPIO.output(DIR4, CW)
+    for x in range(200):
+        GPIO.output(STEP2, GPIO.HIGH)
+        GPIO.output(STEP4, GPIO.HIGH)
+        sleep(delay)
+        GPIO.output(STEP2, GPIO.LOW)
+        GPIO.output(STEP4, GPIO.LOW)
+        sleep(delay)     
+
+>>>>>>> Stashed changes
 
 def colorfinder():
     counter = 1
@@ -141,14 +230,51 @@ def colorfinder():
             if area4 > 5000:
                faceColors[counter-1] = "green"
                 
+<<<<<<< Updated upstream
+=======
+        #Orange color
+        low_orange = np.array([0, 167, 112])
+        high_orange = np.array([10, 255, 255])
+        orange_mask = cv2.inRange(hsv_img, low_orange, high_orange)
+        contours5, _ = cv2.findContours(orange_mask, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
+        contours5 = sorted(contours5, key=lambda x:cv2.contourArea(x), reverse=True)
+         
+        for cnt in contours5:
+            area5 = cv2.contourArea(cnt)
+            if area5 > 5000:
+               faceColors[counter-1] = "orange"
+        
+        
+#         #White color
+#         low_white = np.array([110, 100, 100])
+#         high_white = np.array([130, 255, 255])
+#         white_mask = cv2.inRange(hsv_img, low_white, high_white)
+#         contours6, _ = cv2.findContours(white_mask, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
+#         contours6 = sorted(contours6, key=lambda x:cv2.contourArea(x), reverse=True)
+#          
+#         for cnt in contours6:
+#             area6 = cv2.contourArea(cnt)
+#             if area6 > 5000:
+        if faceColors[counter-1]=="pink":
+            
+            faceColors[counter-1] = "white"
+>>>>>>> Stashed changes
                 
         counter+=1
                 
+<<<<<<< Updated upstream
         cv2.imshow("Frame", img)
         cv2.imshow("RedMask", red_mask)
         cv2.imshow("YellowMask", yellow_mask)
         cv2.imshow("GreenMask", green_mask)
         cv2.imshow("BlueMask", blue_mask)
+=======
+        #cv2.imshow("Frame", img)
+#         cv2.imshow("RedMask", red_mask)
+#         cv2.imshow("YellowMask", yellow_mask)
+#         cv2.imshow("GreenMask", green_mask)
+#         cv2.imshow("BlueMask", blue_mask)
+>>>>>>> Stashed changes
         key =cv2.waitKey(1)
         
         if key== 27:
@@ -168,6 +294,7 @@ def mainCubeChecker():
     C = yellowFace[8]
     #print(yellowFace)
     #rotate Cube to Red side
+    Xturn()
     colorfinder()
     redFace = faceColors
     E = redFace[0]
@@ -179,6 +306,7 @@ def mainCubeChecker():
     H = redFace[6]
     g = redFace[7]
     G = redFace[8]
+<<<<<<< Updated upstream
     colorfinder()
     redFace = faceColors
     E = redFace[0]
@@ -191,3 +319,73 @@ def mainCubeChecker():
     g = redFace[7]
     G = redFace[8]
 #mainCubeChecker()
+=======
+    Xturn()
+    colorfinder()
+    whiteFace = faceColors
+    U = whiteFace[0]
+    u = whiteFace[1]
+    V = whiteFace[2]
+    x = whiteFace[3]
+    down = whiteFace[4]
+    v = whiteFace[5]
+    X = whiteFace[6]
+    w = whiteFace[7]
+    W = whiteFace[8]
+    Xturn()
+    colorfinder()
+    orangeFace = faceColors
+    O = orangeFace[0]
+    o = orangeFace[1]
+    P = orangeFace[2]
+    n = orangeFace[3]
+    back = orangeFace[4]
+    p = orangeFace[5]
+    N = orangeFace[6]
+    m = orangeFace[7]
+    M = orangeFace[8]
+    Yturn()
+    colorfinder()
+    blueFace = faceColors
+    S = blueFace[0]
+    s = blueFace[1]
+    T = blueFace[2]
+    r = blueFace[3]
+    left = blueFace[4]
+    t = blueFace[5]
+    R = blueFace[6]
+    q = blueFace[7]
+    Q = blueFace[8]
+    Yturn()
+    Yturn()
+    colorfinder()
+    greenFace = faceColors
+    K = greenFace[0]
+    k = greenFace[1]
+    L = greenFace[2]
+    j = greenFace[3]
+    right = greenFace[4]
+    l = greenFace[5]
+    J = greenFace[6]
+    i = greenFace[7]
+    I = greenFace[8]
+
+def cornerAssigner():
+    mAQN = [A, Q, N]
+    mBJM = [B, J, M]
+    mDRE = [D, R, E]
+    mCFI = [C, F, I]
+    mHSU = [H, S, U]
+    mGLV = [G, L, V]
+    mXTO = [X, T, O]
+    mWKP = [W, K, P]
+
+#Pass in any corner, it will do the algo to get that specific corner to where it should go.
+def cornerSorter(Corner):\
+    coner.sort()
+    AQN.sort()
+    if (corner == AQN){
+
+    }
+#use "list".sort() method for comparing the two corners.
+>>>>>>> Stashed changes
