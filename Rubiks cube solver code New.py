@@ -349,13 +349,67 @@ def cornerSwapper():
         if (index == 0):
             Rturn()
             Dprimeturn()
-        
-        
-            
+            AlteredYPermutation()
+        if (index == 1):
+            Rturn()
+            Rturn()
+            AlteredYPermutation()
+        else:
+            Rprimeturn()
+            Fturn()
+            AlteredYPermutation()
+
+    else if(bankCorner == corner3):
+        index = DRE.index(A)
+        if (index == 0):
+            Fturn()
+            Rprimeturn()
+            AlteredYPermutation()
+        if (index == 1):
+            Fturn()
+            Fturn()
+            AlteredYPermutation()
+        else:
+            Fprimeturn()
+            Dturn()
+            AlteredYPermutation()
+
+    else if(bankCorner == corner4):
+        index = CFI.index(A)
+        if (index == 0):
+            Fturn()
+            AlteredYPermutation()
+        if (index == 1):
+            Fturn()
+            Fturn()
+            Dturn()
+            AlteredYPermutation()
+        else:
+            Rprimeturn()
+            AlteredYPermutation()
+    
+    else if(bankCorner == corner5):
+        index = HSU.index(A)
+        if (index == 0):
+            Dturn()
+            AlteredYPermutation()
+        if (index == 1):
+            Dturn()
+            Dturn()
+            Rturn()
+            AlteredYPermutation()
+        else:
+            Fprimeturn()
+            AlteredYPermutation()
+
 #use "list".sort() method for comparing the two corners.
+
+
 def main():
     colorfinder()
     colorMapper()
     cornerAssigner()
+    cornerSwapper()
+    #Figure out new bank corner colors every time we swap
 
 
