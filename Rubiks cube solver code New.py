@@ -402,6 +402,33 @@ def cornerSwapper():
             Fprimeturn()
             AlteredYPermutation()
 
+    else if(bankCorner == corner6):
+        index = GLV.index(A)
+        if (index == 0):
+            Dturn()
+            Rturn()
+            AlteredYPermutation()
+        if (index == 1):
+            AlteredYPermutation()
+        else:
+            Dprimeturn()
+            Fprimeturn()
+            AlteredYPermutation()
+    
+    else if(bankCorner == corner7):
+        index = XTO.index(A)
+        if (index == 0):
+            Dturn()
+            Fprimeturn()
+            AlteredYPermutation()
+        if (index == 1):
+            Dturn()
+            Dturn()
+            AlteredYPermutation()
+        else:
+            Dprimeturn()
+            Rturn()
+            AlteredYPermutation()
 #use "list".sort() method for comparing the two corners.
 
 
