@@ -365,7 +365,7 @@ def cornerSwapper():
         solvedC7 = True
     if (mWKP == WKP):
         solvedC8 = True
-
+#finish
     if (bankCorner == corner1):
         index = AQN.index(A)
         if (index == 0 and solvedC2 == True and SolvedC3 == True and solvedC4 == True and SolvedC5 == True and solvedC6 == True and SolvedC7 == True and solvedC8 == True):
