@@ -389,6 +389,14 @@ def cornerSwapper():
             Dturn()
             Rturn()
             AlteredYPermutation()
+        elif (solvedC7 == False):
+            Dturn()
+            Fprimeturn()
+            AlteredYPermutation()
+        elif (solvedC8 == False):
+            Dturn()
+            Dturn()
+            Fprimeturn()
         #Swap with an unsolved corner because it is in the bank place and cannot be solved
  
     elif(bankCorner == corner2):
