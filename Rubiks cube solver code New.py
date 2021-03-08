@@ -522,11 +522,7 @@ def cornerSwapper():
 #use "list".sort() method for comparing the two corners.
 
 
-def CornerChecker():
-    
-def main():
-    colorfinder()
-    colorMapper()
+def CornerMain():
     cornerAssigner()
     cornerSwapper()
     CornerChecker()
@@ -544,6 +540,11 @@ def main():
     CornerChecker()
     cornerSwapper()
     CornerChecker()
+
+def main():
+    colorfinder()
+    colorMapper()
+    CornerMain()
     #Figure out new bank corner colors every time we swap
 
 
