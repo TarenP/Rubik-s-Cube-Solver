@@ -522,7 +522,7 @@ def cornerSwapper():
 #use "list".sort() method for comparing the two corners.
 
 
-def CornerMain():
+def cornerMain():
     cornerAssigner()
     cornerSwapper()
     CornerChecker()
@@ -541,10 +541,49 @@ def CornerMain():
     cornerSwapper()
     CornerChecker()
 
+
+
+
+def edgeAssigner():
+    mam = [a, m]
+    mbi = [b, i]
+    mce = [c, e]
+    mdq = [d, q]
+    mfl = [f, l]
+    mgu = [g, u]
+    mhr = [h, r]
+    mtn = [t, n]
+    msx = [s, x]
+    mkv = [k, v]
+    mow = [o, w]
+    mjp = [j, p]
+
+def edgeSwapper():
+    bankEdge = mbi
+    bankEdge.sort()
+
+    corner1 = AQN
+    corner1.sort()
+    corner2 = BJM
+    corner2.sort()
+    corner3 = DRE
+    corner3.sort()
+    corner4 = CFI
+    corner4.sort()
+    corner5 = HSU
+    corner5.sort()
+    corner6 = GLV
+    corner6.sort()
+    corner7 = XTO
+    corner7.sort()
+    corner8 = WKP
+    corner8.sort()
+
+
 def main():
     colorfinder()
     colorMapper()
-    CornerMain()
+    cornerMain()
     #Figure out new bank corner colors every time we swap
 
 
