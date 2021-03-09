@@ -351,6 +351,10 @@ def cornerSwapper():
     corner8 = WKP
     corner8.sort()
 
+
+#Use a list of the moves to the positions the bank pieces need to go.
+
+
     #checking if anycorners are already solved
     if (mBJM == BJM):
         solvedC2 = True
