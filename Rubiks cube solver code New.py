@@ -331,6 +331,8 @@ def cornerAssigner():
 #Pass in any corner, it will do the algo to get that specific corner to where it should go.
 def cornerSwapper():
     everythingSolved = False
+    cornerSolveList = []
+
     bankCorner = mAQN
     bankCorner.sort()
 
@@ -370,164 +372,165 @@ def cornerSwapper():
         solvedC7 = True
     if (mWKP == WKP):
         solvedC8 = True
+
+    solvedC1 = False
+
 #finish
-    # while everythingSolved == False:
-    #     if (bankCorner == corner1):
-    #         index = AQN.index(bankCorner[0])
-    #         if (index == 0 and solvedC2 == True and solvedC3 == True and solvedC4 == True and solvedC5 == True and solvedC6 == True and solvedC7 == True and solvedC8 == True):
-    #             print("already set")
-    #             solvedC1 = True
-    #             everythingSolved = True
-    #         elif (solvedC2 == False):
-    #             Rturn()
-    #             Dprimeturn()
-    #             AlteredYPermutation()
-    #             bankCorner = mBJM
-    #         elif(solvedC3 == False):
-    #             Fturn()
-    #             Rprimeturn()
-    #             AlteredYPermutation()
-    #         elif(solvedC4 == False):
-    #             Fturn()
-    #             AlteredYPermutation()
-    #         elif(solvedC5 == False):
-    #             Dturn()
-    #             AlteredYPermutation()
-    #         elif (solvedC6 == False):
-    #             Dturn()
-    #             Rturn()
-    #             AlteredYPermutation()
-    #         elif (solvedC7 == False):
-    #             Dturn()
-    #             Fprimeturn()
-    #             AlteredYPermutation()
-    #         elif (solvedC8 == False):
-    #             Dturn()
-    #             Dturn()
-    #             Fprimeturn()
-    #         #Swap with an unsolved corner because it is in the bank place and cannot be solved
+    while everythingSolved == False:
+        if (bankCorner == corner1):
+            index = AQN.index(bankCorner[0])
+            if (index == 0 and solvedC2 == True and solvedC3 == True and solvedC4 == True and solvedC5 == True and solvedC6 == True and solvedC7 == True and solvedC8 == True):
+                print("already set")
+                solvedC1 = True
+                everythingSolved = True
+            elif (solvedC2 == False):
+                Rturn()
+                Dprimeturn()
+                AlteredYPermutation()
+                bankCorner = mBJM
+            elif(solvedC3 == False):
+                Fturn()
+                Rprimeturn()
+                AlteredYPermutation()
+            elif(solvedC4 == False):
+                Fturn()
+                AlteredYPermutation()
+            elif(solvedC5 == False):
+                Dturn()
+                AlteredYPermutation()
+            elif (solvedC6 == False):
+                Dturn()
+                Rturn()
+                AlteredYPermutation()
+            elif (solvedC7 == False):
+                Dturn()
+                Fprimeturn()
+                AlteredYPermutation()
+            elif (solvedC8 == False):
+                Dturn()
+                Dturn()
+                Fprimeturn()
+            #Swap with an unsolved corner because it is in the bank place and cannot be solved
     
-    #     elif(bankCorner == corner2):
-    #         index = BJM.index(bankCorner[0])
-    #         if (index == 0):
-    #             Rturn()
-    #             Dprimeturn()
-    #             AlteredYPermutation()
-    #             mBJM
-    #             solvedC2 = True
-    #         if (index == 1):
-    #             Rturn()
-    #             Rturn()
-    #             AlteredYPermutation()
-    #             solvedC2 = True
-    #         else:
-    #             Rprimeturn()
-    #             Fturn()
-    #             AlteredYPermutation()
-    #             solvedC2 = True
+        elif(bankCorner == corner2):
+            index = BJM.index(bankCorner[0])
+            if (index == 0):
+                cornerSolveList.append('B')
+                bankCorner = mBJM
+                solvedC2 = True
+            if (index == 1):
+                Rturn()
+                Rturn()
+                AlteredYPermutation()
+                solvedC2 = True
+            else:
+                Rprimeturn()
+                Fturn()
+                AlteredYPermutation()
+                solvedC2 = True
 
-    #     elif (bankCorner == corner3):
-    #         index = DRE.index(bankCorner[0])
-    #         if (index == 0):
-    #             Fturn()
-    #             Rprimeturn()
-    #             AlteredYPermutation()
-    #             solvedC3 = True
-    #         if (index == 1):
-    #             Fturn()
-    #             Fturn()
-    #             AlteredYPermutation()
-    #             solvedC3 = True
-    #         else:
-    #             Fprimeturn()
-    #             Dturn()
-    #             AlteredYPermutation()
-    #             solvedC3 = True
+        elif (bankCorner == corner3):
+            index = DRE.index(bankCorner[0])
+            if (index == 0):
+                Fturn()
+                Rprimeturn()
+                AlteredYPermutation()
+                solvedC3 = True
+            if (index == 1):
+                Fturn()
+                Fturn()
+                AlteredYPermutation()
+                solvedC3 = True
+            else:
+                Fprimeturn()
+                Dturn()
+                AlteredYPermutation()
+                solvedC3 = True
 
-    #     elif(bankCorner == corner4):
-    #         index = CFI.index(bankCorner[0])
-    #         if (index == 0):
-    #             Fturn()
-    #             AlteredYPermutation()
-    #             solvedC4 = True
-    #         if (index == 1):
-    #             Fturn()
-    #             Fturn()
-    #             Dturn()
-    #             AlteredYPermutation()
-    #             solvedC4 = True
-    #         else:
-    #             Rprimeturn()
-    #             AlteredYPermutation()
-    #             solvedC4 = True
+        elif(bankCorner == corner4):
+            index = CFI.index(bankCorner[0])
+            if (index == 0):
+                Fturn()
+                AlteredYPermutation()
+                solvedC4 = True
+            if (index == 1):
+                Fturn()
+                Fturn()
+                Dturn()
+                AlteredYPermutation()
+                solvedC4 = True
+            else:
+                Rprimeturn()
+                AlteredYPermutation()
+                solvedC4 = True
         
-    #     elif(bankCorner == corner5):
-    #         index = HSU.index(bankCorner[0])
-    #         if (index == 0):
-    #             Dturn()
-    #             AlteredYPermutation()
-    #             solvedC5 = True
-    #         if (index == 1):
-    #             Dturn()
-    #             Dturn()
-    #             Rturn()
-    #             AlteredYPermutation()
-    #             solvedC5 = True
-    #         else:
-    #             Fprimeturn()
-    #             AlteredYPermutation()
-    #             solvedC5 = True
+        elif(bankCorner == corner5):
+            index = HSU.index(bankCorner[0])
+            if (index == 0):
+                Dturn()
+                AlteredYPermutation()
+                solvedC5 = True
+            if (index == 1):
+                Dturn()
+                Dturn()
+                Rturn()
+                AlteredYPermutation()
+                solvedC5 = True
+            else:
+                Fprimeturn()
+                AlteredYPermutation()
+                solvedC5 = True
 
-    #     elif(bankCorner == corner6):
-    #         index = GLV.index(bankCorner[0])
-    #         if (index == 0):
-    #             Dturn()
-    #             Rturn()
-    #             AlteredYPermutation()
-    #             solvedC6 = True
-    #         if (index == 1):
-    #             AlteredYPermutation()
-    #             solvedC6 = True
-    #         else:
-    #             Dprimeturn()
-    #             Fprimeturn()
-    #             AlteredYPermutation()
-    #             solvedC6 = True
+        elif(bankCorner == corner6):
+            index = GLV.index(bankCorner[0])
+            if (index == 0):
+                Dturn()
+                Rturn()
+                AlteredYPermutation()
+                solvedC6 = True
+            if (index == 1):
+                AlteredYPermutation()
+                solvedC6 = True
+            else:
+                Dprimeturn()
+                Fprimeturn()
+                AlteredYPermutation()
+                solvedC6 = True
         
-    #     elif(bankCorner == corner7):
-    #         index = XTO.index(bankCorner[0])
-    #         if (index == 0):
-    #             Dturn()
-    #             Fprimeturn()
-    #             AlteredYPermutation()
-    #             solvedC7 = True
-    #         if (index == 1):
-    #             Dturn()
-    #             Dturn()
-    #             AlteredYPermutation()
-    #             solvedC7 = True
-    #         else:
-    #             Dprimeturn()
-    #             Rturn()
-    #             AlteredYPermutation()
-    #             solvedC7 = True
+        elif(bankCorner == corner7):
+            index = XTO.index(bankCorner[0])
+            if (index == 0):
+                Dturn()
+                Fprimeturn()
+                AlteredYPermutation()
+                solvedC7 = True
+            if (index == 1):
+                Dturn()
+                Dturn()
+                AlteredYPermutation()
+                solvedC7 = True
+            else:
+                Dprimeturn()
+                Rturn()
+                AlteredYPermutation()
+                solvedC7 = True
 
-    #     elif (bankCorner == corner8):
-    #         index = WKP.index(bankCorner[0])
-    #         if (index == 0):
-    #             Dturn()
-    #             Dturn()
-    #             Fprimeturn()
-    #             AlteredYPermutation()
-    #             solvedC8 = True
-    #         if (index == 1):
-    #             Rturn()
-    #             AlteredYPermutation()
-    #             solvedC8 = True
-    #         else:
-    #             Dprimeturn()
-    #             AlteredYPermutation()
-    #             solvedC8 = True
+        elif (bankCorner == corner8):
+            index = WKP.index(bankCorner[0])
+            if (index == 0):
+                Dturn()
+                Dturn()
+                Fprimeturn()
+                AlteredYPermutation()
+                solvedC8 = True
+            if (index == 1):
+                Rturn()
+                AlteredYPermutation()
+                solvedC8 = True
+            else:
+                Dprimeturn()
+                AlteredYPermutation()
+                solvedC8 = True
     # #use "list".sort() method for comparing the two corners.
 
 
