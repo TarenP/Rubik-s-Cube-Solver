@@ -384,9 +384,7 @@ def cornerSwapper():
                 solvedC1 = True
                 everythingSolved = True
             elif (solvedC2 == False):
-                Rturn()
-                Dprimeturn()
-                AlteredYPermutation()
+                cornerSolveList.append('B')
                 bankCorner = mBJM
             elif(solvedC3 == False):
                 Fturn()
@@ -418,118 +416,103 @@ def cornerSwapper():
                 cornerSolveList.append('B')
                 bankCorner = mBJM
                 solvedC2 = True
-            if (index == 1):
-                Rturn()
-                Rturn()
-                AlteredYPermutation()
+            elif (index == 1):
+                cornerSolveList.append('J')
+                bankCorner = mBJM
                 solvedC2 = True
             else:
-                Rprimeturn()
-                Fturn()
-                AlteredYPermutation()
+                cornerSolveList.append('M')
+                bankCorner = mBJM
                 solvedC2 = True
 
         elif (bankCorner == corner3):
             index = DRE.index(bankCorner[0])
             if (index == 0):
-                Fturn()
-                Rprimeturn()
-                AlteredYPermutation()
+                cornerSolveList.append('D')
+                bankCorner = mDRE
                 solvedC3 = True
-            if (index == 1):
-                Fturn()
-                Fturn()
-                AlteredYPermutation()
+            elif (index == 1):
+                cornerSolveList.append('R')
+                bankCorner = mDRE
                 solvedC3 = True
             else:
-                Fprimeturn()
-                Dturn()
-                AlteredYPermutation()
+                cornerSolveList.append('E')
+                bankCorner = mDRE
                 solvedC3 = True
 
         elif(bankCorner == corner4):
             index = CFI.index(bankCorner[0])
             if (index == 0):
-                Fturn()
-                AlteredYPermutation()
+                cornerSolveList.append('C')
+                bankCorner = mCFI
                 solvedC4 = True
-            if (index == 1):
-                Fturn()
-                Fturn()
-                Dturn()
-                AlteredYPermutation()
+            elif (index == 1):
+                cornerSolveList.append('F')
+                bankCorner = mCFI
                 solvedC4 = True
             else:
-                Rprimeturn()
-                AlteredYPermutation()
+                cornerSolveList.append('I')
+                bankCorner = mCFI
                 solvedC4 = True
         
         elif(bankCorner == corner5):
             index = HSU.index(bankCorner[0])
             if (index == 0):
-                Dturn()
-                AlteredYPermutation()
+                cornerSolveList.append('D')
+                bankCorner = mHSU
                 solvedC5 = True
-            if (index == 1):
-                Dturn()
-                Dturn()
-                Rturn()
-                AlteredYPermutation()
+            elif (index == 1):
+                cornerSolveList.append('S')
+                bankCorner = mHSU
                 solvedC5 = True
             else:
-                Fprimeturn()
-                AlteredYPermutation()
+                cornerSolveList.append('U')
+                bankCorner = mHSU
                 solvedC5 = True
 
         elif(bankCorner == corner6):
             index = GLV.index(bankCorner[0])
             if (index == 0):
-                Dturn()
-                Rturn()
-                AlteredYPermutation()
+                cornerSolveList.append('G')
+                bankCorner = mGLV
                 solvedC6 = True
-            if (index == 1):
-                AlteredYPermutation()
+            elif (index == 1):
+                cornerSolveList.append('L')
+                bankCorner = mGLV
                 solvedC6 = True
             else:
-                Dprimeturn()
-                Fprimeturn()
-                AlteredYPermutation()
+                cornerSolveList.append('V')
+                bankCorner = mGLV
                 solvedC6 = True
         
         elif(bankCorner == corner7):
             index = XTO.index(bankCorner[0])
             if (index == 0):
-                Dturn()
-                Fprimeturn()
-                AlteredYPermutation()
+                cornerSolveList.append('X')
+                bankCorner = mXTO
                 solvedC7 = True
-            if (index == 1):
-                Dturn()
-                Dturn()
-                AlteredYPermutation()
+            elif (index == 1):
+                cornerSolveList.append('T')
+                bankCorner = mXTO
                 solvedC7 = True
             else:
-                Dprimeturn()
-                Rturn()
-                AlteredYPermutation()
+                cornerSolveList.append('O')
+                bankCorner = mXTO
                 solvedC7 = True
 
         elif (bankCorner == corner8):
             index = WKP.index(bankCorner[0])
             if (index == 0):
-                Dturn()
-                Dturn()
-                Fprimeturn()
-                AlteredYPermutation()
+                cornerSolveList.append('W')
+                bankCorner = mWKP
                 solvedC8 = True
-            if (index == 1):
-                Rturn()
-                AlteredYPermutation()
+            elif (index == 1):
+                cornerSolveList.append('K')
+                bankCorner = mWKP
                 solvedC8 = True
             else:
-                Dprimeturn()
-                AlteredYPermutation()
+                cornerSolveList.append('P')
+                bankCorner = mWKP
                 solvedC8 = True
     # #use "list".sort() method for comparing the two corners.
 
