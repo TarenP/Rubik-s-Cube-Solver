@@ -329,7 +329,23 @@ def cornerAssigner():
     mWKP = [W, K, P]
 
 #Pass in any corner, it will do the algo to get that specific corner to where it should go.
-def cornerSwapper():
+def cornerActions():
+    #checking if anycorners are already solved
+    if (mBJM == BJM):
+        solvedC2 = True
+    if (mDRE == DRE):
+        solvedC3 = True
+    if (mCFI == CFI):
+        solvedC4 = True
+    if (mHSU == HSU):
+        solvedC5 = True
+    if (mGLV == GLV):
+        solvedC6 = True
+    if (mXTO == XTO):
+        solvedC7 = True
+    if (mWKP == WKP):
+        solvedC8 = True
+
     everythingSolved = False
     cornerSolveList = []
 
@@ -354,60 +370,36 @@ def cornerSwapper():
     corner8.sort()
 
 
-#Use a list of the moves to the positions the bank pieces need to go.
+    #Use a list of the moves to the positions the bank pieces need to go.
 
-
-    #checking if anycorners are already solved
-    if (mBJM == BJM):
-        solvedC2 = True
-    if (mDRE == DRE):
-        solvedC3 = True
-    if (mCFI == CFI):
-        solvedC4 = True
-    if (mHSU == HSU):
-        solvedC5 = True
-    if (mGLV == GLV):
-        solvedC6 = True
-    if (mXTO == XTO):
-        solvedC7 = True
-    if (mWKP == WKP):
-        solvedC8 = True
-
-    solvedC1 = False
-
-#finish
+    #finish
     while everythingSolved == False:
         if (bankCorner == corner1):
             index = AQN.index(bankCorner[0])
             if (index == 0 and solvedC2 == True and solvedC3 == True and solvedC4 == True and solvedC5 == True and solvedC6 == True and solvedC7 == True and solvedC8 == True):
                 print("already set")
-                solvedC1 = True
                 everythingSolved = True
             elif (solvedC2 == False):
                 cornerSolveList.append('B')
                 bankCorner = mBJM
             elif(solvedC3 == False):
-                Fturn()
-                Rprimeturn()
-                AlteredYPermutation()
+                cornerSolveList.append('D')
+                bankCorner = mDRE
             elif(solvedC4 == False):
-                Fturn()
-                AlteredYPermutation()
+                cornerSolveList.append('C')
+                bankCorner = mCFI
             elif(solvedC5 == False):
-                Dturn()
-                AlteredYPermutation()
+                cornerSolveList.append('D')
+                bankCorner = mHSU
             elif (solvedC6 == False):
-                Dturn()
-                Rturn()
-                AlteredYPermutation()
+                cornerSolveList.append('G')
+                bankCorner = mGLV
             elif (solvedC7 == False):
-                Dturn()
-                Fprimeturn()
-                AlteredYPermutation()
+                cornerSolveList.append('X')
+                bankCorner = mXTO
             elif (solvedC8 == False):
-                Dturn()
-                Dturn()
-                Fprimeturn()
+                cornerSolveList.append('W')
+                bankCorner = mWKP
             #Swap with an unsolved corner because it is in the bank place and cannot be solved
     
         elif(bankCorner == corner2):
@@ -516,9 +508,20 @@ def cornerSwapper():
                 solvedC8 = True
     # #use "list".sort() method for comparing the two corners.
 
+def cornerSwapper():
+    for i in len(cornerSolveList):
+        letter = cornerSolveList.index(i-1)
+        if letter == 'B':
+            Rturn()
+            Dprimeturn()
+            AlteredYPermutation()
+        elif letter == 'J':
+
+
 
 def cornerMain():
     cornerAssigner()
+    cornerActions()
     cornerSwapper()
 
 
