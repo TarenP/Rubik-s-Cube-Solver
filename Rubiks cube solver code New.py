@@ -7,12 +7,12 @@ from time import sleep
 
 DIR = 20
 STEP = 21
-DIR3 = 19
-STEP3 = 26
 DIR2 = 13
 STEP2 = 6
-DIR4 = 
-STEP4 = 
+DIR3 = 19
+STEP3 = 26
+DIR4 = 15
+STEP4 = 14
 
 CW = 1
 CCW = 0
