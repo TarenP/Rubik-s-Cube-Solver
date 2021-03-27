@@ -5,14 +5,22 @@ from PIL import Image
 import RPi.GPIO as GPIO
 from time import sleep
 
-DIR = 20
-STEP = 21
+DIR1 = 20
+STEP1 = 21
 DIR2 = 13
 STEP2 = 6
 DIR3 = 19
 STEP3 = 26
 DIR4 = 15
 STEP4 = 14
+DIR5 = 3
+STEP5 = 2
+DIR6 = 17
+STEP6 = 4
+DIR7 = 11
+STEP7 = 0
+DIR8 = 27
+STEP8 = 22
 
 CW = 1
 CCW = 0
@@ -26,9 +34,17 @@ GPIO.setup(DIR2, GPIO.OUT)
 GPIO.setup(STEP2, GPIO.OUT)
 GPIO.setup(DIR4, GPIO.OUT)
 GPIO.setup(STEP4, GPIO.OUT)
+GPIO.setup(DIR5, GPIO.OUT)
+GPIO.setup(STEP5, GPIO.OUT)
+GPIO.setup(DIR6, GPIO.OUT)
+GPIO.setup(STEP6, GPIO.OUT)
+GPIO.setup(DIR7, GPIO.OUT)
+GPIO.setup(STEP7, GPIO.OUT)
+GPIO.setup(DIR8, GPIO.OUT)
+GPIO.setup(STEP8, GPIO.OUT)
 
 delay = .0108
-# delay = .0208
+
 
 GPIO.setwarnings(False)
       
