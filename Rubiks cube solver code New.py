@@ -77,7 +77,9 @@ solvedC8 = False
 def Xturn():
     GPIO.output(DIR5, CW)
     GPIO.output(DIR8, CCW)
-    for x in range(200):
+    GPIO.output(DIR1, CCW)
+    GPIO.output(DIR3, CCW)
+    for x in range(50):
         GPIO.output(STEP5, GPIO.HIGH)
         GPIO.output(STEP8, GPIO.HIGH)
         sleep(delay)
