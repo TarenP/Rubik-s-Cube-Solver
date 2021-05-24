@@ -26,8 +26,8 @@ CW = 1
 CCW = 0
 
 GPIO.setmode(GPIO.BCM)
-GPIO.setup(DIR, GPIO.OUT)
-GPIO.setup(STEP, GPIO.OUT)
+GPIO.setup(DIR1, GPIO.OUT)
+GPIO.setup(STEP1, GPIO.OUT)
 GPIO.setup(DIR3, GPIO.OUT)
 GPIO.setup(STEP3, GPIO.OUT)
 GPIO.setup(DIR2, GPIO.OUT)
@@ -75,25 +75,25 @@ solvedC7 = False
 solvedC8 = False
 
 def Xturn():
-    GPIO.output(DIR, CW)
-    GPIO.output(DIR3, CW)
+    GPIO.output(DIR5, CW)
+    GPIO.output(DIR8, CCW)
     for x in range(200):
-        GPIO.output(STEP, GPIO.HIGH)
-        GPIO.output(STEP3, GPIO.HIGH)
+        GPIO.output(STEP5, GPIO.HIGH)
+        GPIO.output(STEP8, GPIO.HIGH)
         sleep(delay)
-        GPIO.output(STEP, GPIO.LOW)
-        GPIO.output(STEP3, GPIO.LOW)
+        GPIO.output(STEP5, GPIO.LOW)
+        GPIO.output(STEP8, GPIO.LOW)
         sleep(delay)
 
 def Xprimeturn():
-    GPIO.output(DIR, CCW)
-    GPIO.output(DIR3, CCW)
+    GPIO.output(DIR5, CCW)
+    GPIO.output(DIR8, CCW)
     for x in range(200):
-        GPIO.output(STEP, GPIO.HIGH)
-        GPIO.output(STEP3, GPIO.HIGH)
+        GPIO.output(STEP5, GPIO.HIGH)
+        GPIO.output(STEP8, GPIO.HIGH)
         sleep(delay)
-        GPIO.output(STEP, GPIO.LOW)
-        GPIO.output(STEP3, GPIO.LOW)
+        GPIO.output(STEP5, GPIO.LOW)
+        GPIO.output(STEP8, GPIO.LOW)
         sleep(delay)
 
 def Yturn():
@@ -602,4 +602,4 @@ def main():
     cornerMain()
     #Figure out new bank corner colors every time we swap
 
-
+Xturn()
