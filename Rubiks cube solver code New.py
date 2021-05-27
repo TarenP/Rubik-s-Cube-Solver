@@ -979,6 +979,39 @@ def cornerSwapper():
             Fturn()
             Dturn()
             AlteredYPermutation()
+        elif letter == 'G':
+            Dturn()
+            Rturn()
+            AlteredYPermutation()
+        elif letter == 'H':
+            Dturn()
+            AlteredYPermutation()
+        elif letter == 'I':
+            Rprimeturn()
+            AlteredYPermutation()
+        elif letter == 'J':
+            Rturn()
+            Rturn()
+            AlteredYPermutation()
+        elif letter == 'K':
+            Rturn()
+            AlteredYPermutation()
+        elif letter == 'L':
+            AlteredYPermutation()
+        elif letter == 'M':
+            Rprimeturn()
+            Fturn()
+            AlteredYPermutation()
+        elif letter == 'N':
+            AlteredYPermutation()
+        elif letter == 'O':
+            Dprimeturn()
+            Rturn()
+            AlteredYPermutation()
+        elif letter == 'P':
+            Dprimeturn()
+            AlteredYPermutation()
+        elif letter == 'Q':
         
 
 
