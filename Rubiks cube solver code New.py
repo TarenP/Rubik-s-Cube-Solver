@@ -1011,7 +1011,36 @@ def cornerSwapper():
         elif letter == 'P':
             Dprimeturn()
             AlteredYPermutation()
-        elif letter == 'Q':
+        elif letter == 'R':
+            Fturn()
+            Fturn()
+            AlteredYPermutation()
+        elif letter == 'S':
+            Dturn()
+            Dturn()
+            Rturn()
+            AlteredYPermutation()
+        elif letter == 'T':
+            Dturn()
+            Dturn()
+            AlteredYPermutation()
+        elif letter == 'U':
+            Fprimeturn()
+        elif letter == 'V':
+            Dprimeturn()
+            Fprimeturn()
+            AlteredYPermutation()
+        elif letter == 'W':
+            Dturn()
+            Dturn()
+            Fprimeturn()
+            AlteredYPermutation()
+        elif letter == 'X':
+            Dturn()
+            Fprimeturn()
+            AlteredYPermutation()
+        else:
+            print("error occurred, no action assigned to corner swapper")
         
 
 
