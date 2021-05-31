@@ -266,6 +266,15 @@ def Yprimeturn():
         GPIO.output(STEP2, GPIO.LOW)
         GPIO.output(STEP4, GPIO.LOW)
         sleep(delay)
+    GPIO.output(DIR1, CCW)
+    GPIO.output(DIR3, CCW)
+    for x in range(3):
+        GPIO.output(STEP1, GPIO.HIGH)
+        GPIO.output(STEP3, GPIO.HIGH)
+        sleep(delay)
+        GPIO.output(STEP1, GPIO.LOW)
+        GPIO.output(STEP3, GPIO.LOW)
+        sleep(delay)
     for x in range(50):
         GPIO.output(STEP6, GPIO.HIGH)
         GPIO.output(STEP7, GPIO.HIGH)
