@@ -359,13 +359,28 @@ def Yprimeturn():
         sleep(delay)
 
 def Rturn():
+    GPIO.output(DIR4, CW)
+    GPIO.output(DIR3, CW)
+    GPIO.output(DIR1, CW)
+    GPIO.output(DIR2, CW)
+    for x in range(5):
+        GPIO.output(STEP4, GPIO.HIGH)
+        GPIO.output(STEP3, GPIO.HIGH)
+        GPIO.output(STEP2, GPIO.HIGH)
+        GPIO.output(STEP1, GPIO.HIGH)
+        sleep(delay)
+        GPIO.output(STEP4, GPIO.LOW)
+        GPIO.output(STEP3, GPIO.LOW)
+        GPIO.output(STEP2, GPIO.LOW)
+        GPIO.output(STEP1, GPIO.LOW)
+        sleep(delay)
+        
     GPIO.output(DIR5, CW)
     for x in range(50):
         GPIO.output(STEP5, GPIO.HIGH)
         sleep(delay)
         GPIO.output(STEP5, GPIO.LOW)
         sleep(delay)
-    
     
     GPIO.output(DIR2, CCW)
     for x in range(30):
@@ -389,6 +404,22 @@ def Rturn():
         sleep(delay)
 
 def Rprimeturn():
+    GPIO.output(DIR4, CW)
+    GPIO.output(DIR3, CW)
+    GPIO.output(DIR1, CW)
+    GPIO.output(DIR2, CW)
+    for x in range(5):
+        GPIO.output(STEP4, GPIO.HIGH)
+        GPIO.output(STEP3, GPIO.HIGH)
+        GPIO.output(STEP2, GPIO.HIGH)
+        GPIO.output(STEP1, GPIO.HIGH)
+        sleep(delay)
+        GPIO.output(STEP4, GPIO.LOW)
+        GPIO.output(STEP3, GPIO.LOW)
+        GPIO.output(STEP2, GPIO.LOW)
+        GPIO.output(STEP1, GPIO.LOW)
+        sleep(delay)
+    
     GPIO.output(DIR5, CCW)
     for x in range(50):
         GPIO.output(STEP5, GPIO.HIGH)
@@ -419,6 +450,22 @@ def Rprimeturn():
         sleep(delay)
 
 def Lturn():
+    GPIO.output(DIR4, CW)
+    GPIO.output(DIR3, CW)
+    GPIO.output(DIR1, CW)
+    GPIO.output(DIR2, CW)
+    for x in range(5):
+        GPIO.output(STEP4, GPIO.HIGH)
+        GPIO.output(STEP3, GPIO.HIGH)
+        GPIO.output(STEP2, GPIO.HIGH)
+        GPIO.output(STEP1, GPIO.HIGH)
+        sleep(delay)
+        GPIO.output(STEP4, GPIO.LOW)
+        GPIO.output(STEP3, GPIO.LOW)
+        GPIO.output(STEP2, GPIO.LOW)
+        GPIO.output(STEP1, GPIO.LOW)
+        sleep(delay)
+        
     GPIO.output(DIR8, CW)
     for x in range(50):
         GPIO.output(STEP8, GPIO.HIGH)
@@ -449,6 +496,22 @@ def Lturn():
         sleep(delay)
 
 def Lprimeturn():
+    GPIO.output(DIR4, CW)
+    GPIO.output(DIR3, CW)
+    GPIO.output(DIR1, CW)
+    GPIO.output(DIR2, CW)
+    for x in range(5):
+        GPIO.output(STEP4, GPIO.HIGH)
+        GPIO.output(STEP3, GPIO.HIGH)
+        GPIO.output(STEP2, GPIO.HIGH)
+        GPIO.output(STEP1, GPIO.HIGH)
+        sleep(delay)
+        GPIO.output(STEP4, GPIO.LOW)
+        GPIO.output(STEP3, GPIO.LOW)
+        GPIO.output(STEP2, GPIO.LOW)
+        GPIO.output(STEP1, GPIO.LOW)
+        sleep(delay)
+        
     GPIO.output(DIR8, CCW)
     for x in range(50):
         GPIO.output(STEP8, GPIO.HIGH)
@@ -479,6 +542,22 @@ def Lprimeturn():
         sleep(delay)
 
 def Bturn():
+    GPIO.output(DIR4, CW)
+    GPIO.output(DIR3, CW)
+    GPIO.output(DIR1, CW)
+    GPIO.output(DIR2, CW)
+    for x in range(5):
+        GPIO.output(STEP4, GPIO.HIGH)
+        GPIO.output(STEP3, GPIO.HIGH)
+        GPIO.output(STEP2, GPIO.HIGH)
+        GPIO.output(STEP1, GPIO.HIGH)
+        sleep(delay)
+        GPIO.output(STEP4, GPIO.LOW)
+        GPIO.output(STEP3, GPIO.LOW)
+        GPIO.output(STEP2, GPIO.LOW)
+        GPIO.output(STEP1, GPIO.LOW)
+        sleep(delay)
+        
     GPIO.output(DIR7, CW)
     for x in range(50):
         GPIO.output(STEP7, GPIO.HIGH)
@@ -508,6 +587,22 @@ def Bturn():
         sleep(delay)
 
 def Bprimeturn():
+    GPIO.output(DIR4, CW)
+    GPIO.output(DIR3, CW)
+    GPIO.output(DIR1, CW)
+    GPIO.output(DIR2, CW)
+    for x in range(5):
+        GPIO.output(STEP4, GPIO.HIGH)
+        GPIO.output(STEP3, GPIO.HIGH)
+        GPIO.output(STEP2, GPIO.HIGH)
+        GPIO.output(STEP1, GPIO.HIGH)
+        sleep(delay)
+        GPIO.output(STEP4, GPIO.LOW)
+        GPIO.output(STEP3, GPIO.LOW)
+        GPIO.output(STEP2, GPIO.LOW)
+        GPIO.output(STEP1, GPIO.LOW)
+        sleep(delay)
+        
     GPIO.output(DIR7, CCW)
     for x in range(50):
         GPIO.output(STEP7, GPIO.HIGH)
@@ -537,28 +632,44 @@ def Bprimeturn():
         sleep(delay)
 
 def Fturn():
-    GPIO.output(DIR7, CW)
-    for x in range(50):
-        GPIO.output(STEP7, GPIO.HIGH)
+    GPIO.output(DIR4, CW)
+    GPIO.output(DIR3, CW)
+    GPIO.output(DIR1, CW)
+    GPIO.output(DIR2, CW)
+    for x in range(5):
+        GPIO.output(STEP4, GPIO.HIGH)
+        GPIO.output(STEP3, GPIO.HIGH)
+        GPIO.output(STEP2, GPIO.HIGH)
+        GPIO.output(STEP1, GPIO.HIGH)
         sleep(delay)
-        GPIO.output(STEP7, GPIO.LOW)
+        GPIO.output(STEP4, GPIO.LOW)
+        GPIO.output(STEP3, GPIO.LOW)
+        GPIO.output(STEP2, GPIO.LOW)
+        GPIO.output(STEP1, GPIO.LOW)
         sleep(delay)
         
-    GPIO.output(DIR1, CW)
+    GPIO.output(DIR6, CW)
+    for x in range(50):
+        GPIO.output(STEP6, GPIO.HIGH)
+        sleep(delay)
+        GPIO.output(STEP6, GPIO.LOW)
+        sleep(delay)
+        
+    GPIO.output(DIR1, CCW)
     for x in range(30):
         GPIO.output(STEP1, GPIO.HIGH)
         sleep(delay)
         GPIO.output(STEP1, GPIO.LOW)
         sleep(delay)
 
-    GPIO.output(DIR7, CCW)
+    GPIO.output(DIR6, CCW)
     for x in range(50):
-        GPIO.output(STEP7, GPIO.HIGH)
+        GPIO.output(STEP6, GPIO.HIGH)
         sleep(delay)
-        GPIO.output(STEP7, GPIO.LOW)
+        GPIO.output(STEP6, GPIO.LOW)
         sleep(delay)
 
-    GPIO.output(DIR1, CCW)
+    GPIO.output(DIR1, CW)
     for x in range(30):
         GPIO.output(STEP1, GPIO.HIGH)
         sleep(delay)
@@ -566,13 +677,43 @@ def Fturn():
         sleep(delay)
 
 def Fprimeturn():
-    GPIO.output(DIR7, CCW)
-    for x in range(50):
-        GPIO.output(STEP7, GPIO.HIGH)
+    GPIO.output(DIR4, CW)
+    GPIO.output(DIR3, CW)
+    GPIO.output(DIR1, CW)
+    GPIO.output(DIR2, CW)
+    for x in range(5):
+        GPIO.output(STEP4, GPIO.HIGH)
+        GPIO.output(STEP3, GPIO.HIGH)
+        GPIO.output(STEP2, GPIO.HIGH)
+        GPIO.output(STEP1, GPIO.HIGH)
         sleep(delay)
-        GPIO.output(STEP7, GPIO.LOW)
+        GPIO.output(STEP4, GPIO.LOW)
+        GPIO.output(STEP3, GPIO.LOW)
+        GPIO.output(STEP2, GPIO.LOW)
+        GPIO.output(STEP1, GPIO.LOW)
         sleep(delay)
         
+    GPIO.output(DIR6, CCW)
+    for x in range(50):
+        GPIO.output(STEP6, GPIO.HIGH)
+        sleep(delay)
+        GPIO.output(STEP6, GPIO.LOW)
+        sleep(delay)
+        
+    GPIO.output(DIR1, CCW)
+    for x in range(30):
+        GPIO.output(STEP1, GPIO.HIGH)
+        sleep(delay)
+        GPIO.output(STEP1, GPIO.LOW)
+        sleep(delay)
+
+    GPIO.output(DIR6, CW)
+    for x in range(50):
+        GPIO.output(STEP6, GPIO.HIGH)
+        sleep(delay)
+        GPIO.output(STEP6, GPIO.LOW)
+        sleep(delay)
+
     GPIO.output(DIR1, CW)
     for x in range(30):
         GPIO.output(STEP1, GPIO.HIGH)
@@ -580,19 +721,25 @@ def Fprimeturn():
         GPIO.output(STEP1, GPIO.LOW)
         sleep(delay)
 
-    GPIO.output(DIR7, CW)
-    for x in range(50):
-        GPIO.output(STEP7, GPIO.HIGH)
-        sleep(delay)
-        GPIO.output(STEP7, GPIO.LOW)
-        sleep(delay)
+def Dturn():
+    Xturn()
+    Fturn()
+    Xprimeturn()
 
-    GPIO.output(DIR1, CCW)
-    for x in range(30):
-        GPIO.output(STEP1, GPIO.HIGH)
-        sleep(delay)
-        GPIO.output(STEP1, GPIO.LOW)
-        sleep(delay)
+def Dprimeturn():
+    Xturn()
+    Fprimeturn()
+    Xprimeturn()
+    
+def Uturn():
+    Xprimeturn()
+    Fturn()
+    Xturn()
+    
+def Uprimeturn():
+    Xprimeturn()
+    Fprimeturn()
+    Xturn()
 
 def AlteredYPermutation():
     Rturn()
@@ -1139,11 +1286,5 @@ def main():
     colorMapper()
     cornerMain()
     #Figure out new bank corner colors every time we swap
-Rprimeturn()
-Xturn()
-Rturn()
-Rprimeturn()
-Lturn()
-Lprimeturn()
-Bturn()
-Bprimeturn()
+
+Uprimeturn()
