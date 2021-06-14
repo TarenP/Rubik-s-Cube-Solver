@@ -54,9 +54,90 @@ camera = PiCamera()
 res = 720
 camera.resolution = (res, res)
 
-
-#Solved cube corners for reference
 cornerSolveList = []
+edgeSolveList = []
+faceColors = ["nothing", "nothing", "nothing", "nothing", "nothing", "nothing", "nothing", "nothing", "nothing"]
+
+A = "N/A"
+a = "N/A"
+B = "N/A"
+b = "N/A"
+C = "N/A"
+c = "N/A"
+D = "N/A"
+d = "N/A"
+E = "N/A"
+e = "N/A"
+F = "N/A"
+f = "N/A"
+G = "N/A"
+g = "N/A"
+H = "N/A"
+h = "N/A"
+I = "N/A"
+i = "N/A"
+J = "N/A"
+j = "N/A"
+K = "N/A"
+k = "N/A"
+L = "N/A"
+l = "N/A"
+M = "N/A"
+m = "N/A"
+N = "N/A"
+n = "N/A"
+O = "N/A"
+o = "N/A"
+P = "N/A"
+p = "N/A"
+Q = "N/A"
+q = "N/A"
+R = "N/A"
+r = "N/A"
+S = "N/A"
+s = "N/A"
+T = "N/A"
+t = "N/A"
+U = "N/A"
+u = "N/A"
+V = "N/A"
+v = "N/A"
+W = "N/A"
+w = "N/A"
+X = "N/A"
+x = "N/A"
+Y = "N/A"
+y = "N/A"
+Z = "N/A"
+z = "N/A"
+up = "N/A"
+front = "N/A"
+left = "N/A"
+right = "N/A"
+back = "N/A"
+down = "N/A"
+
+mAQN = ["N/A"]
+mBJM = ["N/A"]
+mDRE = ["N/A"]
+mCFI = ["N/A"]
+mHSU = ["N/A"]
+mGLV = ["N/A"]
+mXTO = ["N/A"]
+mWKP = ["N/A"]
+
+mam = ["N/A"]
+mbi = ["N/A"]
+mce = ["N/A"]
+mdq = ["N/A"]
+mfl = ["N/A"]
+mgu = ["N/A"]
+mhr = ["N/A"]
+mtn = ["N/A"]
+msx = ["N/A"]
+mkv = ["N/A"]
+mow = ["N/A"]
+mjp = ["N/A"]
 
 AQN = ["yellow", "blue", "orange"]
 BJM = ["yellow", "green", "orange"]
@@ -66,6 +147,20 @@ HSU = ["red", "blue", "white"]
 GLV = ["red", "green", "white"]
 XTO = ["white", "blue", "orange"]
 WKP = ["white", "green", "orange"]
+
+am = ["yellow", "orange"]
+bi = ["yellow", "green"]
+ce = ["yellow", "red"]
+dq = ["yellow", "blue"]
+fl = ["red", "green"]
+gu = ["red", "white"]
+hr = ["red", "blue"]
+sx = ["blue", "white"]
+tn = ["blue", "orange"]
+jp = ["green", "orange"]
+kv = ["green", "white"]
+ow = ["orange", "white"]
+
 
 solvedC2 = False
 solvedC3 = False
@@ -1356,7 +1451,7 @@ def cornerActions():
         if (bankCorner == corner1):
             index = AQN.index(bankCorner[0])
             if (index == 0 and solvedC2 == True and solvedC3 == True and solvedC4 == True and solvedC5 == True and solvedC6 == True and solvedC7 == True and solvedC8 == True):
-                print("already set")
+                print("Corners already set")
                 everythingSolved = True
             elif (solvedC2 == False):
                 cornerSolveList.append('B')
@@ -1586,9 +1681,9 @@ def cornerMain():
 
 #Work in progress
 
-def edgeAssigner():
-    mam = [a, m]
+def edgeActions():
     mbi = [b, i]
+    mam = [a, m]
     mce = [c, e]
     mdq = [d, q]
     mfl = [f, l]
@@ -1601,25 +1696,121 @@ def edgeAssigner():
     mjp = [j, p]
 
 def edgeSwapper():
+    #checking if anycorners are already solved
+    if (mam == am):
+        solvedE2 = True
+    if (mce == ce):
+        solvedE3 = True
+    if (mdq == dq):
+        solvedE4 = True
+    if (mfl == fl):
+        solvedE5 = True
+    if (mgu == gu):
+        solvedE6 = True
+    if (mhr == hr):
+        solvedE7 = True
+    if (mtn == tn):
+        solvedE8 = True
+    if (msx == sx):
+        solvedE9 = True
+    if (mkv == kv):
+        solvedE10 = True
+    if (mow == ow):
+        solvedE11 = True
+    if (mjp == jp):
+        solvedE12 = True
+
+    everythingSolved = False
+
     bankEdge = mbi
     bankEdge.sort()
 
-    edge1 = A
-    edge1.sort()
-    edge2 = BJM
-    edge2.sort()
-    edge3 = DRE
-    edge3.sort()
-    edge4 = CFI
-    edge4.sort()
-    edge5 = HSU
-    edge5.sort()
-    edge6 = GLV
-    edge6.sort()
-    edge7 = XTO
-    edge7.sort()
-    edge8 = WKP
-    edge8.sort()
+    Edge1 = bi
+    Edge1.sort()
+    Edge2 = am
+    Edge2.sort()
+    Edge3 = ce
+    Edge3.sort()
+    Edge4 = dq
+    Edge4.sort()
+    Edge5 = fl
+    Edge5.sort()
+    Edge6 = gu
+    Edge6.sort()
+    Edge7 = hr
+    Edge7.sort()
+    Edge8 = tn
+    Edge8.sort()
+    Edge9 = sx
+    Edge9.sort()
+    Edge10 = kv
+    Edge10.sort()
+    Edge11 = ow
+    Edge11.sort()
+    Edge12 = jp
+    Edge12.sort()
+
+
+
+    #Use a list of the moves to the positions the bank pieces need to go.
+
+    #finish
+    while everythingSolved == False:
+        if (bankEdge == Edge1):
+            index = bi.index(bankEdge[0])
+            if (index == 0 and solvedE2 == True and solvedE3 == True and solvedE4 == True and solvedE5 == True and solvedE6 == True and solvedE7 == True and solvedE8 == True and solvedE9 == True and solvedE10 == True and solvedE11 == True and solvedE12 == True):
+                print("Edges already set")
+                everythingSolved = True
+            elif (solvedE2 == False):
+                edgeSolveList.append('a')
+                bankEdge = mam
+            elif(solvedE3 == False):
+                edgeSolveList.append('c')
+                bankEdge = mce
+            elif(solvedE4 == False):
+                edgeSolveList.append('d')
+                bankEdge = mdq
+            elif(solvedE5 == False):
+                edgeSolveList.append('f')
+                bankEdge = mfl
+            elif (solvedE6 == False):
+                edgeSolveList.append('g')
+                bankEdge = mgu
+            elif (solvedE7 == False):
+                edgeSolveList.append('h')
+                bankEdge = mhr
+            elif (solvedE8 == False):
+                edgeSolveList.append('t')
+                bankEdge = mtn
+            elif (solvedE9 == False):
+                edgeSolveList.append('s')
+                bankEdge = msx
+            elif (solvedE10 == False):
+                edgeSolveList.append('k')
+                bankEdge = mkv
+            elif (solvedE11 == False):
+                edgeSolveList.append('o')
+                bankEdge = mow
+            elif (solvedE12 == False):
+                edgeSolveList.append('j')
+                bankEdge = mjp
+            #Swap with an unsolved Edge because it is in the bank place and cannot be solved
+    
+        elif(bankEdge == Edge2):
+            index = am.index(bankEdge[0])
+            if (index == 0):
+                edgeSolveList.append('a')
+                bankEdge = mam
+                solvedE2 = True
+            elif (index == 1):
+                edgeSolveList.append('m')
+                bankEdge = mam
+                solvedE2 = True
+
+        
+    # #use "list".sort() method for comparing the two corners.
+
+
 
 
 def main():
