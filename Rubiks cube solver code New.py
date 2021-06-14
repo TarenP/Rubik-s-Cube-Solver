@@ -54,9 +54,10 @@ camera = PiCamera()
 res = 720
 camera.resolution = (res, res)
 
-faceColors = ["pink", "pink", "pink", "pink", "pink", "pink", "pink", "pink", "pink"]
 
 #Solved cube corners for reference
+cornerSolveList = []
+
 AQN = ["yellow", "blue", "orange"]
 BJM = ["yellow", "green", "orange"]
 DRE = ["yellow", "blue", "red"]
@@ -760,7 +761,7 @@ def AlteredYPermutation():
 
 def colorfinder():
     counter = 1
-    #faceColors = ["pink", "pink", "pink", "pink", "pink", "pink", "pink", "pink", "pink"]
+    faceColors = ["nothing", "nothing", "nothing", "nothing", "nothing", "nothing", "nothing", "nothing", "nothing"]
     camera.capture("/home/pi/Desktop/cube.jpg")
     while counter <= 9:
         
@@ -864,7 +865,7 @@ def colorfinder():
 #         for cnt in contours6:
 #             area6 = cv2.contourArea(cnt)
 #             if area6 > 5000:
-        if faceColors[counter-1]=="pink":
+        if faceColors[counter-1]=="nothing":
             
             faceColors[counter-1] = "white"
                 
@@ -1104,7 +1105,37 @@ def colorMapper():
         sleep(delay)
 
     #Done with white
-    
+
+    GPIO.output(DIR5, CCW)
+    GPIO.output(DIR8, CW)
+    GPIO.output(DIR1, CCW)
+    GPIO.output(DIR3, CCW)
+    for x in range(30):
+        GPIO.output(STEP1, GPIO.HIGH)
+        GPIO.output(STEP3, GPIO.HIGH)
+        sleep(delay)
+        GPIO.output(STEP1, GPIO.LOW)
+        GPIO.output(STEP3, GPIO.LOW)
+        sleep(delay)
+        
+    GPIO.output(DIR2, CW)
+    GPIO.output(DIR4, CW)
+    for x in range(5):
+        GPIO.output(STEP2, GPIO.HIGH)
+        GPIO.output(STEP4, GPIO.HIGH)
+        sleep(delay)
+        GPIO.output(STEP2, GPIO.LOW)
+        GPIO.output(STEP4, GPIO.LOW)
+        sleep(delay)
+        
+    for x in range(50):
+        GPIO.output(STEP5, GPIO.HIGH)
+        GPIO.output(STEP8, GPIO.HIGH)
+        sleep(delay)
+        GPIO.output(STEP5, GPIO.LOW)
+        GPIO.output(STEP8, GPIO.LOW)
+        sleep(delay)
+
     colorfinder()
     orangeFace = faceColors
     O = orangeFace[0]
@@ -1116,7 +1147,59 @@ def colorMapper():
     N = orangeFace[6]
     m = orangeFace[7]
     M = orangeFace[8]
-    Yturn()
+    
+    GPIO.output(DIR5, CW)
+    GPIO.output(DIR8, CCW)
+    for x in range(50):
+        GPIO.output(STEP5, GPIO.HIGH)
+        GPIO.output(STEP8, GPIO.HIGH)
+        sleep(delay)
+        GPIO.output(STEP5, GPIO.LOW)
+        GPIO.output(STEP8, GPIO.LOW)
+        sleep(delay)
+
+    GPIO.output(DIR1, CW)
+    GPIO.output(DIR3, CW)
+    for x in range(35):
+        GPIO.output(STEP1, GPIO.HIGH)
+        GPIO.output(STEP3, GPIO.HIGH)
+        sleep(delay)
+        GPIO.output(STEP1, GPIO.LOW)
+        GPIO.output(STEP3, GPIO.LOW)
+        sleep(delay)
+
+    #Done with orange
+
+    GPIO.output(DIR6, CW)
+    GPIO.output(DIR7, CCW)
+    GPIO.output(DIR2, CCW)
+    GPIO.output(DIR4, CCW)
+    for x in range(30):
+        GPIO.output(STEP2, GPIO.HIGH)
+        GPIO.output(STEP4, GPIO.HIGH)
+        sleep(delay)
+        GPIO.output(STEP2, GPIO.LOW)
+        GPIO.output(STEP4, GPIO.LOW)
+        sleep(delay)
+        
+    GPIO.output(DIR1, CW)
+    GPIO.output(DIR3, CW)
+    for x in range(5):
+        GPIO.output(STEP1, GPIO.HIGH)
+        GPIO.output(STEP3, GPIO.HIGH)
+        sleep(delay)
+        GPIO.output(STEP1, GPIO.LOW)
+        GPIO.output(STEP3, GPIO.LOW)
+        sleep(delay)
+        
+    for x in range(50):
+        GPIO.output(STEP6, GPIO.HIGH)
+        GPIO.output(STEP7, GPIO.HIGH)
+        sleep(delay)
+        GPIO.output(STEP6, GPIO.LOW)
+        GPIO.output(STEP7, GPIO.LOW)
+        sleep(delay)
+
     colorfinder()
     blueFace = faceColors
     S = blueFace[0]
@@ -1128,8 +1211,60 @@ def colorMapper():
     R = blueFace[6]
     q = blueFace[7]
     Q = blueFace[8]
-    Yturn()
-    Yturn()
+
+    GPIO.output(DIR6, CCW)
+    GPIO.output(DIR7, CW)
+    for x in range(50):
+        GPIO.output(STEP6, GPIO.HIGH)
+        GPIO.output(STEP7, GPIO.HIGH)
+        sleep(delay)
+        GPIO.output(STEP6, GPIO.LOW)
+        GPIO.output(STEP7, GPIO.LOW)
+        sleep(delay)
+
+    GPIO.output(DIR2, CW)
+    GPIO.output(DIR4, CW)
+    for x in range(35):
+        GPIO.output(STEP2, GPIO.HIGH)
+        GPIO.output(STEP4, GPIO.HIGH)
+        sleep(delay)
+        GPIO.output(STEP2, GPIO.LOW)
+        GPIO.output(STEP4, GPIO.LOW)
+        sleep(delay)
+    
+    #Done with Blue
+    
+
+    GPIO.output(DIR6, CCW)
+    GPIO.output(DIR7, CW)
+    GPIO.output(DIR2, CCW)
+    GPIO.output(DIR4, CCW)
+    for x in range(30):
+        GPIO.output(STEP2, GPIO.HIGH)
+        GPIO.output(STEP4, GPIO.HIGH)
+        sleep(delay)
+        GPIO.output(STEP2, GPIO.LOW)
+        GPIO.output(STEP4, GPIO.LOW)
+        sleep(delay)
+        
+    GPIO.output(DIR1, CW)
+    GPIO.output(DIR3, CW)
+    for x in range(5):
+        GPIO.output(STEP1, GPIO.HIGH)
+        GPIO.output(STEP3, GPIO.HIGH)
+        sleep(delay)
+        GPIO.output(STEP1, GPIO.LOW)
+        GPIO.output(STEP3, GPIO.LOW)
+        sleep(delay)
+        
+    for x in range(50):
+        GPIO.output(STEP6, GPIO.HIGH)
+        GPIO.output(STEP7, GPIO.HIGH)
+        sleep(delay)
+        GPIO.output(STEP6, GPIO.LOW)
+        GPIO.output(STEP7, GPIO.LOW)
+        sleep(delay)
+
     colorfinder()
     greenFace = faceColors
     K = greenFace[0]
@@ -1141,8 +1276,27 @@ def colorMapper():
     J = greenFace[6]
     i = greenFace[7]
     I = greenFace[8]
-    Yprimeturn()
-    Xturn()
+
+    GPIO.output(DIR6, CW)
+    GPIO.output(DIR7, CCW)
+    for x in range(50):
+        GPIO.output(STEP6, GPIO.HIGH)
+        GPIO.output(STEP7, GPIO.HIGH)
+        sleep(delay)
+        GPIO.output(STEP6, GPIO.LOW)
+        GPIO.output(STEP7, GPIO.LOW)
+        sleep(delay)
+
+    GPIO.output(DIR2, CW)
+    GPIO.output(DIR4, CW)
+    for x in range(35):
+        GPIO.output(STEP2, GPIO.HIGH)
+        GPIO.output(STEP4, GPIO.HIGH)
+        sleep(delay)
+        GPIO.output(STEP2, GPIO.LOW)
+        GPIO.output(STEP4, GPIO.LOW)
+        sleep(delay)
+    
 
 def cornerAssigner():
     mAQN = [A, Q, N]
@@ -1173,7 +1327,6 @@ def cornerActions():
         solvedC8 = True
 
     everythingSolved = False
-    cornerSolveList = []
 
     bankCorner = mAQN
     bankCorner.sort()
@@ -1335,6 +1488,7 @@ def cornerActions():
     # #use "list".sort() method for comparing the two corners.
 
 def cornerSwapper():
+    print(cornerSolveList)
     for i in len(cornerSolveList):
         letter = cornerSolveList.index(i-1)
         if letter == 'B':
@@ -1472,6 +1626,5 @@ def main():
     colorfinder()
     colorMapper()
     cornerMain()
-    #Figure out new bank corner colors every time we swap
+    
 
-Uprimeturn()
