@@ -1807,6 +1807,16 @@ def edgeSwapper():
                 bankEdge = mam
                 solvedE2 = True
 
+        elif(bankEdge == Edge3):
+            index = ce.index(bankEdge[0])
+            if (index == 0):
+                edgeSolveList.append('c')
+                bankEdge = mce
+                solvedE3 = True
+            elif (index == 1):
+                edgeSolveList.append('e')
+                bankEdge = mce
+                solvedE3 = True
         
     # #use "list".sort() method for comparing the two corners.
 
