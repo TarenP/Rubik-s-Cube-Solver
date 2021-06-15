@@ -933,6 +933,7 @@ b = yellowFace[5]
 D = yellowFace[6]
 c = yellowFace[7]
 C = yellowFace[8]
+print(A)
 
 GPIO.output(DIR1, CW)
 GPIO.output(DIR3, CW)
@@ -977,8 +978,8 @@ for x in range(35):
 #Done with Yellow
 
 
-GPIO.output(DIR5, CW)
-GPIO.output(DIR8, CCW)
+GPIO.output(DIR5, CCW)
+GPIO.output(DIR8, CW)
 GPIO.output(DIR1, CCW)
 GPIO.output(DIR3, CCW)
 for x in range(30):
@@ -1017,9 +1018,10 @@ f = redFace[5]
 H = redFace[6]
 g = redFace[7]
 G = redFace[8]
+print(E)
 
-GPIO.output(DIR5, CCW)
-GPIO.output(DIR8, CW)
+GPIO.output(DIR5, CW)
+GPIO.output(DIR8, CCW)
 for x in range(50):
     GPIO.output(STEP5, GPIO.HIGH)
     GPIO.output(STEP8, GPIO.HIGH)
@@ -1040,8 +1042,8 @@ for x in range(35):
 
 #Done With Red
 
-GPIO.output(DIR5, CW)
-GPIO.output(DIR8, CCW)
+GPIO.output(DIR5, CCW)
+GPIO.output(DIR8, CW)
 GPIO.output(DIR1, CCW)
 GPIO.output(DIR3, CCW)
 for x in range(30):
@@ -1080,6 +1082,7 @@ v = whiteFace[5]
 X = whiteFace[6]
 w = whiteFace[7]
 W = whiteFace[8]
+print(U)
 
 GPIO.output(DIR5, CCW)
 GPIO.output(DIR8, CW)
