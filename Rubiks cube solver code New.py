@@ -1450,22 +1450,251 @@ def edgeSwapper():
     bankEdge = mbi
     bankEdge.sort()
 
-    edge1 = A
+    edge1 = mbi
     edge1.sort()
-    edge2 = BJM
+    edge2 = mam
     edge2.sort()
-    edge3 = DRE
+    edge3 = mce
     edge3.sort()
-    edge4 = CFI
+    edge4 = mdq
     edge4.sort()
-    edge5 = HSU
+    edge5 = mfl
     edge5.sort()
-    edge6 = GLV
+    edge6 = mgu
     edge6.sort()
-    edge7 = XTO
+    edge7 = mhr
     edge7.sort()
-    edge8 = WKP
+    edge8 = mtn
     edge8.sort()
+    edge9 = msx
+    edge9.sort()
+    edge10 = mkv
+    edge10.sort()
+    edge11 = mow
+    edge11.sort()
+    edge12 = mjp
+    edge12.sort()
+
+    #checking if anycorners are already solved
+    if (mam == am):
+        solvedE2 = True
+    if (mce == ce):
+        solvedE3 = True
+    if (mdq == dq):
+        solvedE4 = True
+    if (mfl == fl):
+        solvedE5 = True
+    if (mgu == gu):
+        solvedE6 = True
+    if (mhr == hr):
+        solvedE7 = True
+    if (mtn == tn):
+        solvedE8 = True
+    if (msx == sx):
+        solvedE9 = True
+    if (mkv == kv):
+        solvedE10 = True
+    if (mow == ow):
+        solvedE11 = True
+    if (mjp == jp):
+        solvedE12 = True
+
+    everythingSolved = False
+
+    bankEdge = mbi
+    bankEdge.sort()
+
+    Edge1 = bi
+    Edge1.sort()
+    Edge2 = am
+    Edge2.sort()
+    Edge3 = ce
+    Edge3.sort()
+    Edge4 = dq
+    Edge4.sort()
+    Edge5 = fl
+    Edge5.sort()
+    Edge6 = gu
+    Edge6.sort()
+    Edge7 = hr
+    Edge7.sort()
+    Edge8 = tn
+    Edge8.sort()
+    Edge9 = sx
+    Edge9.sort()
+    Edge10 = kv
+    Edge10.sort()
+    Edge11 = ow
+    Edge11.sort()
+    Edge12 = jp
+    Edge12.sort()
+
+
+
+    #Use a list of the moves to the positions the bank pieces need to go.
+
+    #finish
+    while everythingSolved == False:
+        if (bankEdge == Edge1):
+            index = bi.index(bankEdge[0])
+            if (index == 0 and solvedE2 == True and solvedE3 == True and solvedE4 == True and solvedE5 == True and solvedE6 == True and solvedE7 == True and solvedE8 == True and solvedE9 == True and solvedE10 == True and solvedE11 == True and solvedE12 == True):
+                print("Edges already set")
+                everythingSolved = True
+            elif (solvedE2 == False):
+                edgeSolveList.append('a')
+                bankEdge = mam
+            elif(solvedE3 == False):
+                edgeSolveList.append('c')
+                bankEdge = mce
+            elif(solvedE4 == False):
+                edgeSolveList.append('d')
+                bankEdge = mdq
+            elif(solvedE5 == False):
+                edgeSolveList.append('f')
+                bankEdge = mfl
+            elif (solvedE6 == False):
+                edgeSolveList.append('g')
+                bankEdge = mgu
+            elif (solvedE7 == False):
+                edgeSolveList.append('h')
+                bankEdge = mhr
+            elif (solvedE8 == False):
+                edgeSolveList.append('t')
+                bankEdge = mtn
+            elif (solvedE9 == False):
+                edgeSolveList.append('s')
+                bankEdge = msx
+            elif (solvedE10 == False):
+                edgeSolveList.append('k')
+                bankEdge = mkv
+            elif (solvedE11 == False):
+                edgeSolveList.append('o')
+                bankEdge = mow
+            elif (solvedE12 == False):
+                edgeSolveList.append('j')
+                bankEdge = mjp
+            #Swap with an unsolved Edge because it is in the bank place and cannot be solved
+    
+        elif(bankEdge == Edge2):
+            index = am.index(bankEdge[0])
+            if (index == 0):
+                edgeSolveList.append('a')
+                bankEdge = mam
+                solvedE2 = True
+            elif (index == 1):
+                edgeSolveList.append('m')
+                bankEdge = mam
+                solvedE2 = True
+
+        elif(bankEdge == Edge3):
+            index = ce.index(bankEdge[0])
+            if (index == 0):
+                edgeSolveList.append('c')
+                bankEdge = mce
+                solvedE3 = True
+            elif (index == 1):
+                edgeSolveList.append('e')
+                bankEdge = mce
+                solvedE3 = True
+        
+        elif(bankEdge == Edge4):
+            index = dq.index(bankEdge[0])
+            if (index == 0):
+                edgeSolveList.append('d')
+                bankEdge = mdq
+                solvedE4 = True
+            elif (index == 1):
+                edgeSolveList.append('q')
+                bankEdge = mdq
+                solvedE4 = True
+            
+        elif(bankEdge == Edge5):
+            index = fl.index(bankEdge[0])
+            if (index == 0):
+                edgeSolveList.append('f')
+                bankEdge = mfl
+                solvedE5 = True
+            elif (index == 1):
+                edgeSolveList.append('l')
+                bankEdge = mfl
+                solvedE5 = True
+        
+        elif(bankEdge == Edge6):
+            index = gu.index(bankEdge[0])
+            if (index == 0):
+                edgeSolveList.append('g')
+                bankEdge = mgu
+                solvedE6 = True
+            elif (index == 1):
+                edgeSolveList.append('u')
+                bankEdge = mgu
+                solvedE6 = True
+
+        elif(bankEdge == Edge7):
+            index = hr.index(bankEdge[0])
+            if (index == 0):
+                edgeSolveList.append('h')
+                bankEdge = mhr
+                solvedE7 = True
+            elif (index == 1):
+                edgeSolveList.append('r')
+                bankEdge = mhr
+                solvedE7 = True
+        
+        elif(bankEdge == Edge8):
+            index = tn.index(bankEdge[0])
+            if (index == 0):
+                edgeSolveList.append('t')
+                bankEdge = mtn
+                solvedE8 = True
+            elif (index == 1):
+                edgeSolveList.append('n')
+                bankEdge = mtn
+                solvedE8 = True
+
+        elif(bankEdge == Edge9):
+            index = sx.index(bankEdge[0])
+            if (index == 0):
+                edgeSolveList.append('s')
+                bankEdge = msx
+                solvedE9 = True
+            elif (index == 1):
+                edgeSolveList.append('x')
+                bankEdge = msx
+                solvedE9 = True
+
+        elif(bankEdge == Edge10):
+            index = kv.index(bankEdge[0])
+            if (index == 0):
+                edgeSolveList.append('k')
+                bankEdge = mkv
+                solvedE10 = True
+            elif (index == 1):
+                edgeSolveList.append('v')
+                bankEdge = mkv
+                solvedE10 = True
+        
+        elif(bankEdge == Edge11):
+            index = ow.index(bankEdge[0])
+            if (index == 0):
+                edgeSolveList.append('o')
+                bankEdge = mow
+                solvedE11 = True
+            elif (index == 1):
+                edgeSolveList.append('w')
+                bankEdge = mow
+                solvedE11 = True
+
+        elif(bankEdge == Edge12):
+            index = jp.index(bankEdge[0])
+            if (index == 0):
+                edgeSolveList.append('j')
+                bankEdge = mjp
+                solvedE12 = True
+            elif (index == 1):
+                edgeSolveList.append('p')
+                bankEdge = mjp
+                solvedE12 = True
 
 
 def main():
