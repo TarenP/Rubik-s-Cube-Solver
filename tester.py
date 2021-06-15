@@ -6,7 +6,8 @@ HSU = ["red", "blue", "white"]
 GLV = ["red", "green", "white"]
 XTO = ["white", "blue", "orange"]
 WKP = ["white", "green", "orange"]
-mAQN = ["orange", "white", "green"]
+mAQN = ["red", "blue", "yellow"]
 
-index = WKP.index(mAQN[0])
-print(index)
+#index = DRE.index(mAQN[0])
+if mAQN == AQN:
+    print("=")
