@@ -854,16 +854,16 @@ def colorfinder():
                faceColors[counter-1] = "orange"
         
         
-#         #White color
-#         low_white = np.array([110, 100, 100])
-#         high_white = np.array([130, 255, 255])
-#         white_mask = cv2.inRange(hsv_img, low_white, high_white)
-#         contours6, _ = cv2.findContours(white_mask, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
-#         contours6 = sorted(contours6, key=lambda x:cv2.contourArea(x), reverse=True)
-#          
-#         for cnt in contours6:
-#             area6 = cv2.contourArea(cnt)
-#             if area6 > 5000:
+    #         #White color
+    #         low_white = np.array([110, 100, 100])
+    #         high_white = np.array([130, 255, 255])
+    #         white_mask = cv2.inRange(hsv_img, low_white, high_white)
+    #         contours6, _ = cv2.findContours(white_mask, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
+    #         contours6 = sorted(contours6, key=lambda x:cv2.contourArea(x), reverse=True)
+    #          
+    #         for cnt in contours6:
+    #             area6 = cv2.contourArea(cnt)
+    #             if area6 > 5000:
         if faceColors[counter-1]=="pink":
             
             faceColors[counter-1] = "white"
@@ -872,281 +872,281 @@ def colorfinder():
         counter+=1
                 
         #cv2.imshow("Frame", img)
-#         cv2.imshow("RedMask", red_mask)
-#         cv2.imshow("YellowMask", yellow_mask)
-#         cv2.imshow("GreenMask", green_mask)
-#         cv2.imshow("BlueMask", blue_mask)
+    #         cv2.imshow("RedMask", red_mask)
+    #         cv2.imshow("YellowMask", yellow_mask)
+    #         cv2.imshow("GreenMask", green_mask)
+    #         cv2.imshow("BlueMask", blue_mask)
         key =cv2.waitKey(1)
         
         if key== 27:
             break
     
-def colorMapper():
-    GPIO.output(DIR2, CCW)
-    GPIO.output(DIR4, CCW)
-    for x in range(30):
-        GPIO.output(STEP2, GPIO.HIGH)
-        GPIO.output(STEP4, GPIO.HIGH)
-        sleep(delay)
-        GPIO.output(STEP2, GPIO.LOW)
-        GPIO.output(STEP4, GPIO.LOW)
-        sleep(delay)
 
-    GPIO.output(DIR5, CW)
-    GPIO.output(DIR8, CCW)
-    for x in range(50):
-        GPIO.output(STEP5, GPIO.HIGH)
-        GPIO.output(STEP8, GPIO.HIGH)
-        sleep(delay)
-        GPIO.output(STEP5, GPIO.LOW)
-        GPIO.output(STEP8, GPIO.LOW)
-        sleep(delay)
+GPIO.output(DIR2, CCW)
+GPIO.output(DIR4, CCW)
+for x in range(30):
+    GPIO.output(STEP2, GPIO.HIGH)
+    GPIO.output(STEP4, GPIO.HIGH)
+    sleep(delay)
+    GPIO.output(STEP2, GPIO.LOW)
+    GPIO.output(STEP4, GPIO.LOW)
+    sleep(delay)
+
+GPIO.output(DIR5, CW)
+GPIO.output(DIR8, CCW)
+for x in range(50):
+    GPIO.output(STEP5, GPIO.HIGH)
+    GPIO.output(STEP8, GPIO.HIGH)
+    sleep(delay)
+    GPIO.output(STEP5, GPIO.LOW)
+    GPIO.output(STEP8, GPIO.LOW)
+    sleep(delay)
+
+GPIO.output(DIR2, CW)
+GPIO.output(DIR4, CW)
+for x in range(35):
+    GPIO.output(STEP2, GPIO.HIGH)
+    GPIO.output(STEP4, GPIO.HIGH)
+    sleep(delay)
+    GPIO.output(STEP2, GPIO.LOW)
+    GPIO.output(STEP4, GPIO.LOW)
+    sleep(delay)
+
+GPIO.output(DIR1, CCW)
+GPIO.output(DIR3, CCW)
+for x in range(30):
+    GPIO.output(STEP1, GPIO.HIGH)
+    GPIO.output(STEP3, GPIO.HIGH)
+    sleep(delay)
+    GPIO.output(STEP1, GPIO.LOW)
+    GPIO.output(STEP3, GPIO.LOW)
+    sleep(delay)
     
-    GPIO.output(DIR2, CW)
-    GPIO.output(DIR4, CW)
-    for x in range(35):
-        GPIO.output(STEP2, GPIO.HIGH)
-        GPIO.output(STEP4, GPIO.HIGH)
-        sleep(delay)
-        GPIO.output(STEP2, GPIO.LOW)
-        GPIO.output(STEP4, GPIO.LOW)
-        sleep(delay)
+colorfinder()
+yellowFace = faceColors
+A = yellowFace[0]
+a = yellowFace[1]
+B = yellowFace[2]
+d = yellowFace[3]
+up = yellowFace[4]
+b = yellowFace[5]
+D = yellowFace[6]
+c = yellowFace[7]
+C = yellowFace[8]
 
-    GPIO.output(DIR1, CCW)
-    GPIO.output(DIR3, CCW)
-    for x in range(30):
-        GPIO.output(STEP1, GPIO.HIGH)
-        GPIO.output(STEP3, GPIO.HIGH)
-        sleep(delay)
-        GPIO.output(STEP1, GPIO.LOW)
-        GPIO.output(STEP3, GPIO.LOW)
-        sleep(delay)
-        
-    colorfinder()
-    yellowFace = faceColors
-    A = yellowFace[0]
-    a = yellowFace[1]
-    B = yellowFace[2]
-    d = yellowFace[3]
-    up = yellowFace[4]
-    b = yellowFace[5]
-    D = yellowFace[6]
-    c = yellowFace[7]
-    C = yellowFace[8]
+GPIO.output(DIR1, CW)
+GPIO.output(DIR3, CW)
+for x in range(35):
+    GPIO.output(STEP1, GPIO.HIGH)
+    GPIO.output(STEP3, GPIO.HIGH)
+    sleep(delay)
+    GPIO.output(STEP1, GPIO.LOW)
+    GPIO.output(STEP3, GPIO.LOW)
+    sleep(delay)
+
+GPIO.output(DIR2, CCW)
+GPIO.output(DIR4, CCW)
+for x in range(30):
+    GPIO.output(STEP2, GPIO.HIGH)
+    GPIO.output(STEP4, GPIO.HIGH)
+    sleep(delay)
+    GPIO.output(STEP2, GPIO.LOW)
+    GPIO.output(STEP4, GPIO.LOW)
+    sleep(delay)
+
+GPIO.output(DIR5, CCW)
+GPIO.output(DIR8, CW)
+for x in range(50):
+    GPIO.output(STEP5, GPIO.HIGH)
+    GPIO.output(STEP8, GPIO.HIGH)
+    sleep(delay)
+    GPIO.output(STEP5, GPIO.LOW)
+    GPIO.output(STEP8, GPIO.LOW)
+    sleep(delay)
+
+GPIO.output(DIR2, CW)
+GPIO.output(DIR4, CW)
+for x in range(35):
+    GPIO.output(STEP2, GPIO.HIGH)
+    GPIO.output(STEP4, GPIO.HIGH)
+    sleep(delay)
+    GPIO.output(STEP2, GPIO.LOW)
+    GPIO.output(STEP4, GPIO.LOW)
+    sleep(delay)
+
+#Done with Yellow
+
+
+GPIO.output(DIR5, CW)
+GPIO.output(DIR8, CCW)
+GPIO.output(DIR1, CCW)
+GPIO.output(DIR3, CCW)
+for x in range(30):
+    GPIO.output(STEP1, GPIO.HIGH)
+    GPIO.output(STEP3, GPIO.HIGH)
+    sleep(delay)
+    GPIO.output(STEP1, GPIO.LOW)
+    GPIO.output(STEP3, GPIO.LOW)
+    sleep(delay)
     
-    GPIO.output(DIR1, CW)
-    GPIO.output(DIR3, CW)
-    for x in range(35):
-        GPIO.output(STEP1, GPIO.HIGH)
-        GPIO.output(STEP3, GPIO.HIGH)
-        sleep(delay)
-        GPIO.output(STEP1, GPIO.LOW)
-        GPIO.output(STEP3, GPIO.LOW)
-        sleep(delay)
-
-    GPIO.output(DIR2, CCW)
-    GPIO.output(DIR4, CCW)
-    for x in range(30):
-        GPIO.output(STEP2, GPIO.HIGH)
-        GPIO.output(STEP4, GPIO.HIGH)
-        sleep(delay)
-        GPIO.output(STEP2, GPIO.LOW)
-        GPIO.output(STEP4, GPIO.LOW)
-        sleep(delay)
+GPIO.output(DIR2, CW)
+GPIO.output(DIR4, CW)
+for x in range(5):
+    GPIO.output(STEP2, GPIO.HIGH)
+    GPIO.output(STEP4, GPIO.HIGH)
+    sleep(delay)
+    GPIO.output(STEP2, GPIO.LOW)
+    GPIO.output(STEP4, GPIO.LOW)
+    sleep(delay)
     
-    GPIO.output(DIR5, CCW)
-    GPIO.output(DIR8, CW)
-    for x in range(50):
-        GPIO.output(STEP5, GPIO.HIGH)
-        GPIO.output(STEP8, GPIO.HIGH)
-        sleep(delay)
-        GPIO.output(STEP5, GPIO.LOW)
-        GPIO.output(STEP8, GPIO.LOW)
-        sleep(delay)
-
-    GPIO.output(DIR2, CW)
-    GPIO.output(DIR4, CW)
-    for x in range(35):
-        GPIO.output(STEP2, GPIO.HIGH)
-        GPIO.output(STEP4, GPIO.HIGH)
-        sleep(delay)
-        GPIO.output(STEP2, GPIO.LOW)
-        GPIO.output(STEP4, GPIO.LOW)
-        sleep(delay)
+for x in range(50):
+    GPIO.output(STEP5, GPIO.HIGH)
+    GPIO.output(STEP8, GPIO.HIGH)
+    sleep(delay)
+    GPIO.output(STEP5, GPIO.LOW)
+    GPIO.output(STEP8, GPIO.LOW)
+    sleep(delay)
     
-    #Done with Yellow
+colorfinder()
+redFace = faceColors
+E = redFace[0]
+e = redFace[1]
+F = redFace[2]
+h = redFace[3]
+front = redFace[4]
+f = redFace[5]
+H = redFace[6]
+g = redFace[7]
+G = redFace[8]
+
+GPIO.output(DIR5, CCW)
+GPIO.output(DIR8, CW)
+for x in range(50):
+    GPIO.output(STEP5, GPIO.HIGH)
+    GPIO.output(STEP8, GPIO.HIGH)
+    sleep(delay)
+    GPIO.output(STEP5, GPIO.LOW)
+    GPIO.output(STEP8, GPIO.LOW)
+    sleep(delay)
+
+GPIO.output(DIR1, CW)
+GPIO.output(DIR3, CW)
+for x in range(35):
+    GPIO.output(STEP1, GPIO.HIGH)
+    GPIO.output(STEP3, GPIO.HIGH)
+    sleep(delay)
+    GPIO.output(STEP1, GPIO.LOW)
+    GPIO.output(STEP3, GPIO.LOW)
+    sleep(delay)
+
+#Done With Red
+
+GPIO.output(DIR5, CW)
+GPIO.output(DIR8, CCW)
+GPIO.output(DIR1, CCW)
+GPIO.output(DIR3, CCW)
+for x in range(30):
+    GPIO.output(STEP1, GPIO.HIGH)
+    GPIO.output(STEP3, GPIO.HIGH)
+    sleep(delay)
+    GPIO.output(STEP1, GPIO.LOW)
+    GPIO.output(STEP3, GPIO.LOW)
+    sleep(delay)
     
-
-    GPIO.output(DIR5, CW)
-    GPIO.output(DIR8, CCW)
-    GPIO.output(DIR1, CCW)
-    GPIO.output(DIR3, CCW)
-    for x in range(30):
-        GPIO.output(STEP1, GPIO.HIGH)
-        GPIO.output(STEP3, GPIO.HIGH)
-        sleep(delay)
-        GPIO.output(STEP1, GPIO.LOW)
-        GPIO.output(STEP3, GPIO.LOW)
-        sleep(delay)
-        
-    GPIO.output(DIR2, CW)
-    GPIO.output(DIR4, CW)
-    for x in range(5):
-        GPIO.output(STEP2, GPIO.HIGH)
-        GPIO.output(STEP4, GPIO.HIGH)
-        sleep(delay)
-        GPIO.output(STEP2, GPIO.LOW)
-        GPIO.output(STEP4, GPIO.LOW)
-        sleep(delay)
-        
-    for x in range(50):
-        GPIO.output(STEP5, GPIO.HIGH)
-        GPIO.output(STEP8, GPIO.HIGH)
-        sleep(delay)
-        GPIO.output(STEP5, GPIO.LOW)
-        GPIO.output(STEP8, GPIO.LOW)
-        sleep(delay)
-        
-    colorfinder()
-    redFace = faceColors
-    E = redFace[0]
-    e = redFace[1]
-    F = redFace[2]
-    h = redFace[3]
-    front = redFace[4]
-    f = redFace[5]
-    H = redFace[6]
-    g = redFace[7]
-    G = redFace[8]
-
-    GPIO.output(DIR5, CCW)
-    GPIO.output(DIR8, CW)
-    for x in range(50):
-        GPIO.output(STEP5, GPIO.HIGH)
-        GPIO.output(STEP8, GPIO.HIGH)
-        sleep(delay)
-        GPIO.output(STEP5, GPIO.LOW)
-        GPIO.output(STEP8, GPIO.LOW)
-        sleep(delay)
-
-    GPIO.output(DIR1, CW)
-    GPIO.output(DIR3, CW)
-    for x in range(35):
-        GPIO.output(STEP1, GPIO.HIGH)
-        GPIO.output(STEP3, GPIO.HIGH)
-        sleep(delay)
-        GPIO.output(STEP1, GPIO.LOW)
-        GPIO.output(STEP3, GPIO.LOW)
-        sleep(delay)
-
-    #Done With Red
-
-    GPIO.output(DIR5, CW)
-    GPIO.output(DIR8, CCW)
-    GPIO.output(DIR1, CCW)
-    GPIO.output(DIR3, CCW)
-    for x in range(30):
-        GPIO.output(STEP1, GPIO.HIGH)
-        GPIO.output(STEP3, GPIO.HIGH)
-        sleep(delay)
-        GPIO.output(STEP1, GPIO.LOW)
-        GPIO.output(STEP3, GPIO.LOW)
-        sleep(delay)
-        
-    GPIO.output(DIR2, CW)
-    GPIO.output(DIR4, CW)
-    for x in range(5):
-        GPIO.output(STEP2, GPIO.HIGH)
-        GPIO.output(STEP4, GPIO.HIGH)
-        sleep(delay)
-        GPIO.output(STEP2, GPIO.LOW)
-        GPIO.output(STEP4, GPIO.LOW)
-        sleep(delay)
-        
-    for x in range(100):
-        GPIO.output(STEP5, GPIO.HIGH)
-        GPIO.output(STEP8, GPIO.HIGH)
-        sleep(delay)
-        GPIO.output(STEP5, GPIO.LOW)
-        GPIO.output(STEP8, GPIO.LOW)
-        sleep(delay)
-        
-    colorfinder()
-    whiteFace = faceColors
-    U = whiteFace[0]
-    u = whiteFace[1]
-    V = whiteFace[2]
-    x = whiteFace[3]
-    down = whiteFace[4]
-    v = whiteFace[5]
-    X = whiteFace[6]
-    w = whiteFace[7]
-    W = whiteFace[8]
-
-    GPIO.output(DIR5, CCW)
-    GPIO.output(DIR8, CW)
-    for x in range(100):
-        GPIO.output(STEP5, GPIO.HIGH)
-        GPIO.output(STEP8, GPIO.HIGH)
-        sleep(delay)
-        GPIO.output(STEP5, GPIO.LOW)
-        GPIO.output(STEP8, GPIO.LOW)
-        sleep(delay)
-
-    GPIO.output(DIR1, CW)
-    GPIO.output(DIR3, CW)
-    for x in range(35):
-        GPIO.output(STEP1, GPIO.HIGH)
-        GPIO.output(STEP3, GPIO.HIGH)
-        sleep(delay)
-        GPIO.output(STEP1, GPIO.LOW)
-        GPIO.output(STEP3, GPIO.LOW)
-        sleep(delay)
-
-    #Done with white
+GPIO.output(DIR2, CW)
+GPIO.output(DIR4, CW)
+for x in range(5):
+    GPIO.output(STEP2, GPIO.HIGH)
+    GPIO.output(STEP4, GPIO.HIGH)
+    sleep(delay)
+    GPIO.output(STEP2, GPIO.LOW)
+    GPIO.output(STEP4, GPIO.LOW)
+    sleep(delay)
     
-    colorfinder()
-    orangeFace = faceColors
-    O = orangeFace[0]
-    o = orangeFace[1]
-    P = orangeFace[2]
-    n = orangeFace[3]
-    back = orangeFace[4]
-    p = orangeFace[5]
-    N = orangeFace[6]
-    m = orangeFace[7]
-    M = orangeFace[8]
-    Yturn()
-    colorfinder()
-    blueFace = faceColors
-    S = blueFace[0]
-    s = blueFace[1]
-    T = blueFace[2]
-    r = blueFace[3]
-    left = blueFace[4]
-    t = blueFace[5]
-    R = blueFace[6]
-    q = blueFace[7]
-    Q = blueFace[8]
-    Yturn()
-    Yturn()
-    colorfinder()
-    greenFace = faceColors
-    K = greenFace[0]
-    k = greenFace[1]
-    L = greenFace[2]
-    j = greenFace[3]
-    right = greenFace[4]
-    l = greenFace[5]
-    J = greenFace[6]
-    i = greenFace[7]
-    I = greenFace[8]
-    Yprimeturn()
-    Xturn()
+for x in range(100):
+    GPIO.output(STEP5, GPIO.HIGH)
+    GPIO.output(STEP8, GPIO.HIGH)
+    sleep(delay)
+    GPIO.output(STEP5, GPIO.LOW)
+    GPIO.output(STEP8, GPIO.LOW)
+    sleep(delay)
+    
+colorfinder()
+whiteFace = faceColors
+U = whiteFace[0]
+u = whiteFace[1]
+V = whiteFace[2]
+x = whiteFace[3]
+down = whiteFace[4]
+v = whiteFace[5]
+X = whiteFace[6]
+w = whiteFace[7]
+W = whiteFace[8]
+
+GPIO.output(DIR5, CCW)
+GPIO.output(DIR8, CW)
+for x in range(100):
+    GPIO.output(STEP5, GPIO.HIGH)
+    GPIO.output(STEP8, GPIO.HIGH)
+    sleep(delay)
+    GPIO.output(STEP5, GPIO.LOW)
+    GPIO.output(STEP8, GPIO.LOW)
+    sleep(delay)
+
+GPIO.output(DIR1, CW)
+GPIO.output(DIR3, CW)
+for x in range(35):
+    GPIO.output(STEP1, GPIO.HIGH)
+    GPIO.output(STEP3, GPIO.HIGH)
+    sleep(delay)
+    GPIO.output(STEP1, GPIO.LOW)
+    GPIO.output(STEP3, GPIO.LOW)
+    sleep(delay)
+
+#Done with white
+
+colorfinder()
+orangeFace = faceColors
+O = orangeFace[0]
+o = orangeFace[1]
+P = orangeFace[2]
+n = orangeFace[3]
+back = orangeFace[4]
+p = orangeFace[5]
+N = orangeFace[6]
+m = orangeFace[7]
+M = orangeFace[8]
+Yturn()
+colorfinder()
+blueFace = faceColors
+S = blueFace[0]
+s = blueFace[1]
+T = blueFace[2]
+r = blueFace[3]
+left = blueFace[4]
+t = blueFace[5]
+R = blueFace[6]
+q = blueFace[7]
+Q = blueFace[8]
+Yturn()
+Yturn()
+colorfinder()
+greenFace = faceColors
+K = greenFace[0]
+k = greenFace[1]
+L = greenFace[2]
+j = greenFace[3]
+right = greenFace[4]
+l = greenFace[5]
+J = greenFace[6]
+i = greenFace[7]
+I = greenFace[8]
+Yprimeturn()
+Xturn()
 
     
 
-#Pass in any corner, it will do the algo to get that specific corner to where it should go.
+#it will do the algo to get that specific corner to where it should go.
 def cornerActions():
     mAQN = [A, Q, N]
     mBJM = [B, J, M]
@@ -1156,33 +1156,6 @@ def cornerActions():
     mGLV = [G, L, V]
     mXTO = [X, T, O]
     mWKP = [W, K, P]
-
-    mAQN.sort()
-    mBJM.sort()
-    mBJM.sort()
-    mDRE.sort()
-    mCFI.sort()
-    mHSU.sort()
-    mGLV.sort()
-    mXTO.sort()
-
-    AQN.sort()
-    BJM.sort()
-    BJM.sort()
-    DRE.sort()
-    CFI.sort()
-    HSU.sort()
-    GLV.sort()
-    XTO.sort()
-
-
-    #checking if anycorners are already solved
-    everythingSolved = False
-    cornerSolveList = []
-
-    bankCorner = mAQN
-    bankCorner.sort()
-
 
     if (mBJM == BJM):
         solvedC2 = True
@@ -1198,6 +1171,35 @@ def cornerActions():
         solvedC7 = True
     if (mWKP == WKP):
         solvedC8 = True
+        
+    mAQN.sort()
+    mBJM.sort()
+    mBJM.sort()
+    mDRE.sort()
+    mCFI.sort()
+    mHSU.sort()
+    mGLV.sort()
+    mXTO.sort()
+
+    bankCorner = mAQN
+
+    corner1 = AQN
+    corner2 = BJM
+    corner3 = DRE
+    corner4 = CFI
+    corner5 = HSU
+    corner6 = GLV
+    corner7 = XTO
+    corner8 = WKP
+
+
+    #checking if anycorners are already solved
+    everythingSolved = False
+    cornerSolveList = []
+
+    bankCorner = mAQN
+    bankCorner.sort()
+
 
     
 
@@ -1206,7 +1208,7 @@ def cornerActions():
 
     #finish
     while everythingSolved == False:
-        if (bankCorner == AQN):
+        if (bankCorner == corner1):
             index = AQN.index(bankCorner[0])
             if (index == 0 and solvedC2 == True and solvedC3 == True and solvedC4 == True and solvedC5 == True and solvedC6 == True and solvedC7 == True and solvedC8 == True):
                 print("already set")
@@ -1234,7 +1236,7 @@ def cornerActions():
                 bankCorner = mWKP
             #Swap with an unsolved corner because it is in the bank place and cannot be solved
     
-        elif(bankCorner == BJM):
+        elif(bankCorner == corner2):
             index = BJM.index(bankCorner[0])
             if (index == 0):
                 cornerSolveList.append('B')
@@ -1249,7 +1251,7 @@ def cornerActions():
                 bankCorner = mBJM
                 solvedC2 = True
 
-        elif (bankCorner == DRE):
+        elif (bankCorner == corner3):
             index = DRE.index(bankCorner[0])
             if (index == 0):
                 cornerSolveList.append('D')
@@ -1264,7 +1266,7 @@ def cornerActions():
                 bankCorner = mDRE
                 solvedC3 = True
 
-        elif(bankCorner == CFI):
+        elif(bankCorner == corner4):
             index = CFI.index(bankCorner[0])
             if (index == 0):
                 cornerSolveList.append('C')
@@ -1279,7 +1281,7 @@ def cornerActions():
                 bankCorner = mCFI
                 solvedC4 = True
         
-        elif(bankCorner == HSU):
+        elif(bankCorner == corner5):
             index = HSU.index(bankCorner[0])
             if (index == 0):
                 cornerSolveList.append('H')
@@ -1294,7 +1296,7 @@ def cornerActions():
                 bankCorner = mHSU
                 solvedC5 = True
 
-        elif(bankCorner == GLV):
+        elif(bankCorner == corner6):
             index = GLV.index(bankCorner[0])
             if (index == 0):
                 cornerSolveList.append('G')
@@ -1309,7 +1311,7 @@ def cornerActions():
                 bankCorner = mGLV
                 solvedC6 = True
         
-        elif(bankCorner == XTO):
+        elif(bankCorner == corner7):
             index = XTO.index(bankCorner[0])
             if (index == 0):
                 cornerSolveList.append('X')
@@ -1324,7 +1326,7 @@ def cornerActions():
                 bankCorner = mXTO
                 solvedC7 = True
 
-        elif (bankCorner == WKP):
+        elif (bankCorner == corner8):
             index = WKP.index(bankCorner[0])
             if (index == 0):
                 cornerSolveList.append('W')
