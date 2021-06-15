@@ -884,213 +884,6 @@ def colorfinder():
             break
     return faceColors    
 
-GPIO.output(DIR2, CCW)
-GPIO.output(DIR4, CCW)
-for x in range(30):
-    GPIO.output(STEP2, GPIO.HIGH)
-    GPIO.output(STEP4, GPIO.HIGH)
-    sleep(delay)
-    GPIO.output(STEP2, GPIO.LOW)
-    GPIO.output(STEP4, GPIO.LOW)
-    sleep(delay)
-
-
-GPIO.output(DIR5, CW)
-GPIO.output(DIR8, CCW)
-for x in range(50):
-    GPIO.output(STEP5, GPIO.HIGH)
-    GPIO.output(STEP8, GPIO.HIGH)
-    sleep(delay)
-    GPIO.output(STEP5, GPIO.LOW)
-    GPIO.output(STEP8, GPIO.LOW)
-    sleep(delay)
-
-GPIO.output(DIR2, CW)
-GPIO.output(DIR4, CW)
-for x in range(35):
-    GPIO.output(STEP2, GPIO.HIGH)
-    GPIO.output(STEP4, GPIO.HIGH)
-    sleep(delay)
-    GPIO.output(STEP2, GPIO.LOW)
-    GPIO.output(STEP4, GPIO.LOW)
-    sleep(delay)
-
-GPIO.output(DIR1, CCW)
-GPIO.output(DIR3, CCW)
-for x in range(30):
-    GPIO.output(STEP1, GPIO.HIGH)
-    GPIO.output(STEP3, GPIO.HIGH)
-    sleep(delay)
-    GPIO.output(STEP1, GPIO.LOW)
-    GPIO.output(STEP3, GPIO.LOW)
-    sleep(delay)
-    
-
-yellowFace = colorfinder()
-A = yellowFace[0]
-a = yellowFace[1]
-B = yellowFace[2]
-d = yellowFace[3]
-up = yellowFace[4]
-b = yellowFace[5]
-D = yellowFace[6]
-c = yellowFace[7]
-C = yellowFace[8]
-print(A)
-
-GPIO.output(DIR1, CW)
-GPIO.output(DIR3, CW)
-for x in range(35):
-    GPIO.output(STEP1, GPIO.HIGH)
-    GPIO.output(STEP3, GPIO.HIGH)
-    sleep(delay)
-    GPIO.output(STEP1, GPIO.LOW)
-    GPIO.output(STEP3, GPIO.LOW)
-    sleep(delay)
-
-GPIO.output(DIR2, CCW)
-GPIO.output(DIR4, CCW)
-for x in range(30):
-    GPIO.output(STEP2, GPIO.HIGH)
-    GPIO.output(STEP4, GPIO.HIGH)
-    sleep(delay)
-    GPIO.output(STEP2, GPIO.LOW)
-    GPIO.output(STEP4, GPIO.LOW)
-    sleep(delay)
-
-GPIO.output(DIR5, CCW)
-GPIO.output(DIR8, CW)
-for x in range(50):
-    GPIO.output(STEP5, GPIO.HIGH)
-    GPIO.output(STEP8, GPIO.HIGH)
-    sleep(delay)
-    GPIO.output(STEP5, GPIO.LOW)
-    GPIO.output(STEP8, GPIO.LOW)
-    sleep(delay)
-
-GPIO.output(DIR2, CW)
-GPIO.output(DIR4, CW)
-for x in range(35):
-    GPIO.output(STEP2, GPIO.HIGH)
-    GPIO.output(STEP4, GPIO.HIGH)
-    sleep(delay)
-    GPIO.output(STEP2, GPIO.LOW)
-    GPIO.output(STEP4, GPIO.LOW)
-    sleep(delay)
-
-#Done with Yellow
-
-
-GPIO.output(DIR5, CCW)
-GPIO.output(DIR8, CW)
-GPIO.output(DIR1, CCW)
-GPIO.output(DIR3, CCW)
-for x in range(30):
-    GPIO.output(STEP1, GPIO.HIGH)
-    GPIO.output(STEP3, GPIO.HIGH)
-    sleep(delay)
-    GPIO.output(STEP1, GPIO.LOW)
-    GPIO.output(STEP3, GPIO.LOW)
-    sleep(delay)
-    
-    
-for x in range(50):
-    GPIO.output(STEP5, GPIO.HIGH)
-    GPIO.output(STEP8, GPIO.HIGH)
-    sleep(delay)
-    GPIO.output(STEP5, GPIO.LOW)
-    GPIO.output(STEP8, GPIO.LOW)
-    sleep(delay)
-    
-redFace = colorfinder()
-E = redFace[0]
-e = redFace[1]
-F = redFace[2]
-h = redFace[3]
-front = redFace[4]
-f = redFace[5]
-H = redFace[6]
-g = redFace[7]
-G = redFace[8]
-print(E)
-
-GPIO.output(DIR5, CW)
-GPIO.output(DIR8, CCW)
-for x in range(50):
-    GPIO.output(STEP5, GPIO.HIGH)
-    GPIO.output(STEP8, GPIO.HIGH)
-    sleep(delay)
-    GPIO.output(STEP5, GPIO.LOW)
-    GPIO.output(STEP8, GPIO.LOW)
-    sleep(delay)
-
-GPIO.output(DIR1, CW)
-GPIO.output(DIR3, CW)
-for x in range(35):
-    GPIO.output(STEP1, GPIO.HIGH)
-    GPIO.output(STEP3, GPIO.HIGH)
-    sleep(delay)
-    GPIO.output(STEP1, GPIO.LOW)
-    GPIO.output(STEP3, GPIO.LOW)
-    sleep(delay)
-
-#Done With Red
-
-Xprimeturn()
-Xprimeturn()
-    
-whiteFace = colorfinder()
-U = whiteFace[0]
-u = whiteFace[1]
-V = whiteFace[2]
-x = whiteFace[3]
-down = whiteFace[4]
-v = whiteFace[5]
-X = whiteFace[6]
-w = whiteFace[7]
-W = whiteFace[8]
-print(U)
-
-Xturn()
-
-Xturn()
-
-#Done with white
-
-orangeFace = colorfinder()
-O = orangeFace[0]
-o = orangeFace[1]
-P = orangeFace[2]
-n = orangeFace[3]
-back = orangeFace[4]
-p = orangeFace[5]
-N = orangeFace[6]
-m = orangeFace[7]
-M = orangeFace[8]
-
-blueFace = colorfinder()
-S = blueFace[0]
-s = blueFace[1]
-T = blueFace[2]
-r = blueFace[3]
-left = blueFace[4]
-t = blueFace[5]
-R = blueFace[6]
-q = blueFace[7]
-Q = blueFace[8]
-
-
-greenFace = colorfinder()
-K = greenFace[0]
-k = greenFace[1]
-L = greenFace[2]
-j = greenFace[3]
-right = greenFace[4]
-l = greenFace[5]
-J = greenFace[6]
-i = greenFace[7]
-I = greenFace[8]
-
 
     
 
@@ -1650,6 +1443,559 @@ def edgeSwapper():
 
 
 def main():
-    colorfinder()
     cornerMain()
     #Figure out new bank corner colors every time we swap
+
+GPIO.output(DIR2, CCW)
+GPIO.output(DIR4, CCW)
+for x in range(30):
+    GPIO.output(STEP2, GPIO.HIGH)
+    GPIO.output(STEP4, GPIO.HIGH)
+    sleep(delay)
+    GPIO.output(STEP2, GPIO.LOW)
+    GPIO.output(STEP4, GPIO.LOW)
+    sleep(delay)
+
+
+GPIO.output(DIR5, CW)
+GPIO.output(DIR8, CCW)
+for x in range(50):
+    GPIO.output(STEP5, GPIO.HIGH)
+    GPIO.output(STEP8, GPIO.HIGH)
+    sleep(delay)
+    GPIO.output(STEP5, GPIO.LOW)
+    GPIO.output(STEP8, GPIO.LOW)
+    sleep(delay)
+
+GPIO.output(DIR2, CW)
+GPIO.output(DIR4, CW)
+for x in range(35):
+    GPIO.output(STEP2, GPIO.HIGH)
+    GPIO.output(STEP4, GPIO.HIGH)
+    sleep(delay)
+    GPIO.output(STEP2, GPIO.LOW)
+    GPIO.output(STEP4, GPIO.LOW)
+    sleep(delay)
+
+GPIO.output(DIR1, CCW)
+GPIO.output(DIR3, CCW)
+for x in range(30):
+    GPIO.output(STEP1, GPIO.HIGH)
+    GPIO.output(STEP3, GPIO.HIGH)
+    sleep(delay)
+    GPIO.output(STEP1, GPIO.LOW)
+    GPIO.output(STEP3, GPIO.LOW)
+    sleep(delay)
+    
+
+yellowFace = colorfinder()
+A = yellowFace[0]
+a = yellowFace[1]
+B = yellowFace[2]
+d = yellowFace[3]
+up = yellowFace[4]
+b = yellowFace[5]
+D = yellowFace[6]
+c = yellowFace[7]
+C = yellowFace[8]
+print(A)
+
+GPIO.output(DIR1, CW)
+GPIO.output(DIR3, CW)
+for x in range(35):
+    GPIO.output(STEP1, GPIO.HIGH)
+    GPIO.output(STEP3, GPIO.HIGH)
+    sleep(delay)
+    GPIO.output(STEP1, GPIO.LOW)
+    GPIO.output(STEP3, GPIO.LOW)
+    sleep(delay)
+
+GPIO.output(DIR2, CCW)
+GPIO.output(DIR4, CCW)
+for x in range(30):
+    GPIO.output(STEP2, GPIO.HIGH)
+    GPIO.output(STEP4, GPIO.HIGH)
+    sleep(delay)
+    GPIO.output(STEP2, GPIO.LOW)
+    GPIO.output(STEP4, GPIO.LOW)
+    sleep(delay)
+
+GPIO.output(DIR5, CCW)
+GPIO.output(DIR8, CW)
+for x in range(50):
+    GPIO.output(STEP5, GPIO.HIGH)
+    GPIO.output(STEP8, GPIO.HIGH)
+    sleep(delay)
+    GPIO.output(STEP5, GPIO.LOW)
+    GPIO.output(STEP8, GPIO.LOW)
+    sleep(delay)
+
+GPIO.output(DIR2, CW)
+GPIO.output(DIR4, CW)
+for x in range(35):
+    GPIO.output(STEP2, GPIO.HIGH)
+    GPIO.output(STEP4, GPIO.HIGH)
+    sleep(delay)
+    GPIO.output(STEP2, GPIO.LOW)
+    GPIO.output(STEP4, GPIO.LOW)
+    sleep(delay)
+
+#Done with Yellow
+
+
+GPIO.output(DIR5, CCW)
+GPIO.output(DIR8, CW)
+GPIO.output(DIR1, CCW)
+GPIO.output(DIR3, CCW)
+for x in range(30):
+    GPIO.output(STEP1, GPIO.HIGH)
+    GPIO.output(STEP3, GPIO.HIGH)
+    sleep(delay)
+    GPIO.output(STEP1, GPIO.LOW)
+    GPIO.output(STEP3, GPIO.LOW)
+    sleep(delay)
+    
+    
+for x in range(50):
+    GPIO.output(STEP5, GPIO.HIGH)
+    GPIO.output(STEP8, GPIO.HIGH)
+    sleep(delay)
+    GPIO.output(STEP5, GPIO.LOW)
+    GPIO.output(STEP8, GPIO.LOW)
+    sleep(delay)
+    
+redFace = colorfinder()
+E = redFace[0]
+e = redFace[1]
+F = redFace[2]
+h = redFace[3]
+front = redFace[4]
+f = redFace[5]
+H = redFace[6]
+g = redFace[7]
+G = redFace[8]
+print(E)
+
+GPIO.output(DIR5, CW)
+GPIO.output(DIR8, CCW)
+for x in range(50):
+    GPIO.output(STEP5, GPIO.HIGH)
+    GPIO.output(STEP8, GPIO.HIGH)
+    sleep(delay)
+    GPIO.output(STEP5, GPIO.LOW)
+    GPIO.output(STEP8, GPIO.LOW)
+    sleep(delay)
+
+GPIO.output(DIR1, CW)
+GPIO.output(DIR3, CW)
+for x in range(35):
+    GPIO.output(STEP1, GPIO.HIGH)
+    GPIO.output(STEP3, GPIO.HIGH)
+    sleep(delay)
+    GPIO.output(STEP1, GPIO.LOW)
+    GPIO.output(STEP3, GPIO.LOW)
+    sleep(delay)
+
+#Done With Red
+
+Xprimeturn()
+Xprimeturn()
+GPIO.output(DIR2, CCW)
+GPIO.output(DIR4, CCW)
+for x in range(30):
+    GPIO.output(STEP2, GPIO.HIGH)
+    GPIO.output(STEP4, GPIO.HIGH)
+    sleep(delay)
+    GPIO.output(STEP2, GPIO.LOW)
+    GPIO.output(STEP4, GPIO.LOW)
+    sleep(delay)
+
+
+GPIO.output(DIR5, CW)
+GPIO.output(DIR8, CCW)
+for x in range(50):
+    GPIO.output(STEP5, GPIO.HIGH)
+    GPIO.output(STEP8, GPIO.HIGH)
+    sleep(delay)
+    GPIO.output(STEP5, GPIO.LOW)
+    GPIO.output(STEP8, GPIO.LOW)
+    sleep(delay)
+
+GPIO.output(DIR2, CW)
+GPIO.output(DIR4, CW)
+for x in range(35):
+    GPIO.output(STEP2, GPIO.HIGH)
+    GPIO.output(STEP4, GPIO.HIGH)
+    sleep(delay)
+    GPIO.output(STEP2, GPIO.LOW)
+    GPIO.output(STEP4, GPIO.LOW)
+    sleep(delay)
+
+GPIO.output(DIR1, CCW)
+GPIO.output(DIR3, CCW)
+for x in range(30):
+    GPIO.output(STEP1, GPIO.HIGH)
+    GPIO.output(STEP3, GPIO.HIGH)
+    sleep(delay)
+    GPIO.output(STEP1, GPIO.LOW)
+    GPIO.output(STEP3, GPIO.LOW)
+    sleep(delay)
+    
+whiteFace = colorfinder()
+U = whiteFace[0]
+u = whiteFace[1]
+V = whiteFace[2]
+x = whiteFace[3]
+down = whiteFace[4]
+v = whiteFace[5]
+X = whiteFace[6]
+w = whiteFace[7]
+W = whiteFace[8]
+print(U)
+
+GPIO.output(DIR1, CW)
+GPIO.output(DIR3, CW)
+for x in range(35):
+    GPIO.output(STEP1, GPIO.HIGH)
+    GPIO.output(STEP3, GPIO.HIGH)
+    sleep(delay)
+    GPIO.output(STEP1, GPIO.LOW)
+    GPIO.output(STEP3, GPIO.LOW)
+    sleep(delay)
+
+GPIO.output(DIR2, CCW)
+GPIO.output(DIR4, CCW)
+for x in range(30):
+    GPIO.output(STEP2, GPIO.HIGH)
+    GPIO.output(STEP4, GPIO.HIGH)
+    sleep(delay)
+    GPIO.output(STEP2, GPIO.LOW)
+    GPIO.output(STEP4, GPIO.LOW)
+    sleep(delay)
+
+GPIO.output(DIR5, CCW)
+GPIO.output(DIR8, CW)
+for x in range(50):
+    GPIO.output(STEP5, GPIO.HIGH)
+    GPIO.output(STEP8, GPIO.HIGH)
+    sleep(delay)
+    GPIO.output(STEP5, GPIO.LOW)
+    GPIO.output(STEP8, GPIO.LOW)
+    sleep(delay)
+
+GPIO.output(DIR2, CW)
+GPIO.output(DIR4, CW)
+for x in range(35):
+    GPIO.output(STEP2, GPIO.HIGH)
+    GPIO.output(STEP4, GPIO.HIGH)
+    sleep(delay)
+    GPIO.output(STEP2, GPIO.LOW)
+    GPIO.output(STEP4, GPIO.LOW)
+    sleep(delay)
+
+
+Xturn()
+
+Xturn()
+
+#Done with white
+
+Xturn()
+GPIO.output(DIR2, CCW)
+GPIO.output(DIR4, CCW)
+for x in range(30):
+    GPIO.output(STEP2, GPIO.HIGH)
+    GPIO.output(STEP4, GPIO.HIGH)
+    sleep(delay)
+    GPIO.output(STEP2, GPIO.LOW)
+    GPIO.output(STEP4, GPIO.LOW)
+    sleep(delay)
+
+
+GPIO.output(DIR5, CW)
+GPIO.output(DIR8, CCW)
+for x in range(50):
+    GPIO.output(STEP5, GPIO.HIGH)
+    GPIO.output(STEP8, GPIO.HIGH)
+    sleep(delay)
+    GPIO.output(STEP5, GPIO.LOW)
+    GPIO.output(STEP8, GPIO.LOW)
+    sleep(delay)
+
+GPIO.output(DIR2, CW)
+GPIO.output(DIR4, CW)
+for x in range(35):
+    GPIO.output(STEP2, GPIO.HIGH)
+    GPIO.output(STEP4, GPIO.HIGH)
+    sleep(delay)
+    GPIO.output(STEP2, GPIO.LOW)
+    GPIO.output(STEP4, GPIO.LOW)
+    sleep(delay)
+
+GPIO.output(DIR1, CCW)
+GPIO.output(DIR3, CCW)
+for x in range(30):
+    GPIO.output(STEP1, GPIO.HIGH)
+    GPIO.output(STEP3, GPIO.HIGH)
+    sleep(delay)
+    GPIO.output(STEP1, GPIO.LOW)
+    GPIO.output(STEP3, GPIO.LOW)
+    sleep(delay)
+
+
+orangeFace = colorfinder()
+O = orangeFace[0]
+o = orangeFace[1]
+P = orangeFace[2]
+n = orangeFace[3]
+back = orangeFace[4]
+p = orangeFace[5]
+N = orangeFace[6]
+m = orangeFace[7]
+M = orangeFace[8]
+
+GPIO.output(DIR1, CW)
+GPIO.output(DIR3, CW)
+for x in range(35):
+    GPIO.output(STEP1, GPIO.HIGH)
+    GPIO.output(STEP3, GPIO.HIGH)
+    sleep(delay)
+    GPIO.output(STEP1, GPIO.LOW)
+    GPIO.output(STEP3, GPIO.LOW)
+    sleep(delay)
+
+GPIO.output(DIR2, CCW)
+GPIO.output(DIR4, CCW)
+for x in range(30):
+    GPIO.output(STEP2, GPIO.HIGH)
+    GPIO.output(STEP4, GPIO.HIGH)
+    sleep(delay)
+    GPIO.output(STEP2, GPIO.LOW)
+    GPIO.output(STEP4, GPIO.LOW)
+    sleep(delay)
+
+GPIO.output(DIR5, CCW)
+GPIO.output(DIR8, CW)
+for x in range(50):
+    GPIO.output(STEP5, GPIO.HIGH)
+    GPIO.output(STEP8, GPIO.HIGH)
+    sleep(delay)
+    GPIO.output(STEP5, GPIO.LOW)
+    GPIO.output(STEP8, GPIO.LOW)
+    sleep(delay)
+
+GPIO.output(DIR2, CW)
+GPIO.output(DIR4, CW)
+for x in range(35):
+    GPIO.output(STEP2, GPIO.HIGH)
+    GPIO.output(STEP4, GPIO.HIGH)
+    sleep(delay)
+    GPIO.output(STEP2, GPIO.LOW)
+    GPIO.output(STEP4, GPIO.LOW)
+    sleep(delay)
+
+
+Xprimeturn
+
+#Done with Orange
+
+Yturn()
+GPIO.output(DIR2, CCW)
+GPIO.output(DIR4, CCW)
+for x in range(30):
+    GPIO.output(STEP2, GPIO.HIGH)
+    GPIO.output(STEP4, GPIO.HIGH)
+    sleep(delay)
+    GPIO.output(STEP2, GPIO.LOW)
+    GPIO.output(STEP4, GPIO.LOW)
+    sleep(delay)
+
+
+GPIO.output(DIR5, CW)
+GPIO.output(DIR8, CCW)
+for x in range(50):
+    GPIO.output(STEP5, GPIO.HIGH)
+    GPIO.output(STEP8, GPIO.HIGH)
+    sleep(delay)
+    GPIO.output(STEP5, GPIO.LOW)
+    GPIO.output(STEP8, GPIO.LOW)
+    sleep(delay)
+
+GPIO.output(DIR2, CW)
+GPIO.output(DIR4, CW)
+for x in range(35):
+    GPIO.output(STEP2, GPIO.HIGH)
+    GPIO.output(STEP4, GPIO.HIGH)
+    sleep(delay)
+    GPIO.output(STEP2, GPIO.LOW)
+    GPIO.output(STEP4, GPIO.LOW)
+    sleep(delay)
+
+GPIO.output(DIR1, CCW)
+GPIO.output(DIR3, CCW)
+for x in range(30):
+    GPIO.output(STEP1, GPIO.HIGH)
+    GPIO.output(STEP3, GPIO.HIGH)
+    sleep(delay)
+    GPIO.output(STEP1, GPIO.LOW)
+    GPIO.output(STEP3, GPIO.LOW)
+    sleep(delay)
+
+
+blueFace = colorfinder()
+T = blueFace[0]
+t = blueFace[1]
+Q = blueFace[2]
+s = blueFace[3]
+left = blueFace[4]
+q = blueFace[5]
+S = blueFace[6]
+r = blueFace[7]
+R = blueFace[8]
+
+GPIO.output(DIR1, CW)
+GPIO.output(DIR3, CW)
+for x in range(35):
+    GPIO.output(STEP1, GPIO.HIGH)
+    GPIO.output(STEP3, GPIO.HIGH)
+    sleep(delay)
+    GPIO.output(STEP1, GPIO.LOW)
+    GPIO.output(STEP3, GPIO.LOW)
+    sleep(delay)
+
+GPIO.output(DIR2, CCW)
+GPIO.output(DIR4, CCW)
+for x in range(30):
+    GPIO.output(STEP2, GPIO.HIGH)
+    GPIO.output(STEP4, GPIO.HIGH)
+    sleep(delay)
+    GPIO.output(STEP2, GPIO.LOW)
+    GPIO.output(STEP4, GPIO.LOW)
+    sleep(delay)
+
+GPIO.output(DIR5, CCW)
+GPIO.output(DIR8, CW)
+for x in range(50):
+    GPIO.output(STEP5, GPIO.HIGH)
+    GPIO.output(STEP8, GPIO.HIGH)
+    sleep(delay)
+    GPIO.output(STEP5, GPIO.LOW)
+    GPIO.output(STEP8, GPIO.LOW)
+    sleep(delay)
+
+GPIO.output(DIR2, CW)
+GPIO.output(DIR4, CW)
+for x in range(35):
+    GPIO.output(STEP2, GPIO.HIGH)
+    GPIO.output(STEP4, GPIO.HIGH)
+    sleep(delay)
+    GPIO.output(STEP2, GPIO.LOW)
+    GPIO.output(STEP4, GPIO.LOW)
+    sleep(delay)
+
+
+Yprimeturn()
+
+#Done with blue
+
+Yprimeturn()
+GPIO.output(DIR2, CCW)
+GPIO.output(DIR4, CCW)
+for x in range(30):
+    GPIO.output(STEP2, GPIO.HIGH)
+    GPIO.output(STEP4, GPIO.HIGH)
+    sleep(delay)
+    GPIO.output(STEP2, GPIO.LOW)
+    GPIO.output(STEP4, GPIO.LOW)
+    sleep(delay)
+
+
+GPIO.output(DIR5, CW)
+GPIO.output(DIR8, CCW)
+for x in range(50):
+    GPIO.output(STEP5, GPIO.HIGH)
+    GPIO.output(STEP8, GPIO.HIGH)
+    sleep(delay)
+    GPIO.output(STEP5, GPIO.LOW)
+    GPIO.output(STEP8, GPIO.LOW)
+    sleep(delay)
+
+GPIO.output(DIR2, CW)
+GPIO.output(DIR4, CW)
+for x in range(35):
+    GPIO.output(STEP2, GPIO.HIGH)
+    GPIO.output(STEP4, GPIO.HIGH)
+    sleep(delay)
+    GPIO.output(STEP2, GPIO.LOW)
+    GPIO.output(STEP4, GPIO.LOW)
+    sleep(delay)
+
+GPIO.output(DIR1, CCW)
+GPIO.output(DIR3, CCW)
+for x in range(30):
+    GPIO.output(STEP1, GPIO.HIGH)
+    GPIO.output(STEP3, GPIO.HIGH)
+    sleep(delay)
+    GPIO.output(STEP1, GPIO.LOW)
+    GPIO.output(STEP3, GPIO.LOW)
+    sleep(delay)
+
+
+greenFace = colorfinder()
+J = greenFace[0]
+j = greenFace[1]
+K = greenFace[2]
+i = greenFace[3]
+right = greenFace[4]
+k = greenFace[5]
+I = greenFace[6]
+l = greenFace[7]
+L = greenFace[8]
+
+GPIO.output(DIR1, CW)
+GPIO.output(DIR3, CW)
+for x in range(35):
+    GPIO.output(STEP1, GPIO.HIGH)
+    GPIO.output(STEP3, GPIO.HIGH)
+    sleep(delay)
+    GPIO.output(STEP1, GPIO.LOW)
+    GPIO.output(STEP3, GPIO.LOW)
+    sleep(delay)
+
+GPIO.output(DIR2, CCW)
+GPIO.output(DIR4, CCW)
+for x in range(30):
+    GPIO.output(STEP2, GPIO.HIGH)
+    GPIO.output(STEP4, GPIO.HIGH)
+    sleep(delay)
+    GPIO.output(STEP2, GPIO.LOW)
+    GPIO.output(STEP4, GPIO.LOW)
+    sleep(delay)
+
+GPIO.output(DIR5, CCW)
+GPIO.output(DIR8, CW)
+for x in range(50):
+    GPIO.output(STEP5, GPIO.HIGH)
+    GPIO.output(STEP8, GPIO.HIGH)
+    sleep(delay)
+    GPIO.output(STEP5, GPIO.LOW)
+    GPIO.output(STEP8, GPIO.LOW)
+    sleep(delay)
+
+GPIO.output(DIR2, CW)
+GPIO.output(DIR4, CW)
+for x in range(35):
+    GPIO.output(STEP2, GPIO.HIGH)
+    GPIO.output(STEP4, GPIO.HIGH)
+    sleep(delay)
+    GPIO.output(STEP2, GPIO.LOW)
+    GPIO.output(STEP4, GPIO.LOW)
+    sleep(delay)
+
+
+Yturn()
+
+#Done With green
+
+
+main()
