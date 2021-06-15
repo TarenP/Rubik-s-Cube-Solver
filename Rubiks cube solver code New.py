@@ -760,7 +760,7 @@ def AlteredYPermutation():
 
 def colorfinder():
     counter = 1
-    #faceColors = ["pink", "pink", "pink", "pink", "pink", "pink", "pink", "pink", "pink"]
+    faceColors = ["pink", "pink", "pink", "pink", "pink", "pink", "pink", "pink", "pink"]
     camera.capture("/home/pi/Desktop/cube.jpg")
     while counter <= 9:
         
