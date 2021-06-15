@@ -922,8 +922,8 @@ for x in range(30):
     GPIO.output(STEP3, GPIO.LOW)
     sleep(delay)
     
-colorfinder()
-yellowFace = faceColors
+
+yellowFace = colorfinder()
 A = yellowFace[0]
 a = yellowFace[1]
 B = yellowFace[2]
@@ -1007,8 +1007,7 @@ for x in range(50):
     GPIO.output(STEP8, GPIO.LOW)
     sleep(delay)
     
-colorfinder()
-redFace = faceColors
+redFace = colorfinder()
 E = redFace[0]
 e = redFace[1]
 F = redFace[2]
@@ -1071,8 +1070,7 @@ for x in range(100):
     GPIO.output(STEP8, GPIO.LOW)
     sleep(delay)
     
-colorfinder()
-whiteFace = faceColors
+whiteFace = colorfinder()
 U = whiteFace[0]
 u = whiteFace[1]
 V = whiteFace[2]
@@ -1105,8 +1103,7 @@ for x in range(35):
 
 #Done with white
 
-colorfinder()
-orangeFace = faceColors
+orangeFace = colorfinder()
 O = orangeFace[0]
 o = orangeFace[1]
 P = orangeFace[2]
@@ -1116,9 +1113,8 @@ p = orangeFace[5]
 N = orangeFace[6]
 m = orangeFace[7]
 M = orangeFace[8]
-Yturn()
-colorfinder()
-blueFace = faceColors
+
+blueFace = colorfinder()
 S = blueFace[0]
 s = blueFace[1]
 T = blueFace[2]
@@ -1128,10 +1124,9 @@ t = blueFace[5]
 R = blueFace[6]
 q = blueFace[7]
 Q = blueFace[8]
-Yturn()
-Yturn()
-colorfinder()
-greenFace = faceColors
+
+
+greenFace = colorfinder()
 K = greenFace[0]
 k = greenFace[1]
 L = greenFace[2]
@@ -1141,8 +1136,7 @@ l = greenFace[5]
 J = greenFace[6]
 i = greenFace[7]
 I = greenFace[8]
-Yprimeturn()
-Xturn()
+
 
     
 
