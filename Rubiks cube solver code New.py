@@ -880,7 +880,7 @@ def colorfinder():
         
         if key== 27:
             break
-    
+    return faceColors    
 
 GPIO.output(DIR2, CCW)
 GPIO.output(DIR4, CCW)
