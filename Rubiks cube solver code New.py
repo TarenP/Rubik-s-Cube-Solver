@@ -880,7 +880,6 @@ def colorfinder():
         
         if key== 27:
             break
-    return faceColors
     
 def colorMapper():
     GPIO.output(DIR2, CCW)
@@ -923,8 +922,8 @@ def colorMapper():
         GPIO.output(STEP3, GPIO.LOW)
         sleep(delay)
         
-    
-    yellowFace = colorfinder()
+    colorfinder()
+    yellowFace = faceColors
     A = yellowFace[0]
     a = yellowFace[1]
     B = yellowFace[2]
@@ -1008,7 +1007,8 @@ def colorMapper():
         GPIO.output(STEP8, GPIO.LOW)
         sleep(delay)
         
-    redFace = colorfinder()
+    colorfinder()
+    redFace = faceColors
     E = redFace[0]
     e = redFace[1]
     F = redFace[2]
@@ -1071,7 +1071,8 @@ def colorMapper():
         GPIO.output(STEP8, GPIO.LOW)
         sleep(delay)
         
-    whiteFace = colorfinder()
+    colorfinder()
+    whiteFace = faceColors
     U = whiteFace[0]
     u = whiteFace[1]
     V = whiteFace[2]
@@ -1104,7 +1105,8 @@ def colorMapper():
 
     #Done with white
     
-    orangeFace = colorfinder()
+    colorfinder()
+    orangeFace = faceColors
     O = orangeFace[0]
     o = orangeFace[1]
     P = orangeFace[2]
@@ -1114,9 +1116,9 @@ def colorMapper():
     N = orangeFace[6]
     m = orangeFace[7]
     M = orangeFace[8]
-
-
-    blueFace = colorfinder()
+    Yturn()
+    colorfinder()
+    blueFace = faceColors
     S = blueFace[0]
     s = blueFace[1]
     T = blueFace[2]
@@ -1126,9 +1128,10 @@ def colorMapper():
     R = blueFace[6]
     q = blueFace[7]
     Q = blueFace[8]
-
-
-    greenFace = colorfinder()
+    Yturn()
+    Yturn()
+    colorfinder()
+    greenFace = faceColors
     K = greenFace[0]
     k = greenFace[1]
     L = greenFace[2]
@@ -1138,9 +1141,13 @@ def colorMapper():
     J = greenFace[6]
     i = greenFace[7]
     I = greenFace[8]
+    Yprimeturn()
+    Xturn()
 
+    
 
-def cornerAssigner():
+#Pass in any corner, it will do the algo to get that specific corner to where it should go.
+def cornerActions():
     mAQN = [A, Q, N]
     mBJM = [B, J, M]
     mDRE = [D, R, E]
@@ -1150,9 +1157,33 @@ def cornerAssigner():
     mXTO = [X, T, O]
     mWKP = [W, K, P]
 
-#Pass in any corner, it will do the algo to get that specific corner to where it should go.
-def cornerActions():
+    mAQN.sort()
+    mBJM.sort()
+    mBJM.sort()
+    mDRE.sort()
+    mCFI.sort()
+    mHSU.sort()
+    mGLV.sort()
+    mXTO.sort()
+
+    AQN.sort()
+    BJM.sort()
+    BJM.sort()
+    DRE.sort()
+    CFI.sort()
+    HSU.sort()
+    GLV.sort()
+    XTO.sort()
+
+
     #checking if anycorners are already solved
+    everythingSolved = False
+    cornerSolveList = []
+
+    bankCorner = mAQN
+    bankCorner.sort()
+
+
     if (mBJM == BJM):
         solvedC2 = True
     if (mDRE == DRE):
@@ -1168,35 +1199,14 @@ def cornerActions():
     if (mWKP == WKP):
         solvedC8 = True
 
-    everythingSolved = False
-    cornerSolveList = []
-
-    bankCorner = mAQN
-    bankCorner.sort()
-
-    corner1 = AQN
-    corner1.sort()
-    corner2 = BJM
-    corner2.sort()
-    corner3 = DRE
-    corner3.sort()
-    corner4 = CFI
-    corner4.sort()
-    corner5 = HSU
-    corner5.sort()
-    corner6 = GLV
-    corner6.sort()
-    corner7 = XTO
-    corner7.sort()
-    corner8 = WKP
-    corner8.sort()
+    
 
 
     #Use a list of the moves to the positions the bank pieces need to go.
 
     #finish
     while everythingSolved == False:
-        if (bankCorner == corner1):
+        if (bankCorner == AQN):
             index = AQN.index(bankCorner[0])
             if (index == 0 and solvedC2 == True and solvedC3 == True and solvedC4 == True and solvedC5 == True and solvedC6 == True and solvedC7 == True and solvedC8 == True):
                 print("already set")
@@ -1224,7 +1234,7 @@ def cornerActions():
                 bankCorner = mWKP
             #Swap with an unsolved corner because it is in the bank place and cannot be solved
     
-        elif(bankCorner == corner2):
+        elif(bankCorner == BJM):
             index = BJM.index(bankCorner[0])
             if (index == 0):
                 cornerSolveList.append('B')
@@ -1239,7 +1249,7 @@ def cornerActions():
                 bankCorner = mBJM
                 solvedC2 = True
 
-        elif (bankCorner == corner3):
+        elif (bankCorner == DRE):
             index = DRE.index(bankCorner[0])
             if (index == 0):
                 cornerSolveList.append('D')
@@ -1254,7 +1264,7 @@ def cornerActions():
                 bankCorner = mDRE
                 solvedC3 = True
 
-        elif(bankCorner == corner4):
+        elif(bankCorner == CFI):
             index = CFI.index(bankCorner[0])
             if (index == 0):
                 cornerSolveList.append('C')
@@ -1269,10 +1279,10 @@ def cornerActions():
                 bankCorner = mCFI
                 solvedC4 = True
         
-        elif(bankCorner == corner5):
+        elif(bankCorner == HSU):
             index = HSU.index(bankCorner[0])
             if (index == 0):
-                cornerSolveList.append('D')
+                cornerSolveList.append('H')
                 bankCorner = mHSU
                 solvedC5 = True
             elif (index == 1):
@@ -1284,7 +1294,7 @@ def cornerActions():
                 bankCorner = mHSU
                 solvedC5 = True
 
-        elif(bankCorner == corner6):
+        elif(bankCorner == GLV):
             index = GLV.index(bankCorner[0])
             if (index == 0):
                 cornerSolveList.append('G')
@@ -1299,7 +1309,7 @@ def cornerActions():
                 bankCorner = mGLV
                 solvedC6 = True
         
-        elif(bankCorner == corner7):
+        elif(bankCorner == XTO):
             index = XTO.index(bankCorner[0])
             if (index == 0):
                 cornerSolveList.append('X')
@@ -1314,7 +1324,7 @@ def cornerActions():
                 bankCorner = mXTO
                 solvedC7 = True
 
-        elif (bankCorner == corner8):
+        elif (bankCorner == WKP):
             index = WKP.index(bankCorner[0])
             if (index == 0):
                 cornerSolveList.append('W')
@@ -1328,9 +1338,10 @@ def cornerActions():
                 cornerSolveList.append('P')
                 bankCorner = mWKP
                 solvedC8 = True
+    return cornerSolveList
     # #use "list".sort() method for comparing the two corners.
 
-def cornerSwapper():
+def cornerSwapper(cornerSolveList):
     for i in len(cornerSolveList):
         letter = cornerSolveList.index(i-1)
         if letter == 'B':
@@ -1420,9 +1431,8 @@ def cornerSwapper():
 
 
 def cornerMain():
-    cornerAssigner()
-    cornerActions()
-    cornerSwapper()
+    cList = cornerActions()
+    cornerSwapper(cList)
 
 
 
