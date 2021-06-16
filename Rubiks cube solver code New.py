@@ -1088,7 +1088,6 @@ def cornerActions():
                 cornerSolveList.append('P')
                 bankCorner = mWKP
                 solvedC8 = True
-    print(cornerSolveList)
     return cornerSolveList
     # #use "list".sort() method for comparing the two corners.
 
@@ -1099,93 +1098,128 @@ def cornerSwapper(cornerSolveList):
             Rturn()
             Dprimeturn()
             AlteredYPermutation()
+            Dturn()
+            Rprimeturn()
         elif letter == 'C':
             Fturn()
             AlteredYPermutation()
+            Fprimeturn()
         elif letter == 'D':
             Fturn()
             Rprimeturn()
             AlteredYPermutation()
+            Rturn()
+            Fprimeturn()
         elif letter == 'E':
             Fprimeturn()
             Dturn()
             AlteredYPermutation()
+            Dprimeturn()
+            Fturn()
         elif letter == 'F':
             Fturn()
             Fturn()
             Dturn()
             AlteredYPermutation()
+            Dprimeturn()
+            Fprimeturn()
+            Fprimeturn()
         elif letter == 'G':
             Dturn()
             Rturn()
             AlteredYPermutation()
+            Rprimeturn()
+            Dprimeturn()
         elif letter == 'H':
             Dturn()
             AlteredYPermutation()
+            Dprimeturn()
         elif letter == 'I':
             Rprimeturn()
             AlteredYPermutation()
+            Rturn()
         elif letter == 'J':
             Rturn()
             Rturn()
             AlteredYPermutation()
+            Rprimeturn()
+            Rprimeturn()
         elif letter == 'K':
             Rturn()
             AlteredYPermutation()
+            Rprimeturn()
         elif letter == 'L':
             AlteredYPermutation()
         elif letter == 'M':
             Rprimeturn()
             Fturn()
             AlteredYPermutation()
+            Fprimeturn()
+            Rturn()
         elif letter == 'N':
             AlteredYPermutation()
         elif letter == 'O':
             Dprimeturn()
             Rturn()
             AlteredYPermutation()
+            Rprimeturn()
+            Dturn()
         elif letter == 'P':
             Dprimeturn()
             AlteredYPermutation()
+            Dturn()
         elif letter == 'R':
             Fturn()
             Fturn()
             AlteredYPermutation()
+            Fprimeturn()
+            Fprimeturn()
         elif letter == 'S':
             Dturn()
             Dturn()
             Rturn()
             AlteredYPermutation()
+            Rprimeturn()
+            Dprimeturn()
+            Dprimeturn()
         elif letter == 'T':
             Dturn()
             Dturn()
             AlteredYPermutation()
+            Dprimeturn()
+            Dprimeturn()
         elif letter == 'U':
             Fprimeturn()
+            AlteredYPermutation()
+            Fturn()
         elif letter == 'V':
             Dprimeturn()
             Fprimeturn()
             AlteredYPermutation()
+            Fturn()
+            Dturn()
         elif letter == 'W':
             Dturn()
             Dturn()
             Fprimeturn()
             AlteredYPermutation()
+            Fturn()
+            Dprimeturn()
+            Dprimeturn()
         elif letter == 'X':
             Dturn()
             Fprimeturn()
             AlteredYPermutation()
+            Fturn()
+            Dprimeturn
         
 
 
 
 def cornerMain():
     cList = cornerActions()
+    print(cList)
     cornerSwapper(cList)
-
-
-
-#Work in progress
 
 
 
@@ -1424,9 +1458,109 @@ def edgeSwapper():
                 bankEdge = mjp
                 solvedE12 = True
 
+    return edgeSolveList
+
+def cornerSwapper(edgeSolveList):
+    for i in len(edgeSolveList):
+        letter = edgeSolveList.index(i-1)
+        if letter == 'a':
+            lturn()
+            lturn()
+            Dprimeturn()
+            Lturn()
+            Lturn()
+            Tpermutation()
+            Lprimeturn()
+            Lprimeturn()
+            Dturn()
+            lprimeturn()
+            lprimeturn()
+            #WIP
+        elif letter == 'C':
+            Fturn()
+            AlteredYPermutation()
+        elif letter == 'D':
+            Fturn()
+            Rprimeturn()
+            AlteredYPermutation()
+        elif letter == 'E':
+            Fprimeturn()
+            Dturn()
+            AlteredYPermutation()
+        elif letter == 'F':
+            Fturn()
+            Fturn()
+            Dturn()
+            AlteredYPermutation()
+        elif letter == 'G':
+            Dturn()
+            Rturn()
+            AlteredYPermutation()
+        elif letter == 'H':
+            Dturn()
+            AlteredYPermutation()
+        elif letter == 'I':
+            Rprimeturn()
+            AlteredYPermutation()
+        elif letter == 'J':
+            Rturn()
+            Rturn()
+            AlteredYPermutation()
+        elif letter == 'K':
+            Rturn()
+            AlteredYPermutation()
+        elif letter == 'L':
+            AlteredYPermutation()
+        elif letter == 'M':
+            Rprimeturn()
+            Fturn()
+            AlteredYPermutation()
+        elif letter == 'N':
+            AlteredYPermutation()
+        elif letter == 'O':
+            Dprimeturn()
+            Rturn()
+            AlteredYPermutation()
+        elif letter == 'P':
+            Dprimeturn()
+            AlteredYPermutation()
+        elif letter == 'R':
+            Fturn()
+            Fturn()
+            AlteredYPermutation()
+        elif letter == 'S':
+            Dturn()
+            Dturn()
+            Rturn()
+            AlteredYPermutation()
+        elif letter == 'T':
+            Dturn()
+            Dturn()
+            AlteredYPermutation()
+        elif letter == 'U':
+            Fprimeturn()
+        elif letter == 'V':
+            Dprimeturn()
+            Fprimeturn()
+            AlteredYPermutation()
+        elif letter == 'W':
+            Dturn()
+            Dturn()
+            Fprimeturn()
+            AlteredYPermutation()
+        elif letter == 'X':
+            Dturn()
+            Fprimeturn()
+            AlteredYPermutation()
+
+def edgeMain():
+    eList = edgeMain()
+    print(eList)
+    edgeSwapper(eList)
 
 def main():
     cornerMain()
+    edgeMain()
     #Figure out new bank corner colors every time we swap
 
 #region cubeTurning
