@@ -66,6 +66,19 @@ GLV = ["red", "green", "white"]
 XTO = ["white", "blue", "orange"]
 WKP = ["white", "green", "orange"]
 
+am = ["yellow", "orange"]
+bi = ["yellow", "green"]
+ce = ["yellow", "red"]
+dq = ["yellow", "blue"]
+fl = ["red", "green"]
+gu = ["red", "white"]
+hr = ["red", "blue"]
+tn = ["blue", "orange"]
+sx = ["blue", "white"]
+kv = ["green", "white"]
+ow = ["orange", "white"]
+jp = ["green", "orange"]
+
 solvedC2 = False
 solvedC3 = False
 solvedC4 = False
@@ -897,7 +910,7 @@ def cornerActions():
     mGLV = [G, L, V]
     mXTO = [X, T, O]
     mWKP = [W, K, P]
-
+    #checking if anycorners are already solved
     if (mBJM == BJM):
         solvedC2 = True
     if (mDRE == DRE):
@@ -933,7 +946,6 @@ def cornerActions():
     corner8.sort()
 
 
-    #checking if anycorners are already solved
     everythingSolved = False
     cornerSolveList = []
 
@@ -1163,8 +1175,6 @@ def cornerSwapper(cornerSolveList):
             Dturn()
             Fprimeturn()
             AlteredYPermutation()
-        else:
-            print("error occurred, no action assigned to corner swapper")
         
 
 
@@ -1177,7 +1187,9 @@ def cornerMain():
 
 #Work in progress
 
-def edgeAssigner():
+
+
+def edgeSwapper():
     mam = [a, m]
     mbi = [b, i]
     mce = [c, e]
@@ -1191,33 +1203,31 @@ def edgeAssigner():
     mow = [o, w]
     mjp = [j, p]
 
-def edgeSwapper():
     bankEdge = mbi
-    bankEdge.sort()
 
-    edge1 = mbi
+    edge1 = bi
     edge1.sort()
-    edge2 = mam
+    edge2 = am
     edge2.sort()
-    edge3 = mce
+    edge3 = ce
     edge3.sort()
-    edge4 = mdq
+    edge4 = dq
     edge4.sort()
-    edge5 = mfl
+    edge5 = fl
     edge5.sort()
-    edge6 = mgu
+    edge6 = gu
     edge6.sort()
-    edge7 = mhr
+    edge7 = hr
     edge7.sort()
-    edge8 = mtn
+    edge8 = tn
     edge8.sort()
-    edge9 = msx
+    edge9 = sx
     edge9.sort()
-    edge10 = mkv
+    edge10 = kv
     edge10.sort()
-    edge11 = mow
+    edge11 = ow
     edge11.sort()
-    edge12 = mjp
+    edge12 = jp
     edge12.sort()
 
     #checking if anycorners are already solved
@@ -1245,42 +1255,15 @@ def edgeSwapper():
         solvedE12 = True
 
     everythingSolved = False
-
-    bankEdge = mbi
-    bankEdge.sort()
-
-    Edge1 = bi
-    Edge1.sort()
-    Edge2 = am
-    Edge2.sort()
-    Edge3 = ce
-    Edge3.sort()
-    Edge4 = dq
-    Edge4.sort()
-    Edge5 = fl
-    Edge5.sort()
-    Edge6 = gu
-    Edge6.sort()
-    Edge7 = hr
-    Edge7.sort()
-    Edge8 = tn
-    Edge8.sort()
-    Edge9 = sx
-    Edge9.sort()
-    Edge10 = kv
-    Edge10.sort()
-    Edge11 = ow
-    Edge11.sort()
-    Edge12 = jp
-    Edge12.sort()
-
-
+    edgeSolveList = []
 
     #Use a list of the moves to the positions the bank pieces need to go.
 
     #finish
     while everythingSolved == False:
-        if (bankEdge == Edge1):
+        bankEdgeSorted = bankEdge
+        bankEdgeSorted.sort()
+        if (bankEdgeSorted == edge1):
             index = bi.index(bankEdge[0])
             if (index == 0 and solvedE2 == True and solvedE3 == True and solvedE4 == True and solvedE5 == True and solvedE6 == True and solvedE7 == True and solvedE8 == True and solvedE9 == True and solvedE10 == True and solvedE11 == True and solvedE12 == True):
                 print("Edges already set")
@@ -1320,7 +1303,7 @@ def edgeSwapper():
                 bankEdge = mjp
             #Swap with an unsolved Edge because it is in the bank place and cannot be solved
     
-        elif(bankEdge == Edge2):
+        elif(bankEdgeSorted == edge2):
             index = am.index(bankEdge[0])
             if (index == 0):
                 edgeSolveList.append('a')
@@ -1331,7 +1314,7 @@ def edgeSwapper():
                 bankEdge = mam
                 solvedE2 = True
 
-        elif(bankEdge == Edge3):
+        elif(bankEdgeSorted == edge3):
             index = ce.index(bankEdge[0])
             if (index == 0):
                 edgeSolveList.append('c')
@@ -1342,7 +1325,7 @@ def edgeSwapper():
                 bankEdge = mce
                 solvedE3 = True
         
-        elif(bankEdge == Edge4):
+        elif(bankEdgeSorted == edge4):
             index = dq.index(bankEdge[0])
             if (index == 0):
                 edgeSolveList.append('d')
@@ -1353,7 +1336,7 @@ def edgeSwapper():
                 bankEdge = mdq
                 solvedE4 = True
             
-        elif(bankEdge == Edge5):
+        elif(bankEdgeSorted == edge5):
             index = fl.index(bankEdge[0])
             if (index == 0):
                 edgeSolveList.append('f')
@@ -1364,7 +1347,7 @@ def edgeSwapper():
                 bankEdge = mfl
                 solvedE5 = True
         
-        elif(bankEdge == Edge6):
+        elif(bankEdgeSorted == edge6):
             index = gu.index(bankEdge[0])
             if (index == 0):
                 edgeSolveList.append('g')
@@ -1375,7 +1358,7 @@ def edgeSwapper():
                 bankEdge = mgu
                 solvedE6 = True
 
-        elif(bankEdge == Edge7):
+        elif(bankEdgeSorted == edge7):
             index = hr.index(bankEdge[0])
             if (index == 0):
                 edgeSolveList.append('h')
@@ -1386,7 +1369,7 @@ def edgeSwapper():
                 bankEdge = mhr
                 solvedE7 = True
         
-        elif(bankEdge == Edge8):
+        elif(bankEdgeSorted == edge8):
             index = tn.index(bankEdge[0])
             if (index == 0):
                 edgeSolveList.append('t')
@@ -1397,7 +1380,7 @@ def edgeSwapper():
                 bankEdge = mtn
                 solvedE8 = True
 
-        elif(bankEdge == Edge9):
+        elif(bankEdgeSorted == edge9):
             index = sx.index(bankEdge[0])
             if (index == 0):
                 edgeSolveList.append('s')
@@ -1408,7 +1391,7 @@ def edgeSwapper():
                 bankEdge = msx
                 solvedE9 = True
 
-        elif(bankEdge == Edge10):
+        elif(bankEdgeSorted == edge10):
             index = kv.index(bankEdge[0])
             if (index == 0):
                 edgeSolveList.append('k')
@@ -1419,7 +1402,7 @@ def edgeSwapper():
                 bankEdge = mkv
                 solvedE10 = True
         
-        elif(bankEdge == Edge11):
+        elif(bankEdgeSorted == edge11):
             index = ow.index(bankEdge[0])
             if (index == 0):
                 edgeSolveList.append('o')
@@ -1430,7 +1413,7 @@ def edgeSwapper():
                 bankEdge = mow
                 solvedE11 = True
 
-        elif(bankEdge == Edge12):
+        elif(bankEdgeSorted == edge12):
             index = jp.index(bankEdge[0])
             if (index == 0):
                 edgeSolveList.append('j')
@@ -1446,6 +1429,7 @@ def main():
     cornerMain()
     #Figure out new bank corner colors every time we swap
 
+#region cubeTurning
 GPIO.output(DIR2, CCW)
 GPIO.output(DIR4, CCW)
 for x in range(30):
@@ -1996,6 +1980,8 @@ for x in range(35):
 Yturn()
 
 #Done With green
+
+#endregion
 
 
 main()
