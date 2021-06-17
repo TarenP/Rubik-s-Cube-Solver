@@ -1476,82 +1476,138 @@ def cornerSwapper(edgeSolveList):
             lprimeturn()
             lprimeturn()
             #WIP
-        elif letter == 'C':
-            Fturn()
-            AlteredYPermutation()
-        elif letter == 'D':
-            Fturn()
-            Rprimeturn()
-            AlteredYPermutation()
-        elif letter == 'E':
-            Fprimeturn()
+        elif letter == 'c':
+            Jpermutation()
+        elif letter == 'd':
+            Tpermutation()
+        elif letter == 'e':
+            lturn()
+            Dprimeturn()
+            Lturn()
+            Lturn()
+            Tpermutation()
+            Lprimeturn()
+            Lprimeturn()
             Dturn()
-            AlteredYPermutation()
-        elif letter == 'F':
-            Fturn()
-            Fturn()
-            Dturn()
-            AlteredYPermutation()
-        elif letter == 'G':
-            Dturn()
-            Rturn()
-            AlteredYPermutation()
-        elif letter == 'H':
-            Dturn()
-            AlteredYPermutation()
-        elif letter == 'I':
-            Rprimeturn()
-            AlteredYPermutation()
+            lprimeturn()
+        elif letter == 'f':
+            dturn()
+            dturn()
+            Lturn()
+            Tpermutation()
+            Lprimeturn()
+            dprimeturn()
+            dprimeturn()
+        elif letter == 'g':
+            lprimeturn()
+            Jpermutation()
+            lturn()
+        elif letter == 'h':
+            Lprimeturn()
+            Tpermutation()
+            Lturn()
         elif letter == 'J':
-            Rturn()
-            Rturn()
-            AlteredYPermutation()
-        elif letter == 'K':
-            Rturn()
-            AlteredYPermutation()
-        elif letter == 'L':
-            AlteredYPermutation()
-        elif letter == 'M':
-            Rprimeturn()
-            Fturn()
-            AlteredYPermutation()
-        elif letter == 'N':
-            AlteredYPermutation()
-        elif letter == 'O':
+            dturn()
+            Lturn()
+            Tpermutation()
+            Lprimeturn()
+            dprimeturn()
+        elif letter == 'k':
             Dprimeturn()
-            Rturn()
-            AlteredYPermutation()
-        elif letter == 'P':
+            lprimeturn()
+            Jpermutation()
+            lturn()
+            Dturn()
+        elif letter == 'l':
+            dprimerturn()
+            Lprimeturn()
+            Tpermutation()
+            Lturn()
+            dturn()
+        elif letter == 'm':
+            lturn()
+            Jpermutation()
+            lprimeturn()
+        elif letter == 'n':
+            Lturn()
+            Tpermutation()
+            Lprimeturn()
+        elif letter == 'o':
+            Dturn()
+            Dturn()
+            lprimeturn()
+            Jpermutation()
+            lturn()
             Dprimeturn()
-            AlteredYPermutation()
-        elif letter == 'R':
-            Fturn()
-            Fturn()
-            AlteredYPermutation()
-        elif letter == 'S':
-            Dturn()
-            Dturn()
-            Rturn()
-            AlteredYPermutation()
-        elif letter == 'T':
-            Dturn()
-            Dturn()
-            AlteredYPermutation()
-        elif letter == 'U':
-            Fprimeturn()
-        elif letter == 'V':
             Dprimeturn()
-            Fprimeturn()
-            AlteredYPermutation()
-        elif letter == 'W':
+        elif letter == 'p':
+            dturn()
+            dturn()
+            Lprimeturn()
+            Tpermutation()
+            Lturn()
+            dprimeturn()
+            dprimeturn()
+        elif letter == 'q':
+            Lturn()
+            Lturn()
+            dturn()
+            lprimeturn()
+            Jpermutation()
+            lturn()
+            dprimeturn()
+            Lprimeturn()
+            Lprimeturn()
+        elif letter == 'r':
+            dprimeturn()
+            Lturn()
+            Tpermutation()
+            Lprimeturn()
+            dturn()
+        elif letter == 's':
+            Dturn()
+            lprimeturn()
+            Jpermutation()
+            lturn()
+            Dprimeturn()
+        elif letter == 't':
+            dturn()
+            Lprimeturn()
+            Tpermutation()
+            Lturn()
+            dprimeturn()
+        elif letter == 'u':
+            Dprimeturn()
+            Lturn()
+            Lturn()
+            Tpermutation()
+            Lprimeturn()
+            Lprimeturn()
+            Dturn()
+        elif letter == 'v':
             Dturn()
             Dturn()
-            Fprimeturn()
-            AlteredYPermutation()
+            Lturn()
+            Lturn()
+            Tpermutation()
+            Lprimeturn()
+            Lprimeturn()
+            Dprimeturn()
+            Dprimeturn()
+        elif letter == 'w':
+            Dturn()
+            Lturn()
+            Lturn()
+            Tpermutation()
+            Lprimeturn()
+            Lprimeturn()
+            Dprimeturn()
         elif letter == 'X':
-            Dturn()
-            Fprimeturn()
-            AlteredYPermutation()
+            Lturn()
+            Lturn()
+            Tpermutation()
+            Lprimeturn()
+            Lprimeturn()
 
 def edgeMain():
     eList = edgeMain()
