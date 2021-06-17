@@ -756,6 +756,30 @@ def Uprimeturn():
     Fprimeturn()
     Xturn()
 
+def lturn():
+    Rturn()
+    Xprimeturn()
+
+def lprimeturn():
+    Rprimeturn()
+    Xturn()
+
+def dturn():
+    Xturn()
+    Bturn()
+    Fprimeturn()
+    Yturn()
+    Fturn()
+    Xprimeturn()
+
+def dprimeturn():
+    Xturn()
+    Bprimeturn()
+    Fturn()
+    Yprimeturn()
+    Fprimeturn()
+    Xprimeturn()
+
 def AlteredYPermutation():
     Rturn()
     Uprimeturn()
@@ -772,6 +796,40 @@ def AlteredYPermutation():
     Rprimeturn()
     Fturn()
     Rturn()
+
+def Tpermutation():
+    Rturn()
+    Uturn()
+    Rprimeturn()
+    Uprimeturn()
+    Rprimeturn()
+    Fturn()
+    Rturn()
+    Rturn()
+    Uprimeturn()
+    Rprimeturn()
+    Uprimeturn()
+    Rturn()
+    Uturn()
+    Rprimeturn()
+    Fprimeturn()
+
+def Jpermutation():
+    Rturn()
+    Uturn()
+    Rprimeturn()
+    Fprimeturn()
+    Rturn()
+    Uturn()
+    Rprimeturn()
+    Uprimeturn()
+    Rprimeturn()
+    Fturn()
+    Rturn()
+    Rturn()
+    Uprimeturn()
+    Rprimeturn()
+    Uprimeturn()
 
 def colorfinder():
     counter = 1
@@ -1460,7 +1518,7 @@ def edgeSwapper():
 
     return edgeSolveList
 
-def cornerSwapper(edgeSolveList):
+def edgeSwapper(edgeSolveList):
     for i in len(edgeSolveList):
         letter = edgeSolveList.index(i-1)
         if letter == 'a':
@@ -1617,9 +1675,8 @@ def edgeMain():
 def main():
     cornerMain()
     edgeMain()
-    #Figure out new bank corner colors every time we swap
 
-#region cubeTurning
+#region cubeMapping
 GPIO.output(DIR2, CCW)
 GPIO.output(DIR4, CCW)
 for x in range(30):
