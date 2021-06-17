@@ -87,6 +87,19 @@ solvedC6 = False
 solvedC7 = False
 solvedC8 = False
 
+solvedE2 = False
+solvedE3 = False
+solvedE4 = False
+solvedE5 = False
+solvedE6 = False
+solvedE7 = False
+solvedE8 = False
+solvedE9 = False
+solvedE10 = False
+solvedE11 = False
+solvedE12 = False
+
+
 def Xturn():
     GPIO.output(DIR5, CW)
     GPIO.output(DIR8, CCW)
@@ -1021,25 +1034,39 @@ def cornerActions():
                 everythingSolved = True
             elif (solvedC2 == False):
                 cornerSolveList.append('B')
+                mBJM2 = bankCorner
                 bankCorner = mBJM
+                mBJM = mBJM2
             elif(solvedC3 == False):
                 cornerSolveList.append('D')
+                mDRE2 = bankCorner
                 bankCorner = mDRE
+                mDRE = mDRE2
             elif(solvedC4 == False):
                 cornerSolveList.append('C')
+                mCFI2 = bankCorner
                 bankCorner = mCFI
+                mCFI = mCFI2
             elif(solvedC5 == False):
                 cornerSolveList.append('D')
+                mHSU2 = bankCorner
                 bankCorner = mHSU
+                mHSU = mHSU2
             elif (solvedC6 == False):
                 cornerSolveList.append('G')
+                mGLV2 = bankCorner
                 bankCorner = mGLV
+                mGLV = mGLV2
             elif (solvedC7 == False):
                 cornerSolveList.append('X')
+                mXTO2 = bankCorner
                 bankCorner = mXTO
+                mXTO = mXTO2
             elif (solvedC8 == False):
                 cornerSolveList.append('W')
+                mWKP2 = bankCorner
                 bankCorner = mWKP
+                mWKP = mWKP2
             #Swap with an unsolved corner because it is in the bank place and cannot be solved
     
         elif(bankCornerSorted == corner2):
@@ -1392,37 +1419,59 @@ def edgeSwapper():
                 everythingSolved = True
             elif (solvedE2 == False):
                 edgeSolveList.append('a')
-                bankEdge = mam
+                mam2 = bankEdge #old bank edge
+                bankEdge = mam #Changes
+                mam = mam2 #equals old bank edge
             elif(solvedE3 == False):
                 edgeSolveList.append('c')
+                mce2 = bankEdge
                 bankEdge = mce
+                mce = mce2
             elif(solvedE4 == False):
                 edgeSolveList.append('d')
+                mdq2 = bankEdge
                 bankEdge = mdq
+                mdq = mdq2
             elif(solvedE5 == False):
                 edgeSolveList.append('f')
+                mfl2 = bankEdge
                 bankEdge = mfl
+                mfl = mfl2
             elif (solvedE6 == False):
                 edgeSolveList.append('g')
+                mgu2 = bankEdge
                 bankEdge = mgu
+                mgu = mgu2
             elif (solvedE7 == False):
                 edgeSolveList.append('h')
+                mhr2 = bankEdge
                 bankEdge = mhr
+                mhr = mhr2
             elif (solvedE8 == False):
                 edgeSolveList.append('t')
+                mtn2 = bankEdge
                 bankEdge = mtn
+                mtn = mtn2
             elif (solvedE9 == False):
                 edgeSolveList.append('s')
+                msx2 = bankEdge
                 bankEdge = msx
+                msx = msx2
             elif (solvedE10 == False):
                 edgeSolveList.append('k')
+                mkv2 = bankEdge
                 bankEdge = mkv
+                mkv = mkv2
             elif (solvedE11 == False):
                 edgeSolveList.append('o')
+                mow2 = bankEdge
                 bankEdge = mow
+                mow = mow2
             elif (solvedE12 == False):
                 edgeSolveList.append('j')
+                mjp2 = bankEdge
                 bankEdge = mjp
+                mjp = mjp2
             #Swap with an unsolved Edge because it is in the bank place and cannot be solved
     
         elif(bankEdgeSorted == edge2):
