@@ -1150,7 +1150,10 @@ def cornerActions():
     # #use "list".sort() method for comparing the two corners.
 
 def cornerSwapper(cornerSolveList):
+    odd = False
     counter = 0
+    if len(cornerSolveList)%2 != 0:
+        odd = True
     for i in cornerSolveList:
         letter = cornerSolveList[counter]
         if letter == 'B':
@@ -1273,7 +1276,28 @@ def cornerSwapper(cornerSolveList):
             Dprimeturn
 
         counter = counter + 1
+    if odd == True:
+        Xturn()
+        Yturn()
+        Xprimeturn()
 
+        Lturn()
+        Uprimeturn()
+        Uprimeturn()
+        Lprimeturn()
+        Uprimeturn()
+        Uprimeturn()
+        Lturn()
+        Fprimeturn()
+        Lprimeturn()
+        Uprimeturn()
+        Lturn()
+        Uturn()
+        Lturn()
+        Fturn()
+        Lprimeturn()
+        Lprimeturn()
+        Uturn()
 
 
 def cornerMain():
