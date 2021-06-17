@@ -1050,11 +1050,11 @@ def cornerActions():
                 solvedC2 = True
             elif (index == 1):
                 cornerSolveList.append('J')
-                bankCorner = mBJM
+                bankCorner = [J, M, B]
                 solvedC2 = True
             else:
                 cornerSolveList.append('M')
-                bankCorner = mBJM
+                bankCorner = [M, B, J]
                 solvedC2 = True
 
         elif (bankCornerSorted == corner3):
@@ -1065,7 +1065,7 @@ def cornerActions():
                 solvedC3 = True
             elif (index == 1):
                 cornerSolveList.append('R')
-                bankCorner = mDRE
+                bankCorner = [R, E, D]
                 solvedC3 = True
             else:
                 cornerSolveList.append('E')
@@ -1080,11 +1080,11 @@ def cornerActions():
                 solvedC4 = True
             elif (index == 1):
                 cornerSolveList.append('F')
-                bankCorner = mCFI
+                bankCorner = [F, I, C]
                 solvedC4 = True
             else:
                 cornerSolveList.append('I')
-                bankCorner = mCFI
+                bankCorner = [I, C, F]
                 solvedC4 = True
         
         elif(bankCornerSorted == corner5):
@@ -1095,11 +1095,11 @@ def cornerActions():
                 solvedC5 = True
             elif (index == 1):
                 cornerSolveList.append('S')
-                bankCorner = mHSU
+                bankCorner = [S, U, H]
                 solvedC5 = True
             else:
                 cornerSolveList.append('U')
-                bankCorner = mHSU
+                bankCorner = [U, H, S]
                 solvedC5 = True
 
         elif(bankCornerSorted == corner6):
@@ -1110,11 +1110,11 @@ def cornerActions():
                 solvedC6 = True
             elif (index == 1):
                 cornerSolveList.append('L')
-                bankCorner = mGLV
+                bankCorner = [L, V, G]
                 solvedC6 = True
             else:
                 cornerSolveList.append('V')
-                bankCorner = mGLV
+                bankCorner = [V, G, L]
                 solvedC6 = True
         
         elif(bankCornerSorted == corner7):
@@ -1125,11 +1125,11 @@ def cornerActions():
                 solvedC7 = True
             elif (index == 1):
                 cornerSolveList.append('T')
-                bankCorner = mXTO
+                bankCorner = [T, O, X]
                 solvedC7 = True
             else:
                 cornerSolveList.append('O')
-                bankCorner = mXTO
+                bankCorner = [O, X, T]
                 solvedC7 = True
 
         elif (bankCornerSorted == corner8):
@@ -1140,11 +1140,11 @@ def cornerActions():
                 solvedC8 = True
             elif (index == 1):
                 cornerSolveList.append('K')
-                bankCorner = mWKP
+                bankCorner = [K, P, W]
                 solvedC8 = True
             else:
                 cornerSolveList.append('P')
-                bankCorner = mWKP
+                bankCorner = [P, W, K]
                 solvedC8 = True
     return cornerSolveList
     # #use "list".sort() method for comparing the two corners.
@@ -1403,7 +1403,7 @@ def edgeSwapper():
                 solvedE2 = True
             elif (index == 1):
                 edgeSolveList.append('m')
-                bankEdge = mam
+                bankEdge = [m, a]
                 solvedE2 = True
 
         elif(bankEdgeSorted == edge3):
@@ -1414,7 +1414,7 @@ def edgeSwapper():
                 solvedE3 = True
             elif (index == 1):
                 edgeSolveList.append('e')
-                bankEdge = mce
+                bankEdge = [e, c]
                 solvedE3 = True
         
         elif(bankEdgeSorted == edge4):
@@ -1425,7 +1425,7 @@ def edgeSwapper():
                 solvedE4 = True
             elif (index == 1):
                 edgeSolveList.append('q')
-                bankEdge = mdq
+                bankEdge = [q, d]
                 solvedE4 = True
             
         elif(bankEdgeSorted == edge5):
@@ -1436,7 +1436,7 @@ def edgeSwapper():
                 solvedE5 = True
             elif (index == 1):
                 edgeSolveList.append('l')
-                bankEdge = mfl
+                bankEdge = [l, f]
                 solvedE5 = True
         
         elif(bankEdgeSorted == edge6):
@@ -1447,7 +1447,7 @@ def edgeSwapper():
                 solvedE6 = True
             elif (index == 1):
                 edgeSolveList.append('u')
-                bankEdge = mgu
+                bankEdge = [u, g]
                 solvedE6 = True
 
         elif(bankEdgeSorted == edge7):
@@ -1458,7 +1458,7 @@ def edgeSwapper():
                 solvedE7 = True
             elif (index == 1):
                 edgeSolveList.append('r')
-                bankEdge = mhr
+                bankEdge = [r, h]
                 solvedE7 = True
         
         elif(bankEdgeSorted == edge8):
@@ -1469,7 +1469,7 @@ def edgeSwapper():
                 solvedE8 = True
             elif (index == 1):
                 edgeSolveList.append('n')
-                bankEdge = mtn
+                bankEdge = [n, t]
                 solvedE8 = True
 
         elif(bankEdgeSorted == edge9):
@@ -1480,7 +1480,7 @@ def edgeSwapper():
                 solvedE9 = True
             elif (index == 1):
                 edgeSolveList.append('x')
-                bankEdge = msx
+                bankEdge = [x, s]
                 solvedE9 = True
 
         elif(bankEdgeSorted == edge10):
@@ -1491,7 +1491,7 @@ def edgeSwapper():
                 solvedE10 = True
             elif (index == 1):
                 edgeSolveList.append('v')
-                bankEdge = mkv
+                bankEdge = [v, k]
                 solvedE10 = True
         
         elif(bankEdgeSorted == edge11):
@@ -1502,7 +1502,7 @@ def edgeSwapper():
                 solvedE11 = True
             elif (index == 1):
                 edgeSolveList.append('w')
-                bankEdge = mow
+                bankEdge = [w, o]
                 solvedE11 = True
 
         elif(bankEdgeSorted == edge12):
@@ -1513,7 +1513,7 @@ def edgeSwapper():
                 solvedE12 = True
             elif (index == 1):
                 edgeSolveList.append('p')
-                bankEdge = mjp
+                bankEdge = [p, j]
                 solvedE12 = True
 
     return edgeSolveList
