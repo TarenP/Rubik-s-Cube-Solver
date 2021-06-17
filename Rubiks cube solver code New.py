@@ -1330,13 +1330,10 @@ def cornerSwapper(cornerSolveList):
         Yprimeturn()
         Xprimeturn()
 
-
 def cornerMain():
     cList = cornerActions()
     print(cList)
     cornerSwapper(cList)
-
-
 
 def edgeSwapper():
     mam = [a, m]
