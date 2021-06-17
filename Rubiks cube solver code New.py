@@ -1299,6 +1299,10 @@ def cornerSwapper(cornerSolveList):
         Lprimeturn()
         Uturn()
 
+        Xturn()
+        Yprimeturn()
+        Xprimeturn()
+
 
 def cornerMain():
     cList = cornerActions()
@@ -1604,7 +1608,7 @@ def edgeSwapper(edgeSolveList):
             lturn()
             Dturn()
         elif letter == 'l':
-            dprimerturn()
+            dprimeturn()
             Lprimeturn()
             Tpermutation()
             Lturn()
