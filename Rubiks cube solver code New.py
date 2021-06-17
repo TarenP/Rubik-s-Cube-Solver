@@ -1069,7 +1069,7 @@ def cornerActions():
                 solvedC3 = True
             else:
                 cornerSolveList.append('E')
-                bankCorner = mDRE
+                bankCorner = [E, D, R]
                 solvedC3 = True
 
         elif(bankCornerSorted == corner4):
@@ -1150,8 +1150,9 @@ def cornerActions():
     # #use "list".sort() method for comparing the two corners.
 
 def cornerSwapper(cornerSolveList):
-    for i in len(cornerSolveList):
-        letter = cornerSolveList.index(i-1)
+    counter = 0
+    for i in cornerSolveList:
+        letter = cornerSolveList[counter]
         if letter == 'B':
             Rturn()
             Dprimeturn()
@@ -1270,7 +1271,8 @@ def cornerSwapper(cornerSolveList):
             AlteredYPermutation()
             Fturn()
             Dprimeturn
-        
+
+        counter = counter + 1
 
 
 
@@ -1519,8 +1521,9 @@ def edgeSwapper():
     return edgeSolveList
 
 def edgeSwapper(edgeSolveList):
+    counter = 0
     for i in len(edgeSolveList):
-        letter = edgeSolveList.index(i-1)
+        letter = edgeSolveList[counter]
         if letter == 'a':
             lturn()
             lturn()
@@ -1666,6 +1669,8 @@ def edgeSwapper(edgeSolveList):
             Tpermutation()
             Lprimeturn()
             Lprimeturn()
+
+        counter = counter + 1
 
 def edgeMain():
     eList = edgeMain()
