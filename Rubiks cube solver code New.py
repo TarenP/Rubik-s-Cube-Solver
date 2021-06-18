@@ -391,17 +391,7 @@ def Rturn():
     GPIO.output(DIR3, CW)
     GPIO.output(DIR1, CW)
     GPIO.output(DIR2, CW)
-    for x in range(5):
-        GPIO.output(STEP4, GPIO.HIGH)
-        GPIO.output(STEP3, GPIO.HIGH)
-        GPIO.output(STEP2, GPIO.HIGH)
-        GPIO.output(STEP1, GPIO.HIGH)
-        sleep(delay)
-        GPIO.output(STEP4, GPIO.LOW)
-        GPIO.output(STEP3, GPIO.LOW)
-        GPIO.output(STEP2, GPIO.LOW)
-        GPIO.output(STEP1, GPIO.LOW)
-        sleep(delay)
+    
         
     GPIO.output(DIR5, CW)
     for x in range(50):
@@ -436,17 +426,6 @@ def Rprimeturn():
     GPIO.output(DIR3, CW)
     GPIO.output(DIR1, CW)
     GPIO.output(DIR2, CW)
-    for x in range(5):
-        GPIO.output(STEP4, GPIO.HIGH)
-        GPIO.output(STEP3, GPIO.HIGH)
-        GPIO.output(STEP2, GPIO.HIGH)
-        GPIO.output(STEP1, GPIO.HIGH)
-        sleep(delay)
-        GPIO.output(STEP4, GPIO.LOW)
-        GPIO.output(STEP3, GPIO.LOW)
-        GPIO.output(STEP2, GPIO.LOW)
-        GPIO.output(STEP1, GPIO.LOW)
-        sleep(delay)
     
     GPIO.output(DIR5, CCW)
     for x in range(50):
@@ -482,17 +461,7 @@ def Lturn():
     GPIO.output(DIR3, CW)
     GPIO.output(DIR1, CW)
     GPIO.output(DIR2, CW)
-    for x in range(5):
-        GPIO.output(STEP4, GPIO.HIGH)
-        GPIO.output(STEP3, GPIO.HIGH)
-        GPIO.output(STEP2, GPIO.HIGH)
-        GPIO.output(STEP1, GPIO.HIGH)
-        sleep(delay)
-        GPIO.output(STEP4, GPIO.LOW)
-        GPIO.output(STEP3, GPIO.LOW)
-        GPIO.output(STEP2, GPIO.LOW)
-        GPIO.output(STEP1, GPIO.LOW)
-        sleep(delay)
+
         
     GPIO.output(DIR8, CW)
     for x in range(50):
@@ -528,17 +497,7 @@ def Lprimeturn():
     GPIO.output(DIR3, CW)
     GPIO.output(DIR1, CW)
     GPIO.output(DIR2, CW)
-    for x in range(5):
-        GPIO.output(STEP4, GPIO.HIGH)
-        GPIO.output(STEP3, GPIO.HIGH)
-        GPIO.output(STEP2, GPIO.HIGH)
-        GPIO.output(STEP1, GPIO.HIGH)
-        sleep(delay)
-        GPIO.output(STEP4, GPIO.LOW)
-        GPIO.output(STEP3, GPIO.LOW)
-        GPIO.output(STEP2, GPIO.LOW)
-        GPIO.output(STEP1, GPIO.LOW)
-        sleep(delay)
+
         
     GPIO.output(DIR8, CCW)
     for x in range(50):
@@ -574,17 +533,7 @@ def Bturn():
     GPIO.output(DIR3, CW)
     GPIO.output(DIR1, CW)
     GPIO.output(DIR2, CW)
-    for x in range(5):
-        GPIO.output(STEP4, GPIO.HIGH)
-        GPIO.output(STEP3, GPIO.HIGH)
-        GPIO.output(STEP2, GPIO.HIGH)
-        GPIO.output(STEP1, GPIO.HIGH)
-        sleep(delay)
-        GPIO.output(STEP4, GPIO.LOW)
-        GPIO.output(STEP3, GPIO.LOW)
-        GPIO.output(STEP2, GPIO.LOW)
-        GPIO.output(STEP1, GPIO.LOW)
-        sleep(delay)
+
         
     GPIO.output(DIR7, CW)
     for x in range(50):
@@ -619,17 +568,7 @@ def Bprimeturn():
     GPIO.output(DIR3, CW)
     GPIO.output(DIR1, CW)
     GPIO.output(DIR2, CW)
-    for x in range(5):
-        GPIO.output(STEP4, GPIO.HIGH)
-        GPIO.output(STEP3, GPIO.HIGH)
-        GPIO.output(STEP2, GPIO.HIGH)
-        GPIO.output(STEP1, GPIO.HIGH)
-        sleep(delay)
-        GPIO.output(STEP4, GPIO.LOW)
-        GPIO.output(STEP3, GPIO.LOW)
-        GPIO.output(STEP2, GPIO.LOW)
-        GPIO.output(STEP1, GPIO.LOW)
-        sleep(delay)
+
         
     GPIO.output(DIR7, CCW)
     for x in range(50):
@@ -664,18 +603,7 @@ def Fturn():
     GPIO.output(DIR3, CW)
     GPIO.output(DIR1, CW)
     GPIO.output(DIR2, CW)
-    for x in range(5):
-        GPIO.output(STEP4, GPIO.HIGH)
-        GPIO.output(STEP3, GPIO.HIGH)
-        GPIO.output(STEP2, GPIO.HIGH)
-        GPIO.output(STEP1, GPIO.HIGH)
-        sleep(delay)
-        GPIO.output(STEP4, GPIO.LOW)
-        GPIO.output(STEP3, GPIO.LOW)
-        GPIO.output(STEP2, GPIO.LOW)
-        GPIO.output(STEP1, GPIO.LOW)
-        sleep(delay)
-        
+
     GPIO.output(DIR6, CW)
     for x in range(50):
         GPIO.output(STEP6, GPIO.HIGH)
@@ -709,17 +637,7 @@ def Fprimeturn():
     GPIO.output(DIR3, CW)
     GPIO.output(DIR1, CW)
     GPIO.output(DIR2, CW)
-    for x in range(5):
-        GPIO.output(STEP4, GPIO.HIGH)
-        GPIO.output(STEP3, GPIO.HIGH)
-        GPIO.output(STEP2, GPIO.HIGH)
-        GPIO.output(STEP1, GPIO.HIGH)
-        sleep(delay)
-        GPIO.output(STEP4, GPIO.LOW)
-        GPIO.output(STEP3, GPIO.LOW)
-        GPIO.output(STEP2, GPIO.LOW)
-        GPIO.output(STEP1, GPIO.LOW)
-        sleep(delay)
+
         
     GPIO.output(DIR6, CCW)
     for x in range(50):
