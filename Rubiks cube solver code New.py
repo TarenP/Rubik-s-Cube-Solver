@@ -103,20 +103,14 @@ solvedE12 = False
 def Xturn():
     GPIO.output(DIR5, CW)
     GPIO.output(DIR8, CCW)
-    GPIO.output(DIR1, CW)
-    GPIO.output(DIR3, CW)
     GPIO.output(DIR2, CW)
     GPIO.output(DIR4, CW)
     for x in range(5):
         GPIO.output(STEP2, GPIO.HIGH)
         GPIO.output(STEP4, GPIO.HIGH)
-        GPIO.output(STEP1, GPIO.HIGH)
-        GPIO.output(STEP3, GPIO.HIGH)
         sleep(delay)
         GPIO.output(STEP2, GPIO.LOW)
         GPIO.output(STEP4, GPIO.LOW)
-        GPIO.output(STEP1, GPIO.LOW)
-        GPIO.output(STEP3, GPIO.LOW)
         sleep(delay)
 
     GPIO.output(DIR1, CCW)
@@ -180,20 +174,14 @@ def Xturn():
 def Xprimeturn():
     GPIO.output(DIR5, CCW)
     GPIO.output(DIR8, CW)
-    GPIO.output(DIR1, CW)
-    GPIO.output(DIR3, CW)
     GPIO.output(DIR2, CW)
     GPIO.output(DIR4, CW)
     for x in range(5):
         GPIO.output(STEP2, GPIO.HIGH)
         GPIO.output(STEP4, GPIO.HIGH)
-        GPIO.output(STEP1, GPIO.HIGH)
-        GPIO.output(STEP3, GPIO.HIGH)
         sleep(delay)
         GPIO.output(STEP2, GPIO.LOW)
         GPIO.output(STEP4, GPIO.LOW)
-        GPIO.output(STEP1, GPIO.LOW)
-        GPIO.output(STEP3, GPIO.LOW)
         sleep(delay)
     
     GPIO.output(DIR1, CCW)
@@ -260,16 +248,10 @@ def Yturn():
     GPIO.output(DIR7, CCW)
     GPIO.output(DIR1, CW)
     GPIO.output(DIR3, CW)
-    GPIO.output(DIR2, CW)
-    GPIO.output(DIR4, CW)
     for x in range(5):
-        GPIO.output(STEP2, GPIO.HIGH)
-        GPIO.output(STEP4, GPIO.HIGH)
         GPIO.output(STEP1, GPIO.HIGH)
         GPIO.output(STEP3, GPIO.HIGH)
         sleep(delay)
-        GPIO.output(STEP2, GPIO.LOW)
-        GPIO.output(STEP4, GPIO.LOW)
         GPIO.output(STEP1, GPIO.LOW)
         GPIO.output(STEP3, GPIO.LOW)
 
@@ -338,16 +320,10 @@ def Yprimeturn():
     GPIO.output(DIR7, CW)
     GPIO.output(DIR1, CW)
     GPIO.output(DIR3, CW)
-    GPIO.output(DIR2, CW)
-    GPIO.output(DIR4, CW)
     for x in range(5):
-        GPIO.output(STEP2, GPIO.HIGH)
-        GPIO.output(STEP4, GPIO.HIGH)
         GPIO.output(STEP1, GPIO.HIGH)
         GPIO.output(STEP3, GPIO.HIGH)
         sleep(delay)
-        GPIO.output(STEP2, GPIO.LOW)
-        GPIO.output(STEP4, GPIO.LOW)
         GPIO.output(STEP1, GPIO.LOW)
         GPIO.output(STEP3, GPIO.LOW)
 
@@ -1765,8 +1741,7 @@ b = yellowFace[5]
 D = yellowFace[6]
 c = yellowFace[7]
 C = yellowFace[8]
-print(A)
-print(C)
+print(yellowFace)
 
 GPIO.output(DIR1, CW)
 GPIO.output(DIR3, CW)
@@ -1857,7 +1832,7 @@ f = redFace[5]
 H = redFace[6]
 g = redFace[7]
 G = redFace[8]
-print(E)
+print(redFace)
 
 GPIO.output(DIR5, CW)
 GPIO.output(DIR8, CCW)
@@ -1934,7 +1909,7 @@ v = whiteFace[5]
 X = whiteFace[6]
 w = whiteFace[7]
 W = whiteFace[8]
-print(U)
+print(whiteFace)
 
 GPIO.output(DIR1, CW)
 GPIO.output(DIR3, CW)
@@ -2036,6 +2011,7 @@ p = orangeFace[5]
 N = orangeFace[6]
 m = orangeFace[7]
 M = orangeFace[8]
+print(orangeFace)
 
 GPIO.output(DIR1, CW)
 GPIO.output(DIR3, CW)
@@ -2135,6 +2111,7 @@ q = blueFace[5]
 S = blueFace[6]
 r = blueFace[7]
 R = blueFace[8]
+print(blueFace)
 
 GPIO.output(DIR1, CW)
 GPIO.output(DIR3, CW)
@@ -2234,6 +2211,8 @@ k = greenFace[5]
 I = greenFace[6]
 l = greenFace[7]
 L = greenFace[8]
+print(greenFace)
+
 
 GPIO.output(DIR1, CW)
 GPIO.output(DIR3, CW)
