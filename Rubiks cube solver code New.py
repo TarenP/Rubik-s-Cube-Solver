@@ -626,7 +626,7 @@ def Fturn():
         sleep(delay)
 
     GPIO.output(DIR1, CW)
-    for x in range(30):
+    for x in range(35):
         GPIO.output(STEP1, GPIO.HIGH)
         sleep(delay)
         GPIO.output(STEP1, GPIO.LOW)
@@ -661,7 +661,7 @@ def Fprimeturn():
         sleep(delay)
 
     GPIO.output(DIR1, CW)
-    for x in range(30):
+    for x in range(35):
         GPIO.output(STEP1, GPIO.HIGH)
         sleep(delay)
         GPIO.output(STEP1, GPIO.LOW)
