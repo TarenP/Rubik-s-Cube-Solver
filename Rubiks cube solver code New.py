@@ -45,9 +45,9 @@ GPIO.setup(DIR8, GPIO.OUT)
 GPIO.setup(STEP8, GPIO.OUT)
 
 #delay between steps for motor turns
-delay = .0208
+delay = .0108
 #Sensitivity for reseting cube position after turn
-sensitivity = 0
+sensitivity = 3
 
 
       
@@ -1015,8 +1015,6 @@ def faceColor():
         if area5 > 5000:
             face = "orange"
             
-        
-    print(face)
     return face
 
 def resetCordinates(color):
@@ -1097,7 +1095,7 @@ def resetCordinates(color):
         contours6, _ = cv2.findContours(red_mask, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
         contours6 = sorted(contours6, key=lambda x:cv2.contourArea(x), reverse=True)
             
-        for cnt in contours5:
+        for cnt in contours6:
             area6 = cv2.contourArea(cnt)
             if area6 > 5000:
                 contoursColor = contours6
@@ -1127,7 +1125,7 @@ def resety(ycord, color):
     #xafter, yafter = resetCordinates(color)
     #while (not ycord + sensitivity > yafter and ycord - sensitivity < yafter):
     xafter, yafter = resetCordinates(color)
-    if yafter < ycord + sensitivity:
+    if yafter < ycord - sensitivity:
         for x in range(2):
             GPIO.output(DIR1, CCW)
             GPIO.output(DIR3, CW)
@@ -1139,7 +1137,7 @@ def resety(ycord, color):
             sleep(.3)
         print("back")
 
-    elif yafter > ycord - sensitivity:
+    elif yafter > ycord + sensitivity:
         for x in range(2):
             GPIO.output(DIR1, CW)
             GPIO.output(DIR3, CCW)
@@ -1157,7 +1155,7 @@ def resetx(xcord, color):
     xafter, yafter = resetCordinates(color)
     #while (not xcord + sensitivity > xafter and xcord - sensitivity < xafter):
     #xafter, yafter = resetCordinates(color)
-    if xafter < xcord + sensitivity:
+    if xafter < xcord - sensitivity:
         for x in range(2):
             GPIO.output(DIR2, CW)
             GPIO.output(DIR4, CCW)
@@ -1169,7 +1167,7 @@ def resetx(xcord, color):
             sleep(.3)
         print("left")
 
-    elif xafter > xcord - sensitivity:
+    elif xafter > xcord + sensitivity:
         for x in range(2):
             GPIO.output(DIR2, CCW)
             GPIO.output(DIR4, CW)
