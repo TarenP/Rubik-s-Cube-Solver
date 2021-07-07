@@ -43,7 +43,7 @@ GPIO.setup(STEP7, GPIO.OUT)
 GPIO.setup(DIR8, GPIO.OUT)
 GPIO.setup(STEP8, GPIO.OUT)
 
-delay = .0108
+delay = .0208
 
 
 GPIO.setwarnings(False)

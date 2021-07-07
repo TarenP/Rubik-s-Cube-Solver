@@ -1,24 +1,27 @@
-import picamera
+from picamera import PiCamera
 import matplotlib.image as img
 from PIL import Image
 import cv2
 import numpy as np
 
-with picamera.PiCamera() as camera:
-    camera.resolution = (720, 720)
-    camera.capture("/home/pi/Desktop/tracker.jpg")
-
-cap = cv2.VideoCapture(0)
+#camera setup
+camera = PiCamera()
+#Res must be divisible by 3
+res = 720
+camera.resolution = (res, res)
 while True:
+    camera.capture("/home/pi/Desktop/track.jpg")
+        
+        
+    im = Image.open("/home/pi/Desktop/track.jpg")
+    #img = cv2.imread("/home/pi/Desktop/track.jpg")
 
-    _, frame = cap.read()
-    rows, cols, _=frame.shape
+
+    im_crop = im.crop(((res/3), (res/3),(res/3) + (res/3), (res/3) + (res/3)))
+    im_crop.save("/home/pi/Desktop/trackcropped.jpg")
+    img = cv2.imread("/home/pi/Desktop/trackcropped.jpg")
+    hsv_img = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
     
-    x_medium = int(cols / 2)
-    center = int(cols/ 2)
-    hsv_img = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
-
-#White color
     low_white = np.array([0, 0, 0])
     high_white = np.array([255, 99, 255])
     white_mask = cv2.inRange(hsv_img, low_white, high_white)
@@ -28,7 +31,6 @@ while True:
     for cnt in contours1:
         area1 = cv2.contourArea(cnt)
         if area1 > 5000:
-            faceColors[counter-1] = "white"
             contoursColor = contours1
 
 
@@ -42,7 +44,6 @@ while True:
     for cnt in contours2:
         area2 = cv2.contourArea(cnt)
         if area2 > 5000:
-            faceColors[counter-1] = "yellow"
             contoursColor = contours2
 
     #blue color
@@ -55,7 +56,6 @@ while True:
     for cnt in contours3:
         area3 = cv2.contourArea(cnt)
         if area3 > 5000:
-            faceColors[counter-1] = "blue"
             contoursColor = contours3
             
     #green color
@@ -68,7 +68,6 @@ while True:
     for cnt in contours4:
         area4 = cv2.contourArea(cnt)
         if area4 > 5000:
-            faceColors[counter-1] = "green"
             contoursColor = contours4
             
     #Orange color
@@ -81,25 +80,20 @@ while True:
     for cnt in contours5:
         area5 = cv2.contourArea(cnt)
         if area5 > 5000:
-            faceColors[counter-1] = "orange"
             contoursColor = contours5
-
-    if faceColors[counter-1]=="pink":
-        
-        faceColors[counter-1] = "red"
-        print("red, flip cube")
 
 
     for cnt in contoursColor:
         (x, y, w, h)= cv2.boundingRect(cnt)
 
-    #cv2.rectangle(frame, (x, y), (x + w, y+h), (0, 255, 0), 2)
         x_medium = int((x + x + w) / 2)
         break
+    cv2.rectangle(img, (x, y), (x + w, y+h), (0, 255, 0), 2)
 
-    cv2.line(frame, (x_medium, 0), (x_medium, 480), (255, 0, 0), 2)
+    cv2.line(img, (x_medium, 0), (x_medium, 480), (255, 0, 0), 2)
     #cv2.imshow("", mask)    
-    cv2.imshow('RGB', frame)
+    cv2.imshow('RGB', img)
+    cv2.imshow('mask', orange_mask)
 
     key = cv2.waitKey(1)
     if key == 27:
