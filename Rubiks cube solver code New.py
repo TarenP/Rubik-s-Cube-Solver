@@ -25,6 +25,8 @@ STEP8 = 22
 CW = 1
 CCW = 0
 
+
+GPIO.setwarnings(False)
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(DIR1, GPIO.OUT)
 GPIO.setup(STEP1, GPIO.OUT)
@@ -45,8 +47,6 @@ GPIO.setup(STEP8, GPIO.OUT)
 
 delay = .0208
 
-
-GPIO.setwarnings(False)
       
 #camera setup
 camera = PiCamera()
@@ -965,11 +965,6 @@ def faceColor():
         if area5 > 5000:
             face = "orange"
             
-        
-    key =cv2.waitKey(1)
-    
-    if key== 27:
-        break
     print(face)
     return face
 
@@ -1051,7 +1046,7 @@ def resetCordinates(color):
         contours6, _ = cv2.findContours(red_mask, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
         contours6 = sorted(contours6, key=lambda x:cv2.contourArea(x), reverse=True)
             
-        for cnt in contours5:
+        for cnt in contours6:
             area6 = cv2.contourArea(cnt)
             if area6 > 5000:
                 contoursColor = contours6
@@ -1076,10 +1071,6 @@ def resetCordinates(color):
     #print(y)
     # cv2.imshow('RGB', img)
     # cv2.imshow('mask', orange_mask)
-
-    key = cv2.waitKey(1)
-    if key == 27:
-        break
 
 #it will do the algo to get that specific corner to where it should go.
 def cornerActions():
