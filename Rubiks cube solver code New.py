@@ -1075,9 +1075,6 @@ def resetCordinates(color):
     # cv2.imshow('RGB', img)
     # cv2.imshow('mask', orange_mask)
 
-    key = cv2.waitKey(1)
-    if key == 27:
-        break
 
 def reset(xcord, ycord, color):
     xafter, yafter = resetCordinates(color)
@@ -1093,7 +1090,7 @@ def reset(xcord, ycord, color):
             GPIO.output(STEP4, GPIO.LOW)
             sleep(.3)
 
-        else if xafter > xcord + 5:
+        elif xafter > xcord - 5:
             GPIO.output(DIR2, CCW)
             GPIO.output(DIR4, CW)
             GPIO.output(STEP2, GPIO.HIGH)
@@ -1102,10 +1099,28 @@ def reset(xcord, ycord, color):
             GPIO.output(STEP2, GPIO.LOW)
             GPIO.output(STEP4, GPIO.LOW)
             sleep(.3)
-
-
+    xafter, yafter = resetCordinates(color)
     while (not ycord + 5 > yafter and ycord - 5 < yafter):
+        xafter, yafter = resetCordinates(color)
+        if yafter < ycord + 5:
+            GPIO.output(DIR1, CCW)
+            GPIO.output(DIR3, CW)
+            GPIO.output(STEP1, GPIO.HIGH)
+            GPIO.output(STEP3, GPIO.HIGH)
+            sleep(delay)
+            GPIO.output(STEP1, GPIO.LOW)
+            GPIO.output(STEP3, GPIO.LOW)
+            sleep(.3)
 
+        elif yafter > ycord - 5:
+            GPIO.output(DIR1, CW)
+            GPIO.output(DIR3, CCW)
+            GPIO.output(STEP1, GPIO.HIGH)
+            GPIO.output(STEP3, GPIO.HIGH)
+            sleep(delay)
+            GPIO.output(STEP1, GPIO.LOW)
+            GPIO.output(STEP3, GPIO.LOW)
+            sleep(.3)
 #it will do the algo to get that specific corner to where it should go.
 def cornerActions():
     mAQN = [A, Q, N]
