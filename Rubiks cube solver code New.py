@@ -846,7 +846,6 @@ def colorfinder():
                faceColors[counter-1] = "green"
                 
         #Orange color
-               (0,2,179,15,255,255)
         low_orange = np.array([0, 2, 179])
         high_orange = np.array([15, 255, 255])
         orange_mask = cv2.inRange(hsv_img, low_orange, high_orange)
