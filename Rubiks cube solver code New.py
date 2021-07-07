@@ -1078,8 +1078,35 @@ def resetCordinates(color):
     # cv2.imshow('RGB', img)
     # cv2.imshow('mask', orange_mask)
 
+def resety(ycord, color):
+    #xafter, yafter = resetCordinates(color)
+    #while (not ycord + sensitivity > yafter and ycord - sensitivity < yafter):
+    xafter, yafter = resetCordinates(color)
+    if yafter < ycord + sensitivity:
+        for x in range(2):
+            GPIO.output(DIR1, CCW)
+            GPIO.output(DIR3, CW)
+            GPIO.output(STEP1, GPIO.HIGH)
+            GPIO.output(STEP3, GPIO.HIGH)
+            sleep(delay)
+            GPIO.output(STEP1, GPIO.LOW)
+            GPIO.output(STEP3, GPIO.LOW)
+            sleep(.3)
 
-def reset(xcord, ycord, color):
+    elif yafter > ycord - sensitivity:
+        for x in range(2):
+            GPIO.output(DIR1, CW)
+            GPIO.output(DIR3, CCW)
+            GPIO.output(STEP1, GPIO.HIGH)
+            GPIO.output(STEP3, GPIO.HIGH)
+            sleep(delay)
+            GPIO.output(STEP1, GPIO.LOW)
+            GPIO.output(STEP3, GPIO.LOW)
+            sleep(.3)
+    print(xafter)
+    print(yafter)
+
+def resetx(xcord, color):
     xafter, yafter = resetCordinates(color)
     print(xafter)
     print(yafter)
@@ -1105,32 +1132,6 @@ def reset(xcord, ycord, color):
             sleep(delay)
             GPIO.output(STEP2, GPIO.LOW)
             GPIO.output(STEP4, GPIO.LOW)
-            sleep(.3)
-    print(xafter)
-    print(yafter)
-    #xafter, yafter = resetCordinates(color)
-    #while (not ycord + sensitivity > yafter and ycord - sensitivity < yafter):
-    xafter, yafter = resetCordinates(color)
-    if yafter < ycord + sensitivity:
-        for x in range(2):
-            GPIO.output(DIR1, CCW)
-            GPIO.output(DIR3, CW)
-            GPIO.output(STEP1, GPIO.HIGH)
-            GPIO.output(STEP3, GPIO.HIGH)
-            sleep(delay)
-            GPIO.output(STEP1, GPIO.LOW)
-            GPIO.output(STEP3, GPIO.LOW)
-            sleep(.3)
-
-    elif yafter > ycord - sensitivity:
-        for x in range(2):
-            GPIO.output(DIR1, CW)
-            GPIO.output(DIR3, CCW)
-            GPIO.output(STEP1, GPIO.HIGH)
-            GPIO.output(STEP3, GPIO.HIGH)
-            sleep(delay)
-            GPIO.output(STEP1, GPIO.LOW)
-            GPIO.output(STEP3, GPIO.LOW)
             sleep(.3)
     print(xafter)
     print(yafter)
