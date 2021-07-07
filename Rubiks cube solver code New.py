@@ -427,10 +427,15 @@ def Rturn():
         sleep(delay)
         GPIO.output(STEP2, GPIO.LOW)
         sleep(delay)
-    reset(xcord, ycord, color)
+    resetx(xcord, color)
     
 
 def Rprimeturn():
+    color = faceColor()
+    xcord, ycord = resetCordinates(color)
+    print(xcord)
+    print(ycord)
+
     GPIO.output(DIR4, CW)
     GPIO.output(DIR3, CW)
     GPIO.output(DIR1, CW)
@@ -464,8 +469,13 @@ def Rprimeturn():
         sleep(delay)
         GPIO.output(STEP2, GPIO.LOW)
         sleep(delay)
+    resetx(xcord, color)
 
 def Lturn():
+    color = faceColor()
+    xcord, ycord = resetCordinates(color)
+    print(xcord)
+    print(ycord)
     GPIO.output(DIR4, CW)
     GPIO.output(DIR3, CW)
     GPIO.output(DIR1, CW)
@@ -500,8 +510,14 @@ def Lturn():
         sleep(delay)
         GPIO.output(STEP4, GPIO.LOW)
         sleep(delay)
+    
+    resetx(xcord, color)
 
 def Lprimeturn():
+    color = faceColor()
+    xcord, ycord = resetCordinates(color)
+    print(xcord)
+    print(ycord)
     GPIO.output(DIR4, CW)
     GPIO.output(DIR3, CW)
     GPIO.output(DIR1, CW)
@@ -537,7 +553,13 @@ def Lprimeturn():
         GPIO.output(STEP4, GPIO.LOW)
         sleep(delay)
 
+    resetx(xcord, color)
+
 def Bturn():
+    color = faceColor()
+    xcord, ycord = resetCordinates(color)
+    print(xcord)
+    print(ycord)
     GPIO.output(DIR4, CW)
     GPIO.output(DIR3, CW)
     GPIO.output(DIR1, CW)
@@ -571,8 +593,15 @@ def Bturn():
         sleep(delay)
         GPIO.output(STEP3, GPIO.LOW)
         sleep(delay)
+    
+    resety(ycord, color)
 
 def Bprimeturn():
+    color = faceColor()
+    xcord, ycord = resetCordinates(color)
+    print(xcord)
+    print(ycord)
+
     GPIO.output(DIR4, CW)
     GPIO.output(DIR3, CW)
     GPIO.output(DIR1, CW)
@@ -607,7 +636,14 @@ def Bprimeturn():
         GPIO.output(STEP3, GPIO.LOW)
         sleep(delay)
 
+    resety(ycord, color)
+
 def Fturn():
+    color = faceColor()
+    xcord, ycord = resetCordinates(color)
+    print(xcord)
+    print(ycord)
+
     GPIO.output(DIR4, CW)
     GPIO.output(DIR3, CW)
     GPIO.output(DIR1, CW)
@@ -640,8 +676,15 @@ def Fturn():
         sleep(delay)
         GPIO.output(STEP1, GPIO.LOW)
         sleep(delay)
+
+    resety(ycord, color)
 
 def Fprimeturn():
+    color = faceColor()
+    xcord, ycord = resetCordinates(color)
+    print(xcord)
+    print(ycord)
+
     GPIO.output(DIR4, CW)
     GPIO.output(DIR3, CW)
     GPIO.output(DIR1, CW)
@@ -675,6 +718,8 @@ def Fprimeturn():
         sleep(delay)
         GPIO.output(STEP1, GPIO.LOW)
         sleep(delay)
+
+    resety(ycord, color)
 
 def Dturn():
     Xturn()
@@ -1092,6 +1137,7 @@ def resety(ycord, color):
             GPIO.output(STEP1, GPIO.LOW)
             GPIO.output(STEP3, GPIO.LOW)
             sleep(.3)
+        print("back")
 
     elif yafter > ycord - sensitivity:
         for x in range(2):
@@ -1103,13 +1149,12 @@ def resety(ycord, color):
             GPIO.output(STEP1, GPIO.LOW)
             GPIO.output(STEP3, GPIO.LOW)
             sleep(.3)
+        print("forward")
     print(xafter)
     print(yafter)
 
 def resetx(xcord, color):
     xafter, yafter = resetCordinates(color)
-    print(xafter)
-    print(yafter)
     #while (not xcord + sensitivity > xafter and xcord - sensitivity < xafter):
     #xafter, yafter = resetCordinates(color)
     if xafter < xcord + sensitivity:
@@ -1122,6 +1167,7 @@ def resetx(xcord, color):
             GPIO.output(STEP2, GPIO.LOW)
             GPIO.output(STEP4, GPIO.LOW)
             sleep(.3)
+        print("left")
 
     elif xafter > xcord - sensitivity:
         for x in range(2):
@@ -1133,6 +1179,7 @@ def resetx(xcord, color):
             GPIO.output(STEP2, GPIO.LOW)
             GPIO.output(STEP4, GPIO.LOW)
             sleep(.3)
+        print("right")
     print(xafter)
     print(yafter)
 #it will do the algo to get that specific corner to where it should go.
