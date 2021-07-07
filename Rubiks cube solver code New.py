@@ -25,6 +25,7 @@ STEP8 = 22
 CW = 1
 CCW = 0
 
+GPIO.setwarnings(False)
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(DIR1, GPIO.OUT)
 GPIO.setup(STEP1, GPIO.OUT)
@@ -43,10 +44,12 @@ GPIO.setup(STEP7, GPIO.OUT)
 GPIO.setup(DIR8, GPIO.OUT)
 GPIO.setup(STEP8, GPIO.OUT)
 
+#delay between steps for motor turns
 delay = .0208
+#Sensitivity for reseting cube position after turn
+sensitivity = 0
 
 
-GPIO.setwarnings(False)
       
 #camera setup
 camera = PiCamera()
@@ -1061,10 +1064,10 @@ def resetCordinates(color):
         x_medium = int((x + x + w) / 2)
         y_medium = int((y + y + h)/ 2)
         break
-    cv2.rectangle(img, (x, y), (x + w, y+h), (0, 255, 0), 2)
+    #cv2.rectangle(img, (x, y), (x + w, y+h), (0, 255, 0), 2)
 
-    cv2.line(img, (x_medium, 0), (x_medium, 720), (255, 255, 0), 2)
-    cv2.line(img, (0, y_medium), (720, y_medium), (255, 255, 0), 2)
+    #cv2.line(img, (x_medium, 0), (x_medium, 720), (255, 255, 0), 2)
+    #cv2.line(img, (0, y_medium), (720, y_medium), (255, 255, 0), 2)
     return x_medium, y_medium
     #cv2.imshow("", mask)
     # print("x_med")
@@ -1078,9 +1081,12 @@ def resetCordinates(color):
 
 def reset(xcord, ycord, color):
     xafter, yafter = resetCordinates(color)
-    while (not xcord + 5 > xafter and xcord - 5 < xafter):
-        xafter, yafter = resetCordinates(color)
-        if xafter < xcord + 5:
+    print(xafter)
+    print(yafter)
+    #while (not xcord + sensitivity > xafter and xcord - sensitivity < xafter):
+    #xafter, yafter = resetCordinates(color)
+    if xafter < xcord + sensitivity:
+        for x in range(2):
             GPIO.output(DIR2, CW)
             GPIO.output(DIR4, CCW)
             GPIO.output(STEP2, GPIO.HIGH)
@@ -1090,7 +1096,8 @@ def reset(xcord, ycord, color):
             GPIO.output(STEP4, GPIO.LOW)
             sleep(.3)
 
-        elif xafter > xcord - 5:
+    elif xafter > xcord - sensitivity:
+        for x in range(2):
             GPIO.output(DIR2, CCW)
             GPIO.output(DIR4, CW)
             GPIO.output(STEP2, GPIO.HIGH)
@@ -1099,10 +1106,13 @@ def reset(xcord, ycord, color):
             GPIO.output(STEP2, GPIO.LOW)
             GPIO.output(STEP4, GPIO.LOW)
             sleep(.3)
+    print(xafter)
+    print(yafter)
+    #xafter, yafter = resetCordinates(color)
+    #while (not ycord + sensitivity > yafter and ycord - sensitivity < yafter):
     xafter, yafter = resetCordinates(color)
-    while (not ycord + 5 > yafter and ycord - 5 < yafter):
-        xafter, yafter = resetCordinates(color)
-        if yafter < ycord + 5:
+    if yafter < ycord + sensitivity:
+        for x in range(2):
             GPIO.output(DIR1, CCW)
             GPIO.output(DIR3, CW)
             GPIO.output(STEP1, GPIO.HIGH)
@@ -1112,7 +1122,8 @@ def reset(xcord, ycord, color):
             GPIO.output(STEP3, GPIO.LOW)
             sleep(.3)
 
-        elif yafter > ycord - 5:
+    elif yafter > ycord - sensitivity:
+        for x in range(2):
             GPIO.output(DIR1, CW)
             GPIO.output(DIR3, CCW)
             GPIO.output(STEP1, GPIO.HIGH)
@@ -1121,6 +1132,8 @@ def reset(xcord, ycord, color):
             GPIO.output(STEP1, GPIO.LOW)
             GPIO.output(STEP3, GPIO.LOW)
             sleep(.3)
+    print(xafter)
+    print(yafter)
 #it will do the algo to get that specific corner to where it should go.
 def cornerActions():
     mAQN = [A, Q, N]
