@@ -424,6 +424,8 @@ def Rturn():
         sleep(delay)
         GPIO.output(STEP2, GPIO.LOW)
         sleep(delay)
+    reset(xcord, ycord, color)
+    
 
 def Rprimeturn():
     GPIO.output(DIR4, CW)
@@ -966,10 +968,6 @@ def faceColor():
             face = "orange"
             
         
-    key =cv2.waitKey(1)
-    
-    if key== 27:
-        break
     print(face)
     return face
 
@@ -1080,6 +1078,33 @@ def resetCordinates(color):
     key = cv2.waitKey(1)
     if key == 27:
         break
+
+def reset(xcord, ycord, color):
+    xafter, yafter = resetCordinates(color)
+    while (not xcord + 5 > xafter and xcord - 5 < xafter):
+        xafter, yafter = resetCordinates(color)
+        if xafter < xcord + 5:
+            GPIO.output(DIR2, CW)
+            GPIO.output(DIR4, CCW)
+            GPIO.output(STEP2, GPIO.HIGH)
+            GPIO.output(STEP4, GPIO.HIGH)
+            sleep(delay)
+            GPIO.output(STEP2, GPIO.LOW)
+            GPIO.output(STEP4, GPIO.LOW)
+            sleep(.3)
+
+        else if xafter > xcord + 5:
+            GPIO.output(DIR2, CCW)
+            GPIO.output(DIR4, CW)
+            GPIO.output(STEP2, GPIO.HIGH)
+            GPIO.output(STEP4, GPIO.HIGH)
+            sleep(delay)
+            GPIO.output(STEP2, GPIO.LOW)
+            GPIO.output(STEP4, GPIO.LOW)
+            sleep(.3)
+
+
+    while (not ycord + 5 > yafter and ycord - 5 < yafter):
 
 #it will do the algo to get that specific corner to where it should go.
 def cornerActions():
