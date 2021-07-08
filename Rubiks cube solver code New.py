@@ -45,10 +45,12 @@ GPIO.setup(DIR8, GPIO.OUT)
 GPIO.setup(STEP8, GPIO.OUT)
 
 #delay between steps for motor turns
-delay = .0108
+delay = .015
 #Sensitivity for reseting cube position after turn
 sensitivity = 3
 
+adjx = 2
+adjy = 0
 
       
 #camera setup
@@ -390,15 +392,25 @@ def Yprimeturn():
         sleep(delay)
 
 def Rturn():
-    color = faceColor()
-    xcord, ycord = resetCordinates(color)
-    print(xcord)
-    print(ycord)
+    # color = faceColor()
+    # xcord, ycord = resetCordinates(color)
+    # print(xcord)
+    # print(ycord)
     GPIO.output(DIR4, CW)
     GPIO.output(DIR3, CW)
     GPIO.output(DIR1, CW)
     GPIO.output(DIR2, CW)
-    
+    for x in range(5):
+        GPIO.output(STEP1, GPIO.HIGH)
+        GPIO.output(STEP2, GPIO.HIGH)
+        GPIO.output(STEP3, GPIO.HIGH)
+        GPIO.output(STEP4, GPIO.HIGH)
+        sleep(delay)
+        GPIO.output(STEP1, GPIO.LOW)
+        GPIO.output(STEP2, GPIO.LOW)
+        GPIO.output(STEP3, GPIO.LOW)
+        GPIO.output(STEP4, GPIO.LOW)
+        sleep(delay)
         
     GPIO.output(DIR5, CW)
     for x in range(50):
@@ -427,19 +439,76 @@ def Rturn():
         sleep(delay)
         GPIO.output(STEP2, GPIO.LOW)
         sleep(delay)
-    resetx(xcord, color)
+    
+    # GPIO.output(DIR5, CCW)
+    # for x in range(50):
+    #     GPIO.output(STEP5, GPIO.HIGH)
+    #     sleep(delay)
+    #     GPIO.output(STEP5, GPIO.LOW)
+    #     sleep(delay)
+    
+    # resetx(xcord, color)
+
+    # GPIO.output(DIR5, CW)
+    # for x in range(50):
+    #     GPIO.output(STEP5, GPIO.HIGH)
+    #     sleep(delay)
+    #     GPIO.output(STEP5, GPIO.LOW)
+    #     sleep(delay)
+    GPIO.output(DIR1, CCW)
+    GPIO.output(DIR3, CCW)
+    for x in range(30):
+        GPIO.output(STEP1, GPIO.HIGH)
+        GPIO.output(STEP3, GPIO.HIGH)
+        sleep(delay)
+        GPIO.output(STEP1, GPIO.LOW)
+        GPIO.output(STEP3, GPIO.LOW)
+        sleep(delay)
+        
+    for x in range(adjx):
+        GPIO.output(DIR2, CCW)
+        GPIO.output(DIR4, CW)
+        GPIO.output(STEP2, GPIO.HIGH)
+        GPIO.output(STEP4, GPIO.HIGH)
+        sleep(delay)
+        GPIO.output(STEP2, GPIO.LOW)
+        GPIO.output(STEP4, GPIO.LOW)
+        sleep(.3)
+
+    GPIO.output(DIR1, CW)
+    GPIO.output(DIR3, CW)
+    for x in range(35):
+        GPIO.output(STEP1, GPIO.HIGH)
+        GPIO.output(STEP3, GPIO.HIGH)
+        sleep(delay)
+        GPIO.output(STEP1, GPIO.LOW)
+        GPIO.output(STEP3, GPIO.LOW)
+        sleep(delay)
+
+    
     
 
 def Rprimeturn():
-    color = faceColor()
-    xcord, ycord = resetCordinates(color)
-    print(xcord)
-    print(ycord)
+    # color = faceColor()
+    # xcord, ycord = resetCordinates(color)
+    # print(xcord)
+    # print(ycord)
 
     GPIO.output(DIR4, CW)
     GPIO.output(DIR3, CW)
     GPIO.output(DIR1, CW)
     GPIO.output(DIR2, CW)
+    for x in range(5):
+        GPIO.output(STEP1, GPIO.HIGH)
+        GPIO.output(STEP2, GPIO.HIGH)
+        GPIO.output(STEP3, GPIO.HIGH)
+        GPIO.output(STEP4, GPIO.HIGH)
+        sleep(delay)
+        GPIO.output(STEP1, GPIO.LOW)
+        GPIO.output(STEP2, GPIO.LOW)
+        GPIO.output(STEP3, GPIO.LOW)
+        GPIO.output(STEP4, GPIO.LOW)
+        sleep(delay)
     
     GPIO.output(DIR5, CCW)
     for x in range(50):
@@ -469,17 +538,58 @@ def Rprimeturn():
         sleep(delay)
         GPIO.output(STEP2, GPIO.LOW)
         sleep(delay)
-    resetx(xcord, color)
+    # resetx(xcord, color)
+
+    GPIO.output(DIR1, CCW)
+    GPIO.output(DIR3, CCW)
+    for x in range(30):
+        GPIO.output(STEP1, GPIO.HIGH)
+        GPIO.output(STEP3, GPIO.HIGH)
+        sleep(delay)
+        GPIO.output(STEP1, GPIO.LOW)
+        GPIO.output(STEP3, GPIO.LOW)
+        sleep(delay)
+        
+    for x in range(adjx):
+        GPIO.output(DIR2, CCW)
+        GPIO.output(DIR4, CW)
+        GPIO.output(STEP2, GPIO.HIGH)
+        GPIO.output(STEP4, GPIO.HIGH)
+        sleep(delay)
+        GPIO.output(STEP2, GPIO.LOW)
+        GPIO.output(STEP4, GPIO.LOW)
+        sleep(.3)
+
+    GPIO.output(DIR1, CW)
+    GPIO.output(DIR3, CW)
+    for x in range(35):
+        GPIO.output(STEP1, GPIO.HIGH)
+        GPIO.output(STEP3, GPIO.HIGH)
+        sleep(delay)
+        GPIO.output(STEP1, GPIO.LOW)
+        GPIO.output(STEP3, GPIO.LOW)
+        sleep(delay)
 
 def Lturn():
-    color = faceColor()
-    xcord, ycord = resetCordinates(color)
-    print(xcord)
-    print(ycord)
+    # color = faceColor()
+    # xcord, ycord = resetCordinates(color)
+    # print(xcord)
+    # print(ycord)
     GPIO.output(DIR4, CW)
     GPIO.output(DIR3, CW)
     GPIO.output(DIR1, CW)
     GPIO.output(DIR2, CW)
+    for x in range(5):
+        GPIO.output(STEP1, GPIO.HIGH)
+        GPIO.output(STEP2, GPIO.HIGH)
+        GPIO.output(STEP3, GPIO.HIGH)
+        GPIO.output(STEP4, GPIO.HIGH)
+        sleep(delay)
+        GPIO.output(STEP1, GPIO.LOW)
+        GPIO.output(STEP2, GPIO.LOW)
+        GPIO.output(STEP3, GPIO.LOW)
+        GPIO.output(STEP4, GPIO.LOW)
+        sleep(delay)
 
         
     GPIO.output(DIR8, CW)
@@ -510,18 +620,59 @@ def Lturn():
         sleep(delay)
         GPIO.output(STEP4, GPIO.LOW)
         sleep(delay)
+
+    GPIO.output(DIR1, CCW)
+    GPIO.output(DIR3, CCW)
+    for x in range(30):
+        GPIO.output(STEP1, GPIO.HIGH)
+        GPIO.output(STEP3, GPIO.HIGH)
+        sleep(delay)
+        GPIO.output(STEP1, GPIO.LOW)
+        GPIO.output(STEP3, GPIO.LOW)
+        sleep(delay)
+        
+    for x in range(adjx):
+        GPIO.output(DIR2, CW)
+        GPIO.output(DIR4, CCW)
+        GPIO.output(STEP2, GPIO.HIGH)
+        GPIO.output(STEP4, GPIO.HIGH)
+        sleep(delay)
+        GPIO.output(STEP2, GPIO.LOW)
+        GPIO.output(STEP4, GPIO.LOW)
+        sleep(.3)
+
+    GPIO.output(DIR1, CW)
+    GPIO.output(DIR3, CW)
+    for x in range(35):
+        GPIO.output(STEP1, GPIO.HIGH)
+        GPIO.output(STEP3, GPIO.HIGH)
+        sleep(delay)
+        GPIO.output(STEP1, GPIO.LOW)
+        GPIO.output(STEP3, GPIO.LOW)
+        sleep(delay)
     
-    resetx(xcord, color)
+    # resetx(xcord, color)
 
 def Lprimeturn():
-    color = faceColor()
-    xcord, ycord = resetCordinates(color)
-    print(xcord)
-    print(ycord)
+    # color = faceColor()
+    # xcord, ycord = resetCordinates(color)
+    # print(xcord)
+    # print(ycord)
     GPIO.output(DIR4, CW)
     GPIO.output(DIR3, CW)
     GPIO.output(DIR1, CW)
     GPIO.output(DIR2, CW)
+    for x in range(5):
+        GPIO.output(STEP1, GPIO.HIGH)
+        GPIO.output(STEP2, GPIO.HIGH)
+        GPIO.output(STEP3, GPIO.HIGH)
+        GPIO.output(STEP4, GPIO.HIGH)
+        sleep(delay)
+        GPIO.output(STEP1, GPIO.LOW)
+        GPIO.output(STEP2, GPIO.LOW)
+        GPIO.output(STEP3, GPIO.LOW)
+        GPIO.output(STEP4, GPIO.LOW)
+        sleep(delay)
 
         
     GPIO.output(DIR8, CCW)
@@ -553,17 +704,57 @@ def Lprimeturn():
         GPIO.output(STEP4, GPIO.LOW)
         sleep(delay)
 
-    resetx(xcord, color)
+    GPIO.output(DIR1, CCW)
+    GPIO.output(DIR3, CCW)
+    for x in range(30):
+        GPIO.output(STEP1, GPIO.HIGH)
+        GPIO.output(STEP3, GPIO.HIGH)
+        sleep(delay)
+        GPIO.output(STEP1, GPIO.LOW)
+        GPIO.output(STEP3, GPIO.LOW)
+        sleep(delay)
+        
+    for x in range(adjx):
+        GPIO.output(DIR2, CW)
+        GPIO.output(DIR4, CCW)
+        GPIO.output(STEP2, GPIO.HIGH)
+        GPIO.output(STEP4, GPIO.HIGH)
+        sleep(delay)
+        GPIO.output(STEP2, GPIO.LOW)
+        GPIO.output(STEP4, GPIO.LOW)
+        sleep(.3)
+
+    GPIO.output(DIR1, CW)
+    GPIO.output(DIR3, CW)
+    for x in range(35):
+        GPIO.output(STEP1, GPIO.HIGH)
+        GPIO.output(STEP3, GPIO.HIGH)
+        sleep(delay)
+        GPIO.output(STEP1, GPIO.LOW)
+        GPIO.output(STEP3, GPIO.LOW)
+        sleep(delay)
+    # resetx(xcord, color)
 
 def Bturn():
-    color = faceColor()
-    xcord, ycord = resetCordinates(color)
-    print(xcord)
-    print(ycord)
+    # color = faceColor()
+    # xcord, ycord = resetCordinates(color)
+    # print(xcord)
+    # print(ycord)
     GPIO.output(DIR4, CW)
     GPIO.output(DIR3, CW)
     GPIO.output(DIR1, CW)
     GPIO.output(DIR2, CW)
+    for x in range(5):
+        GPIO.output(STEP1, GPIO.HIGH)
+        GPIO.output(STEP2, GPIO.HIGH)
+        GPIO.output(STEP3, GPIO.HIGH)
+        GPIO.output(STEP4, GPIO.HIGH)
+        sleep(delay)
+        GPIO.output(STEP1, GPIO.LOW)
+        GPIO.output(STEP2, GPIO.LOW)
+        GPIO.output(STEP3, GPIO.LOW)
+        GPIO.output(STEP4, GPIO.LOW)
+        sleep(delay)
 
         
     GPIO.output(DIR7, CW)
@@ -594,18 +785,60 @@ def Bturn():
         GPIO.output(STEP3, GPIO.LOW)
         sleep(delay)
     
-    resety(ycord, color)
+    GPIO.output(DIR2, CCW)
+    GPIO.output(DIR4, CCW)
+    for x in range(30):
+        GPIO.output(STEP2, GPIO.HIGH)
+        GPIO.output(STEP4, GPIO.HIGH)
+        sleep(delay)
+        GPIO.output(STEP2, GPIO.LOW)
+        GPIO.output(STEP4, GPIO.LOW)
+        sleep(delay)
+    
+
+    for x in range(adjy):
+        GPIO.output(DIR1, CW)
+        GPIO.output(DIR3, CCW)
+        GPIO.output(STEP1, GPIO.HIGH)
+        GPIO.output(STEP3, GPIO.HIGH)
+        sleep(delay)
+        GPIO.output(STEP1, GPIO.LOW)
+        GPIO.output(STEP3, GPIO.LOW)
+        sleep(.3)
+
+    GPIO.output(DIR2, CW)
+    GPIO.output(DIR4, CW)
+    for x in range(35):
+        GPIO.output(STEP2, GPIO.HIGH)
+        GPIO.output(STEP4, GPIO.HIGH)
+        sleep(delay)
+        GPIO.output(STEP2, GPIO.LOW)
+        GPIO.output(STEP4, GPIO.LOW)
+        sleep(delay)
+    
+    # resety(ycord, color)
 
 def Bprimeturn():
-    color = faceColor()
-    xcord, ycord = resetCordinates(color)
-    print(xcord)
-    print(ycord)
+    # color = faceColor()
+    # xcord, ycord = resetCordinates(color)
+    # print(xcord)
+    # print(ycord)
 
     GPIO.output(DIR4, CW)
     GPIO.output(DIR3, CW)
     GPIO.output(DIR1, CW)
     GPIO.output(DIR2, CW)
+    for x in range(5):
+        GPIO.output(STEP1, GPIO.HIGH)
+        GPIO.output(STEP2, GPIO.HIGH)
+        GPIO.output(STEP3, GPIO.HIGH)
+        GPIO.output(STEP4, GPIO.HIGH)
+        sleep(delay)
+        GPIO.output(STEP1, GPIO.LOW)
+        GPIO.output(STEP2, GPIO.LOW)
+        GPIO.output(STEP3, GPIO.LOW)
+        GPIO.output(STEP4, GPIO.LOW)
+        sleep(delay)
 
         
     GPIO.output(DIR7, CCW)
@@ -636,18 +869,59 @@ def Bprimeturn():
         GPIO.output(STEP3, GPIO.LOW)
         sleep(delay)
 
-    resety(ycord, color)
+    # resety(ycord, color)
+    GPIO.output(DIR2, CCW)
+    GPIO.output(DIR4, CCW)
+    for x in range(30):
+        GPIO.output(STEP2, GPIO.HIGH)
+        GPIO.output(STEP4, GPIO.HIGH)
+        sleep(delay)
+        GPIO.output(STEP2, GPIO.LOW)
+        GPIO.output(STEP4, GPIO.LOW)
+        sleep(delay)
+    
+
+    for x in range(adjy):
+        GPIO.output(DIR1, CCW)
+        GPIO.output(DIR3, CW)
+        GPIO.output(STEP1, GPIO.HIGH)
+        GPIO.output(STEP3, GPIO.HIGH)
+        sleep(delay)
+        GPIO.output(STEP1, GPIO.LOW)
+        GPIO.output(STEP3, GPIO.LOW)
+        sleep(.3)
+
+    GPIO.output(DIR2, CW)
+    GPIO.output(DIR4, CW)
+    for x in range(35):
+        GPIO.output(STEP2, GPIO.HIGH)
+        GPIO.output(STEP4, GPIO.HIGH)
+        sleep(delay)
+        GPIO.output(STEP2, GPIO.LOW)
+        GPIO.output(STEP4, GPIO.LOW)
+        sleep(delay)
 
 def Fturn():
-    color = faceColor()
-    xcord, ycord = resetCordinates(color)
-    print(xcord)
-    print(ycord)
+    # color = faceColor()
+    # xcord, ycord = resetCordinates(color)
+    # print(xcord)
+    # print(ycord)
 
     GPIO.output(DIR4, CW)
     GPIO.output(DIR3, CW)
     GPIO.output(DIR1, CW)
     GPIO.output(DIR2, CW)
+    for x in range(5):
+        GPIO.output(STEP1, GPIO.HIGH)
+        GPIO.output(STEP2, GPIO.HIGH)
+        GPIO.output(STEP3, GPIO.HIGH)
+        GPIO.output(STEP4, GPIO.HIGH)
+        sleep(delay)
+        GPIO.output(STEP1, GPIO.LOW)
+        GPIO.output(STEP2, GPIO.LOW)
+        GPIO.output(STEP3, GPIO.LOW)
+        GPIO.output(STEP4, GPIO.LOW)
+        sleep(delay)
 
     GPIO.output(DIR6, CW)
     for x in range(50):
@@ -677,18 +951,59 @@ def Fturn():
         GPIO.output(STEP1, GPIO.LOW)
         sleep(delay)
 
-    resety(ycord, color)
+    GPIO.output(DIR2, CCW)
+    GPIO.output(DIR4, CCW)
+    for x in range(30):
+        GPIO.output(STEP2, GPIO.HIGH)
+        GPIO.output(STEP4, GPIO.HIGH)
+        sleep(delay)
+        GPIO.output(STEP2, GPIO.LOW)
+        GPIO.output(STEP4, GPIO.LOW)
+        sleep(delay)
+    
+
+    for x in range(adjy):
+        GPIO.output(DIR1, CW)
+        GPIO.output(DIR3, CCW)
+        GPIO.output(STEP1, GPIO.HIGH)
+        GPIO.output(STEP3, GPIO.HIGH)
+        sleep(delay)
+        GPIO.output(STEP1, GPIO.LOW)
+        GPIO.output(STEP3, GPIO.LOW)
+        sleep(.3)
+
+    GPIO.output(DIR2, CW)
+    GPIO.output(DIR4, CW)
+    for x in range(35):
+        GPIO.output(STEP2, GPIO.HIGH)
+        GPIO.output(STEP4, GPIO.HIGH)
+        sleep(delay)
+        GPIO.output(STEP2, GPIO.LOW)
+        GPIO.output(STEP4, GPIO.LOW)
+        sleep(delay)
+    # resety(ycord, color)
 
 def Fprimeturn():
-    color = faceColor()
-    xcord, ycord = resetCordinates(color)
-    print(xcord)
-    print(ycord)
+    # color = faceColor()
+    # xcord, ycord = resetCordinates(color)
+    # print(xcord)
+    # print(ycord)
 
     GPIO.output(DIR4, CW)
     GPIO.output(DIR3, CW)
     GPIO.output(DIR1, CW)
     GPIO.output(DIR2, CW)
+    for x in range(5):
+        GPIO.output(STEP1, GPIO.HIGH)
+        GPIO.output(STEP2, GPIO.HIGH)
+        GPIO.output(STEP3, GPIO.HIGH)
+        GPIO.output(STEP4, GPIO.HIGH)
+        sleep(delay)
+        GPIO.output(STEP1, GPIO.LOW)
+        GPIO.output(STEP2, GPIO.LOW)
+        GPIO.output(STEP3, GPIO.LOW)
+        GPIO.output(STEP4, GPIO.LOW)
+        sleep(delay)
 
         
     GPIO.output(DIR6, CCW)
@@ -719,7 +1034,37 @@ def Fprimeturn():
         GPIO.output(STEP1, GPIO.LOW)
         sleep(delay)
 
-    resety(ycord, color)
+    GPIO.output(DIR2, CCW)
+    GPIO.output(DIR4, CCW)
+    for x in range(30):
+        GPIO.output(STEP2, GPIO.HIGH)
+        GPIO.output(STEP4, GPIO.HIGH)
+        sleep(delay)
+        GPIO.output(STEP2, GPIO.LOW)
+        GPIO.output(STEP4, GPIO.LOW)
+        sleep(delay)
+    
+
+    for x in range(adjy):
+        GPIO.output(DIR1, CW)
+        GPIO.output(DIR3, CCW)
+        GPIO.output(STEP1, GPIO.HIGH)
+        GPIO.output(STEP3, GPIO.HIGH)
+        sleep(delay)
+        GPIO.output(STEP1, GPIO.LOW)
+        GPIO.output(STEP3, GPIO.LOW)
+        sleep(.3)
+
+    GPIO.output(DIR2, CW)
+    GPIO.output(DIR4, CW)
+    for x in range(35):
+        GPIO.output(STEP2, GPIO.HIGH)
+        GPIO.output(STEP4, GPIO.HIGH)
+        sleep(delay)
+        GPIO.output(STEP2, GPIO.LOW)
+        GPIO.output(STEP4, GPIO.LOW)
+        sleep(delay)
+    # resety(ycord, color)
 
 def Dturn():
     Xturn()
@@ -940,247 +1285,247 @@ def colorfinder():
             break
     return faceColors    
 
-def faceColor():
-    #Determine the color of the face
-    face = "red"
+# def faceColor():
+#     #Determine the color of the face
+#     face = "red"
 
-    camera.capture("/home/pi/Desktop/cube.jpg")
+#     camera.capture("/home/pi/Desktop/cube.jpg")
         
         
-    im = Image.open("/home/pi/Desktop/cube.jpg")
+#     im = Image.open("/home/pi/Desktop/cube.jpg")
 
-    im_crop = im.crop(((res/3)+80, (res/3)+80, (res/3) + (res/3) - 80, (res/3) + (res/3)-80))
-    im_crop.save("/home/pi/Desktop/cubecropped.jpg")
-    img = cv2.imread("/home/pi/Desktop/cubecropped.jpg")
-    hsv_img = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
+#     im_crop = im.crop(((res/3)+80, (res/3)+80, (res/3) + (res/3) - 80, (res/3) + (res/3)-80))
+#     im_crop.save("/home/pi/Desktop/cubecropped.jpg")
+#     img = cv2.imread("/home/pi/Desktop/cubecropped.jpg")
+#     hsv_img = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
     
-    #White color
-    low_white = np.array([0, 0, 0])
-    high_white = np.array([255, 99, 255])
-    white_mask = cv2.inRange(hsv_img, low_white, high_white)
-    contours1, _ = cv2.findContours(white_mask, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
-    contours1 = sorted(contours1, key=lambda x:cv2.contourArea(x), reverse=True)
+#     #White color
+#     low_white = np.array([0, 0, 0])
+#     high_white = np.array([255, 99, 255])
+#     white_mask = cv2.inRange(hsv_img, low_white, high_white)
+#     contours1, _ = cv2.findContours(white_mask, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
+#     contours1 = sorted(contours1, key=lambda x:cv2.contourArea(x), reverse=True)
         
-    for cnt in contours1:
-        area1 = cv2.contourArea(cnt)
-        if area1 > 5000:
-            face = "white"
+#     for cnt in contours1:
+#         area1 = cv2.contourArea(cnt)
+#         if area1 > 5000:
+#             face = "white"
 
     
-    #yellow color
-    low_yellow = np.array([23, 108, 90])
-    high_yellow = np.array([40, 255, 255])
-    yellow_mask = cv2.inRange(hsv_img, low_yellow, high_yellow)
-    contours2, _ = cv2.findContours(yellow_mask, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
-    contours2 = sorted(contours2, key=lambda x:cv2.contourArea(x), reverse=True)
+#     #yellow color
+#     low_yellow = np.array([23, 108, 90])
+#     high_yellow = np.array([40, 255, 255])
+#     yellow_mask = cv2.inRange(hsv_img, low_yellow, high_yellow)
+#     contours2, _ = cv2.findContours(yellow_mask, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
+#     contours2 = sorted(contours2, key=lambda x:cv2.contourArea(x), reverse=True)
         
-    for cnt in contours2:
-        area2 = cv2.contourArea(cnt)
-        if area2 > 5000:
-            face = "yellow"
+#     for cnt in contours2:
+#         area2 = cv2.contourArea(cnt)
+#         if area2 > 5000:
+#             face = "yellow"
     
-    #blue color
-    low_blue = np.array([111, 155, 100])
-    high_blue = np.array([122, 255, 255])
-    blue_mask = cv2.inRange(hsv_img, low_blue, high_blue)
-    contours3, _ = cv2.findContours(blue_mask, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
-    contours3 = sorted(contours3, key=lambda x:cv2.contourArea(x), reverse=True)
+#     #blue color
+#     low_blue = np.array([111, 155, 100])
+#     high_blue = np.array([122, 255, 255])
+#     blue_mask = cv2.inRange(hsv_img, low_blue, high_blue)
+#     contours3, _ = cv2.findContours(blue_mask, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
+#     contours3 = sorted(contours3, key=lambda x:cv2.contourArea(x), reverse=True)
         
-    for cnt in contours3:
-        area3 = cv2.contourArea(cnt)
-        if area3 > 5000:
-            face = "blue"
+#     for cnt in contours3:
+#         area3 = cv2.contourArea(cnt)
+#         if area3 > 5000:
+#             face = "blue"
             
-    #green color
-    low_green = np.array([36, 171, 0])
-    high_green = np.array([71, 255, 255])
-    green_mask = cv2.inRange(hsv_img, low_green, high_green)
-    contours4, _ = cv2.findContours(green_mask, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
-    contours4 = sorted(contours4, key=lambda x:cv2.contourArea(x), reverse=True)
+#     #green color
+#     low_green = np.array([36, 171, 0])
+#     high_green = np.array([71, 255, 255])
+#     green_mask = cv2.inRange(hsv_img, low_green, high_green)
+#     contours4, _ = cv2.findContours(green_mask, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
+#     contours4 = sorted(contours4, key=lambda x:cv2.contourArea(x), reverse=True)
         
-    for cnt in contours4:
-        area4 = cv2.contourArea(cnt)
-        if area4 > 5000:
-            face = "green"
+#     for cnt in contours4:
+#         area4 = cv2.contourArea(cnt)
+#         if area4 > 5000:
+#             face = "green"
             
-    #Orange color
-    low_orange = np.array([0, 2, 179])
-    high_orange = np.array([15, 255, 255])
-    orange_mask = cv2.inRange(hsv_img, low_orange, high_orange)
-    contours5, _ = cv2.findContours(orange_mask, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
-    contours5 = sorted(contours5, key=lambda x:cv2.contourArea(x), reverse=True)
+#     #Orange color
+#     low_orange = np.array([0, 2, 179])
+#     high_orange = np.array([15, 255, 255])
+#     orange_mask = cv2.inRange(hsv_img, low_orange, high_orange)
+#     contours5, _ = cv2.findContours(orange_mask, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
+#     contours5 = sorted(contours5, key=lambda x:cv2.contourArea(x), reverse=True)
         
-    for cnt in contours5:
-        area5 = cv2.contourArea(cnt)
-        if area5 > 5000:
-            face = "orange"
+#     for cnt in contours5:
+#         area5 = cv2.contourArea(cnt)
+#         if area5 > 5000:
+#             face = "orange"
             
-    return face
+#     return face
 
-def resetCordinates(color):
-    camera.capture("/home/pi/Desktop/track.jpg")
-    im = Image.open("/home/pi/Desktop/track.jpg")
-    #im_crop = im.crop(((res/3)+80, (res/3)+80, (res/3) + (res/3) - 80, (res/3) + (res/3)-80))
-    img = cv2.imread("/home/pi/Desktop/track.jpg")
-    #im_crop.save("/home/pi/Desktop/trackcropped.jpg")
-    #img = cv2.imread("/home/pi/Desktop/trackcropped.jpg")
-    hsv_img = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
-    if color == "white":
-        low_white = np.array([0, 0, 0])
-        high_white = np.array([255, 99, 255])
-        white_mask = cv2.inRange(hsv_img, low_white, high_white)
-        contours1, _ = cv2.findContours(white_mask, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
-        contours1 = sorted(contours1, key=lambda x:cv2.contourArea(x), reverse=True)
+# def resetCordinates(color):
+#     camera.capture("/home/pi/Desktop/track.jpg")
+#     im = Image.open("/home/pi/Desktop/track.jpg")
+#     #im_crop = im.crop(((res/3)+80, (res/3)+80, (res/3) + (res/3) - 80, (res/3) + (res/3)-80))
+#     img = cv2.imread("/home/pi/Desktop/track.jpg")
+#     #im_crop.save("/home/pi/Desktop/trackcropped.jpg")
+#     #img = cv2.imread("/home/pi/Desktop/trackcropped.jpg")
+#     hsv_img = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
+#     if color == "white":
+#         low_white = np.array([0, 0, 0])
+#         high_white = np.array([255, 99, 255])
+#         white_mask = cv2.inRange(hsv_img, low_white, high_white)
+#         contours1, _ = cv2.findContours(white_mask, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
+#         contours1 = sorted(contours1, key=lambda x:cv2.contourArea(x), reverse=True)
             
-        for cnt in contours1:
-            area1 = cv2.contourArea(cnt)
-            if area1 > 5000:
-                contoursColor = contours1
+#         for cnt in contours1:
+#             area1 = cv2.contourArea(cnt)
+#             if area1 > 5000:
+#                 contoursColor = contours1
 
-    if color == "yellow":
-        #yellow color
-        low_yellow = np.array([23, 108, 90])
-        high_yellow = np.array([40, 255, 255])
-        yellow_mask = cv2.inRange(hsv_img, low_yellow, high_yellow)
-        contours2, _ = cv2.findContours(yellow_mask, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
-        contours2 = sorted(contours2, key=lambda x:cv2.contourArea(x), reverse=True)
+#     if color == "yellow":
+#         #yellow color
+#         low_yellow = np.array([23, 108, 90])
+#         high_yellow = np.array([40, 255, 255])
+#         yellow_mask = cv2.inRange(hsv_img, low_yellow, high_yellow)
+#         contours2, _ = cv2.findContours(yellow_mask, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
+#         contours2 = sorted(contours2, key=lambda x:cv2.contourArea(x), reverse=True)
             
-        for cnt in contours2:
-            area2 = cv2.contourArea(cnt)
-            if area2 > 5000:
-                contoursColor = contours2
-    if color == "blue":
-        #blue color
-        low_blue = np.array([111, 155, 100])
-        high_blue = np.array([122, 255, 255])
-        blue_mask = cv2.inRange(hsv_img, low_blue, high_blue)
-        contours3, _ = cv2.findContours(blue_mask, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
-        contours3 = sorted(contours3, key=lambda x:cv2.contourArea(x), reverse=True)
+#         for cnt in contours2:
+#             area2 = cv2.contourArea(cnt)
+#             if area2 > 5000:
+#                 contoursColor = contours2
+#     if color == "blue":
+#         #blue color
+#         low_blue = np.array([111, 155, 100])
+#         high_blue = np.array([122, 255, 255])
+#         blue_mask = cv2.inRange(hsv_img, low_blue, high_blue)
+#         contours3, _ = cv2.findContours(blue_mask, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
+#         contours3 = sorted(contours3, key=lambda x:cv2.contourArea(x), reverse=True)
             
-        for cnt in contours3:
-            area3 = cv2.contourArea(cnt)
-            if area3 > 5000:
-                contoursColor = contours3
+#         for cnt in contours3:
+#             area3 = cv2.contourArea(cnt)
+#             if area3 > 5000:
+#                 contoursColor = contours3
 
-    if color == "green":
-        #green color
-        low_green = np.array([36, 171, 0])
-        high_green = np.array([71, 255, 255])
-        green_mask = cv2.inRange(hsv_img, low_green, high_green)
-        contours4, _ = cv2.findContours(green_mask, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
-        contours4 = sorted(contours4, key=lambda x:cv2.contourArea(x), reverse=True)
+#     if color == "green":
+#         #green color
+#         low_green = np.array([36, 171, 0])
+#         high_green = np.array([71, 255, 255])
+#         green_mask = cv2.inRange(hsv_img, low_green, high_green)
+#         contours4, _ = cv2.findContours(green_mask, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
+#         contours4 = sorted(contours4, key=lambda x:cv2.contourArea(x), reverse=True)
             
-        for cnt in contours4:
-            area4 = cv2.contourArea(cnt)
-            if area4 > 5000:
-                contoursColor = contours4
+#         for cnt in contours4:
+#             area4 = cv2.contourArea(cnt)
+#             if area4 > 5000:
+#                 contoursColor = contours4
 
-    if color == "orange":  
-        #Orange color
-        low_orange = np.array([0, 2, 179])
-        high_orange = np.array([15, 255, 255])
-        orange_mask = cv2.inRange(hsv_img, low_orange, high_orange)
-        contours5, _ = cv2.findContours(orange_mask, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
-        contours5 = sorted(contours5, key=lambda x:cv2.contourArea(x), reverse=True)
+#     if color == "orange":  
+#         #Orange color
+#         low_orange = np.array([0, 2, 179])
+#         high_orange = np.array([15, 255, 255])
+#         orange_mask = cv2.inRange(hsv_img, low_orange, high_orange)
+#         contours5, _ = cv2.findContours(orange_mask, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
+#         contours5 = sorted(contours5, key=lambda x:cv2.contourArea(x), reverse=True)
             
-        for cnt in contours5:
-            area5 = cv2.contourArea(cnt)
-            if area5 > 5000:
-                contoursColor = contours5
+#         for cnt in contours5:
+#             area5 = cv2.contourArea(cnt)
+#             if area5 > 5000:
+#                 contoursColor = contours5
     
-    if color == "red":  
-        #Red color
-        low_red = np.array([150, 43, 142])
-        high_red = np.array([255, 255, 255])
-        red_mask = cv2.inRange(hsv_img, low_red, high_red)
-        contours6, _ = cv2.findContours(red_mask, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
-        contours6 = sorted(contours6, key=lambda x:cv2.contourArea(x), reverse=True)
+#     if color == "red":  
+#         #Red color
+#         low_red = np.array([150, 43, 142])
+#         high_red = np.array([255, 255, 255])
+#         red_mask = cv2.inRange(hsv_img, low_red, high_red)
+#         contours6, _ = cv2.findContours(red_mask, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
+#         contours6 = sorted(contours6, key=lambda x:cv2.contourArea(x), reverse=True)
             
-        for cnt in contours6:
-            area6 = cv2.contourArea(cnt)
-            if area6 > 5000:
-                contoursColor = contours6
+#         for cnt in contours6:
+#             area6 = cv2.contourArea(cnt)
+#             if area6 > 5000:
+#                 contoursColor = contours6
 
 
-    for cnt in contoursColor:
-        (x, y, w, h)= cv2.boundingRect(cnt)
+#     for cnt in contoursColor:
+#         (x, y, w, h)= cv2.boundingRect(cnt)
 
-        x_medium = int((x + x + w) / 2)
-        y_medium = int((y + y + h)/ 2)
-        break
-    #cv2.rectangle(img, (x, y), (x + w, y+h), (0, 255, 0), 2)
+#         x_medium = int((x + x + w) / 2)
+#         y_medium = int((y + y + h)/ 2)
+#         break
+#     #cv2.rectangle(img, (x, y), (x + w, y+h), (0, 255, 0), 2)
 
-    #cv2.line(img, (x_medium, 0), (x_medium, 720), (255, 255, 0), 2)
-    #cv2.line(img, (0, y_medium), (720, y_medium), (255, 255, 0), 2)
-    return x_medium, y_medium
-    #cv2.imshow("", mask)
-    # print("x_med")
-    # print(x_medium)
-    # print("y_med")
-    # print(y_medium)
-    #print(y)
-    # cv2.imshow('RGB', img)
-    # cv2.imshow('mask', orange_mask)
+#     #cv2.line(img, (x_medium, 0), (x_medium, 720), (255, 255, 0), 2)
+    # #cv2.line(img, (0, y_medium), (720, y_medium), (255, 255, 0), 2)
+    # return x_medium, y_medium
+    # #cv2.imshow("", mask)
+    # # print("x_med")
+    # # print(x_medium)
+    # # print("y_med")
+    # # print(y_medium)
+    # #print(y)
+    # # cv2.imshow('RGB', img)
+    # # cv2.imshow('mask', orange_mask)
 
-def resety(ycord, color):
-    #xafter, yafter = resetCordinates(color)
-    #while (not ycord + sensitivity > yafter and ycord - sensitivity < yafter):
-    xafter, yafter = resetCordinates(color)
-    if yafter < ycord - sensitivity:
-        for x in range(2):
-            GPIO.output(DIR1, CCW)
-            GPIO.output(DIR3, CW)
-            GPIO.output(STEP1, GPIO.HIGH)
-            GPIO.output(STEP3, GPIO.HIGH)
-            sleep(delay)
-            GPIO.output(STEP1, GPIO.LOW)
-            GPIO.output(STEP3, GPIO.LOW)
-            sleep(.3)
-        print("back")
+# def resety(ycord, color):
+#     #xafter, yafter = resetCordinates(color)
+#     #while (not ycord + sensitivity > yafter and ycord - sensitivity < yafter):
+#     xafter, yafter = resetCordinates(color)
+#     if yafter < ycord - sensitivity:
+#         for x in range(4):
+#             GPIO.output(DIR1, CCW)
+#             GPIO.output(DIR3, CW)
+#             GPIO.output(STEP1, GPIO.HIGH)
+#             GPIO.output(STEP3, GPIO.HIGH)
+#             sleep(delay)
+#             GPIO.output(STEP1, GPIO.LOW)
+#             GPIO.output(STEP3, GPIO.LOW)
+#             sleep(.3)
+#         print("back")
 
-    elif yafter > ycord + sensitivity:
-        for x in range(2):
-            GPIO.output(DIR1, CW)
-            GPIO.output(DIR3, CCW)
-            GPIO.output(STEP1, GPIO.HIGH)
-            GPIO.output(STEP3, GPIO.HIGH)
-            sleep(delay)
-            GPIO.output(STEP1, GPIO.LOW)
-            GPIO.output(STEP3, GPIO.LOW)
-            sleep(.3)
-        print("forward")
-    print(xafter)
-    print(yafter)
+#     elif yafter > ycord + sensitivity:
+#         for x in range(4):
+#             GPIO.output(DIR1, CW)
+#             GPIO.output(DIR3, CCW)
+#             GPIO.output(STEP1, GPIO.HIGH)
+#             GPIO.output(STEP3, GPIO.HIGH)
+#             sleep(delay)
+#             GPIO.output(STEP1, GPIO.LOW)
+#             GPIO.output(STEP3, GPIO.LOW)
+#             sleep(.3)
+#         print("forward")
+#     print(xafter)
+#     print(yafter)
 
-def resetx(xcord, color):
-    xafter, yafter = resetCordinates(color)
-    #while (not xcord + sensitivity > xafter and xcord - sensitivity < xafter):
-    #xafter, yafter = resetCordinates(color)
-    if xafter < xcord - sensitivity:
-        for x in range(2):
-            GPIO.output(DIR2, CW)
-            GPIO.output(DIR4, CCW)
-            GPIO.output(STEP2, GPIO.HIGH)
-            GPIO.output(STEP4, GPIO.HIGH)
-            sleep(delay)
-            GPIO.output(STEP2, GPIO.LOW)
-            GPIO.output(STEP4, GPIO.LOW)
-            sleep(.3)
-        print("left")
+# def resetx(xcord, color):
+#     xafter, yafter = resetCordinates(color)
+#     #while (not xcord + sensitivity > xafter and xcord - sensitivity < xafter):
+#     #xafter, yafter = resetCordinates(color)
+#     if xafter < xcord - sensitivity:
+#         for x in range(4):
+#             GPIO.output(DIR2, CW)
+#             GPIO.output(DIR4, CCW)
+#             GPIO.output(STEP2, GPIO.HIGH)
+#             GPIO.output(STEP4, GPIO.HIGH)
+#             sleep(delay)
+#             GPIO.output(STEP2, GPIO.LOW)
+#             GPIO.output(STEP4, GPIO.LOW)
+#             sleep(.3)
+#         print("left")
 
-    elif xafter > xcord + sensitivity:
-        for x in range(2):
-            GPIO.output(DIR2, CCW)
-            GPIO.output(DIR4, CW)
-            GPIO.output(STEP2, GPIO.HIGH)
-            GPIO.output(STEP4, GPIO.HIGH)
-            sleep(delay)
-            GPIO.output(STEP2, GPIO.LOW)
-            GPIO.output(STEP4, GPIO.LOW)
-            sleep(.3)
-        print("right")
-    print(xafter)
-    print(yafter)
+#     elif xafter > xcord + sensitivity:
+#         for x in range(4):
+#             GPIO.output(DIR2, CCW)
+#             GPIO.output(DIR4, CW)
+#             GPIO.output(STEP2, GPIO.HIGH)
+#             GPIO.output(STEP4, GPIO.HIGH)
+#             sleep(delay)
+#             GPIO.output(STEP2, GPIO.LOW)
+#             GPIO.output(STEP4, GPIO.LOW)
+#             sleep(.3)
+#         print("right")
+#     print(xafter)
+#     print(yafter)
 #it will do the algo to get that specific corner to where it should go.
 def cornerActions():
     mAQN = [A, Q, N]
@@ -2769,4 +3114,4 @@ def main():
 
 #main()
 
-Rturn()
+AlteredYPermutation()
