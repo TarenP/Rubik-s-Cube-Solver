@@ -46,6 +46,7 @@ GPIO.setup(STEP8, GPIO.OUT)
 
 #delay between steps for motor turns
 delay = .015
+sdelay = .03
 #Sensitivity for reseting cube position after turn
 sensitivity = 3
 
@@ -434,11 +435,28 @@ def Rturn():
         sleep(delay)
 
     GPIO.output(DIR2, CW)
-    for x in range(35):
+    for x in range(30):
         GPIO.output(STEP2, GPIO.HIGH)
-        sleep(delay)
+        sleep(sdelay)
         GPIO.output(STEP2, GPIO.LOW)
+        sleep(sdelay)
+    
+    GPIO.output(DIR4, CW)
+    GPIO.output(DIR3, CW)
+    GPIO.output(DIR1, CW)
+    GPIO.output(DIR2, CW)
+    for x in range(5):
+        GPIO.output(STEP1, GPIO.HIGH)
+        GPIO.output(STEP2, GPIO.HIGH)
+        GPIO.output(STEP3, GPIO.HIGH)
+        GPIO.output(STEP4, GPIO.HIGH)
         sleep(delay)
+        GPIO.output(STEP1, GPIO.LOW)
+        GPIO.output(STEP2, GPIO.LOW)
+        GPIO.output(STEP3, GPIO.LOW)
+        GPIO.output(STEP4, GPIO.LOW)
+        sleep(delay)
+        
     
     # GPIO.output(DIR5, CCW)
     # for x in range(50):
@@ -455,35 +473,6 @@ def Rturn():
     #     sleep(delay)
     #     GPIO.output(STEP5, GPIO.LOW)
     #     sleep(delay)
-    GPIO.output(DIR1, CCW)
-    GPIO.output(DIR3, CCW)
-    for x in range(30):
-        GPIO.output(STEP1, GPIO.HIGH)
-        GPIO.output(STEP3, GPIO.HIGH)
-        sleep(delay)
-        GPIO.output(STEP1, GPIO.LOW)
-        GPIO.output(STEP3, GPIO.LOW)
-        sleep(delay)
-        
-    for x in range(adjx):
-        GPIO.output(DIR2, CCW)
-        GPIO.output(DIR4, CW)
-        GPIO.output(STEP2, GPIO.HIGH)
-        GPIO.output(STEP4, GPIO.HIGH)
-        sleep(delay)
-        GPIO.output(STEP2, GPIO.LOW)
-        GPIO.output(STEP4, GPIO.LOW)
-        sleep(.3)
-
-    GPIO.output(DIR1, CW)
-    GPIO.output(DIR3, CW)
-    for x in range(35):
-        GPIO.output(STEP1, GPIO.HIGH)
-        GPIO.output(STEP3, GPIO.HIGH)
-        sleep(delay)
-        GPIO.output(STEP1, GPIO.LOW)
-        GPIO.output(STEP3, GPIO.LOW)
-        sleep(delay)
 
     
     
