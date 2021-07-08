@@ -401,7 +401,7 @@ def Rturn():
     GPIO.output(DIR3, CW)
     GPIO.output(DIR1, CW)
     GPIO.output(DIR2, CW)
-    for x in range(5):
+    for x in range(3):
         GPIO.output(STEP1, GPIO.HIGH)
         GPIO.output(STEP2, GPIO.HIGH)
         GPIO.output(STEP3, GPIO.HIGH)
@@ -440,12 +440,13 @@ def Rturn():
         sleep(sdelay)
         GPIO.output(STEP2, GPIO.LOW)
         sleep(sdelay)
-    
+    sleep(.2)
+
     GPIO.output(DIR4, CW)
     GPIO.output(DIR3, CW)
     GPIO.output(DIR1, CW)
     GPIO.output(DIR2, CW)
-    for x in range(5):
+    for x in range(3):
         GPIO.output(STEP1, GPIO.HIGH)
         GPIO.output(STEP2, GPIO.HIGH)
         GPIO.output(STEP3, GPIO.HIGH)
@@ -3103,4 +3104,4 @@ def main():
 
 #main()
 
-AlteredYPermutation()
+Rturn()
