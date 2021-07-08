@@ -1020,10 +1020,10 @@ def faceColor():
 def resetCordinates(color):
     camera.capture("/home/pi/Desktop/track.jpg")
     im = Image.open("/home/pi/Desktop/track.jpg")
-    im_crop = im.crop(((res/3)+80, (res/3)+80, (res/3) + (res/3) - 80, (res/3) + (res/3)-80))
-    #img = cv2.imread("/home/pi/Desktop/track.jpg")
-    im_crop.save("/home/pi/Desktop/trackcropped.jpg")
-    img = cv2.imread("/home/pi/Desktop/trackcropped.jpg")
+    #im_crop = im.crop(((res/3)+80, (res/3)+80, (res/3) + (res/3) - 80, (res/3) + (res/3)-80))
+    img = cv2.imread("/home/pi/Desktop/track.jpg")
+    #im_crop.save("/home/pi/Desktop/trackcropped.jpg")
+    #img = cv2.imread("/home/pi/Desktop/trackcropped.jpg")
     hsv_img = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
     if color == "white":
         low_white = np.array([0, 0, 0])
