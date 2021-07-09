@@ -2681,6 +2681,22 @@ sleep(.3)
 
 #Done with Yellow
 
+GPIO.output(DIR4, CW)
+GPIO.output(DIR3, CW)
+GPIO.output(DIR1, CW)
+GPIO.output(DIR2, CW)
+for x in range(5):
+    GPIO.output(STEP1, GPIO.HIGH)
+    GPIO.output(STEP2, GPIO.HIGH)
+    GPIO.output(STEP3, GPIO.HIGH)
+    GPIO.output(STEP4, GPIO.HIGH)
+    sleep(sdelay)
+    GPIO.output(STEP1, GPIO.LOW)
+    GPIO.output(STEP2, GPIO.LOW)
+    GPIO.output(STEP3, GPIO.LOW)
+    GPIO.output(STEP4, GPIO.LOW)
+    sleep(sdelay)
+
 
 
 Xprimeturn()
@@ -2734,6 +2750,7 @@ for x in range(3):
     GPIO.output(STEP3, GPIO.LOW)
     GPIO.output(STEP4, GPIO.LOW)
     sleep(sdelay)
+sleep(.3)
 
 
 GPIO.output(DIR1, CCW)
@@ -2785,6 +2802,7 @@ for x in range(3):
     GPIO.output(STEP3, GPIO.LOW)
     GPIO.output(STEP4, GPIO.LOW)
     sleep(sdelay)
+sleep(.3)
 
 
 GPIO.output(DIR2, CCW)
@@ -2833,77 +2851,59 @@ for x in range(3):
     GPIO.output(STEP3, GPIO.LOW)
     GPIO.output(STEP4, GPIO.LOW)
     sleep(sdelay)
-
+sleep(.3)
 
 #Done With Red
 
 
-
-
+GPIO.output(DIR4, CW)
+GPIO.output(DIR3, CW)
+GPIO.output(DIR1, CW)
+GPIO.output(DIR2, CW)
+for x in range(5):
+    GPIO.output(STEP1, GPIO.HIGH)
+    GPIO.output(STEP2, GPIO.HIGH)
+    GPIO.output(STEP3, GPIO.HIGH)
+    GPIO.output(STEP4, GPIO.HIGH)
+    sleep(sdelay)
+    GPIO.output(STEP1, GPIO.LOW)
+    GPIO.output(STEP2, GPIO.LOW)
+    GPIO.output(STEP3, GPIO.LOW)
+    GPIO.output(STEP4, GPIO.LOW)
+    sleep(sdelay)
 
 
 
 Xprimeturn()
 
- #Turn Motor 5
+GPIO.output(DIR4, CCW)
 GPIO.output(DIR2, CCW)
 for x in range(30):
     GPIO.output(STEP2, GPIO.HIGH)
+    GPIO.output(STEP4, GPIO.HIGH)
     sleep(delay)
     GPIO.output(STEP2, GPIO.LOW)
+    GPIO.output(STEP4, GPIO.LOW)
     sleep(delay)
 
 
 GPIO.output(DIR5, CW)
-for x in range(50):
-    GPIO.output(STEP5, GPIO.HIGH)
-    sleep(delay)
-    GPIO.output(STEP5, GPIO.LOW)
-    sleep(delay)
-
-GPIO.output(DIR2, CW)
-for x in range(30):
-    GPIO.output(STEP2, GPIO.HIGH)
-    sleep(sdelay)
-    GPIO.output(STEP2, GPIO.LOW)
-    sleep(sdelay)
-sleep(.3)
-
-GPIO.output(DIR4, CW)
-GPIO.output(DIR3, CW)
-GPIO.output(DIR1, CW)
-GPIO.output(DIR2, CW)
-for x in range(3):
-    GPIO.output(STEP1, GPIO.HIGH)
-    GPIO.output(STEP2, GPIO.HIGH)
-    GPIO.output(STEP3, GPIO.HIGH)
-    GPIO.output(STEP4, GPIO.HIGH)
-    sleep(sdelay)
-    GPIO.output(STEP1, GPIO.LOW)
-    GPIO.output(STEP2, GPIO.LOW)
-    GPIO.output(STEP3, GPIO.LOW)
-    GPIO.output(STEP4, GPIO.LOW)
-    sleep(sdelay)
-
-#Turn Motor 8
-GPIO.output(DIR4, CCW)
-for x in range(30):
-    GPIO.output(STEP4, GPIO.HIGH)
-    sleep(delay)
-    GPIO.output(STEP4, GPIO.LOW)
-    sleep(delay)
-
 GPIO.output(DIR8, CCW)
 for x in range(50):
+    GPIO.output(STEP5, GPIO.HIGH)
     GPIO.output(STEP8, GPIO.HIGH)
     sleep(delay)
+    GPIO.output(STEP5, GPIO.LOW)
     GPIO.output(STEP8, GPIO.LOW)
     sleep(delay)
 
+GPIO.output(DIR2, CW)
 GPIO.output(DIR4, CW)
 for x in range(30):
+    GPIO.output(STEP2, GPIO.HIGH)
     GPIO.output(STEP4, GPIO.HIGH)
     sleep(sdelay)
+    GPIO.output(STEP2, GPIO.LOW)
     GPIO.output(STEP4, GPIO.LOW)
     sleep(sdelay)
 sleep(.3)
@@ -2923,6 +2923,7 @@ for x in range(3):
     GPIO.output(STEP3, GPIO.LOW)
     GPIO.output(STEP4, GPIO.LOW)
     sleep(sdelay)
+sleep(.3)
 
 GPIO.output(DIR1, CCW)
 GPIO.output(DIR3, CCW)
@@ -2974,65 +2975,35 @@ for x in range(3):
     GPIO.output(STEP3, GPIO.LOW)
     GPIO.output(STEP4, GPIO.LOW)
     sleep(sdelay)
+sleep(.3)
 
- #Turn Motor 5
+GPIO.output(DIR4, CCW)
 GPIO.output(DIR2, CCW)
 for x in range(30):
     GPIO.output(STEP2, GPIO.HIGH)
+    GPIO.output(STEP4, GPIO.HIGH)
     sleep(delay)
     GPIO.output(STEP2, GPIO.LOW)
+    GPIO.output(STEP4, GPIO.LOW)
     sleep(delay)
 
 GPIO.output(DIR5, CW)
-for x in range(50):
-    GPIO.output(STEP5, GPIO.HIGH)
-    sleep(delay)
-    GPIO.output(STEP5, GPIO.LOW)
-    sleep(delay)
-
-GPIO.output(DIR2, CW)
-for x in range(30):
-    GPIO.output(STEP2, GPIO.HIGH)
-    sleep(sdelay)
-    GPIO.output(STEP2, GPIO.LOW)
-    sleep(sdelay)
-sleep(.3)
-
-GPIO.output(DIR4, CW)
-GPIO.output(DIR3, CW)
-GPIO.output(DIR1, CW)
-GPIO.output(DIR2, CW)
-for x in range(3):
-    GPIO.output(STEP1, GPIO.HIGH)
-    GPIO.output(STEP2, GPIO.HIGH)
-    GPIO.output(STEP3, GPIO.HIGH)
-    GPIO.output(STEP4, GPIO.HIGH)
-    sleep(sdelay)
-    GPIO.output(STEP1, GPIO.LOW)
-    GPIO.output(STEP2, GPIO.LOW)
-    GPIO.output(STEP3, GPIO.LOW)
-    GPIO.output(STEP4, GPIO.LOW)
-    sleep(sdelay)
-
-#Turn Motor 8
-GPIO.output(DIR4, CCW)
-for x in range(30):
-    GPIO.output(STEP4, GPIO.HIGH)
-    sleep(delay)
-    GPIO.output(STEP4, GPIO.LOW)
-    sleep(delay)
-
 GPIO.output(DIR8, CCW)
 for x in range(50):
+    GPIO.output(STEP5, GPIO.HIGH)
     GPIO.output(STEP8, GPIO.HIGH)
     sleep(delay)
+    GPIO.output(STEP5, GPIO.LOW)
     GPIO.output(STEP8, GPIO.LOW)
     sleep(delay)
 
+GPIO.output(DIR2, CW)
 GPIO.output(DIR4, CW)
 for x in range(30):
+    GPIO.output(STEP2, GPIO.HIGH)
     GPIO.output(STEP4, GPIO.HIGH)
     sleep(sdelay)
+    GPIO.output(STEP2, GPIO.LOW)
     GPIO.output(STEP4, GPIO.LOW)
     sleep(sdelay)
 sleep(.3)
@@ -3052,43 +3023,17 @@ for x in range(3):
     GPIO.output(STEP3, GPIO.LOW)
     GPIO.output(STEP4, GPIO.LOW)
     sleep(sdelay)
-
+sleep(.3)
 
 Xprimeturn()
 
 #Done with white
 
-
-
- #Turn Motor 5
-GPIO.output(DIR2, CCW)
-for x in range(30):
-    GPIO.output(STEP2, GPIO.HIGH)
-    sleep(delay)
-    GPIO.output(STEP2, GPIO.LOW)
-    sleep(delay)
-
-
-GPIO.output(DIR5, CW)
-for x in range(50):
-    GPIO.output(STEP5, GPIO.HIGH)
-    sleep(delay)
-    GPIO.output(STEP5, GPIO.LOW)
-    sleep(delay)
-
-GPIO.output(DIR2, CW)
-for x in range(30):
-    GPIO.output(STEP2, GPIO.HIGH)
-    sleep(sdelay)
-    GPIO.output(STEP2, GPIO.LOW)
-    sleep(sdelay)
-sleep(.3)
-
 GPIO.output(DIR4, CW)
 GPIO.output(DIR3, CW)
 GPIO.output(DIR1, CW)
 GPIO.output(DIR2, CW)
-for x in range(3):
+for x in range(5):
     GPIO.output(STEP1, GPIO.HIGH)
     GPIO.output(STEP2, GPIO.HIGH)
     GPIO.output(STEP3, GPIO.HIGH)
@@ -3100,25 +3045,34 @@ for x in range(3):
     GPIO.output(STEP4, GPIO.LOW)
     sleep(sdelay)
 
-#Turn Motor 8
+
 GPIO.output(DIR4, CCW)
+GPIO.output(DIR2, CCW)
 for x in range(30):
+    GPIO.output(STEP2, GPIO.HIGH)
     GPIO.output(STEP4, GPIO.HIGH)
     sleep(delay)
+    GPIO.output(STEP2, GPIO.LOW)
     GPIO.output(STEP4, GPIO.LOW)
     sleep(delay)
 
 GPIO.output(DIR8, CCW)
+GPIO.output(DIR5, CW)
 for x in range(50):
+    GPIO.output(STEP5, GPIO.HIGH)
     GPIO.output(STEP8, GPIO.HIGH)
     sleep(delay)
+    GPIO.output(STEP5, GPIO.LOW)
     GPIO.output(STEP8, GPIO.LOW)
     sleep(delay)
 
+GPIO.output(DIR2, CW)
 GPIO.output(DIR4, CW)
 for x in range(30):
+    GPIO.output(STEP2, GPIO.HIGH)
     GPIO.output(STEP4, GPIO.HIGH)
     sleep(sdelay)
+    GPIO.output(STEP2, GPIO.LOW)
     GPIO.output(STEP4, GPIO.LOW)
     sleep(sdelay)
 sleep(.3)
@@ -3138,6 +3092,7 @@ for x in range(3):
     GPIO.output(STEP3, GPIO.LOW)
     GPIO.output(STEP4, GPIO.LOW)
     sleep(sdelay)
+sleep(.3)
 
 
 GPIO.output(DIR1, CCW)
@@ -3189,66 +3144,37 @@ for x in range(3):
     GPIO.output(STEP3, GPIO.LOW)
     GPIO.output(STEP4, GPIO.LOW)
     sleep(sdelay)
+sleep(.3)
 
- #Turn Motor 5
+GPIO.output(DIR4, CCW)
 GPIO.output(DIR2, CCW)
 for x in range(30):
     GPIO.output(STEP2, GPIO.HIGH)
+    GPIO.output(STEP4, GPIO.HIGH)
     sleep(delay)
     GPIO.output(STEP2, GPIO.LOW)
+    GPIO.output(STEP4, GPIO.LOW)
     sleep(delay)
 
+
+GPIO.output(DIR8, CCW)
 GPIO.output(DIR5, CW)
 for x in range(50):
     GPIO.output(STEP5, GPIO.HIGH)
-    sleep(delay)
-    GPIO.output(STEP5, GPIO.LOW)
-    sleep(delay)
-
-GPIO.output(DIR2, CW)
-for x in range(30):
-    GPIO.output(STEP2, GPIO.HIGH)
-    sleep(sdelay)
-    GPIO.output(STEP2, GPIO.LOW)
-    sleep(sdelay)
-sleep(.3)
-
-GPIO.output(DIR4, CW)
-GPIO.output(DIR3, CW)
-GPIO.output(DIR1, CW)
-GPIO.output(DIR2, CW)
-for x in range(3):
-    GPIO.output(STEP1, GPIO.HIGH)
-    GPIO.output(STEP2, GPIO.HIGH)
-    GPIO.output(STEP3, GPIO.HIGH)
-    GPIO.output(STEP4, GPIO.HIGH)
-    sleep(sdelay)
-    GPIO.output(STEP1, GPIO.LOW)
-    GPIO.output(STEP2, GPIO.LOW)
-    GPIO.output(STEP3, GPIO.LOW)
-    GPIO.output(STEP4, GPIO.LOW)
-    sleep(sdelay)
-
-#Turn Motor 8
-GPIO.output(DIR4, CCW)
-for x in range(30):
-    GPIO.output(STEP4, GPIO.HIGH)
-    sleep(delay)
-    GPIO.output(STEP4, GPIO.LOW)
-    sleep(delay)
-
-GPIO.output(DIR8, CCW)
-for x in range(50):
     GPIO.output(STEP8, GPIO.HIGH)
     sleep(delay)
-    GPIO.output(STEP8, GPIO.LOW)
+    GPIO.output(STEP5, GPIO.LOW)
+    GPIO.output(STEP8, GPIO.HIGH)
     sleep(delay)
 
+GPIO.output(DIR2, CW)
 GPIO.output(DIR4, CW)
 for x in range(30):
+    GPIO.output(STEP2, GPIO.HIGH)
     GPIO.output(STEP4, GPIO.HIGH)
     sleep(sdelay)
-    GPIO.output(STEP4, GPIO.LOW)
+    GPIO.output(STEP2, GPIO.LOW)
+    GPIO.output(STEP4, GPIO.HIGH)
     sleep(sdelay)
 sleep(.3)
 
@@ -3267,74 +3193,61 @@ for x in range(3):
     GPIO.output(STEP3, GPIO.LOW)
     GPIO.output(STEP4, GPIO.LOW)
     sleep(sdelay)
+sleep(.3)
+
 
 
 Xprimeturn()
 
 #Done with Orange
 
+GPIO.output(DIR4, CW)
+GPIO.output(DIR3, CW)
+GPIO.output(DIR1, CW)
+GPIO.output(DIR2, CW)
+for x in range(5):
+    GPIO.output(STEP1, GPIO.HIGH)
+    GPIO.output(STEP2, GPIO.HIGH)
+    GPIO.output(STEP3, GPIO.HIGH)
+    GPIO.output(STEP4, GPIO.HIGH)
+    sleep(sdelay)
+    GPIO.output(STEP1, GPIO.LOW)
+    GPIO.output(STEP2, GPIO.LOW)
+    GPIO.output(STEP3, GPIO.LOW)
+    GPIO.output(STEP4, GPIO.LOW)
+    sleep(sdelay)
+
+
 Yprimeturn()
 
- #Turn Motor 5
 GPIO.output(DIR2, CCW)
+GPIO.output(DIR4, CCW)
 for x in range(30):
     GPIO.output(STEP2, GPIO.HIGH)
+    GPIO.output(STEP4, GPIO.HIGH)
     sleep(delay)
     GPIO.output(STEP2, GPIO.LOW)
+    GPIO.output(STEP4, GPIO.LOW)
     sleep(delay)
 
 
 GPIO.output(DIR5, CW)
-for x in range(50):
-    GPIO.output(STEP5, GPIO.HIGH)
-    sleep(delay)
-    GPIO.output(STEP5, GPIO.LOW)
-    sleep(delay)
-
-GPIO.output(DIR2, CW)
-for x in range(30):
-    GPIO.output(STEP2, GPIO.HIGH)
-    sleep(sdelay)
-    GPIO.output(STEP2, GPIO.LOW)
-    sleep(sdelay)
-sleep(.3)
-
-GPIO.output(DIR4, CW)
-GPIO.output(DIR3, CW)
-GPIO.output(DIR1, CW)
-GPIO.output(DIR2, CW)
-for x in range(3):
-    GPIO.output(STEP1, GPIO.HIGH)
-    GPIO.output(STEP2, GPIO.HIGH)
-    GPIO.output(STEP3, GPIO.HIGH)
-    GPIO.output(STEP4, GPIO.HIGH)
-    sleep(sdelay)
-    GPIO.output(STEP1, GPIO.LOW)
-    GPIO.output(STEP2, GPIO.LOW)
-    GPIO.output(STEP3, GPIO.LOW)
-    GPIO.output(STEP4, GPIO.LOW)
-    sleep(sdelay)
-
-#Turn Motor 8
-GPIO.output(DIR4, CCW)
-for x in range(30):
-    GPIO.output(STEP4, GPIO.HIGH)
-    sleep(delay)
-    GPIO.output(STEP4, GPIO.LOW)
-    sleep(delay)
-
 GPIO.output(DIR8, CCW)
 for x in range(50):
+    GPIO.output(STEP5, GPIO.HIGH)
     GPIO.output(STEP8, GPIO.HIGH)
     sleep(delay)
+    GPIO.output(STEP5, GPIO.LOW)
     GPIO.output(STEP8, GPIO.LOW)
     sleep(delay)
 
+GPIO.output(DIR2, CW)
 GPIO.output(DIR4, CW)
 for x in range(30):
-    GPIO.output(STEP4, GPIO.HIGH)
+    GPIO.output(STEP2, GPIO.HIGH)
     sleep(sdelay)
-    GPIO.output(STEP4, GPIO.LOW)
+    GPIO.output(STEP2, GPIO.LOW)
+    GPIO.output(STEP2, GPIO.HIGH)
     sleep(sdelay)
 sleep(.3)
 
@@ -3353,6 +3266,7 @@ for x in range(3):
     GPIO.output(STEP3, GPIO.LOW)
     GPIO.output(STEP4, GPIO.LOW)
     sleep(sdelay)
+sleep(.3)
 
 
 GPIO.output(DIR1, CCW)
@@ -3404,67 +3318,36 @@ for x in range(3):
     GPIO.output(STEP3, GPIO.LOW)
     GPIO.output(STEP4, GPIO.LOW)
     sleep(sdelay)
+sleep(.3)
 
 
- #Turn Motor 5
 GPIO.output(DIR2, CCW)
+GPIO.output(DIR4, CCW)
 for x in range(30):
     GPIO.output(STEP2, GPIO.HIGH)
+    GPIO.output(STEP4, GPIO.HIGH)
     sleep(delay)
     GPIO.output(STEP2, GPIO.LOW)
+    GPIO.output(STEP4, GPIO.LOW)
     sleep(delay)
 
 GPIO.output(DIR5, CW)
-for x in range(50):
-    GPIO.output(STEP5, GPIO.HIGH)
-    sleep(delay)
-    GPIO.output(STEP5, GPIO.LOW)
-    sleep(delay)
-
-GPIO.output(DIR2, CW)
-for x in range(30):
-    GPIO.output(STEP2, GPIO.HIGH)
-    sleep(sdelay)
-    GPIO.output(STEP2, GPIO.LOW)
-    sleep(sdelay)
-sleep(.3)
-
-GPIO.output(DIR4, CW)
-GPIO.output(DIR3, CW)
-GPIO.output(DIR1, CW)
-GPIO.output(DIR2, CW)
-for x in range(3):
-    GPIO.output(STEP1, GPIO.HIGH)
-    GPIO.output(STEP2, GPIO.HIGH)
-    GPIO.output(STEP3, GPIO.HIGH)
-    GPIO.output(STEP4, GPIO.HIGH)
-    sleep(sdelay)
-    GPIO.output(STEP1, GPIO.LOW)
-    GPIO.output(STEP2, GPIO.LOW)
-    GPIO.output(STEP3, GPIO.LOW)
-    GPIO.output(STEP4, GPIO.LOW)
-    sleep(sdelay)
-
-#Turn Motor 8
-GPIO.output(DIR4, CCW)
-for x in range(30):
-    GPIO.output(STEP4, GPIO.HIGH)
-    sleep(delay)
-    GPIO.output(STEP4, GPIO.LOW)
-    sleep(delay)
-
 GPIO.output(DIR8, CCW)
 for x in range(50):
+    GPIO.output(STEP5, GPIO.HIGH)
     GPIO.output(STEP8, GPIO.HIGH)
     sleep(delay)
+    GPIO.output(STEP5, GPIO.LOW)
     GPIO.output(STEP8, GPIO.LOW)
     sleep(delay)
 
+GPIO.output(DIR2, CW)
 GPIO.output(DIR4, CW)
 for x in range(30):
-    GPIO.output(STEP4, GPIO.HIGH)
+    GPIO.output(STEP2, GPIO.HIGH)
     sleep(sdelay)
-    GPIO.output(STEP4, GPIO.LOW)
+    GPIO.output(STEP2, GPIO.LOW)
+    GPIO.output(STEP2, GPIO.HIGH)
     sleep(sdelay)
 sleep(.3)
 
@@ -3483,72 +3366,59 @@ for x in range(3):
     GPIO.output(STEP3, GPIO.LOW)
     GPIO.output(STEP4, GPIO.LOW)
     sleep(sdelay)
+sleep(.3)
+
 
 #Done with blue
 
+GPIO.output(DIR4, CW)
+GPIO.output(DIR3, CW)
+GPIO.output(DIR1, CW)
+GPIO.output(DIR2, CW)
+for x in range(5):
+    GPIO.output(STEP1, GPIO.HIGH)
+    GPIO.output(STEP2, GPIO.HIGH)
+    GPIO.output(STEP3, GPIO.HIGH)
+    GPIO.output(STEP4, GPIO.HIGH)
+    sleep(sdelay)
+    GPIO.output(STEP1, GPIO.LOW)
+    GPIO.output(STEP2, GPIO.LOW)
+    GPIO.output(STEP3, GPIO.LOW)
+    GPIO.output(STEP4, GPIO.LOW)
+    sleep(sdelay)
+
+
 Yprimeturn()
 Yprimeturn()
 
- #Turn Motor 5
 GPIO.output(DIR2, CCW)
+GPIO.output(DIR4, CCW)
 for x in range(30):
     GPIO.output(STEP2, GPIO.HIGH)
+    GPIO.output(STEP4, GPIO.HIGH)
     sleep(delay)
     GPIO.output(STEP2, GPIO.LOW)
+    GPIO.output(STEP4, GPIO.LOW)
     sleep(delay)
 
 
 GPIO.output(DIR5, CW)
-for x in range(50):
-    GPIO.output(STEP5, GPIO.HIGH)
-    sleep(delay)
-    GPIO.output(STEP5, GPIO.LOW)
-    sleep(delay)
-
-GPIO.output(DIR2, CW)
-for x in range(30):
-    GPIO.output(STEP2, GPIO.HIGH)
-    sleep(sdelay)
-    GPIO.output(STEP2, GPIO.LOW)
-    sleep(sdelay)
-sleep(.3)
-
-GPIO.output(DIR4, CW)
-GPIO.output(DIR3, CW)
-GPIO.output(DIR1, CW)
-GPIO.output(DIR2, CW)
-for x in range(3):
-    GPIO.output(STEP1, GPIO.HIGH)
-    GPIO.output(STEP2, GPIO.HIGH)
-    GPIO.output(STEP3, GPIO.HIGH)
-    GPIO.output(STEP4, GPIO.HIGH)
-    sleep(sdelay)
-    GPIO.output(STEP1, GPIO.LOW)
-    GPIO.output(STEP2, GPIO.LOW)
-    GPIO.output(STEP3, GPIO.LOW)
-    GPIO.output(STEP4, GPIO.LOW)
-    sleep(sdelay)
-
-#Turn Motor 8
-GPIO.output(DIR4, CCW)
-for x in range(30):
-    GPIO.output(STEP4, GPIO.HIGH)
-    sleep(delay)
-    GPIO.output(STEP4, GPIO.LOW)
-    sleep(delay)
-
 GPIO.output(DIR8, CCW)
 for x in range(50):
+    GPIO.output(STEP5, GPIO.HIGH)
     GPIO.output(STEP8, GPIO.HIGH)
     sleep(delay)
+    GPIO.output(STEP5, GPIO.LOW)
     GPIO.output(STEP8, GPIO.LOW)
     sleep(delay)
 
+GPIO.output(DIR2, CW)
 GPIO.output(DIR4, CW)
 for x in range(30):
-    GPIO.output(STEP4, GPIO.HIGH)
+    GPIO.output(STEP2, GPIO.HIGH)
     sleep(sdelay)
-    GPIO.output(STEP4, GPIO.LOW)
+    GPIO.output(STEP2, GPIO.LOW)
+    GPIO.output(STEP2, GPIO.HIGH)
     sleep(sdelay)
 sleep(.3)
 
@@ -3567,6 +3437,7 @@ for x in range(3):
     GPIO.output(STEP3, GPIO.LOW)
     GPIO.output(STEP4, GPIO.LOW)
     sleep(sdelay)
+sleep(.3)
 
 
 GPIO.output(DIR1, CCW)
@@ -3618,67 +3489,35 @@ for x in range(3):
     GPIO.output(STEP3, GPIO.LOW)
     GPIO.output(STEP4, GPIO.LOW)
     sleep(sdelay)
+sleep(.3)
 
-
- #Turn Motor 5
 GPIO.output(DIR2, CCW)
+GPIO.output(DIR4, CCW)
 for x in range(30):
     GPIO.output(STEP2, GPIO.HIGH)
+    GPIO.output(STEP4, GPIO.HIGH)
     sleep(delay)
     GPIO.output(STEP2, GPIO.LOW)
+    GPIO.output(STEP4, GPIO.LOW)
     sleep(delay)
 
 GPIO.output(DIR5, CW)
-for x in range(50):
-    GPIO.output(STEP5, GPIO.HIGH)
-    sleep(delay)
-    GPIO.output(STEP5, GPIO.LOW)
-    sleep(delay)
-
-GPIO.output(DIR2, CW)
-for x in range(30):
-    GPIO.output(STEP2, GPIO.HIGH)
-    sleep(sdelay)
-    GPIO.output(STEP2, GPIO.LOW)
-    sleep(sdelay)
-sleep(.3)
-
-GPIO.output(DIR4, CW)
-GPIO.output(DIR3, CW)
-GPIO.output(DIR1, CW)
-GPIO.output(DIR2, CW)
-for x in range(3):
-    GPIO.output(STEP1, GPIO.HIGH)
-    GPIO.output(STEP2, GPIO.HIGH)
-    GPIO.output(STEP3, GPIO.HIGH)
-    GPIO.output(STEP4, GPIO.HIGH)
-    sleep(sdelay)
-    GPIO.output(STEP1, GPIO.LOW)
-    GPIO.output(STEP2, GPIO.LOW)
-    GPIO.output(STEP3, GPIO.LOW)
-    GPIO.output(STEP4, GPIO.LOW)
-    sleep(sdelay)
-
-#Turn Motor 8
-GPIO.output(DIR4, CCW)
-for x in range(30):
-    GPIO.output(STEP4, GPIO.HIGH)
-    sleep(delay)
-    GPIO.output(STEP4, GPIO.LOW)
-    sleep(delay)
-
 GPIO.output(DIR8, CCW)
 for x in range(50):
+    GPIO.output(STEP5, GPIO.HIGH)
     GPIO.output(STEP8, GPIO.HIGH)
     sleep(delay)
+    GPIO.output(STEP5, GPIO.LOW)
     GPIO.output(STEP8, GPIO.LOW)
     sleep(delay)
 
+GPIO.output(DIR2, CW)
 GPIO.output(DIR4, CW)
 for x in range(30):
-    GPIO.output(STEP4, GPIO.HIGH)
+    GPIO.output(STEP2, GPIO.HIGH)
     sleep(sdelay)
-    GPIO.output(STEP4, GPIO.LOW)
+    GPIO.output(STEP2, GPIO.LOW)
+    GPIO.output(STEP2, GPIO.HIGH)
     sleep(sdelay)
 sleep(.3)
 
@@ -3697,6 +3536,7 @@ for x in range(3):
     GPIO.output(STEP3, GPIO.LOW)
     GPIO.output(STEP4, GPIO.LOW)
     sleep(sdelay)
+sleep(.3)
 
 Yprimeturn()
 
