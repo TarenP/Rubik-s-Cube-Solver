@@ -3546,4 +3546,3 @@ Yprimeturn()
 
 
 #main()
-AlteredYPermutation()
