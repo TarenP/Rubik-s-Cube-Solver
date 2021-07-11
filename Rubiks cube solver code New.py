@@ -89,14 +89,6 @@ kv = ["green", "white"]
 ow = ["orange", "white"]
 jp = ["green", "orange"]
 
-solvedC2 = False
-solvedC3 = False
-solvedC4 = False
-solvedC5 = False
-solvedC6 = False
-solvedC7 = False
-solvedC8 = False
-
 solvedE2 = False
 solvedE3 = False
 solvedE4 = False
@@ -1460,6 +1452,15 @@ def colorfinder():
 #endregion
 
 def cornerActions():
+    solvedC2 = False
+    solvedC3 = False
+    solvedC4 = False
+    solvedC5 = False
+    solvedC6 = False
+    solvedC7 = False
+    solvedC8 = False
+
+
     mAQN = [A, Q, N]
     mBJM = [B, J, M]
     mDRE = [D, R, E]

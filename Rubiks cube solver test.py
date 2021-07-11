@@ -1,8 +1,8 @@
 import cv2
 import numpy as np
-from picamera import PiCamera
+# from picamera import PiCamera
 from PIL import Image
-import RPi.GPIO as GPIO
+# import RPi.GPIO as GPIO
 from time import sleep
 
 DIR1 = 20
@@ -25,24 +25,24 @@ STEP8 = 22
 CW = 1
 CCW = 0
 
-GPIO.setwarnings(False)
-GPIO.setmode(GPIO.BCM)
-GPIO.setup(DIR1, GPIO.OUT)
-GPIO.setup(STEP1, GPIO.OUT)
-GPIO.setup(DIR3, GPIO.OUT)
-GPIO.setup(STEP3, GPIO.OUT)
-GPIO.setup(DIR2, GPIO.OUT)
-GPIO.setup(STEP2, GPIO.OUT)
-GPIO.setup(DIR4, GPIO.OUT)
-GPIO.setup(STEP4, GPIO.OUT)
-GPIO.setup(DIR5, GPIO.OUT)
-GPIO.setup(STEP5, GPIO.OUT)
-GPIO.setup(DIR6, GPIO.OUT)
-GPIO.setup(STEP6, GPIO.OUT)
-GPIO.setup(DIR7, GPIO.OUT)
-GPIO.setup(STEP7, GPIO.OUT)
-GPIO.setup(DIR8, GPIO.OUT)
-GPIO.setup(STEP8, GPIO.OUT)
+# GPIO.setwarnings(False)
+# GPIO.setmode(GPIO.BCM)
+# GPIO.setup(DIR1, GPIO.OUT)
+# GPIO.setup(STEP1, GPIO.OUT)
+# GPIO.setup(DIR3, GPIO.OUT)
+# GPIO.setup(STEP3, GPIO.OUT)
+# GPIO.setup(DIR2, GPIO.OUT)
+# GPIO.setup(STEP2, GPIO.OUT)
+# GPIO.setup(DIR4, GPIO.OUT)
+# GPIO.setup(STEP4, GPIO.OUT)
+# GPIO.setup(DIR5, GPIO.OUT)
+# GPIO.setup(STEP5, GPIO.OUT)
+# GPIO.setup(DIR6, GPIO.OUT)
+# GPIO.setup(STEP6, GPIO.OUT)
+# GPIO.setup(DIR7, GPIO.OUT)
+# GPIO.setup(STEP7, GPIO.OUT)
+# GPIO.setup(DIR8, GPIO.OUT)
+# GPIO.setup(STEP8, GPIO.OUT)
 
 #delay between steps for motor turns
 delay = .015
@@ -59,10 +59,10 @@ turnClamp = 4
 
       
 #camera setup
-camera = PiCamera()
+# camera = PiCamera()
 #Res must be divisible by 3
 res = 720
-camera.resolution = (res, res)
+# camera.resolution = (res, res)
 
 faceColors = ["pink", "pink", "pink", "pink", "pink", "pink", "pink", "pink", "pink"]
 
@@ -88,14 +88,6 @@ sx = ["blue", "white"]
 kv = ["green", "white"]
 ow = ["orange", "white"]
 jp = ["green", "orange"]
-
-solvedC2 = False
-solvedC3 = False
-solvedC4 = False
-solvedC5 = False
-solvedC6 = False
-solvedC7 = False
-solvedC8 = False
 
 solvedE2 = False
 solvedE3 = False
@@ -342,16 +334,22 @@ def colorfinder():
 
 
 def cornerActions():
-    mAQN = [A, Q, N]
-    mBJM = [B, J, M]
-    mDRE = [D, R, E]
-    mCFI = [C, F, I]
-    mHSU = [H, S, U]
-    mGLV = [G, L, V]
-    mXTO = [X, T, O]
-    mWKP = [W, K, P]
-    print(mAQN)
-    print(AQN)
+    solvedC2 = False
+    solvedC3 = False
+    solvedC4 = False
+    solvedC5 = False
+    solvedC6 = False
+    solvedC7 = False
+    solvedC8 = False
+
+    mAQN = ["green", "red", "yellow"]
+    mBJM = ["yellow", "orange", "blue"]
+    mDRE = ["white", "orange", "green"]
+    mCFI = ["green", "orange", "yellow"]
+    mHSU = ["red", "blue", "white"]
+    mGLV = ["white", "red", "green"]
+    mXTO = ["red", "yellow", "blue"]
+    mWKP = ["white", "orange", "blue"]
     #checking if anycorners are already solved
     if (mBJM == BJM):
         solvedC2 = True
@@ -397,7 +395,6 @@ def cornerActions():
     while everythingSolved == False:
         bankCornerSorted = bankCorner
         bankCornerSorted.sort()
-        print("here")
         print(bankCornerSorted)
         print(corner1)
         if (bankCornerSorted == corner1):
@@ -1130,125 +1127,125 @@ def main():
     edgeMain()
 
 #region cubeMapping
-print("Place Orange side facing Motor 6, Yellow facing up. Stop program if needed!")
+# print("Place Orange side facing Motor 6, Yellow facing up. Stop program if needed!")
 
-yellowFace = colorfinder()
-A = yellowFace[0]
-a = yellowFace[1]
-B = yellowFace[2]
-d = yellowFace[3]
-up = yellowFace[4]
-b = yellowFace[5]
-D = yellowFace[6]
-c = yellowFace[7]
-C = yellowFace[8]
-print(yellowFace)
+# yellowFace = colorfinder()
+# A = yellowFace[0]
+# a = yellowFace[1]
+# B = yellowFace[2]
+# d = yellowFace[3]
+# up = yellowFace[4]
+# b = yellowFace[5]
+# D = yellowFace[6]
+# c = yellowFace[7]
+# C = yellowFace[8]
+# print(yellowFace)
 
-#Done with Yellow
-
-
-Xprimeturn()
-
-sleep(20)
+# #Done with Yellow
 
 
-redFace = colorfinder()
-E = redFace[0]
-e = redFace[1]
-F = redFace[2]
-h = redFace[3]
-front = redFace[4]
-f = redFace[5]
-H = redFace[6]
-g = redFace[7]
-G = redFace[8]
-print(redFace)
+# Xprimeturn()
+
+# sleep(20)
 
 
-#Done With Red
+# redFace = colorfinder()
+# E = redFace[0]
+# e = redFace[1]
+# F = redFace[2]
+# h = redFace[3]
+# front = redFace[4]
+# f = redFace[5]
+# H = redFace[6]
+# g = redFace[7]
+# G = redFace[8]
+# print(redFace)
 
-Xprimeturn()
-sleep(20)
+
+# #Done With Red
+
+# Xprimeturn()
+# sleep(20)
     
-whiteFace = colorfinder()
-U = whiteFace[0]
-u = whiteFace[1]
-V = whiteFace[2]
-x = whiteFace[3]
-down = whiteFace[4]
-v = whiteFace[5]
-X = whiteFace[6]
-w = whiteFace[7]
-W = whiteFace[8]
-print(whiteFace)
+# whiteFace = colorfinder()
+# U = whiteFace[0]
+# u = whiteFace[1]
+# V = whiteFace[2]
+# x = whiteFace[3]
+# down = whiteFace[4]
+# v = whiteFace[5]
+# X = whiteFace[6]
+# w = whiteFace[7]
+# W = whiteFace[8]
+# print(whiteFace)
 
 
-Xprimeturn()
-sleep(20)
-#Done with white
-    
-
-orangeFace = colorfinder()
-O = orangeFace[0]
-o = orangeFace[1]
-P = orangeFace[2]
-n = orangeFace[3]
-back = orangeFace[4]
-p = orangeFace[5]
-N = orangeFace[6]
-m = orangeFace[7]
-M = orangeFace[8]
-print(orangeFace)
-
-
-Xprimeturn()
-#Done with Orange
-
-
-
-Yprimeturn()
-sleep(20)
+# Xprimeturn()
+# sleep(20)
+# #Done with white
     
 
-blueFace = colorfinder()
-T = blueFace[0]
-t = blueFace[1]
-Q = blueFace[2]
-s = blueFace[3]
-left = blueFace[4]
-q = blueFace[5]
-S = blueFace[6]
-r = blueFace[7]
-R = blueFace[8]
-print(blueFace)
+# orangeFace = colorfinder()
+# O = orangeFace[0]
+# o = orangeFace[1]
+# P = orangeFace[2]
+# n = orangeFace[3]
+# back = orangeFace[4]
+# p = orangeFace[5]
+# N = orangeFace[6]
+# m = orangeFace[7]
+# M = orangeFace[8]
+# print(orangeFace)
 
 
-#Done with blue
+# Xprimeturn()
+# #Done with Orange
 
 
 
-Yprimeturn()
-Yprimeturn()
-sleep(20)
+# Yprimeturn()
+# sleep(20)
     
 
-greenFace = colorfinder()
-J = greenFace[0]
-j = greenFace[1]
-K = greenFace[2]
-i = greenFace[3]
-right = greenFace[4]
-k = greenFace[5]
-I = greenFace[6]
-l = greenFace[7]
-L = greenFace[8]
-print(greenFace)
+# blueFace = colorfinder()
+# T = blueFace[0]
+# t = blueFace[1]
+# Q = blueFace[2]
+# s = blueFace[3]
+# left = blueFace[4]
+# q = blueFace[5]
+# S = blueFace[6]
+# r = blueFace[7]
+# R = blueFace[8]
+# print(blueFace)
 
-Yprimeturn()
-sleep(20)
-#Done With green
 
-#endregion
+# #Done with blue
+
+
+
+# Yprimeturn()
+# Yprimeturn()
+# sleep(20)
+    
+
+# greenFace = colorfinder()
+# J = greenFace[0]
+# j = greenFace[1]
+# K = greenFace[2]
+# i = greenFace[3]
+# right = greenFace[4]
+# k = greenFace[5]
+# I = greenFace[6]
+# l = greenFace[7]
+# L = greenFace[8]
+# print(greenFace)
+
+# Yprimeturn()
+# sleep(20)
+# #Done With green
+
+# #endregion
 
 
 main()
