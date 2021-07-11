@@ -350,6 +350,8 @@ def cornerActions():
     mGLV = [G, L, V]
     mXTO = [X, T, O]
     mWKP = [W, K, P]
+    print(mAQN)
+    print(AQN)
     #checking if anycorners are already solved
     if (mBJM == BJM):
         solvedC2 = True
@@ -395,8 +397,13 @@ def cornerActions():
     while everythingSolved == False:
         bankCornerSorted = bankCorner
         bankCornerSorted.sort()
+        print("here")
+        print(bankCornerSorted)
+        print(corner1)
         if (bankCornerSorted == corner1):
+            print("equal to corner1")
             index = AQN.index(bankCorner[0])
+            print(index)
             if (index == 0 and solvedC2 == True and solvedC3 == True and solvedC4 == True and solvedC5 == True and solvedC6 == True and solvedC7 == True and solvedC8 == True):
                 print("already set")
                 everythingSolved = True
@@ -1142,7 +1149,7 @@ print(yellowFace)
 
 Xprimeturn()
 
-sleep(10)
+sleep(20)
 
 
 redFace = colorfinder()
@@ -1161,7 +1168,7 @@ print(redFace)
 #Done With Red
 
 Xprimeturn()
-sleep(10)
+sleep(20)
     
 whiteFace = colorfinder()
 U = whiteFace[0]
@@ -1177,7 +1184,7 @@ print(whiteFace)
 
 
 Xprimeturn()
-sleep(10)
+sleep(20)
 #Done with white
     
 
@@ -1200,7 +1207,7 @@ Xprimeturn()
 
 
 Yprimeturn()
-sleep(10)
+sleep(20)
     
 
 blueFace = colorfinder()
@@ -1222,7 +1229,7 @@ print(blueFace)
 
 Yprimeturn()
 Yprimeturn()
-sleep(10)
+sleep(20)
     
 
 greenFace = colorfinder()
@@ -1238,7 +1245,7 @@ L = greenFace[8]
 print(greenFace)
 
 Yprimeturn()
-sleep(10)
+sleep(20)
 #Done With green
 
 #endregion
