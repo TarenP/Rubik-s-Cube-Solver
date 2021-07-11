@@ -4,6 +4,7 @@ import numpy as np
 from PIL import Image
 # import RPi.GPIO as GPIO
 from time import sleep
+import pycuber as pc
 
 DIR1 = 20
 STEP1 = 21
@@ -89,17 +90,6 @@ kv = ["green", "white"]
 ow = ["orange", "white"]
 jp = ["green", "orange"]
 
-solvedE2 = False
-solvedE3 = False
-solvedE4 = False
-solvedE5 = False
-solvedE6 = False
-solvedE7 = False
-solvedE8 = False
-solvedE9 = False
-solvedE10 = False
-solvedE11 = False
-solvedE12 = False
 
 
 def Xturn():
@@ -705,6 +695,42 @@ def cornerMain():
     cornerSwapper(cList)
 
 def edgeSwapper():
+    solvedE2 = False
+    solvedE3 = False
+    solvedE4 = False
+    solvedE5 = False
+    solvedE6 = False
+    solvedE7 = False
+    solvedE8 = False
+    solvedE9 = False
+    solvedE10 = False
+    solvedE11 = False
+    solvedE12 = False
+    print("edge")
+    a = "yellow"
+    b = "yellow"
+    c = "yellow"
+    d = "yellow"
+    e = "red"
+    f = "red"
+    g = "red"
+    h = "red"
+    u = "white"
+    v = "white"
+    w = "white"
+    x = "white"
+    r = "blue"
+    q = "blue"
+    t = "blue"
+    s = "blue"
+    l = "green"
+    i = "green"
+    j = "green"
+    k = "green"
+    p = "orange"
+    m = "orange"
+    n = "orange"
+    o = "orange"
     mam = [a, m]
     mbi = [b, i]
     mce = [c, e]
@@ -1121,6 +1147,7 @@ def edgeMain():
 
 def main():
     cornerMain()
+    print("done")
     edgeMain()
 
 #region cubeMapping
@@ -1243,7 +1270,6 @@ def main():
 # #Done With green
 
 # #endregion
-
 
 main()
 
