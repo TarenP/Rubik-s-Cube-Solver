@@ -395,12 +395,9 @@ def cornerActions():
     while everythingSolved == False:
         bankCornerSorted = bankCorner
         bankCornerSorted.sort()
-        print(bankCornerSorted)
-        print(corner1)
+        print(bankCorner)
         if (bankCornerSorted == corner1):
-            print("equal to corner1")
             index = AQN.index(bankCorner[0])
-            print(index)
             if (index == 0 and solvedC2 == True and solvedC3 == True and solvedC4 == True and solvedC5 == True and solvedC6 == True and solvedC7 == True and solvedC8 == True):
                 print("already set")
                 everythingSolved = True
