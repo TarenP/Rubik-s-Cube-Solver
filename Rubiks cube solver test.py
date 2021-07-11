@@ -314,7 +314,7 @@ def colorfinder():
     #         cv2.imshow("YellowMask", yellow_mask)
     #         cv2.imshow("GreenMask", green_mask)
     #         cv2.imshow("BlueMask", blue_mask)
-        key =cv2.waitKey(1)
+        key = cv2.waitKey(1)
         
         if key== 27:
             break
@@ -329,15 +329,29 @@ def cornerActions():
     solvedC6 = False
     solvedC7 = False
     solvedC8 = False
-
-    mAQN = ["green", "red", "yellow"]
-    mBJM = ["yellow", "orange", "blue"]
-    mDRE = ["white", "orange", "green"]
-    mCFI = ["green", "orange", "yellow"]
-    mHSU = ["red", "blue", "white"]
-    mGLV = ["white", "red", "green"]
-    mXTO = ["red", "yellow", "blue"]
-    mWKP = ["white", "orange", "blue"]
+    A = "orange"
+    Q = "white"
+    N = "green"
+    B = "yellow"
+    J = "green"
+    M = "orange"
+    D = "orange"
+    R = "white"
+    E = "blue"
+    C = "green"
+    F = "yellow"
+    I = "red"
+    H = "red"
+    S = "blue"
+    U = "white"
+    mAQN = [A, Q, N]
+    mBJM = [B, J, M]
+    mDRE = [D, R, E]
+    mCFI = [C, F, I]
+    mHSU = [H, S, "white"]
+    mGLV = ["yellow", "red", "blue"]
+    mXTO = ["blue", "yellow", "orange"]
+    mWKP = ["green", "white", "red"]
     #checking if anycorners are already solved
     if (mBJM == BJM):
         solvedC2 = True
@@ -705,30 +719,30 @@ def edgeActions():
     solvedE11 = False
     solvedE12 = False
 
-    a = "yellow"
-    b = "yellow"
-    c = "yellow"
-    d = "yellow"
-    e = "red"
-    f = "red"
-    g = "red"
-    h = "red"
-    u = "white"
-    v = "white"
-    w = "white"
-    x = "white"
-    r = "blue"
-    q = "blue"
-    t = "blue"
+    a = "orange"
+    b = "blue"
+    c = "green"
+    d = "white"
+    e = "white"
+    f = "yellow"
+    g = "blue"
+    h = "orange"
+    u = "orange"
+    v = "red"
+    w = "orange"
+    x = "red"
+    r = "white"
+    q = "red"
+    t = "green"
     s = "blue"
     l = "green"
-    i = "green"
-    j = "green"
-    k = "green"
-    p = "orange"
-    m = "orange"
-    n = "orange"
-    o = "orange"
+    i = "yellow"
+    j = "white"
+    k = "blue"
+    p = "blue"
+    m = "green"
+    n = "red"
+    o = "yellow"
     mam = [a, m]
     mbi = [b, i]
     mce = [c, e]
