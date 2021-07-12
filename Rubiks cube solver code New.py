@@ -4,6 +4,7 @@ from picamera import PiCamera
 from PIL import Image
 import RPi.GPIO as GPIO
 from time import sleep
+import collections
 
 DIR1 = 20
 STEP1 = 21
@@ -1474,34 +1475,12 @@ def cornerActions():
 
     bankCorner = mAQN
 
-    corner1 = AQN
-    corner1.sort()
-    corner2 = BJM
-    corner2.sort()
-    corner3 = DRE
-    corner3.sort()
-    corner4 = CFI
-    corner4.sort()
-    corner5 = HSU
-    corner5.sort()
-    corner6 = GLV
-    corner6.sort()
-    corner7 = XTO
-    corner7.sort()
-    corner8 = WKP
-    corner8.sort()
-
-
     everythingSolved = False
     cornerSolveList = []
 
-
     #Use a list of the moves to the positions the bank pieces need to go.
-
     while everythingSolved == False:
-        bankCornerSorted = bankCorner
-        bankCornerSorted.sort()
-        if (bankCornerSorted == corner1):
+        if (collections.Counter(bankCorner) == collections.Counter(AQN)):
             index = AQN.index(bankCorner[0])
             if (index == 0 and solvedC2 == True and solvedC3 == True and solvedC4 == True and solvedC5 == True and solvedC6 == True and solvedC7 == True and solvedC8 == True):
                 print("already set")
@@ -1543,7 +1522,7 @@ def cornerActions():
                 mWKP = mWKP2
             #Swap with an unsolved corner because it is in the bank place and cannot be solved
     
-        elif(bankCornerSorted == corner2):
+        elif(collections.Counter(bankCorner) == collections.Counter(BJM)):
             index = BJM.index(bankCorner[0])
             if (index == 0):
                 cornerSolveList.append('B')
@@ -1558,7 +1537,7 @@ def cornerActions():
                 bankCorner = [M, B, J]
                 solvedC2 = True
 
-        elif (bankCornerSorted == corner3):
+        elif (collections.Counter(bankCorner) == collections.Counter(DRE)):
             index = DRE.index(bankCorner[0])
             if (index == 0):
                 cornerSolveList.append('D')
@@ -1573,7 +1552,7 @@ def cornerActions():
                 bankCorner = [E, D, R]
                 solvedC3 = True
 
-        elif(bankCornerSorted == corner4):
+        elif(collections.Counter(bankCorner) == collections.Counter(CFI)):
             index = CFI.index(bankCorner[0])
             if (index == 0):
                 cornerSolveList.append('C')
@@ -1588,7 +1567,7 @@ def cornerActions():
                 bankCorner = [I, C, F]
                 solvedC4 = True
         
-        elif(bankCornerSorted == corner5):
+        elif(collections.Counter(bankCorner) == collections.Counter(HSU)):
             index = HSU.index(bankCorner[0])
             if (index == 0):
                 cornerSolveList.append('H')
@@ -1603,7 +1582,7 @@ def cornerActions():
                 bankCorner = [U, H, S]
                 solvedC5 = True
 
-        elif(bankCornerSorted == corner6):
+        elif(collections.Counter(bankCorner) == collections.Counter(GLV)):
             index = GLV.index(bankCorner[0])
             if (index == 0):
                 cornerSolveList.append('G')
@@ -1618,7 +1597,7 @@ def cornerActions():
                 bankCorner = [V, G, L]
                 solvedC6 = True
         
-        elif(bankCornerSorted == corner7):
+        elif(collections.Counter(bankCorner) == collections.Counter(XTO)):
             index = XTO.index(bankCorner[0])
             if (index == 0):
                 cornerSolveList.append('X')
@@ -1633,7 +1612,7 @@ def cornerActions():
                 bankCorner = [O, X, T]
                 solvedC7 = True
 
-        elif (bankCornerSorted == corner8):
+        elif (collections.Counter(bankCorner) == collections.Counter(WKP)):
             index = WKP.index(bankCorner[0])
             if (index == 0):
                 cornerSolveList.append('W')
@@ -2082,7 +2061,7 @@ def edgeActions():
 
 def edgeSwapper(edgeSolveList):
     counter = 0
-    for i in len(edgeSolveList):
+    for i in edgeSolveList:
         letter = edgeSolveList[counter]
         if letter == 'a':
             lturn()

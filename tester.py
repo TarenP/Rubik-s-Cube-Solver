@@ -1,3 +1,4 @@
+import collections
 AQN = ["yellow", "blue", "orange"]
 BJM = ["yellow", "green", "orange"]
 DRE = ["yellow", "blue", "red"]
@@ -6,8 +7,7 @@ HSU = ["red", "blue", "white"]
 GLV = ["red", "green", "white"]
 XTO = ["white", "blue", "orange"]
 WKP = ["white", "green", "orange"]
-mAQN = ["red", "blue", "yellow"]
+mAQN = ["green", "orange", "white"]
 
-#index = DRE.index(mAQN[0])
-if mAQN == AQN:
-    print("=")
+index = WKP.index(mAQN[0])
+print(index)

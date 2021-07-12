@@ -3,6 +3,7 @@ import numpy as np
 from PIL import Image
 # import RPi.GPIO as GPIO
 from time import sleep
+import collections
 
 DIR1 = 20
 STEP1 = 21
@@ -196,130 +197,6 @@ def Jpermutation():
     Rprimeturn()
     Uprimeturn()
 
-def colorfinder():
-    counter = 1
-    faceColors = ["pink", "pink", "pink", "pink", "pink", "pink", "pink", "pink", "pink"]
-    camera.capture("/home/pi/Desktop/cube.jpg")
-    while counter <= 9:
-        
-        
-        im = Image.open("/home/pi/Desktop/cube.jpg")
-        
-        
-        if counter == 1:
-            im_crop = im.crop((80, 80, (res/3)-80, (res/3)-80))
-        if counter == 2:
-             im_crop = im.crop(((res/3)+80, 80, (res/3) + (res/3)-80, (res/3)-80))
-        if counter == 3:
-             im_crop = im.crop(((res/3) + (res/3) + 80, 80, res-80, (res/3)-80))
-        if counter == 4:
-             im_crop = im.crop((80, (res/3)+80, (res/3)-80, (res/3) + (res/3) - 80))
-        if counter == 5:
-             im_crop = im.crop(((res/3)+80, (res/3)+80, (res/3) + (res/3) - 80, (res/3) + (res/3)-80))
-        if counter == 6:
-             im_crop = im.crop(((res/3) + (res/3) + 80, (res/3) + 80, (res/3) + (res/3) + (res/3) -80, (res/3) + (res/3) - 80))
-        if counter == 7:
-             im_crop = im.crop((80, (res/3) + (res/3) + 80, (res/3) - 80, res - 80))
-        if counter == 8:
-             im_crop = im.crop(((res/3) + 80, (res/3) + (res/3) + 80, (res/3) + (res/3) - 80, res - 80))
-        if counter == 9:
-             im_crop = im.crop(((res/3) + (res/3) + 80, (res/3) + (res/3) + 80, res - 80, res - 80))
-        im_crop.save("/home/pi/Desktop/cubecropped.jpg")
-        img = cv2.imread("/home/pi/Desktop/cubecropped.jpg")
-        hsv_img = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
-            
-        # store in array
-        
-        #White color
-        low_white = np.array([0, 0, 0])
-        high_white = np.array([255, 99, 255])
-        white_mask = cv2.inRange(hsv_img, low_white, high_white)
-        contours1, _ = cv2.findContours(white_mask, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
-        contours1 = sorted(contours1, key=lambda x:cv2.contourArea(x), reverse=True)
-            
-        for cnt in contours1:
-            area1 = cv2.contourArea(cnt)
-            if area1 > 5000:
-                faceColors[counter-1] = "white"
-
-        
-        #yellow color
-        low_yellow = np.array([23, 108, 90])
-        high_yellow = np.array([40, 255, 255])
-        yellow_mask = cv2.inRange(hsv_img, low_yellow, high_yellow)
-        contours2, _ = cv2.findContours(yellow_mask, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
-        contours2 = sorted(contours2, key=lambda x:cv2.contourArea(x), reverse=True)
-         
-        for cnt in contours2:
-            area2 = cv2.contourArea(cnt)
-            if area2 > 5000:
-                faceColors[counter-1] = "yellow"
-        
-        #blue color
-        low_blue = np.array([111, 155, 100])
-        high_blue = np.array([122, 255, 255])
-        blue_mask = cv2.inRange(hsv_img, low_blue, high_blue)
-        contours3, _ = cv2.findContours(blue_mask, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
-        contours3 = sorted(contours3, key=lambda x:cv2.contourArea(x), reverse=True)
-         
-        for cnt in contours3:
-            area3 = cv2.contourArea(cnt)
-            if area3 > 5000:
-                faceColors[counter-1] = "blue"
-                
-        #green color
-        low_green = np.array([36, 171, 0])
-        high_green = np.array([71, 255, 255])
-        green_mask = cv2.inRange(hsv_img, low_green, high_green)
-        contours4, _ = cv2.findContours(green_mask, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
-        contours4 = sorted(contours4, key=lambda x:cv2.contourArea(x), reverse=True)
-         
-        for cnt in contours4:
-            area4 = cv2.contourArea(cnt)
-            if area4 > 5000:
-               faceColors[counter-1] = "green"
-                
-        #Orange color
-        low_orange = np.array([0, 2, 179])
-        high_orange = np.array([15, 255, 255])
-        orange_mask = cv2.inRange(hsv_img, low_orange, high_orange)
-        contours5, _ = cv2.findContours(orange_mask, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
-        contours5 = sorted(contours5, key=lambda x:cv2.contourArea(x), reverse=True)
-         
-        for cnt in contours5:
-            area5 = cv2.contourArea(cnt)
-            if area5 > 5000:
-               faceColors[counter-1] = "orange"
-        
-        
-    #         #White color
-    #         low_white = np.array([110, 100, 100])
-    #         high_white = np.array([130, 255, 255])
-    #         white_mask = cv2.inRange(hsv_img, low_white, high_white)
-    #         contours6, _ = cv2.findContours(white_mask, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
-    #         contours6 = sorted(contours6, key=lambda x:cv2.contourArea(x), reverse=True)
-    #          
-    #         for cnt in contours6:
-    #             area6 = cv2.contourArea(cnt)
-    #             if area6 > 5000:
-        if faceColors[counter-1]=="pink":
-            
-            faceColors[counter-1] = "red"
-                
-        
-        counter+=1
-                
-        #cv2.imshow("Frame", img)
-    #         cv2.imshow("RedMask", red_mask)
-    #         cv2.imshow("YellowMask", yellow_mask)
-    #         cv2.imshow("GreenMask", green_mask)
-    #         cv2.imshow("BlueMask", blue_mask)
-        key = cv2.waitKey(1)
-        
-        if key== 27:
-            break
-    return faceColors    
-
 
 def cornerActions():
     solvedC2 = False
@@ -330,62 +207,40 @@ def cornerActions():
     solvedC7 = False
     solvedC8 = False
     A = "orange"
-    Q = "white"
-    N = "green"
-    B = "yellow"
-    J = "green"
-    M = "orange"
+    Q = "yellow"
+    N = "blue"
+    B = "green"
+    J = "yellow"
+    M = "red"
     D = "orange"
-    R = "white"
-    E = "blue"
-    C = "green"
+    R = "yellow"
+    E = "green"
+    C = "red"
     F = "yellow"
-    I = "red"
+    I = "blue"
     H = "red"
     S = "blue"
     U = "white"
+    G = "white"
+    L = "red"
+    V = "green"
+    X = "blue"
+    T = "orange"
+    O = "white"
+    W = "white"
+    K = "green"
+    P = "orange"
     mAQN = [A, Q, N]
     mBJM = [B, J, M]
     mDRE = [D, R, E]
     mCFI = [C, F, I]
-    mHSU = [H, S, "white"]
-    mGLV = ["yellow", "red", "blue"]
-    mXTO = ["blue", "yellow", "orange"]
-    mWKP = ["green", "white", "red"]
+    mHSU = [H, S, U]
+    mGLV = [G, L, V]
+    mXTO = [X, T, O]
+    mWKP = [W, K, P]
     #checking if anycorners are already solved
-    if (mBJM == BJM):
-        solvedC2 = True
-    if (mDRE == DRE):
-        solvedC3 = True
-    if (mCFI == CFI):
-        solvedC4 = True
-    if (mHSU == HSU):
-        solvedC5 = True
-    if (mGLV == GLV):
-        solvedC6 = True
-    if (mXTO == XTO):
-        solvedC7 = True
-    if (mWKP == WKP):
-        solvedC8 = True
 
     bankCorner = mAQN
-
-    corner1 = AQN
-    corner1.sort()
-    corner2 = BJM
-    corner2.sort()
-    corner3 = DRE
-    corner3.sort()
-    corner4 = CFI
-    corner4.sort()
-    corner5 = HSU
-    corner5.sort()
-    corner6 = GLV
-    corner6.sort()
-    corner7 = XTO
-    corner7.sort()
-    corner8 = WKP
-    corner8.sort()
 
 
     everythingSolved = False
@@ -393,14 +248,25 @@ def cornerActions():
 
 
     #Use a list of the moves to the positions the bank pieces need to go.
-
     while everythingSolved == False:
-        bankCornerSorted = bankCorner
-        bankCornerSorted.sort()
-        print(bankCorner)
-        if (bankCornerSorted == corner1):
-            index = AQN.index(bankCorner[0])
-            if (index == 0 and solvedC2 == True and solvedC3 == True and solvedC4 == True and solvedC5 == True and solvedC6 == True and solvedC7 == True and solvedC8 == True):
+        #print(bankCorner)
+        if (mBJM == BJM):
+            solvedC2 = True
+        if (mDRE == DRE):
+            solvedC3 = True
+        if (mCFI == CFI):
+            solvedC4 = True
+        if (mHSU == HSU):
+            solvedC5 = True
+        if (mGLV == GLV):
+            solvedC6 = True
+        if (mXTO == XTO):
+            solvedC7 = True
+        if (mWKP == WKP):
+            solvedC8 = True
+
+        if (collections.Counter(bankCorner) == collections.Counter(AQN)):
+            if (solvedC2 == True and solvedC3 == True and solvedC4 == True and solvedC5 == True and solvedC6 == True and solvedC7 == True and solvedC8 == True):
                 print("already set")
                 everythingSolved = True
             elif (solvedC2 == False):
@@ -408,39 +274,53 @@ def cornerActions():
                 mBJM2 = bankCorner
                 bankCorner = mBJM
                 mBJM = mBJM2
+                print(mBJM)
+                print(bankCorner)
             elif(solvedC3 == False):
                 cornerSolveList.append('D')
                 mDRE2 = bankCorner
                 bankCorner = mDRE
                 mDRE = mDRE2
+                print(mDRE)
+                print(bankCorner)
             elif(solvedC4 == False):
                 cornerSolveList.append('C')
                 mCFI2 = bankCorner
                 bankCorner = mCFI
                 mCFI = mCFI2
+                print(mCFI)
+                print(bankCorner)
             elif(solvedC5 == False):
-                cornerSolveList.append('D')
+                cornerSolveList.append('H')
                 mHSU2 = bankCorner
                 bankCorner = mHSU
                 mHSU = mHSU2
+                print(mHSU)
+                print(bankCorner)
             elif (solvedC6 == False):
                 cornerSolveList.append('G')
                 mGLV2 = bankCorner
                 bankCorner = mGLV
                 mGLV = mGLV2
+                print(mGLV)
+                print(bankCorner)
             elif (solvedC7 == False):
                 cornerSolveList.append('X')
                 mXTO2 = bankCorner
                 bankCorner = mXTO
                 mXTO = mXTO2
+                print(mXTO)
+                print(bankCorner)
             elif (solvedC8 == False):
                 cornerSolveList.append('W')
                 mWKP2 = bankCorner
                 bankCorner = mWKP
                 mWKP = mWKP2
+                print(mWKP)
+                print(bankCorner)
             #Swap with an unsolved corner because it is in the bank place and cannot be solved
     
-        elif(bankCornerSorted == corner2):
+        elif(collections.Counter(bankCorner) == collections.Counter(BJM)):
             index = BJM.index(bankCorner[0])
             if (index == 0):
                 cornerSolveList.append('B')
@@ -455,7 +335,7 @@ def cornerActions():
                 bankCorner = [M, B, J]
                 solvedC2 = True
 
-        elif (bankCornerSorted == corner3):
+        elif (collections.Counter(bankCorner) == collections.Counter(DRE)):
             index = DRE.index(bankCorner[0])
             if (index == 0):
                 cornerSolveList.append('D')
@@ -470,7 +350,7 @@ def cornerActions():
                 bankCorner = [E, D, R]
                 solvedC3 = True
 
-        elif(bankCornerSorted == corner4):
+        elif(collections.Counter(bankCorner) == collections.Counter(CFI)):
             index = CFI.index(bankCorner[0])
             if (index == 0):
                 cornerSolveList.append('C')
@@ -485,7 +365,7 @@ def cornerActions():
                 bankCorner = [I, C, F]
                 solvedC4 = True
         
-        elif(bankCornerSorted == corner5):
+        elif(collections.Counter(bankCorner) == collections.Counter(HSU)):
             index = HSU.index(bankCorner[0])
             if (index == 0):
                 cornerSolveList.append('H')
@@ -500,7 +380,7 @@ def cornerActions():
                 bankCorner = [U, H, S]
                 solvedC5 = True
 
-        elif(bankCornerSorted == corner6):
+        elif(collections.Counter(bankCorner) == collections.Counter(GLV)):
             index = GLV.index(bankCorner[0])
             if (index == 0):
                 cornerSolveList.append('G')
@@ -515,7 +395,7 @@ def cornerActions():
                 bankCorner = [V, G, L]
                 solvedC6 = True
         
-        elif(bankCornerSorted == corner7):
+        elif(collections.Counter(bankCorner) == collections.Counter(XTO)):
             index = XTO.index(bankCorner[0])
             if (index == 0):
                 cornerSolveList.append('X')
@@ -530,7 +410,7 @@ def cornerActions():
                 bankCorner = [O, X, T]
                 solvedC7 = True
 
-        elif (bankCornerSorted == corner8):
+        elif (collections.Counter(bankCorner) == collections.Counter(WKP)):
             index = WKP.index(bankCorner[0])
             if (index == 0):
                 cornerSolveList.append('W')
