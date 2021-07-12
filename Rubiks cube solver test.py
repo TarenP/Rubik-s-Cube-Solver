@@ -453,6 +453,7 @@ def cornerSwapper(cornerSolveList):
     counter = 0
     if len(cornerSolveList)%2 != 0:
         odd = True
+        print("odd")
     for i in cornerSolveList:
         letter = cornerSolveList[counter]
         if letter == 'B':
