@@ -1840,54 +1840,6 @@ def edgeActions():
 
     bankEdge = mbi
 
-    edge1 = bi
-    edge1.sort()
-    edge2 = am
-    edge2.sort()
-    edge3 = ce
-    edge3.sort()
-    edge4 = dq
-    edge4.sort()
-    edge5 = fl
-    edge5.sort()
-    edge6 = gu
-    edge6.sort()
-    edge7 = hr
-    edge7.sort()
-    edge8 = tn
-    edge8.sort()
-    edge9 = sx
-    edge9.sort()
-    edge10 = kv
-    edge10.sort()
-    edge11 = ow
-    edge11.sort()
-    edge12 = jp
-    edge12.sort()
-
-    #checking if anycorners are already solved
-    if (mam == am):
-        solvedE2 = True
-    if (mce == ce):
-        solvedE3 = True
-    if (mdq == dq):
-        solvedE4 = True
-    if (mfl == fl):
-        solvedE5 = True
-    if (mgu == gu):
-        solvedE6 = True
-    if (mhr == hr):
-        solvedE7 = True
-    if (mtn == tn):
-        solvedE8 = True
-    if (msx == sx):
-        solvedE9 = True
-    if (mkv == kv):
-        solvedE10 = True
-    if (mow == ow):
-        solvedE11 = True
-    if (mjp == jp):
-        solvedE12 = True
 
     everythingSolved = False
     edgeSolveList = []
@@ -1896,71 +1848,135 @@ def edgeActions():
 
     #finish
     while everythingSolved == False:
-        bankEdgeSorted = bankEdge
-        bankEdgeSorted.sort()
-        if (bankEdgeSorted == edge1):
-            index = bi.index(bankEdge[0])
-            if (index == 0 and solvedE2 == True and solvedE3 == True and solvedE4 == True and solvedE5 == True and solvedE6 == True and solvedE7 == True and solvedE8 == True and solvedE9 == True and solvedE10 == True and solvedE11 == True and solvedE12 == True):
+        #checking if any edges are already solved
+        if (mam == am):
+            solvedE2 = True
+        if (mce == ce):
+            solvedE3 = True
+        if (mdq == dq):
+            solvedE4 = True
+        if (mfl == fl):
+            solvedE5 = True
+        if (mgu == gu):
+            solvedE6 = True
+        if (mhr == hr):
+            solvedE7 = True
+        if (mtn == tn):
+            solvedE8 = True
+        if (msx == sx):
+            solvedE9 = True
+        if (mkv == kv):
+            solvedE10 = True
+        if (mow == ow):
+            solvedE11 = True
+        if (mjp == jp):
+            solvedE12 = True
+        if (collections.Counter(bankEdge) == collections.Counter(bi)):
+            if (solvedE2 == True and solvedE3 == True and solvedE4 == True and solvedE5 == True and solvedE6 == True and solvedE7 == True and solvedE8 == True and solvedE9 == True and solvedE10 == True and solvedE11 == True and solvedE12 == True):
                 print("Edges already set")
                 everythingSolved = True
             elif (solvedE2 == False):
                 edgeSolveList.append('a')
-                mam2 = bankEdge #old bank edge
-                bankEdge = mam #Changes
-                mam = mam2 #equals old bank edge
+                mam2 = bankEdge 
+                bankEdge = mam 
+                mam = mam2 
+                a = mam[0]
+                m = mam[1]
+                print(mam)
+                print(bankEdge)
             elif(solvedE3 == False):
                 edgeSolveList.append('c')
                 mce2 = bankEdge
                 bankEdge = mce
                 mce = mce2
+                c = mce[0]
+                e = mce[1]
+                print(mce)
+                print(bankEdge)
             elif(solvedE4 == False):
                 edgeSolveList.append('d')
                 mdq2 = bankEdge
                 bankEdge = mdq
                 mdq = mdq2
+                d = mdq[0]
+                q = mdq[1]
+                print(mdq)
+                print(bankEdge)
             elif(solvedE5 == False):
                 edgeSolveList.append('f')
                 mfl2 = bankEdge
                 bankEdge = mfl
                 mfl = mfl2
+                f = mfl[0]
+                l = mfl[1]
+                print(mfl)
+                print(bankEdge)
             elif (solvedE6 == False):
                 edgeSolveList.append('g')
                 mgu2 = bankEdge
                 bankEdge = mgu
                 mgu = mgu2
+                g = mgu[0]
+                u = mgu[1]
+                print(mgu)
+                print(bankEdge)
             elif (solvedE7 == False):
                 edgeSolveList.append('h')
                 mhr2 = bankEdge
                 bankEdge = mhr
                 mhr = mhr2
+                h = mhr[0]
+                r = mhr[1]
+                print(mhr)
+                print(bankEdge)
             elif (solvedE8 == False):
                 edgeSolveList.append('t')
                 mtn2 = bankEdge
                 bankEdge = mtn
                 mtn = mtn2
+                t = mtn[0]
+                n = mtn[1]
+                print(mtn)
+                print(bankEdge)
             elif (solvedE9 == False):
                 edgeSolveList.append('s')
                 msx2 = bankEdge
                 bankEdge = msx
                 msx = msx2
+                s = msx[0]
+                x = msx[1]
+                print(msx)
+                print(bankEdge)
             elif (solvedE10 == False):
                 edgeSolveList.append('k')
                 mkv2 = bankEdge
                 bankEdge = mkv
                 mkv = mkv2
+                k = mkv[0]
+                v = mkv[1]
+                print(mkv)
+                print(bankEdge)
             elif (solvedE11 == False):
                 edgeSolveList.append('o')
                 mow2 = bankEdge
                 bankEdge = mow
                 mow = mow2
+                o = mow[0]
+                w = mow[1]
+                print(mow)
+                print(bankEdge)
             elif (solvedE12 == False):
                 edgeSolveList.append('j')
                 mjp2 = bankEdge
                 bankEdge = mjp
                 mjp = mjp2
+                j = mjp[0]
+                p = mjp[1]
+                print(mjp)
+                print(bankEdge)
             #Swap with an unsolved Edge because it is in the bank place and cannot be solved
     
-        elif(bankEdgeSorted == edge2):
+        elif(collections.Counter(bankEdge) == collections.Counter(am)):
             index = am.index(bankEdge[0])
             if (index == 0):
                 edgeSolveList.append('a')
@@ -1971,7 +1987,7 @@ def edgeActions():
                 bankEdge = [m, a]
                 solvedE2 = True
 
-        elif(bankEdgeSorted == edge3):
+        elif(collections.Counter(bankEdge) == collections.Counter(ce)):
             index = ce.index(bankEdge[0])
             if (index == 0):
                 edgeSolveList.append('c')
@@ -1982,7 +1998,7 @@ def edgeActions():
                 bankEdge = [e, c]
                 solvedE3 = True
         
-        elif(bankEdgeSorted == edge4):
+        elif(collections.Counter(bankEdge) == collections.Counter(dq)):
             index = dq.index(bankEdge[0])
             if (index == 0):
                 edgeSolveList.append('d')
@@ -1993,7 +2009,7 @@ def edgeActions():
                 bankEdge = [q, d]
                 solvedE4 = True
             
-        elif(bankEdgeSorted == edge5):
+        elif(collections.Counter(bankEdge) == collections.Counter(fl)):
             index = fl.index(bankEdge[0])
             if (index == 0):
                 edgeSolveList.append('f')
@@ -2004,7 +2020,7 @@ def edgeActions():
                 bankEdge = [l, f]
                 solvedE5 = True
         
-        elif(bankEdgeSorted == edge6):
+        elif(collections.Counter(bankEdge) == collections.Counter(gu)):
             index = gu.index(bankEdge[0])
             if (index == 0):
                 edgeSolveList.append('g')
@@ -2015,7 +2031,7 @@ def edgeActions():
                 bankEdge = [u, g]
                 solvedE6 = True
 
-        elif(bankEdgeSorted == edge7):
+        elif(collections.Counter(bankEdge) == collections.Counter(hr)):
             index = hr.index(bankEdge[0])
             if (index == 0):
                 edgeSolveList.append('h')
@@ -2026,7 +2042,7 @@ def edgeActions():
                 bankEdge = [r, h]
                 solvedE7 = True
         
-        elif(bankEdgeSorted == edge8):
+        elif(collections.Counter(bankEdge) == collections.Counter(tn)):
             index = tn.index(bankEdge[0])
             if (index == 0):
                 edgeSolveList.append('t')
@@ -2037,7 +2053,7 @@ def edgeActions():
                 bankEdge = [n, t]
                 solvedE8 = True
 
-        elif(bankEdgeSorted == edge9):
+        elif(collections.Counter(bankEdge) == collections.Counter(sx)):
             index = sx.index(bankEdge[0])
             if (index == 0):
                 edgeSolveList.append('s')
@@ -2048,7 +2064,7 @@ def edgeActions():
                 bankEdge = [x, s]
                 solvedE9 = True
 
-        elif(bankEdgeSorted == edge10):
+        elif(collections.Counter(bankEdge) == collections.Counter(kv)):
             index = kv.index(bankEdge[0])
             if (index == 0):
                 edgeSolveList.append('k')
@@ -2059,7 +2075,7 @@ def edgeActions():
                 bankEdge = [v, k]
                 solvedE10 = True
         
-        elif(bankEdgeSorted == edge11):
+        elif(collections.Counter(bankEdge) == collections.Counter(ow)):
             index = ow.index(bankEdge[0])
             if (index == 0):
                 edgeSolveList.append('o')
@@ -2070,7 +2086,7 @@ def edgeActions():
                 bankEdge = [w, o]
                 solvedE11 = True
 
-        elif(bankEdgeSorted == edge12):
+        elif(collections.Counter(bankEdge) == collections.Counter(jp)):
             index = jp.index(bankEdge[0])
             if (index == 0):
                 edgeSolveList.append('j')
