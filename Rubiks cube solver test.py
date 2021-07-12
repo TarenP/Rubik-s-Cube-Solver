@@ -206,21 +206,21 @@ def cornerActions():
     solvedC6 = False
     solvedC7 = False
     solvedC8 = False
-    A = "orange"
-    Q = "yellow"
+    A = "red"
+    Q = "white"
     N = "blue"
-    B = "green"
-    J = "yellow"
-    M = "red"
-    D = "orange"
+    B = "orange"
+    J = "blue"
+    M = "yellow"
+    D = "green"
     R = "yellow"
-    E = "green"
-    C = "red"
+    E = "red"
+    C = "orange"
     F = "yellow"
-    I = "blue"
+    I = "green"
     H = "red"
-    S = "blue"
-    U = "white"
+    S = "yellow"
+    U = "blue"
     G = "white"
     L = "red"
     V = "green"
@@ -274,6 +274,9 @@ def cornerActions():
                 mBJM2 = bankCorner
                 bankCorner = mBJM
                 mBJM = mBJM2
+                B = mBJM[0]
+                J = mBJM[1]
+                M = mBJM[2]
                 print(mBJM)
                 print(bankCorner)
             elif(solvedC3 == False):
@@ -281,6 +284,9 @@ def cornerActions():
                 mDRE2 = bankCorner
                 bankCorner = mDRE
                 mDRE = mDRE2
+                D = mDRE[0]
+                R = mDRE[1]
+                E = mDRE[2]
                 print(mDRE)
                 print(bankCorner)
             elif(solvedC4 == False):
@@ -288,6 +294,9 @@ def cornerActions():
                 mCFI2 = bankCorner
                 bankCorner = mCFI
                 mCFI = mCFI2
+                C = mCFI[0]
+                F = mCFI[1]
+                I = mCFI[2]
                 print(mCFI)
                 print(bankCorner)
             elif(solvedC5 == False):
@@ -295,6 +304,9 @@ def cornerActions():
                 mHSU2 = bankCorner
                 bankCorner = mHSU
                 mHSU = mHSU2
+                H = mHSU[0]
+                S = mHSU[1]
+                U = mHSU[2]
                 print(mHSU)
                 print(bankCorner)
             elif (solvedC6 == False):
@@ -302,6 +314,9 @@ def cornerActions():
                 mGLV2 = bankCorner
                 bankCorner = mGLV
                 mGLV = mGLV2
+                G = mGLV[0]
+                L = mGLV[1]
+                V = mGLV[2]
                 print(mGLV)
                 print(bankCorner)
             elif (solvedC7 == False):
@@ -309,6 +324,9 @@ def cornerActions():
                 mXTO2 = bankCorner
                 bankCorner = mXTO
                 mXTO = mXTO2
+                X = mXTO[0]
+                T = mXTO[1]
+                O = mXTO[2]
                 print(mXTO)
                 print(bankCorner)
             elif (solvedC8 == False):
@@ -316,6 +334,9 @@ def cornerActions():
                 mWKP2 = bankCorner
                 bankCorner = mWKP
                 mWKP = mWKP2
+                W = mWKP[0]
+                K = mWKP[1]
+                P = mWKP[2]
                 print(mWKP)
                 print(bankCorner)
             #Swap with an unsolved corner because it is in the bank place and cannot be solved
