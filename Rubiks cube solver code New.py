@@ -1458,31 +1458,34 @@ def cornerActions():
     mXTO = [X, T, O]
     mWKP = [W, K, P]
     #checking if anycorners are already solved
-    if (mBJM == BJM):
-        solvedC2 = True
-    if (mDRE == DRE):
-        solvedC3 = True
-    if (mCFI == CFI):
-        solvedC4 = True
-    if (mHSU == HSU):
-        solvedC5 = True
-    if (mGLV == GLV):
-        solvedC6 = True
-    if (mXTO == XTO):
-        solvedC7 = True
-    if (mWKP == WKP):
-        solvedC8 = True
 
     bankCorner = mAQN
+
 
     everythingSolved = False
     cornerSolveList = []
 
+
     #Use a list of the moves to the positions the bank pieces need to go.
     while everythingSolved == False:
+        #print(bankCorner)
+        if (mBJM == BJM):
+            solvedC2 = True
+        if (mDRE == DRE):
+            solvedC3 = True
+        if (mCFI == CFI):
+            solvedC4 = True
+        if (mHSU == HSU):
+            solvedC5 = True
+        if (mGLV == GLV):
+            solvedC6 = True
+        if (mXTO == XTO):
+            solvedC7 = True
+        if (mWKP == WKP):
+            solvedC8 = True
+
         if (collections.Counter(bankCorner) == collections.Counter(AQN)):
-            index = AQN.index(bankCorner[0])
-            if (index == 0 and solvedC2 == True and solvedC3 == True and solvedC4 == True and solvedC5 == True and solvedC6 == True and solvedC7 == True and solvedC8 == True):
+            if (solvedC2 == True and solvedC3 == True and solvedC4 == True and solvedC5 == True and solvedC6 == True and solvedC7 == True and solvedC8 == True):
                 print("already set")
                 everythingSolved = True
             elif (solvedC2 == False):
@@ -1490,36 +1493,57 @@ def cornerActions():
                 mBJM2 = bankCorner
                 bankCorner = mBJM
                 mBJM = mBJM2
+                B = mBJM[0]
+                J = mBJM[1]
+                M = mBJM[2]
             elif(solvedC3 == False):
                 cornerSolveList.append('D')
                 mDRE2 = bankCorner
                 bankCorner = mDRE
                 mDRE = mDRE2
+                D = mDRE[0]
+                R = mDRE[1]
+                E = mDRE[2]
             elif(solvedC4 == False):
                 cornerSolveList.append('C')
                 mCFI2 = bankCorner
                 bankCorner = mCFI
                 mCFI = mCFI2
+                C = mCFI[0]
+                F = mCFI[1]
+                I = mCFI[2]
             elif(solvedC5 == False):
-                cornerSolveList.append('D')
+                cornerSolveList.append('H')
                 mHSU2 = bankCorner
                 bankCorner = mHSU
                 mHSU = mHSU2
+                H = mHSU[0]
+                S = mHSU[1]
+                U = mHSU[2]
             elif (solvedC6 == False):
                 cornerSolveList.append('G')
                 mGLV2 = bankCorner
                 bankCorner = mGLV
                 mGLV = mGLV2
+                G = mGLV[0]
+                L = mGLV[1]
+                V = mGLV[2]
             elif (solvedC7 == False):
                 cornerSolveList.append('X')
                 mXTO2 = bankCorner
                 bankCorner = mXTO
                 mXTO = mXTO2
+                X = mXTO[0]
+                T = mXTO[1]
+                O = mXTO[2]
             elif (solvedC8 == False):
                 cornerSolveList.append('W')
                 mWKP2 = bankCorner
                 bankCorner = mWKP
                 mWKP = mWKP2
+                W = mWKP[0]
+                K = mWKP[1]
+                P = mWKP[2]
             #Swap with an unsolved corner because it is in the bank place and cannot be solved
     
         elif(collections.Counter(bankCorner) == collections.Counter(BJM)):
