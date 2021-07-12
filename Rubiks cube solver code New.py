@@ -2586,7 +2586,7 @@ for x in range(clamp):
     sleep(sdelay)
 sleep(.3)
 
-Done With Red
+#Done With Red
 
 
 GPIO.output(DIR4, CW)
