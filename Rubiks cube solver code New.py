@@ -46,15 +46,14 @@ GPIO.setup(DIR8, GPIO.OUT)
 GPIO.setup(STEP8, GPIO.OUT)
 
 #delay between steps for motor turns
-delay = .015
+delay = .0208
 sdelay = .03
 #Sensitivity for reseting cube position after turn
 # sensitivity = 3
 
 #Steps for clamping the cube with all four claws
-clamp = 6
-turnClamp = 6
-
+clamp = 4
+turnClamp = 4
 # adjx = 2
 # adjy = 0
 
@@ -2954,21 +2953,21 @@ Xprimeturn()
 
 #Done with Orange
 
-GPIO.output(DIR4, CW)
-GPIO.output(DIR3, CW)
-GPIO.output(DIR1, CW)
-GPIO.output(DIR2, CW)
-for x in range(clamp):
-    GPIO.output(STEP1, GPIO.HIGH)
-    GPIO.output(STEP2, GPIO.HIGH)
-    GPIO.output(STEP3, GPIO.HIGH)
-    GPIO.output(STEP4, GPIO.HIGH)
-    sleep(sdelay)
-    GPIO.output(STEP1, GPIO.LOW)
-    GPIO.output(STEP2, GPIO.LOW)
-    GPIO.output(STEP3, GPIO.LOW)
-    GPIO.output(STEP4, GPIO.LOW)
-    sleep(sdelay)
+# GPIO.output(DIR4, CW)
+# GPIO.output(DIR3, CW)
+# GPIO.output(DIR1, CW)
+# GPIO.output(DIR2, CW)
+# for x in range(clamp):
+#     GPIO.output(STEP1, GPIO.HIGH)
+#     GPIO.output(STEP2, GPIO.HIGH)
+#     GPIO.output(STEP3, GPIO.HIGH)
+#     GPIO.output(STEP4, GPIO.HIGH)
+#     sleep(sdelay)
+#     GPIO.output(STEP1, GPIO.LOW)
+#     GPIO.output(STEP2, GPIO.LOW)
+#     GPIO.output(STEP3, GPIO.LOW)
+#     GPIO.output(STEP4, GPIO.LOW)
+#     sleep(sdelay)
 
 
 Yprimeturn()
@@ -3299,6 +3298,7 @@ sleep(.3)
 # sleep(.3)
 
 Yprimeturn()
+
 
 #Done With green
 
