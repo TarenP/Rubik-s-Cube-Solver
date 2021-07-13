@@ -1168,16 +1168,6 @@ def colorfinder():
                faceColors[counter-1] = "orange"
         
         
-    #         #White color
-    #         low_white = np.array([110, 100, 100])
-    #         high_white = np.array([130, 255, 255])
-    #         white_mask = cv2.inRange(hsv_img, low_white, high_white)
-    #         contours6, _ = cv2.findContours(white_mask, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
-    #         contours6 = sorted(contours6, key=lambda x:cv2.contourArea(x), reverse=True)
-    #          
-    #         for cnt in contours6:
-    #             area6 = cv2.contourArea(cnt)
-    #             if area6 > 5000:
         if faceColors[counter-1]=="pink":
             
             faceColors[counter-1] = "red"
