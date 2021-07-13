@@ -52,8 +52,8 @@ sdelay = .03
 # sensitivity = 3
 
 #Steps for clamping the cube with all four claws
-clamp = 4
-turnClamp = 4
+clamp = 6
+turnClamp = 6
 
 # adjx = 2
 # adjy = 0
@@ -1449,6 +1449,8 @@ def cornerActions():
     solvedC7 = False
     solvedC8 = False
 
+    global A, Q, N, B, J, M, D, R, E, C, F, I, H, S, U, G, L, V, X, T, O, W, K, P
+
     mAQN = [A, Q, N]
     mBJM = [B, J, M]
     mDRE = [D, R, E]
@@ -1824,7 +1826,7 @@ def edgeActions():
     solvedE10 = False
     solvedE11 = False
     solvedE12 = False
-
+    global a, m, b, i, c, e, d, q, f, l, g, u, h, r, t, n, s, x, k, v, o, w, j, p
     mam = [a, m]
     mbi = [b, i]
     mce = [c, e]
@@ -3303,5 +3305,5 @@ Yprimeturn()
 #endregion
 
 
-#main()
+main()
 
