@@ -90,6 +90,148 @@ ow = ["orange", "white"]
 jp = ["green", "orange"]
 
 
+def beforePic():
+    GPIO.output(DIR4, CW)
+    GPIO.output(DIR3, CW)
+    GPIO.output(DIR1, CW)
+    GPIO.output(DIR2, CW)
+    for x in range(clamp):
+        GPIO.output(STEP1, GPIO.HIGH)
+        GPIO.output(STEP2, GPIO.HIGH)
+        GPIO.output(STEP3, GPIO.HIGH)
+        GPIO.output(STEP4, GPIO.HIGH)
+        sleep(sdelay)
+        GPIO.output(STEP1, GPIO.LOW)
+        GPIO.output(STEP2, GPIO.LOW)
+        GPIO.output(STEP3, GPIO.LOW)
+        GPIO.output(STEP4, GPIO.LOW)
+        sleep(sdelay)
+    sleep(.03)
+
+
+    GPIO.output(DIR2, CCW)
+    GPIO.output(DIR4, CCW)
+    for x in range(30):
+        GPIO.output(STEP2, GPIO.HIGH)
+        GPIO.output(STEP4, GPIO.HIGH)
+        sleep(delay)
+        GPIO.output(STEP2, GPIO.LOW)
+        GPIO.output(STEP4, GPIO.LOW)
+        sleep(delay)
+
+
+    GPIO.output(DIR5, CW)
+    GPIO.output(DIR8, CCW)
+    for x in range(50):
+        GPIO.output(STEP5, GPIO.HIGH)
+        GPIO.output(STEP8, GPIO.HIGH)
+        sleep(delay)
+        GPIO.output(STEP5, GPIO.LOW)
+        GPIO.output(STEP8, GPIO.LOW)
+        sleep(delay)
+
+
+    GPIO.output(DIR2, CW)
+    GPIO.output(DIR4, CW)
+    for x in range(30):
+        GPIO.output(STEP2, GPIO.HIGH)
+        GPIO.output(STEP4, GPIO.HIGH)
+        sleep(sdelay)
+        GPIO.output(STEP2, GPIO.LOW)
+        GPIO.output(STEP4, GPIO.LOW)
+        sleep(sdelay)
+    sleep(.3)
+
+    GPIO.output(DIR4, CW)
+    GPIO.output(DIR3, CW)
+    GPIO.output(DIR1, CW)
+    GPIO.output(DIR2, CW)
+    for x in range(clamp):
+        GPIO.output(STEP1, GPIO.HIGH)
+        GPIO.output(STEP2, GPIO.HIGH)
+        GPIO.output(STEP3, GPIO.HIGH)
+        GPIO.output(STEP4, GPIO.HIGH)
+        sleep(sdelay)
+        GPIO.output(STEP1, GPIO.LOW)
+        GPIO.output(STEP2, GPIO.LOW)
+        GPIO.output(STEP3, GPIO.LOW)
+        GPIO.output(STEP4, GPIO.LOW)
+        sleep(sdelay)
+    sleep(.3)
+
+
+    GPIO.output(DIR1, CCW)
+    GPIO.output(DIR3, CCW)
+    for x in range(30):
+        GPIO.output(STEP1, GPIO.HIGH)
+        GPIO.output(STEP3, GPIO.HIGH)
+        sleep(delay)
+        GPIO.output(STEP1, GPIO.LOW)
+        GPIO.output(STEP3, GPIO.LOW)
+        sleep(delay)
+
+def afterPic():
+    GPIO.output(DIR1, CW)
+    GPIO.output(DIR3, CW)
+    for x in range(30):
+        GPIO.output(STEP1, GPIO.HIGH)
+        GPIO.output(STEP3, GPIO.HIGH)
+        sleep(sdelay)
+        GPIO.output(STEP1, GPIO.LOW)
+        GPIO.output(STEP3, GPIO.LOW)
+        sleep(sdelay)
+    sleep(.3)
+
+    GPIO.output(DIR4, CW)
+    GPIO.output(DIR3, CW)
+    GPIO.output(DIR1, CW)
+    GPIO.output(DIR2, CW)
+    for x in range(clamp):
+        GPIO.output(STEP1, GPIO.HIGH)
+        GPIO.output(STEP2, GPIO.HIGH)
+        GPIO.output(STEP3, GPIO.HIGH)
+        GPIO.output(STEP4, GPIO.HIGH)
+        sleep(sdelay)
+        GPIO.output(STEP1, GPIO.LOW)
+        GPIO.output(STEP2, GPIO.LOW)
+        GPIO.output(STEP3, GPIO.LOW)
+        GPIO.output(STEP4, GPIO.LOW)
+        sleep(sdelay)
+    sleep(.3)
+
+    GPIO.output(DIR2, CCW)
+    GPIO.output(DIR4, CCW)
+    for x in range(30):
+        GPIO.output(STEP2, GPIO.HIGH)
+        GPIO.output(STEP4, GPIO.HIGH)
+        sleep(delay)
+        GPIO.output(STEP2, GPIO.LOW)
+        GPIO.output(STEP4, GPIO.LOW)
+        sleep(delay)
+
+
+    GPIO.output(DIR5, CW)
+    GPIO.output(DIR8, CW)
+    for x in range(50):
+        GPIO.output(STEP5, GPIO.HIGH)
+        GPIO.output(STEP8, GPIO.HIGH)
+        sleep(delay)
+        GPIO.output(STEP5, GPIO.LOW)
+        GPIO.output(STEP8, GPIO.LOW)
+        sleep(delay)
+
+    GPIO.output(DIR2, CW)
+    GPIO.output(DIR4, CW)
+    for x in range(30):
+        GPIO.output(STEP2, GPIO.HIGH)
+        GPIO.output(STEP4, GPIO.HIGH)
+        sleep(sdelay)
+        GPIO.output(STEP2, GPIO.LOW)
+        GPIO.output(STEP4, GPIO.LOW)
+        sleep(sdelay)
+    sleep(.3)
+
+
 def Xturn():
     GPIO.output(DIR5, CW)
     GPIO.output(DIR8, CCW)
@@ -2394,81 +2536,8 @@ def main():
 #region cubeMapping
 print("Place Orange side facing Motor 6, Yellow facing up. Stop program if needed!")
 sleep(5)
-GPIO.output(DIR4, CW)
-GPIO.output(DIR3, CW)
-GPIO.output(DIR1, CW)
-GPIO.output(DIR2, CW)
-for x in range(clamp):
-    GPIO.output(STEP1, GPIO.HIGH)
-    GPIO.output(STEP2, GPIO.HIGH)
-    GPIO.output(STEP3, GPIO.HIGH)
-    GPIO.output(STEP4, GPIO.HIGH)
-    sleep(sdelay)
-    GPIO.output(STEP1, GPIO.LOW)
-    GPIO.output(STEP2, GPIO.LOW)
-    GPIO.output(STEP3, GPIO.LOW)
-    GPIO.output(STEP4, GPIO.LOW)
-    sleep(sdelay)
-sleep(.3)
-GPIO.output(DIR2, CCW)
-GPIO.output(DIR4, CCW)
-for x in range(30):
-    GPIO.output(STEP2, GPIO.HIGH)
-    GPIO.output(STEP4, GPIO.HIGH)
-    sleep(delay)
-    GPIO.output(STEP2, GPIO.LOW)
-    GPIO.output(STEP4, GPIO.LOW)
-    sleep(delay)
 
-
-GPIO.output(DIR5, CW)
-GPIO.output(DIR8, CCW)
-for x in range(50):
-    GPIO.output(STEP5, GPIO.HIGH)
-    GPIO.output(STEP8, GPIO.HIGH)
-    sleep(delay)
-    GPIO.output(STEP5, GPIO.LOW)
-    GPIO.output(STEP8, GPIO.LOW)
-    sleep(delay)
-
-GPIO.output(DIR2, CW)
-GPIO.output(DIR4, CW)
-for x in range(30):
-    GPIO.output(STEP2, GPIO.HIGH)
-    GPIO.output(STEP4, GPIO.HIGH)
-    sleep(sdelay)
-    GPIO.output(STEP2, GPIO.LOW)
-    GPIO.output(STEP4, GPIO.LOW)
-    sleep(sdelay)
-sleep(.3)
-
-GPIO.output(DIR4, CW)
-GPIO.output(DIR3, CW)
-GPIO.output(DIR1, CW)
-GPIO.output(DIR2, CW)
-for x in range(clamp):
-    GPIO.output(STEP1, GPIO.HIGH)
-    GPIO.output(STEP2, GPIO.HIGH)
-    GPIO.output(STEP3, GPIO.HIGH)
-    GPIO.output(STEP4, GPIO.HIGH)
-    sleep(sdelay)
-    GPIO.output(STEP1, GPIO.LOW)
-    GPIO.output(STEP2, GPIO.LOW)
-    GPIO.output(STEP3, GPIO.LOW)
-    GPIO.output(STEP4, GPIO.LOW)
-    sleep(sdelay)
-sleep(.3)
-
-
-GPIO.output(DIR1, CCW)
-GPIO.output(DIR3, CCW)
-for x in range(30):
-    GPIO.output(STEP1, GPIO.HIGH)
-    GPIO.output(STEP3, GPIO.HIGH)
-    sleep(delay)
-    GPIO.output(STEP1, GPIO.LOW)
-    GPIO.output(STEP3, GPIO.LOW)
-    sleep(delay)
+beforePic()
     
 
 yellowFace = colorfinder()
@@ -2483,166 +2552,14 @@ c = yellowFace[7]
 C = yellowFace[8]
 print(yellowFace)
 
-GPIO.output(DIR1, CW)
-GPIO.output(DIR3, CW)
-for x in range(30):
-    GPIO.output(STEP1, GPIO.HIGH)
-    GPIO.output(STEP3, GPIO.HIGH)
-    sleep(sdelay)
-    GPIO.output(STEP1, GPIO.LOW)
-    GPIO.output(STEP3, GPIO.LOW)
-    sleep(sdelay)
-sleep(.3)
-
-GPIO.output(DIR4, CW)
-GPIO.output(DIR3, CW)
-GPIO.output(DIR1, CW)
-GPIO.output(DIR2, CW)
-for x in range(clamp):
-    GPIO.output(STEP1, GPIO.HIGH)
-    GPIO.output(STEP2, GPIO.HIGH)
-    GPIO.output(STEP3, GPIO.HIGH)
-    GPIO.output(STEP4, GPIO.HIGH)
-    sleep(sdelay)
-    GPIO.output(STEP1, GPIO.LOW)
-    GPIO.output(STEP2, GPIO.LOW)
-    GPIO.output(STEP3, GPIO.LOW)
-    GPIO.output(STEP4, GPIO.LOW)
-    sleep(sdelay)
-sleep(.3)
-
-GPIO.output(DIR2, CCW)
-GPIO.output(DIR4, CCW)
-for x in range(30):
-    GPIO.output(STEP2, GPIO.HIGH)
-    GPIO.output(STEP4, GPIO.HIGH)
-    sleep(delay)
-    GPIO.output(STEP2, GPIO.LOW)
-    GPIO.output(STEP4, GPIO.LOW)
-    sleep(delay)
-
-
-GPIO.output(DIR5, CW)
-GPIO.output(DIR8, CW)
-for x in range(50):
-    GPIO.output(STEP5, GPIO.HIGH)
-    GPIO.output(STEP8, GPIO.HIGH)
-    sleep(delay)
-    GPIO.output(STEP5, GPIO.LOW)
-    GPIO.output(STEP8, GPIO.LOW)
-    sleep(delay)
-
-GPIO.output(DIR2, CW)
-GPIO.output(DIR4, CW)
-for x in range(30):
-    GPIO.output(STEP2, GPIO.HIGH)
-    GPIO.output(STEP4, GPIO.HIGH)
-    sleep(sdelay)
-    GPIO.output(STEP2, GPIO.LOW)
-    GPIO.output(STEP4, GPIO.LOW)
-    sleep(sdelay)
-sleep(.3)
-
-# GPIO.output(DIR4, CW)
-# GPIO.output(DIR3, CW)
-# GPIO.output(DIR1, CW)
-# GPIO.output(DIR2, CW)
-# for x in range(clamp):
-#     GPIO.output(STEP1, GPIO.HIGH)
-#     GPIO.output(STEP2, GPIO.HIGH)
-#     GPIO.output(STEP3, GPIO.HIGH)
-#     GPIO.output(STEP4, GPIO.HIGH)
-#     sleep(sdelay)
-#     GPIO.output(STEP1, GPIO.LOW)
-#     GPIO.output(STEP2, GPIO.LOW)
-#     GPIO.output(STEP3, GPIO.LOW)
-#     GPIO.output(STEP4, GPIO.LOW)
-#     sleep(sdelay)
-# sleep(.3)
+afterPic()
 
 #Done with Yellow
 
 
 Xprimeturn()
 
-GPIO.output(DIR4, CW)
-GPIO.output(DIR3, CW)
-GPIO.output(DIR1, CW)
-GPIO.output(DIR2, CW)
-for x in range(clamp):
-    GPIO.output(STEP1, GPIO.HIGH)
-    GPIO.output(STEP2, GPIO.HIGH)
-    GPIO.output(STEP3, GPIO.HIGH)
-    GPIO.output(STEP4, GPIO.HIGH)
-    sleep(sdelay)
-    GPIO.output(STEP1, GPIO.LOW)
-    GPIO.output(STEP2, GPIO.LOW)
-    GPIO.output(STEP3, GPIO.LOW)
-    GPIO.output(STEP4, GPIO.LOW)
-    sleep(sdelay)
-sleep(.03)
-
-
-GPIO.output(DIR2, CCW)
-GPIO.output(DIR4, CCW)
-for x in range(30):
-    GPIO.output(STEP2, GPIO.HIGH)
-    GPIO.output(STEP4, GPIO.HIGH)
-    sleep(delay)
-    GPIO.output(STEP2, GPIO.LOW)
-    GPIO.output(STEP4, GPIO.LOW)
-    sleep(delay)
-
-
-GPIO.output(DIR5, CW)
-GPIO.output(DIR8, CCW)
-for x in range(50):
-    GPIO.output(STEP5, GPIO.HIGH)
-    GPIO.output(STEP8, GPIO.HIGH)
-    sleep(delay)
-    GPIO.output(STEP5, GPIO.LOW)
-    GPIO.output(STEP8, GPIO.LOW)
-    sleep(delay)
-
-
-GPIO.output(DIR2, CW)
-GPIO.output(DIR4, CW)
-for x in range(30):
-    GPIO.output(STEP2, GPIO.HIGH)
-    GPIO.output(STEP4, GPIO.HIGH)
-    sleep(sdelay)
-    GPIO.output(STEP2, GPIO.LOW)
-    GPIO.output(STEP4, GPIO.LOW)
-    sleep(sdelay)
-sleep(.3)
-
-GPIO.output(DIR4, CW)
-GPIO.output(DIR3, CW)
-GPIO.output(DIR1, CW)
-GPIO.output(DIR2, CW)
-for x in range(clamp):
-    GPIO.output(STEP1, GPIO.HIGH)
-    GPIO.output(STEP2, GPIO.HIGH)
-    GPIO.output(STEP3, GPIO.HIGH)
-    GPIO.output(STEP4, GPIO.HIGH)
-    sleep(sdelay)
-    GPIO.output(STEP1, GPIO.LOW)
-    GPIO.output(STEP2, GPIO.LOW)
-    GPIO.output(STEP3, GPIO.LOW)
-    GPIO.output(STEP4, GPIO.LOW)
-    sleep(sdelay)
-sleep(.3)
-
-
-GPIO.output(DIR1, CCW)
-GPIO.output(DIR3, CCW)
-for x in range(30):
-    GPIO.output(STEP1, GPIO.HIGH)
-    GPIO.output(STEP3, GPIO.HIGH)
-    sleep(delay)
-    GPIO.output(STEP1, GPIO.LOW)
-    GPIO.output(STEP3, GPIO.LOW)
-    sleep(delay)
+beforePic()
     
 
 redFace = colorfinder()
@@ -2657,82 +2574,7 @@ g = redFace[7]
 G = redFace[8]
 print(redFace)
 
-GPIO.output(DIR1, CW)
-GPIO.output(DIR3, CW)
-for x in range(30):
-    GPIO.output(STEP1, GPIO.HIGH)
-    GPIO.output(STEP3, GPIO.HIGH)
-    sleep(sdelay)
-    GPIO.output(STEP1, GPIO.LOW)
-    GPIO.output(STEP3, GPIO.LOW)
-    sleep(sdelay)
-sleep(.3)
-
-GPIO.output(DIR4, CW)
-GPIO.output(DIR3, CW)
-GPIO.output(DIR1, CW)
-GPIO.output(DIR2, CW)
-for x in range(clamp):
-    GPIO.output(STEP1, GPIO.HIGH)
-    GPIO.output(STEP2, GPIO.HIGH)
-    GPIO.output(STEP3, GPIO.HIGH)
-    GPIO.output(STEP4, GPIO.HIGH)
-    sleep(sdelay)
-    GPIO.output(STEP1, GPIO.LOW)
-    GPIO.output(STEP2, GPIO.LOW)
-    GPIO.output(STEP3, GPIO.LOW)
-    GPIO.output(STEP4, GPIO.LOW)
-    sleep(sdelay)
-sleep(.3)
-
-
-GPIO.output(DIR2, CCW)
-GPIO.output(DIR4, CCW)
-for x in range(30):
-    GPIO.output(STEP2, GPIO.HIGH)
-    GPIO.output(STEP4, GPIO.HIGH)
-    sleep(delay)
-    GPIO.output(STEP2, GPIO.LOW)
-    GPIO.output(STEP4, GPIO.LOW)
-    sleep(delay)
-
-GPIO.output(DIR5, CW)
-GPIO.output(DIR8, CCW)
-for x in range(50):
-    GPIO.output(STEP5, GPIO.HIGH)
-    GPIO.output(STEP8, GPIO.HIGH)
-    sleep(delay)
-    GPIO.output(STEP5, GPIO.LOW)
-    GPIO.output(STEP8, GPIO.LOW)
-    sleep(delay)
-
-GPIO.output(DIR2, CW)
-GPIO.output(DIR4, CW)
-for x in range(30):
-    GPIO.output(STEP2, GPIO.HIGH)
-    GPIO.output(STEP4, GPIO.HIGH)
-    sleep(sdelay)
-    GPIO.output(STEP2, GPIO.LOW)
-    GPIO.output(STEP4, GPIO.LOW)
-    sleep(sdelay)
-sleep(.3)
-
-# GPIO.output(DIR4, CW)
-# GPIO.output(DIR3, CW)
-# GPIO.output(DIR1, CW)
-# GPIO.output(DIR2, CW)
-# for x in range(clamp):
-#     GPIO.output(STEP1, GPIO.HIGH)
-#     GPIO.output(STEP2, GPIO.HIGH)
-#     GPIO.output(STEP3, GPIO.HIGH)
-#     GPIO.output(STEP4, GPIO.HIGH)
-#     sleep(sdelay)
-#     GPIO.output(STEP1, GPIO.LOW)
-#     GPIO.output(STEP2, GPIO.LOW)
-#     GPIO.output(STEP3, GPIO.LOW)
-#     GPIO.output(STEP4, GPIO.LOW)
-#     sleep(sdelay)
-# sleep(.3)
+afterPic()
 
 #Done With Red
 
@@ -2742,81 +2584,7 @@ sleep(.3)
 
 Xprimeturn()
 
-GPIO.output(DIR4, CW)
-GPIO.output(DIR3, CW)
-GPIO.output(DIR1, CW)
-GPIO.output(DIR2, CW)
-for x in range(clamp):
-    GPIO.output(STEP1, GPIO.HIGH)
-    GPIO.output(STEP2, GPIO.HIGH)
-    GPIO.output(STEP3, GPIO.HIGH)
-    GPIO.output(STEP4, GPIO.HIGH)
-    sleep(sdelay)
-    GPIO.output(STEP1, GPIO.LOW)
-    GPIO.output(STEP2, GPIO.LOW)
-    GPIO.output(STEP3, GPIO.LOW)
-    GPIO.output(STEP4, GPIO.LOW)
-    sleep(sdelay)
-
-
-GPIO.output(DIR4, CCW)
-GPIO.output(DIR2, CCW)
-for x in range(30):
-    GPIO.output(STEP2, GPIO.HIGH)
-    GPIO.output(STEP4, GPIO.HIGH)
-    sleep(delay)
-    GPIO.output(STEP2, GPIO.LOW)
-    GPIO.output(STEP4, GPIO.LOW)
-    sleep(delay)
-
-
-GPIO.output(DIR5, CW)
-GPIO.output(DIR8, CCW)
-for x in range(50):
-    GPIO.output(STEP5, GPIO.HIGH)
-    GPIO.output(STEP8, GPIO.HIGH)
-    sleep(delay)
-    GPIO.output(STEP5, GPIO.LOW)
-    GPIO.output(STEP8, GPIO.LOW)
-    sleep(delay)
-
-GPIO.output(DIR2, CW)
-GPIO.output(DIR4, CW)
-for x in range(30):
-    GPIO.output(STEP2, GPIO.HIGH)
-    GPIO.output(STEP4, GPIO.HIGH)
-    sleep(sdelay)
-    GPIO.output(STEP2, GPIO.LOW)
-    GPIO.output(STEP4, GPIO.LOW)
-    sleep(sdelay)
-sleep(.3)
-
-GPIO.output(DIR4, CW)
-GPIO.output(DIR3, CW)
-GPIO.output(DIR1, CW)
-GPIO.output(DIR2, CW)
-for x in range(clamp):
-    GPIO.output(STEP1, GPIO.HIGH)
-    GPIO.output(STEP2, GPIO.HIGH)
-    GPIO.output(STEP3, GPIO.HIGH)
-    GPIO.output(STEP4, GPIO.HIGH)
-    sleep(sdelay)
-    GPIO.output(STEP1, GPIO.LOW)
-    GPIO.output(STEP2, GPIO.LOW)
-    GPIO.output(STEP3, GPIO.LOW)
-    GPIO.output(STEP4, GPIO.LOW)
-    sleep(sdelay)
-sleep(.3)
-
-GPIO.output(DIR1, CCW)
-GPIO.output(DIR3, CCW)
-for x in range(30):
-    GPIO.output(STEP1, GPIO.HIGH)
-    GPIO.output(STEP3, GPIO.HIGH)
-    sleep(delay)
-    GPIO.output(STEP1, GPIO.LOW)
-    GPIO.output(STEP3, GPIO.LOW)
-    sleep(delay)
+beforePic()
     
 
     
@@ -2832,162 +2600,13 @@ w = whiteFace[7]
 W = whiteFace[8]
 print(whiteFace)
 
-GPIO.output(DIR1, CW)
-GPIO.output(DIR3, CW)
-for x in range(30):
-    GPIO.output(STEP1, GPIO.HIGH)
-    GPIO.output(STEP3, GPIO.HIGH)
-    sleep(sdelay)
-    GPIO.output(STEP1, GPIO.LOW)
-    GPIO.output(STEP3, GPIO.LOW)
-    sleep(sdelay)
-sleep(.3)
-
-GPIO.output(DIR4, CW)
-GPIO.output(DIR3, CW)
-GPIO.output(DIR1, CW)
-GPIO.output(DIR2, CW)
-for x in range(clamp):
-    GPIO.output(STEP1, GPIO.HIGH)
-    GPIO.output(STEP2, GPIO.HIGH)
-    GPIO.output(STEP3, GPIO.HIGH)
-    GPIO.output(STEP4, GPIO.HIGH)
-    sleep(sdelay)
-    GPIO.output(STEP1, GPIO.LOW)
-    GPIO.output(STEP2, GPIO.LOW)
-    GPIO.output(STEP3, GPIO.LOW)
-    GPIO.output(STEP4, GPIO.LOW)
-    sleep(sdelay)
-sleep(.3)
-
-GPIO.output(DIR4, CCW)
-GPIO.output(DIR2, CCW)
-for x in range(30):
-    GPIO.output(STEP2, GPIO.HIGH)
-    GPIO.output(STEP4, GPIO.HIGH)
-    sleep(delay)
-    GPIO.output(STEP2, GPIO.LOW)
-    GPIO.output(STEP4, GPIO.LOW)
-    sleep(delay)
-
-GPIO.output(DIR5, CW)
-GPIO.output(DIR8, CCW)
-for x in range(50):
-    GPIO.output(STEP5, GPIO.HIGH)
-    GPIO.output(STEP8, GPIO.HIGH)
-    sleep(delay)
-    GPIO.output(STEP5, GPIO.LOW)
-    GPIO.output(STEP8, GPIO.LOW)
-    sleep(delay)
-
-GPIO.output(DIR2, CW)
-GPIO.output(DIR4, CW)
-for x in range(30):
-    GPIO.output(STEP2, GPIO.HIGH)
-    GPIO.output(STEP4, GPIO.HIGH)
-    sleep(sdelay)
-    GPIO.output(STEP2, GPIO.LOW)
-    GPIO.output(STEP4, GPIO.LOW)
-    sleep(sdelay)
-sleep(.3)
-
-# GPIO.output(DIR4, CW)
-# GPIO.output(DIR3, CW)
-# GPIO.output(DIR1, CW)
-# GPIO.output(DIR2, CW)
-# for x in range(clamp):
-#     GPIO.output(STEP1, GPIO.HIGH)
-#     GPIO.output(STEP2, GPIO.HIGH)
-#     GPIO.output(STEP3, GPIO.HIGH)
-#     GPIO.output(STEP4, GPIO.HIGH)
-#     sleep(sdelay)
-#     GPIO.output(STEP1, GPIO.LOW)
-#     GPIO.output(STEP2, GPIO.LOW)
-#     GPIO.output(STEP3, GPIO.LOW)
-#     GPIO.output(STEP4, GPIO.LOW)
-#     sleep(sdelay)
-# sleep(.3)
+afterPic()
 
 Xprimeturn()
 
 #Done with white
 
-GPIO.output(DIR4, CW)
-GPIO.output(DIR3, CW)
-GPIO.output(DIR1, CW)
-GPIO.output(DIR2, CW)
-for x in range(clamp):
-    GPIO.output(STEP1, GPIO.HIGH)
-    GPIO.output(STEP2, GPIO.HIGH)
-    GPIO.output(STEP3, GPIO.HIGH)
-    GPIO.output(STEP4, GPIO.HIGH)
-    sleep(sdelay)
-    GPIO.output(STEP1, GPIO.LOW)
-    GPIO.output(STEP2, GPIO.LOW)
-    GPIO.output(STEP3, GPIO.LOW)
-    GPIO.output(STEP4, GPIO.LOW)
-    sleep(sdelay)
-
-
-GPIO.output(DIR4, CCW)
-GPIO.output(DIR2, CCW)
-for x in range(30):
-    GPIO.output(STEP2, GPIO.HIGH)
-    GPIO.output(STEP4, GPIO.HIGH)
-    sleep(delay)
-    GPIO.output(STEP2, GPIO.LOW)
-    GPIO.output(STEP4, GPIO.LOW)
-    sleep(delay)
-
-GPIO.output(DIR8, CCW)
-GPIO.output(DIR5, CW)
-for x in range(50):
-    GPIO.output(STEP5, GPIO.HIGH)
-    GPIO.output(STEP8, GPIO.HIGH)
-    sleep(delay)
-    GPIO.output(STEP5, GPIO.LOW)
-    GPIO.output(STEP8, GPIO.LOW)
-    sleep(delay)
-
-GPIO.output(DIR2, CW)
-GPIO.output(DIR4, CW)
-for x in range(30):
-    GPIO.output(STEP2, GPIO.HIGH)
-    GPIO.output(STEP4, GPIO.HIGH)
-    sleep(sdelay)
-    GPIO.output(STEP2, GPIO.LOW)
-    GPIO.output(STEP4, GPIO.LOW)
-    sleep(sdelay)
-sleep(.3)
-
-GPIO.output(DIR4, CW)
-GPIO.output(DIR3, CW)
-GPIO.output(DIR1, CW)
-GPIO.output(DIR2, CW)
-for x in range(clamp):
-    GPIO.output(STEP1, GPIO.HIGH)
-    GPIO.output(STEP2, GPIO.HIGH)
-    GPIO.output(STEP3, GPIO.HIGH)
-    GPIO.output(STEP4, GPIO.HIGH)
-    sleep(sdelay)
-    GPIO.output(STEP1, GPIO.LOW)
-    GPIO.output(STEP2, GPIO.LOW)
-    GPIO.output(STEP3, GPIO.LOW)
-    GPIO.output(STEP4, GPIO.LOW)
-    sleep(sdelay)
-sleep(.3)
-
-
-GPIO.output(DIR1, CCW)
-GPIO.output(DIR3, CCW)
-for x in range(30):
-    GPIO.output(STEP1, GPIO.HIGH)
-    GPIO.output(STEP3, GPIO.HIGH)
-    sleep(delay)
-    GPIO.output(STEP1, GPIO.LOW)
-    GPIO.output(STEP3, GPIO.LOW)
-    sleep(delay)
-    
+beforePic()
 
 orangeFace = colorfinder()
 O = orangeFace[0]
@@ -3001,82 +2620,7 @@ m = orangeFace[7]
 M = orangeFace[8]
 print(orangeFace)
 
-GPIO.output(DIR1, CW)
-GPIO.output(DIR3, CW)
-for x in range(30):
-    GPIO.output(STEP1, GPIO.HIGH)
-    GPIO.output(STEP3, GPIO.HIGH)
-    sleep(sdelay)
-    GPIO.output(STEP1, GPIO.LOW)
-    GPIO.output(STEP3, GPIO.LOW)
-    sleep(sdelay)
-sleep(.3)
-
-GPIO.output(DIR4, CW)
-GPIO.output(DIR3, CW)
-GPIO.output(DIR1, CW)
-GPIO.output(DIR2, CW)
-for x in range(clamp):
-    GPIO.output(STEP1, GPIO.HIGH)
-    GPIO.output(STEP2, GPIO.HIGH)
-    GPIO.output(STEP3, GPIO.HIGH)
-    GPIO.output(STEP4, GPIO.HIGH)
-    sleep(sdelay)
-    GPIO.output(STEP1, GPIO.LOW)
-    GPIO.output(STEP2, GPIO.LOW)
-    GPIO.output(STEP3, GPIO.LOW)
-    GPIO.output(STEP4, GPIO.LOW)
-    sleep(sdelay)
-sleep(.3)
-
-GPIO.output(DIR4, CCW)
-GPIO.output(DIR2, CCW)
-for x in range(30):
-    GPIO.output(STEP2, GPIO.HIGH)
-    GPIO.output(STEP4, GPIO.HIGH)
-    sleep(delay)
-    GPIO.output(STEP2, GPIO.LOW)
-    GPIO.output(STEP4, GPIO.LOW)
-    sleep(delay)
-
-
-GPIO.output(DIR8, CCW)
-GPIO.output(DIR5, CW)
-for x in range(50):
-    GPIO.output(STEP5, GPIO.HIGH)
-    GPIO.output(STEP8, GPIO.HIGH)
-    sleep(delay)
-    GPIO.output(STEP5, GPIO.LOW)
-    GPIO.output(STEP8, GPIO.LOW)
-    sleep(delay)
-
-GPIO.output(DIR2, CW)
-GPIO.output(DIR4, CW)
-for x in range(30):
-    GPIO.output(STEP2, GPIO.HIGH)
-    GPIO.output(STEP4, GPIO.HIGH)
-    sleep(sdelay)
-    GPIO.output(STEP2, GPIO.LOW)
-    GPIO.output(STEP4, GPIO.LOW)
-    sleep(sdelay)
-sleep(.3)
-
-# GPIO.output(DIR4, CW)
-# GPIO.output(DIR3, CW)
-# GPIO.output(DIR1, CW)
-# GPIO.output(DIR2, CW)
-# for x in range(clamp):
-#     GPIO.output(STEP1, GPIO.HIGH)
-#     GPIO.output(STEP2, GPIO.HIGH)
-#     GPIO.output(STEP3, GPIO.HIGH)
-#     GPIO.output(STEP4, GPIO.HIGH)
-#     sleep(sdelay)
-#     GPIO.output(STEP1, GPIO.LOW)
-#     GPIO.output(STEP2, GPIO.LOW)
-#     GPIO.output(STEP3, GPIO.LOW)
-#     GPIO.output(STEP4, GPIO.LOW)
-#     sleep(sdelay)
-# sleep(.3)
+afterPic()
 
 
 
@@ -3084,85 +2628,7 @@ Xprimeturn()
 
 #Done with Orange
 
-# GPIO.output(DIR4, CW)
-# GPIO.output(DIR3, CW)
-# GPIO.output(DIR1, CW)
-# GPIO.output(DIR2, CW)
-# for x in range(clamp):
-#     GPIO.output(STEP1, GPIO.HIGH)
-#     GPIO.output(STEP2, GPIO.HIGH)
-#     GPIO.output(STEP3, GPIO.HIGH)
-#     GPIO.output(STEP4, GPIO.HIGH)
-#     sleep(sdelay)
-#     GPIO.output(STEP1, GPIO.LOW)
-#     GPIO.output(STEP2, GPIO.LOW)
-#     GPIO.output(STEP3, GPIO.LOW)
-#     GPIO.output(STEP4, GPIO.LOW)
-#     sleep(sdelay)
-
-
-Yprimeturn()
-
-GPIO.output(DIR2, CCW)
-GPIO.output(DIR4, CCW)
-for x in range(30):
-    GPIO.output(STEP2, GPIO.HIGH)
-    GPIO.output(STEP4, GPIO.HIGH)
-    sleep(delay)
-    GPIO.output(STEP2, GPIO.LOW)
-    GPIO.output(STEP4, GPIO.LOW)
-    sleep(delay)
-
-
-GPIO.output(DIR5, CW)
-GPIO.output(DIR8, CCW)
-for x in range(50):
-    GPIO.output(STEP5, GPIO.HIGH)
-    GPIO.output(STEP8, GPIO.HIGH)
-    sleep(delay)
-    GPIO.output(STEP5, GPIO.LOW)
-    GPIO.output(STEP8, GPIO.LOW)
-    sleep(delay)
-
-GPIO.output(DIR2, CW)
-GPIO.output(DIR4, CW)
-for x in range(30):
-    GPIO.output(STEP2, GPIO.HIGH)
-    GPIO.output(STEP4, GPIO.HIGH)
-    sleep(sdelay)
-    GPIO.output(STEP2, GPIO.LOW)
-    GPIO.output(STEP4, GPIO.LOW)
-    sleep(sdelay)
-sleep(.3)
-
-GPIO.output(DIR4, CW)
-GPIO.output(DIR3, CW)
-GPIO.output(DIR1, CW)
-GPIO.output(DIR2, CW)
-for x in range(clamp):
-    GPIO.output(STEP1, GPIO.HIGH)
-    GPIO.output(STEP2, GPIO.HIGH)
-    GPIO.output(STEP3, GPIO.HIGH)
-    GPIO.output(STEP4, GPIO.HIGH)
-    sleep(sdelay)
-    GPIO.output(STEP1, GPIO.LOW)
-    GPIO.output(STEP2, GPIO.LOW)
-    GPIO.output(STEP3, GPIO.LOW)
-    GPIO.output(STEP4, GPIO.LOW)
-    sleep(sdelay)
-sleep(.3)
-
-
-GPIO.output(DIR1, CCW)
-GPIO.output(DIR3, CCW)
-for x in range(30):
-    GPIO.output(STEP1, GPIO.HIGH)
-    GPIO.output(STEP3, GPIO.HIGH)
-    sleep(delay)
-    GPIO.output(STEP1, GPIO.LOW)
-    GPIO.output(STEP3, GPIO.LOW)
-    sleep(delay)
-    
+beforePic()
 
 blueFace = colorfinder()
 T = blueFace[0]
@@ -3176,82 +2642,7 @@ r = blueFace[7]
 R = blueFace[8]
 print(blueFace)
 
-GPIO.output(DIR1, CW)
-GPIO.output(DIR3, CW)
-for x in range(30):
-    GPIO.output(STEP1, GPIO.HIGH)
-    GPIO.output(STEP3, GPIO.HIGH)
-    sleep(sdelay)
-    GPIO.output(STEP1, GPIO.LOW)
-    GPIO.output(STEP3, GPIO.LOW)
-    sleep(sdelay)
-sleep(.3)
-
-GPIO.output(DIR4, CW)
-GPIO.output(DIR3, CW)
-GPIO.output(DIR1, CW)
-GPIO.output(DIR2, CW)
-for x in range(clamp):
-    GPIO.output(STEP1, GPIO.HIGH)
-    GPIO.output(STEP2, GPIO.HIGH)
-    GPIO.output(STEP3, GPIO.HIGH)
-    GPIO.output(STEP4, GPIO.HIGH)
-    sleep(sdelay)
-    GPIO.output(STEP1, GPIO.LOW)
-    GPIO.output(STEP2, GPIO.LOW)
-    GPIO.output(STEP3, GPIO.LOW)
-    GPIO.output(STEP4, GPIO.LOW)
-    sleep(sdelay)
-sleep(.3)
-
-
-GPIO.output(DIR2, CCW)
-GPIO.output(DIR4, CCW)
-for x in range(30):
-    GPIO.output(STEP2, GPIO.HIGH)
-    GPIO.output(STEP4, GPIO.HIGH)
-    sleep(delay)
-    GPIO.output(STEP2, GPIO.LOW)
-    GPIO.output(STEP4, GPIO.LOW)
-    sleep(delay)
-
-GPIO.output(DIR5, CW)
-GPIO.output(DIR8, CCW)
-for x in range(50):
-    GPIO.output(STEP5, GPIO.HIGH)
-    GPIO.output(STEP8, GPIO.HIGH)
-    sleep(delay)
-    GPIO.output(STEP5, GPIO.LOW)
-    GPIO.output(STEP8, GPIO.LOW)
-    sleep(delay)
-
-GPIO.output(DIR2, CW)
-GPIO.output(DIR4, CW)
-for x in range(30):
-    GPIO.output(STEP2, GPIO.HIGH)
-    GPIO.output(STEP4, GPIO.HIGH)
-    sleep(sdelay)
-    GPIO.output(STEP2, GPIO.LOW)
-    GPIO.output(STEP4, GPIO.LOW)
-    sleep(sdelay)
-sleep(.3)
-
-# GPIO.output(DIR4, CW)
-# GPIO.output(DIR3, CW)
-# GPIO.output(DIR1, CW)
-# GPIO.output(DIR2, CW)
-# for x in range(clamp):
-#     GPIO.output(STEP1, GPIO.HIGH)
-#     GPIO.output(STEP2, GPIO.HIGH)
-#     GPIO.output(STEP3, GPIO.HIGH)
-#     GPIO.output(STEP4, GPIO.HIGH)
-#     sleep(sdelay)
-#     GPIO.output(STEP1, GPIO.LOW)
-#     GPIO.output(STEP2, GPIO.LOW)
-#     GPIO.output(STEP3, GPIO.LOW)
-#     GPIO.output(STEP4, GPIO.LOW)
-#     sleep(sdelay)
-# sleep(.3)
+afterPic()
 
 
 #Done with blue
@@ -3261,82 +2652,7 @@ sleep(.3)
 Yprimeturn()
 Yprimeturn()
 
-GPIO.output(DIR4, CW)
-GPIO.output(DIR3, CW)
-GPIO.output(DIR1, CW)
-GPIO.output(DIR2, CW)
-for x in range(clamp):
-    GPIO.output(STEP1, GPIO.HIGH)
-    GPIO.output(STEP2, GPIO.HIGH)
-    GPIO.output(STEP3, GPIO.HIGH)
-    GPIO.output(STEP4, GPIO.HIGH)
-    sleep(sdelay)
-    GPIO.output(STEP1, GPIO.LOW)
-    GPIO.output(STEP2, GPIO.LOW)
-    GPIO.output(STEP3, GPIO.LOW)
-    GPIO.output(STEP4, GPIO.LOW)
-    sleep(sdelay)
-
-GPIO.output(DIR2, CCW)
-GPIO.output(DIR4, CCW)
-for x in range(30):
-    GPIO.output(STEP2, GPIO.HIGH)
-    GPIO.output(STEP4, GPIO.HIGH)
-    sleep(delay)
-    GPIO.output(STEP2, GPIO.LOW)
-    GPIO.output(STEP4, GPIO.LOW)
-    sleep(delay)
-
-
-GPIO.output(DIR5, CW)
-GPIO.output(DIR8, CCW)
-for x in range(50):
-    GPIO.output(STEP5, GPIO.HIGH)
-    GPIO.output(STEP8, GPIO.HIGH)
-    sleep(delay)
-    GPIO.output(STEP5, GPIO.LOW)
-    GPIO.output(STEP8, GPIO.LOW)
-    sleep(delay)
-
-GPIO.output(DIR2, CW)
-GPIO.output(DIR4, CW)
-for x in range(30):
-    GPIO.output(STEP2, GPIO.HIGH)
-    GPIO.output(STEP4, GPIO.HIGH)
-    sleep(sdelay)
-    GPIO.output(STEP2, GPIO.LOW)
-    GPIO.output(STEP4, GPIO.LOW)
-    sleep(sdelay)
-sleep(.3)
-
-
-GPIO.output(DIR4, CW)
-GPIO.output(DIR3, CW)
-GPIO.output(DIR1, CW)
-GPIO.output(DIR2, CW)
-for x in range(clamp):
-    GPIO.output(STEP1, GPIO.HIGH)
-    GPIO.output(STEP2, GPIO.HIGH)
-    GPIO.output(STEP3, GPIO.HIGH)
-    GPIO.output(STEP4, GPIO.HIGH)
-    sleep(sdelay)
-    GPIO.output(STEP1, GPIO.LOW)
-    GPIO.output(STEP2, GPIO.LOW)
-    GPIO.output(STEP3, GPIO.LOW)
-    GPIO.output(STEP4, GPIO.LOW)
-    sleep(sdelay)
-sleep(.3)
-
-
-GPIO.output(DIR1, CCW)
-GPIO.output(DIR3, CCW)
-for x in range(30):
-    GPIO.output(STEP1, GPIO.HIGH)
-    GPIO.output(STEP3, GPIO.HIGH)
-    sleep(delay)
-    GPIO.output(STEP1, GPIO.LOW)
-    GPIO.output(STEP3, GPIO.LOW)
-    sleep(delay)
+beforePic()
     
 
 greenFace = colorfinder()
@@ -3351,83 +2667,7 @@ l = greenFace[7]
 L = greenFace[8]
 print(greenFace)
 
-GPIO.output(DIR1, CW)
-GPIO.output(DIR3, CW)
-for x in range(30):
-    GPIO.output(STEP1, GPIO.HIGH)
-    GPIO.output(STEP3, GPIO.HIGH)
-    sleep(sdelay)
-    GPIO.output(STEP1, GPIO.LOW)
-    GPIO.output(STEP3, GPIO.LOW)
-    sleep(sdelay)
-sleep(.3)
-
-GPIO.output(DIR4, CW)
-GPIO.output(DIR3, CW)
-GPIO.output(DIR1, CW)
-GPIO.output(DIR2, CW)
-for x in range(clamp):
-    GPIO.output(STEP1, GPIO.HIGH)
-    GPIO.output(STEP2, GPIO.HIGH)
-    GPIO.output(STEP3, GPIO.HIGH)
-    GPIO.output(STEP4, GPIO.HIGH)
-    sleep(sdelay)
-    GPIO.output(STEP1, GPIO.LOW)
-    GPIO.output(STEP2, GPIO.LOW)
-    GPIO.output(STEP3, GPIO.LOW)
-    GPIO.output(STEP4, GPIO.LOW)
-    sleep(sdelay)
-sleep(.3)
-
-GPIO.output(DIR2, CCW)
-GPIO.output(DIR4, CCW)
-for x in range(30):
-    GPIO.output(STEP2, GPIO.HIGH)
-    GPIO.output(STEP4, GPIO.HIGH)
-    sleep(delay)
-    GPIO.output(STEP2, GPIO.LOW)
-    GPIO.output(STEP4, GPIO.LOW)
-    sleep(delay)
-
-GPIO.output(DIR5, CW)
-GPIO.output(DIR8, CCW)
-for x in range(50):
-    GPIO.output(STEP5, GPIO.HIGH)
-    GPIO.output(STEP8, GPIO.HIGH)
-    sleep(delay)
-    GPIO.output(STEP5, GPIO.LOW)
-    GPIO.output(STEP8, GPIO.LOW)
-    sleep(delay)
-
-GPIO.output(DIR2, CW)
-GPIO.output(DIR4, CW)
-for x in range(30):
-    GPIO.output(STEP2, GPIO.HIGH)
-    GPIO.output(STEP4, GPIO.HIGH)
-    sleep(sdelay)
-    GPIO.output(STEP2, GPIO.LOW)
-    GPIO.output(STEP4, GPIO.LOW)
-    sleep(sdelay)
-sleep(.3)
-
-
-# GPIO.output(DIR4, CW)
-# GPIO.output(DIR3, CW)
-# GPIO.output(DIR1, CW)
-# GPIO.output(DIR2, CW)
-# for x in range(clamp):
-#     GPIO.output(STEP1, GPIO.HIGH)
-#     GPIO.output(STEP2, GPIO.HIGH)
-#     GPIO.output(STEP3, GPIO.HIGH)
-#     GPIO.output(STEP4, GPIO.HIGH)
-#     sleep(sdelay)
-#     GPIO.output(STEP1, GPIO.LOW)
-#     GPIO.output(STEP2, GPIO.LOW)
-#     GPIO.output(STEP3, GPIO.LOW)
-#     GPIO.output(STEP4, GPIO.LOW)
-#     sleep(sdelay)
-# sleep(.3)
-
+afterPic()
 Yprimeturn()
 
 
