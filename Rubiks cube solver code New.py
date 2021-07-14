@@ -46,8 +46,8 @@ GPIO.setup(DIR8, GPIO.OUT)
 GPIO.setup(STEP8, GPIO.OUT)
 
 #delay between steps for motor turns
-delay = .01
-sdelay = .02
+delay = .007
+sdelay = .03
 #Sensitivity for reseting cube position after turn
 # sensitivity = 3
 
@@ -491,36 +491,6 @@ def Yprimeturn():
         sleep(sdelay)
     sleep(.3)
     
-    GPIO.output(DIR1, CCW)
-    GPIO.output(DIR3, CCW)
-    for x in range(30):
-        GPIO.output(STEP1, GPIO.HIGH)
-        GPIO.output(STEP3, GPIO.HIGH)
-        sleep(delay)
-        GPIO.output(STEP1, GPIO.LOW)
-        GPIO.output(STEP3, GPIO.LOW)
-        sleep(delay)
-
-    GPIO.output(DIR6, CW)
-    GPIO.output(DIR7, CCW)
-    for x in range(50):
-        GPIO.output(STEP6, GPIO.HIGH)
-        GPIO.output(STEP7, GPIO.HIGH)
-        sleep(delay)
-        GPIO.output(STEP6, GPIO.LOW)
-        GPIO.output(STEP7, GPIO.LOW)
-        sleep(delay)
-        
-    GPIO.output(DIR1, CW)
-    GPIO.output(DIR3, CW)
-    for x in range(30):
-        GPIO.output(STEP1, GPIO.HIGH)
-        GPIO.output(STEP3, GPIO.HIGH)
-        sleep(sdelay)
-        GPIO.output(STEP1, GPIO.LOW)
-        GPIO.output(STEP3, GPIO.LOW)
-        sleep(sdelay)
-    sleep(.3)
     
     GPIO.output(DIR3, CCW)
     for x in range(30):
