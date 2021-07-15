@@ -140,28 +140,691 @@ def primeturn(motor):
         GPIO.output(STEP, GPIO.LOW)
         sleep(delay)
 
+def Rturn():
+    global Front, Top
+
+    if Front == "red" and Top == "yellow":
+        turn()
+    if Front == "red" and Top == "green":
+        turn()
+    if Front == "red" and Top == "white":
+        turn()
+    if Front == "red" and Top == "blue":
+        turn()
         
+
+    if Front == "green" and Top == "yellow":
+        turn()
+    if Front == "green" and Top == "red":
+        turn()
+    if Front == "green" and Top == "white":
+        turn()
+    if Front == "green" and Top == "orange":
+        turn()
+    
+    if Front == "orange" and Top == "yellow":
+        turn()
+    if Front == "orange" and Top == "green":
+        turn()
+    if Front == "orange" and Top == "white":
+        turn()
+    if Front == "orange" and Top == "blue":
+        turn()
+
+    if Front == "yellow" and Top == "green":
+        turn()
+    if Front == "yellow" and Top == "red":
+        turn()
+    if Front == "yellow" and Top == "white":
+        turn()
+    if Front == "yellow" and Top == "orange":
+        turn()
+
+    if Front == "blue" and Top == "yellow":
+        turn()
+    if Front == "blue" and Top == "red":
+        turn()
+    if Front == "blue" and Top == "white":
+        turn()
+    if Front == "blue" and Top == "orange":
+        turn()
+
+    if Front == "white" and Top == "green":
+        turn()
+    if Front == "white" and Top == "red":
+        turn()
+    if Front == "white" and Top == "blue":
+        turn()
+    if Front == "white" and Top == "orange":
+        turn()
+
+def Rprimeturn():
+    global Front, Top
+
+    if Front == "red" and Top == "yellow":
+        primeturn()
+    if Front == "red" and Top == "green":
+        primeturn()
+    if Front == "red" and Top == "white":
+        primeturn()
+    if Front == "red" and Top == "blue":
+        primeturn()
+        
+
+    if Front == "green" and Top == "yellow":
+        primeturn()
+    if Front == "green" and Top == "red":
+        primeturn()
+    if Front == "green" and Top == "white":
+        primeturn()
+    if Front == "green" and Top == "orange":
+        primeturn()
+    
+    if Front == "orange" and Top == "yellow":
+        primeturn()
+    if Front == "orange" and Top == "green":
+        primeturn()
+    if Front == "orange" and Top == "white":
+        primeturn()
+    if Front == "orange" and Top == "blue":
+        primeturn()
+
+    if Front == "yellow" and Top == "green":
+        primeturn()
+    if Front == "yellow" and Top == "red":
+        primeturn()
+    if Front == "yellow" and Top == "white":
+        primeturn()
+    if Front == "yellow" and Top == "orange":
+        primeturn()
+
+    if Front == "blue" and Top == "yellow":
+        primeturn()
+    if Front == "blue" and Top == "red":
+        primeturn()
+    if Front == "blue" and Top == "white":
+        primeturn()
+    if Front == "blue" and Top == "orange":
+        primeturn()
+
+    if Front == "white" and Top == "green":
+        primeturn()
+    if Front == "white" and Top == "red":
+        primeturn()
+    if Front == "white" and Top == "blue":
+        primeturn()
+    if Front == "white" and Top == "orange":
+        primeturn()
+
+def Lturn():
+    global Front, Top
+
+    if Front == "red" and Top == "yellow":
+        turn()
+    if Front == "red" and Top == "green":
+        turn()
+    if Front == "red" and Top == "white":
+        turn()
+    if Front == "red" and Top == "blue":
+        turn()
+        
+
+    if Front == "green" and Top == "yellow":
+        turn()
+    if Front == "green" and Top == "red":
+        turn()
+    if Front == "green" and Top == "white":
+        turn()
+    if Front == "green" and Top == "orange":
+        turn()
+    
+    if Front == "orange" and Top == "yellow":
+        turn()
+    if Front == "orange" and Top == "green":
+        turn()
+    if Front == "orange" and Top == "white":
+        turn()
+    if Front == "orange" and Top == "blue":
+        turn()
+
+    if Front == "yellow" and Top == "green":
+        turn()
+    if Front == "yellow" and Top == "red":
+        turn()
+    if Front == "yellow" and Top == "white":
+        turn()
+    if Front == "yellow" and Top == "orange":
+        turn()
+
+    if Front == "blue" and Top == "yellow":
+        turn()
+    if Front == "blue" and Top == "red":
+        turn()
+    if Front == "blue" and Top == "white":
+        turn()
+    if Front == "blue" and Top == "orange":
+        turn()
+
+    if Front == "white" and Top == "green":
+        turn()
+    if Front == "white" and Top == "red":
+        turn()
+    if Front == "white" and Top == "blue":
+        turn()
+    if Front == "white" and Top == "orange":
+        turn()
+
+def Lprimeturn():
+    global Front, Top
+
+    if Front == "red" and Top == "yellow":
+        primeturn()
+    if Front == "red" and Top == "green":
+        primeturn()
+    if Front == "red" and Top == "white":
+        primeturn()
+    if Front == "red" and Top == "blue":
+        primeturn()
+        
+
+    if Front == "green" and Top == "yellow":
+        primeturn()
+    if Front == "green" and Top == "red":
+        primeturn()
+    if Front == "green" and Top == "white":
+        primeturn()
+    if Front == "green" and Top == "orange":
+        primeturn()
+    
+    if Front == "orange" and Top == "yellow":
+        primeturn()
+    if Front == "orange" and Top == "green":
+        primeturn()
+    if Front == "orange" and Top == "white":
+        primeturn()
+    if Front == "orange" and Top == "blue":
+        primeturn()
+
+    if Front == "yellow" and Top == "green":
+        primeturn()
+    if Front == "yellow" and Top == "red":
+        primeturn()
+    if Front == "yellow" and Top == "white":
+        primeturn()
+    if Front == "yellow" and Top == "orange":
+        primeturn()
+
+    if Front == "blue" and Top == "yellow":
+        primeturn()
+    if Front == "blue" and Top == "red":
+        primeturn()
+    if Front == "blue" and Top == "white":
+        primeturn()
+    if Front == "blue" and Top == "orange":
+        primeturn()
+
+    if Front == "white" and Top == "green":
+        primeturn()
+    if Front == "white" and Top == "red":
+        primeturn()
+    if Front == "white" and Top == "blue":
+        primeturn()
+    if Front == "white" and Top == "orange":
+        primeturn()
+
+def Fturn():
+    global Front, Top
+
+    if Front == "red" and Top == "yellow":
+        turn()
+    if Front == "red" and Top == "green":
+        turn()
+    if Front == "red" and Top == "white":
+        turn()
+    if Front == "red" and Top == "blue":
+        turn()
+        
+
+    if Front == "green" and Top == "yellow":
+        turn()
+    if Front == "green" and Top == "red":
+        turn()
+    if Front == "green" and Top == "white":
+        turn()
+    if Front == "green" and Top == "orange":
+        turn()
+    
+    if Front == "orange" and Top == "yellow":
+        turn()
+    if Front == "orange" and Top == "green":
+        turn()
+    if Front == "orange" and Top == "white":
+        turn()
+    if Front == "orange" and Top == "blue":
+        turn()
+
+    if Front == "yellow" and Top == "green":
+        turn()
+    if Front == "yellow" and Top == "red":
+        turn()
+    if Front == "yellow" and Top == "white":
+        turn()
+    if Front == "yellow" and Top == "orange":
+        turn()
+
+    if Front == "blue" and Top == "yellow":
+        turn()
+    if Front == "blue" and Top == "red":
+        turn()
+    if Front == "blue" and Top == "white":
+        turn()
+    if Front == "blue" and Top == "orange":
+        turn()
+
+    if Front == "white" and Top == "green":
+        turn()
+    if Front == "white" and Top == "red":
+        turn()
+    if Front == "white" and Top == "blue":
+        turn()
+    if Front == "white" and Top == "orange":
+        turn()
+
+def Fprimeturn():
+    global Front, Top
+
+    if Front == "red" and Top == "yellow":
+        primeturn()
+    if Front == "red" and Top == "green":
+        primeturn()
+    if Front == "red" and Top == "white":
+        primeturn()
+    if Front == "red" and Top == "blue":
+        primeturn()
+        
+
+    if Front == "green" and Top == "yellow":
+        primeturn()
+    if Front == "green" and Top == "red":
+        primeturn()
+    if Front == "green" and Top == "white":
+        primeturn()
+    if Front == "green" and Top == "orange":
+        primeturn()
+    
+    if Front == "orange" and Top == "yellow":
+        primeturn()
+    if Front == "orange" and Top == "green":
+        primeturn()
+    if Front == "orange" and Top == "white":
+        primeturn()
+    if Front == "orange" and Top == "blue":
+        primeturn()
+
+    if Front == "yellow" and Top == "green":
+        primeturn()
+    if Front == "yellow" and Top == "red":
+        primeturn()
+    if Front == "yellow" and Top == "white":
+        primeturn()
+    if Front == "yellow" and Top == "orange":
+        primeturn()
+
+    if Front == "blue" and Top == "yellow":
+        primeturn()
+    if Front == "blue" and Top == "red":
+        primeturn()
+    if Front == "blue" and Top == "white":
+        primeturn()
+    if Front == "blue" and Top == "orange":
+        primeturn()
+
+    if Front == "white" and Top == "green":
+        primeturn()
+    if Front == "white" and Top == "red":
+        primeturn()
+    if Front == "white" and Top == "blue":
+        primeturn()
+    if Front == "white" and Top == "orange":
+        primeturn()
+
 def Dturn():
-    turn()
+    global Front, Top
+
+    if Front == "red" and Top == "yellow":
+        turn()
+    if Front == "red" and Top == "green":
+        turn()
+    if Front == "red" and Top == "white":
+        turn()
+    if Front == "red" and Top == "blue":
+        turn()
+        
+
+    if Front == "green" and Top == "yellow":
+        turn()
+    if Front == "green" and Top == "red":
+        turn()
+    if Front == "green" and Top == "white":
+        turn()
+    if Front == "green" and Top == "orange":
+        turn()
+    
+    if Front == "orange" and Top == "yellow":
+        turn()
+    if Front == "orange" and Top == "green":
+        turn()
+    if Front == "orange" and Top == "white":
+        turn()
+    if Front == "orange" and Top == "blue":
+        turn()
+
+    if Front == "yellow" and Top == "green":
+        turn()
+    if Front == "yellow" and Top == "red":
+        turn()
+    if Front == "yellow" and Top == "white":
+        turn()
+    if Front == "yellow" and Top == "orange":
+        turn()
+
+    if Front == "blue" and Top == "yellow":
+        turn()
+    if Front == "blue" and Top == "red":
+        turn()
+    if Front == "blue" and Top == "white":
+        turn()
+    if Front == "blue" and Top == "orange":
+        turn()
+
+    if Front == "white" and Top == "green":
+        turn()
+    if Front == "white" and Top == "red":
+        turn()
+    if Front == "white" and Top == "blue":
+        turn()
+    if Front == "white" and Top == "orange":
+        turn()
 
 def Dprimeturn():
-    Xturn()
-    Fprimeturn()
-    Xprimeturn()
+    global Front, Top
+
+    if Front == "red" and Top == "yellow":
+        primeturn()
+    if Front == "red" and Top == "green":
+        primeturn()
+    if Front == "red" and Top == "white":
+        primeturn()
+    if Front == "red" and Top == "blue":
+        primeturn()
+        
+
+    if Front == "green" and Top == "yellow":
+        primeturn()
+    if Front == "green" and Top == "red":
+        primeturn()
+    if Front == "green" and Top == "white":
+        primeturn()
+    if Front == "green" and Top == "orange":
+        primeturn()
+    
+    if Front == "orange" and Top == "yellow":
+        primeturn()
+    if Front == "orange" and Top == "green":
+        primeturn()
+    if Front == "orange" and Top == "white":
+        primeturn()
+    if Front == "orange" and Top == "blue":
+        primeturn()
+
+    if Front == "yellow" and Top == "green":
+        primeturn()
+    if Front == "yellow" and Top == "red":
+        primeturn()
+    if Front == "yellow" and Top == "white":
+        primeturn()
+    if Front == "yellow" and Top == "orange":
+        primeturn()
+
+    if Front == "blue" and Top == "yellow":
+        primeturn()
+    if Front == "blue" and Top == "red":
+        primeturn()
+    if Front == "blue" and Top == "white":
+        primeturn()
+    if Front == "blue" and Top == "orange":
+        primeturn()
+
+    if Front == "white" and Top == "green":
+        primeturn()
+    if Front == "white" and Top == "red":
+        primeturn()
+    if Front == "white" and Top == "blue":
+        primeturn()
+    if Front == "white" and Top == "orange":
+        primeturn()
     
 def Uturn():
-    Xprimeturn()
-    Fturn()
-    Xturn()
+    global Front, Top
+
+    if Front == "red" and Top == "yellow":
+        turn()
+    if Front == "red" and Top == "green":
+        turn()
+    if Front == "red" and Top == "white":
+        turn()
+    if Front == "red" and Top == "blue":
+        turn()
+        
+
+    if Front == "green" and Top == "yellow":
+        turn()
+    if Front == "green" and Top == "red":
+        turn()
+    if Front == "green" and Top == "white":
+        turn()
+    if Front == "green" and Top == "orange":
+        turn()
+    
+    if Front == "orange" and Top == "yellow":
+        turn()
+    if Front == "orange" and Top == "green":
+        turn()
+    if Front == "orange" and Top == "white":
+        turn()
+    if Front == "orange" and Top == "blue":
+        turn()
+
+    if Front == "yellow" and Top == "green":
+        turn()
+    if Front == "yellow" and Top == "red":
+        turn()
+    if Front == "yellow" and Top == "white":
+        turn()
+    if Front == "yellow" and Top == "orange":
+        turn()
+
+    if Front == "blue" and Top == "yellow":
+        turn()
+    if Front == "blue" and Top == "red":
+        turn()
+    if Front == "blue" and Top == "white":
+        turn()
+    if Front == "blue" and Top == "orange":
+        turn()
+
+    if Front == "white" and Top == "green":
+        turn()
+    if Front == "white" and Top == "red":
+        turn()
+    if Front == "white" and Top == "blue":
+        turn()
+    if Front == "white" and Top == "orange":
+        turn()
     
 def Uprimeturn():
-    Xprimeturn()
-    Fprimeturn()
-    Xturn()
+    global Front, Top
+
+    if Front == "red" and Top == "yellow":
+        primeturn()
+    if Front == "red" and Top == "green":
+        primeturn()
+    if Front == "red" and Top == "white":
+        primeturn()
+    if Front == "red" and Top == "blue":
+        primeturn()
+        
+
+    if Front == "green" and Top == "yellow":
+        primeturn()
+    if Front == "green" and Top == "red":
+        primeturn()
+    if Front == "green" and Top == "white":
+        primeturn()
+    if Front == "green" and Top == "orange":
+        primeturn()
+    
+    if Front == "orange" and Top == "yellow":
+        primeturn()
+    if Front == "orange" and Top == "green":
+        primeturn()
+    if Front == "orange" and Top == "white":
+        primeturn()
+    if Front == "orange" and Top == "blue":
+        primeturn()
+
+    if Front == "yellow" and Top == "green":
+        primeturn()
+    if Front == "yellow" and Top == "red":
+        primeturn()
+    if Front == "yellow" and Top == "white":
+        primeturn()
+    if Front == "yellow" and Top == "orange":
+        primeturn()
+
+    if Front == "blue" and Top == "yellow":
+        primeturn()
+    if Front == "blue" and Top == "red":
+        primeturn()
+    if Front == "blue" and Top == "white":
+        primeturn()
+    if Front == "blue" and Top == "orange":
+        primeturn()
+
+    if Front == "white" and Top == "green":
+        primeturn()
+    if Front == "white" and Top == "red":
+        primeturn()
+    if Front == "white" and Top == "blue":
+        primeturn()
+    if Front == "white" and Top == "orange":
+        primeturn()
 
 def lturn():
-    Rturn()
-    Xprimeturn()
+    global Front, Top
+
+    if Front == "red" and Top == "yellow":
+        Front = "yellow" 
+        Top = "orange"
+        turn()
+    if Front == "red" and Top == "green":
+        Front = "green" 
+        Top = "orange"
+        turn()
+    if Front == "red" and Top == "white":
+        Front = "white" 
+        Top = "orange"
+        turn()
+    if Front == "red" and Top == "blue":
+        Front = "blue" 
+        Top = "orange"
+        turn()
+        
+
+    if Front == "green" and Top == "yellow":
+        Front = "yellow" 
+        Top = "blue"
+        turn()
+    if Front == "green" and Top == "red":
+        Front = "red" 
+        Top = "blue"
+        turn()
+    if Front == "green" and Top == "white":
+        Front = "white" 
+        Top = "blue"
+        turn()
+    if Front == "green" and Top == "orange":
+        Front = "orange" 
+        Top = "blue"
+        turn()
+    
+    if Front == "orange" and Top == "yellow":
+        Front = "yellow" 
+        Top = "red"
+        turn()
+    if Front == "orange" and Top == "green":
+        Front = "green" 
+        Top = "red"
+        turn()
+    if Front == "orange" and Top == "white":
+        Front = "white" 
+        Top = "red"
+        turn()
+    if Front == "orange" and Top == "blue":
+        Front = "blue" 
+        Top = "red"
+        turn()
+
+    if Front == "yellow" and Top == "green":
+        Front = "green" 
+        Top = "white"
+        turn()
+    if Front == "yellow" and Top == "red":
+        Front = "red" 
+        Top = "white"
+        turn()
+    if Front == "yellow" and Top == "blue":
+        Front = "blue" 
+        Top = "white"
+        turn()
+    if Front == "yellow" and Top == "orange":
+        Front = "orange" 
+        Top = "white"
+        turn()
+
+    if Front == "blue" and Top == "yellow":
+        Front = "yellow" 
+        Top = "green"
+        turn()
+    if Front == "blue" and Top == "red":
+        Front = "red" 
+        Top = "green"
+        turn()
+    if Front == "blue" and Top == "white":
+        Front = "white" 
+        Top = "green"
+        turn()
+    if Front == "blue" and Top == "orange":
+        Front = "orange" 
+        Top = "green"
+        turn()
+
+    if Front == "white" and Top == "green":
+        Front = "green" 
+        Top = "yellow"
+        turn()
+    if Front == "white" and Top == "red":
+        Front = "red" 
+        Top = "yellow"
+        turn()
+    if Front == "white" and Top == "blue":
+        Front = "blue" 
+        Top = "yellow"
+        turn()
+    if Front == "white" and Top == "orange":
+        Front = "orange" 
+        Top = "yellow"
+        turn()
 
 def lprimeturn():
     Rprimeturn()
