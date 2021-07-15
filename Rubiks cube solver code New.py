@@ -2141,12 +2141,8 @@ def main():
     cornerMain()
     edgeMain()
 
-#region cubeMapping
-print("Place Orange side facing Motor 6, Yellow facing up. Stop program if needed!")
+print("Place Red face forward and Yellow facing up.")
 sleep(5)
-
-beforePic()
-    
 
 yellowFace = colorfinder()
 A = yellowFace[0]
@@ -2160,14 +2156,11 @@ c = yellowFace[7]
 C = yellowFace[8]
 print(yellowFace)
 
-afterPic()
-
+space = input("press space to continue")
+while space != " ":
+    space = input("press Space then Enter to continue")
 #Done with Yellow
 
-
-Xprimeturn()
-
-beforePic()
     
 
 redFace = colorfinder()
@@ -2182,17 +2175,13 @@ g = redFace[7]
 G = redFace[8]
 print(redFace)
 
-afterPic()
+space = input("press space to continue")
+while space != " ":
+    space = input("press Space then Enter to continue")
 
 #Done With Red
 
 
-
-
-
-Xprimeturn()
-
-beforePic()
     
 
     
@@ -2208,13 +2197,13 @@ w = whiteFace[7]
 W = whiteFace[8]
 print(whiteFace)
 
-afterPic()
 
-Xprimeturn()
+space = input("press space to continue")
+while space != " ":
+    space = input("press Space then Enter to continue")
 
 #Done with white
 
-beforePic()
 
 orangeFace = colorfinder()
 O = orangeFace[0]
@@ -2228,15 +2217,12 @@ m = orangeFace[7]
 M = orangeFace[8]
 print(orangeFace)
 
-afterPic()
-
-
-
-Xprimeturn()
+space = input("press space to continue")
+while space != " ":
+    space = input("press Space then Enter to continue")
 
 #Done with Orange
 
-beforePic()
 
 blueFace = colorfinder()
 T = blueFace[0]
@@ -2250,18 +2236,12 @@ r = blueFace[7]
 R = blueFace[8]
 print(blueFace)
 
-afterPic()
-
+space = input("press space to continue")
+while space != " ":
+    space = input("press Space then Enter to continue")
 
 #Done with blue
 
-
-
-Yprimeturn()
-Yprimeturn()
-
-beforePic()
-    
 
 greenFace = colorfinder()
 J = greenFace[0]
@@ -2275,13 +2255,12 @@ l = greenFace[7]
 L = greenFace[8]
 print(greenFace)
 
-afterPic()
-Yprimeturn()
-
+space = input("press space to continue")
+while space != " ":
+    space = input("press Space then Enter to continue")
 
 #Done With green
 
-#endregiond
 
 
 main()
