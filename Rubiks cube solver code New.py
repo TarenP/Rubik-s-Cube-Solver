@@ -1144,6 +1144,170 @@ def dprimeturn():
         Front = "blue" 
         Top = "orange"
 
+def flipLeft():
+    global Front, Top
+
+    if Front == "red" and Top == "yellow":
+        Front = "blue" 
+        Top = "yellow"
+    elif Front == "red" and Top == "green":
+        Front = "yellow" 
+        Top = "green"
+    elif Front == "red" and Top == "white":
+        Front = "green" 
+        Top = "white"
+    elif Front == "red" and Top == "blue":
+        Front = "white" 
+        Top = "blue"
+        
+
+    elif Front == "green" and Top == "yellow":
+        Front = "red" 
+        Top = "yellow"
+    elif Front == "green" and Top == "red":
+        Front = "white" 
+        Top = "red"
+    elif Front == "green" and Top == "white":
+        Front = "orange" 
+        Top = "white"
+    elif Front == "green" and Top == "orange":
+        Front = "yellow" 
+        Top = "orange"
+    
+    elif Front == "orange" and Top == "yellow":
+        Front = "green" 
+        Top = "yellow"
+    elif Front == "orange" and Top == "green":
+        Front = "white" 
+        Top = "green"
+    elif Front == "orange" and Top == "white":
+        Front = "blue" 
+        Top = "white"
+    elif Front == "orange" and Top == "blue":
+        Front = "yellow" 
+        Top = "blue"
+
+    elif Front == "yellow" and Top == "green":
+        Front = "orange" 
+        Top = "green"
+    elif Front == "yellow" and Top == "red":
+        Front = "green" 
+        Top = "red"
+    elif Front == "yellow" and Top == "blue":
+        Front = "red" 
+        Top = "blue"
+    elif Front == "yellow" and Top == "orange":
+        Front = "blue" 
+        Top = "orange"
+
+    elif Front == "blue" and Top == "yellow":
+        Front = "orange" 
+        Top = "yellow"
+    elif Front == "blue" and Top == "red":
+        Front = "yellow" 
+        Top = "red"
+    elif Front == "blue" and Top == "white":
+        Front = "red" 
+        Top = "white"
+    elif Front == "blue" and Top == "orange":
+        Front = "white" 
+        Top = "orange"
+
+    elif Front == "white" and Top == "green":
+        Front = "red" 
+        Top = "green"
+    elif Front == "white" and Top == "red":
+        Front = "blue" 
+        Top = "red"
+    if Front == "white" and Top == "blue":
+        Front = "orange" 
+        Top = "blue"
+    elif Front == "white" and Top == "orange":
+        Front = "green" 
+        Top = "orange"
+
+def flipRight():
+    global Front, Top
+
+    if Front == "red" and Top == "yellow":
+        Front = "green" 
+        Top = "yellow"
+    elif Front == "red" and Top == "green":
+        Front = "white" 
+        Top = "green"
+    elif Front == "red" and Top == "white":
+        Front = "blue" 
+        Top = "white"
+    elif Front == "red" and Top == "blue":
+        Front = "yellow" 
+        Top = "blue"
+        
+
+    elif Front == "green" and Top == "yellow":
+        Front = "orange" 
+        Top = "yellow"
+    elif Front == "green" and Top == "red":
+        Front = "yellow" 
+        Top = "red"
+    elif Front == "green" and Top == "white":
+        Front = "red" 
+        Top = "white"
+    elif Front == "green" and Top == "orange":
+        Front = "white" 
+        Top = "orange"
+    
+    elif Front == "orange" and Top == "yellow":
+        Front = "blue" 
+        Top = "yellow"
+    elif Front == "orange" and Top == "green":
+        Front = "yellow" 
+        Top = "green"
+    elif Front == "orange" and Top == "white":
+        Front = "green" 
+        Top = "white"
+    elif Front == "orange" and Top == "blue":
+        Front = "white" 
+        Top = "blue"
+
+    elif Front == "yellow" and Top == "green":
+        Front = "red" 
+        Top = "green"
+    elif Front == "yellow" and Top == "red":
+        Front = "blue" 
+        Top = "red"
+    elif Front == "yellow" and Top == "blue":
+        Front = "orange" 
+        Top = "blue"
+    elif Front == "yellow" and Top == "orange":
+        Front = "green" 
+        Top = "orange"
+
+    elif Front == "blue" and Top == "yellow":
+        Front = "red" 
+        Top = "yellow"
+    elif Front == "blue" and Top == "red":
+        Front = "white" 
+        Top = "red"
+    elif Front == "blue" and Top == "white":
+        Front = "orange" 
+        Top = "white"
+    elif Front == "blue" and Top == "orange":
+        Front = "yellow" 
+        Top = "orange"
+
+    elif Front == "white" and Top == "green":
+        Front = "orange" 
+        Top = "green"
+    elif Front == "white" and Top == "red":
+        Front = "green" 
+        Top = "red"
+    elif Front == "white" and Top == "blue":
+        Front = "red" 
+        Top = "blue"
+    elif Front == "white" and Top == "orange":
+        Front = "blue" 
+        Top = "orange"
+
 def AlteredYPermutation():
     Rturn()
     Uprimeturn()
@@ -1663,9 +1827,7 @@ def cornerSwapper(cornerSolveList):
 
         counter = counter + 1
     if odd == True:
-        Xturn()
-        Yturn()
-        Xprimeturn()
+        flipLeft()
 
         Lturn()
         Uprimeturn()
@@ -1685,9 +1847,7 @@ def cornerSwapper(cornerSolveList):
         Lprimeturn()
         Uturn()
 
-        Xturn()
-        Yprimeturn()
-        Xprimeturn()
+        flipRight()
 
 def cornerMain():
     cList = cornerActions()
