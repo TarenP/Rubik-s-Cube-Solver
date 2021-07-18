@@ -832,105 +832,105 @@ def lturn():
     global Front, Top
 
     if Front == "red" and Top == "yellow":
-        turn(6)
+        turn(5)
         Front = "yellow" 
         Top = "orange"
     elif Front == "red" and Top == "green":
-        turn(5)
+        turn(1)
         Front = "green" 
         Top = "orange"
     elif Front == "red" and Top == "white":
-        turn(1)
+        turn(2)
         Front = "white" 
         Top = "orange"
     elif Front == "red" and Top == "blue":
-        turn(2)
+        turn(6)
         Front = "blue" 
         Top = "orange"
         
 
     elif Front == "green" and Top == "yellow":
-        turn(6)
+        turn(3)
         Front = "yellow" 
         Top = "blue"
     elif Front == "green" and Top == "red":
-        turn(4)
+        turn(6)
         Front = "red" 
         Top = "blue"
     elif Front == "green" and Top == "white":
-        turn(1)
+        turn(4)
         Front = "white" 
         Top = "blue"
     elif Front == "green" and Top == "orange":
-        turn(3)
+        turn(1)
         Front = "orange" 
         Top = "blue"
     
     elif Front == "orange" and Top == "yellow":
-        turn(6)
+        turn(2)
         Front = "yellow" 
         Top = "red"
     elif Front == "orange" and Top == "green":
-        turn(5)
+        turn(6)
         Front = "green" 
         Top = "red"
     elif Front == "orange" and Top == "white":
-        turn(1)
+        turn(5)
         Front = "white" 
         Top = "red"
     elif Front == "orange" and Top == "blue":
-        turn(2)
+        turn(1)
         Front = "blue" 
         Top = "red"
 
     elif Front == "yellow" and Top == "green":
-        turn(5)
+        turn(4)
         Front = "green" 
         Top = "white"
     elif Front == "yellow" and Top == "red":
-        turn(4)
+        turn(2)
         Front = "red" 
         Top = "white"
     elif Front == "yellow" and Top == "blue":
-        turn(2)
+        turn(3)
         Front = "blue" 
         Top = "white"
     elif Front == "yellow" and Top == "orange":
-        turn(3)
+        turn(5)
         Front = "orange" 
         Top = "white"
 
     elif Front == "blue" and Top == "yellow":
-        turn(6)
+        turn(4)
         Front = "yellow" 
         Top = "green"
     elif Front == "blue" and Top == "red":
-        turn(4)
+        turn(1)
         Front = "red" 
         Top = "green"
     elif Front == "blue" and Top == "white":
-        turn(1)
+        turn(3)
         Front = "white" 
         Top = "green"
     elif Front == "blue" and Top == "orange":
-        turn(3)
+        turn(6)
         Front = "orange" 
         Top = "green"
 
     elif Front == "white" and Top == "green":
-        turn(5)
+        turn(3)
         Front = "green" 
         Top = "yellow"
     elif Front == "white" and Top == "red":
-        turn(4)
+        turn(5)
         Front = "red" 
         Top = "yellow"
     elif Front == "white" and Top == "blue":
-        turn(2)
+        turn(4)
         Front = "blue" 
         Top = "yellow"
     elif Front == "white" and Top == "orange":
-        turn(3)
+        turn(2)
         Front = "orange" 
         Top = "yellow"
 
@@ -938,105 +938,105 @@ def lprimeturn():
     global Front, Top
 
     if Front == "red" and Top == "yellow":
-        primeturn(6)
+        primeturn(5)
         Front = "white" 
         Top = "red"
     elif Front == "red" and Top == "green":
-        primeturn(5)
+        primeturn(1)
         Front = "blue" 
         Top = "red"
     elif Front == "red" and Top == "white":
-        primeturn(1)
+        primeturn(2)
         Front = "yellow" 
         Top = "red"
     elif Front == "red" and Top == "blue":
-        primeturn(2)
+        primeturn(6)
         Front = "green" 
         Top = "red"
         
 
     elif Front == "green" and Top == "yellow":
-        primeturn(6)
+        primeturn(3)
         Front = "white" 
         Top = "green"
     elif Front == "green" and Top == "red":
-        primeturn(4)
+        primeturn(6)
         Front = "orange" 
         Top = "green"
     elif Front == "green" and Top == "white":
-        primeturn(1)
+        primeturn(4)
         Front = "yellow" 
         Top = "green"
     elif Front == "green" and Top == "orange":
-        primeturn(3)
+        primeturn(1)
         Front = "red" 
         Top = "green"
     
     elif Front == "orange" and Top == "yellow":
-        primeturn(6)
+        primeturn(2)
         Front = "white" 
         Top = "orange"
     elif Front == "orange" and Top == "green":
-        primeturn(5)
+        primeturn(6)
         Front = "blue" 
         Top = "orange"
     elif Front == "orange" and Top == "white":
-        primeturn(1)
+        primeturn(5)
         Front = "yellow" 
         Top = "orange"
     elif Front == "orange" and Top == "blue":
         Front = "green" 
         Top = "orange"
-        primeturn(2)
+        primeturn(1)
 
     elif Front == "yellow" and Top == "green":
-        primeturn(5)
+        primeturn(4)
         Front = "blue" 
         Top = "yellow"
     elif Front == "yellow" and Top == "red":
-        primeturn(4)
+        primeturn(2)
         Front = "orange" 
         Top = "yellow"
     elif Front == "yellow" and Top == "blue":
-        primeturn(2)
+        primeturn(3)
         Front = "green" 
         Top = "yellow"
     elif Front == "yellow" and Top == "orange":
-        primeturn(3)
+        primeturn(5)
         Front = "red" 
         Top = "yellow"
 
     elif Front == "blue" and Top == "yellow":
-        primeturn(6)
+        primeturn(4)
         Front = "white" 
         Top = "blue"
     elif Front == "blue" and Top == "red":
-        primeturn(4)
+        primeturn(1)
         Front = "orange" 
         Top = "blue"
     elif Front == "blue" and Top == "white":
-        primeturn(1)
+        primeturn(3)
         Front = "yellow" 
         Top = "blue"
     elif Front == "blue" and Top == "orange":
-        primeturn(3)
+        primeturn(6)
         Front = "red" 
         Top = "blue"
 
     elif Front == "white" and Top == "green":
-        primeturn(5)
+        primeturn(3)
         Front = "blue" 
         Top = "white"
     elif Front == "white" and Top == "red":
-        primeturn(4)
+        primeturn(5)
         Front = "orange" 
         Top = "white"
     elif Front == "white" and Top == "blue":
-        primeturn(2)
+        primeturn(4)
         Front = "green" 
         Top = "white"
     elif Front == "white" and Top == "orange":
-        primeturn(3)
+        primeturn(2)
         Front = "red" 
         Top = "white"
 
