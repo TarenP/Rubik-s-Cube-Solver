@@ -38,7 +38,7 @@ GPIO.setup(DIR6, GPIO.OUT)
 GPIO.setup(STEP6, GPIO.OUT)
 
 #delay between steps for motor turns
-delay = .01
+delay = .001
     
 #camera setup
 camera = PiCamera()
@@ -78,59 +78,92 @@ Top = "yellow"
 
 def turn(motor):
     if motor == 1:
-        DIR = 1
-        STEP = 1
-    if motor == 2:
-        DIR = 2
-        STEP = 2
-    if motor == 3:
-        DIR = 3
-        STEP = 3
-    if motor == 4:
-        DIR = 4
-        STEP = 4
-    if motor == 5:
-        DIR = 5
-        STEP = 5
-    if motor == 6:
-        DIR = 6
-        STEP = 6
+        GPIO.output(DIR1, CW)
+        for x in range(50):
+            GPIO.output(STEP1, GPIO.HIGH)
+            sleep(delay)
+            GPIO.output(STEP1, GPIO.LOW)
+            sleep(delay)
 
-
-    GPIO.output(DIR, CW)
-    for x in range(50):
-        GPIO.output(STEP, GPIO.HIGH)
-        sleep(delay)
-        GPIO.output(STEP, GPIO.LOW)
-        sleep(delay)
-
+    elif motor == 2:
+        GPIO.output(DIR2, CW)
+        for x in range(50):
+            GPIO.output(STEP2, GPIO.HIGH)
+            sleep(delay)
+            GPIO.output(STEP2, GPIO.LOW)
+            sleep(delay)
+    elif motor == 3:
+        GPIO.output(DIR3, CW)
+        for x in range(50):
+            GPIO.output(STEP3, GPIO.HIGH)
+            sleep(delay)
+            GPIO.output(STEP3, GPIO.LOW)
+            sleep(delay)
+    elif motor == 4:
+        GPIO.output(DIR4, CW)
+        for x in range(50):
+            GPIO.output(STEP4, GPIO.HIGH)
+            sleep(delay)
+            GPIO.output(STEP4, GPIO.LOW)
+            sleep(delay)
+    elif motor == 5:
+        GPIO.output(DIR5, CW)
+        for x in range(50):
+            GPIO.output(STEP5, GPIO.HIGH)
+            sleep(delay)
+            GPIO.output(STEP5, GPIO.LOW)
+            sleep(delay)
+    elif motor == 6:
+        GPIO.output(DIR6, CW)
+        for x in range(50):
+            GPIO.output(STEP6, GPIO.HIGH)
+            sleep(delay)
+            GPIO.output(STEP6, GPIO.LOW)
+            sleep(delay)
 def primeturn(motor):
     if motor == 1:
-        DIR = 1
-        STEP = 1
-    if motor == 2:
-        DIR = 2
-        STEP = 2
-    if motor == 3:
-        DIR = 3
-        STEP = 3
-    if motor == 4:
-        DIR = 4
-        STEP = 4
-    if motor == 5:
-        DIR = 5
-        STEP = 5
-    if motor == 6:
-        DIR = 6
-        STEP = 6
+        GPIO.output(DIR1, CCW)
+        for x in range(50):
+            GPIO.output(STEP1, GPIO.HIGH)
+            sleep(delay)
+            GPIO.output(STEP1, GPIO.LOW)
+            sleep(delay)
 
-
-    GPIO.output(DIR, CCW)
-    for x in range(50):
-        GPIO.output(STEP, GPIO.HIGH)
-        sleep(delay)
-        GPIO.output(STEP, GPIO.LOW)
-        sleep(delay)
+    elif motor == 2:
+        GPIO.output(DIR2, CCW)
+        for x in range(50):
+            GPIO.output(STEP2, GPIO.HIGH)
+            sleep(delay)
+            GPIO.output(STEP2, GPIO.LOW)
+            sleep(delay)
+    elif motor == 3:
+        GPIO.output(DIR3, CCW)
+        for x in range(50):
+            GPIO.output(STEP3, GPIO.HIGH)
+            sleep(delay)
+            GPIO.output(STEP3, GPIO.LOW)
+            sleep(delay)
+    elif motor == 4:
+        GPIO.output(DIR4, CCW)
+        for x in range(50):
+            GPIO.output(STEP4, GPIO.HIGH)
+            sleep(delay)
+            GPIO.output(STEP4, GPIO.LOW)
+            sleep(delay)
+    elif motor == 5:
+        GPIO.output(DIR5, CCW)
+        for x in range(50):
+            GPIO.output(STEP5, GPIO.HIGH)
+            sleep(delay)
+            GPIO.output(STEP5, GPIO.LOW)
+            sleep(delay)
+    elif motor == 6:
+        GPIO.output(DIR6, CCW)
+        for x in range(50):
+            GPIO.output(STEP6, GPIO.HIGH)
+            sleep(delay)
+            GPIO.output(STEP6, GPIO.LOW)
+            sleep(delay)
 
 def Rturn():
     global Front, Top
@@ -1137,7 +1170,7 @@ def dturn():
         turn(4)
         Front = "blue" 
         Top = "red"
-    if Front == "white" and Top == "blue":
+    elif Front == "white" and Top == "blue":
         turn(2)
         Front = "orange" 
         Top = "blue"
@@ -1327,7 +1360,7 @@ def flipLeft():
     elif Front == "white" and Top == "red":
         Front = "blue" 
         Top = "red"
-    if Front == "white" and Top == "blue":
+    elif Front == "white" and Top == "blue":
         Front = "orange" 
         Top = "blue"
     elif Front == "white" and Top == "orange":
@@ -2410,125 +2443,128 @@ def main():
     edgeMain()
 
 print("Place Red face forward and Yellow facing up.")
-sleep(5)
+# sleep(5)
 
-yellowFace = colorfinder()
-A = yellowFace[0]
-a = yellowFace[1]
-B = yellowFace[2]
-d = yellowFace[3]
-up = yellowFace[4]
-b = yellowFace[5]
-D = yellowFace[6]
-c = yellowFace[7]
-C = yellowFace[8]
-print(yellowFace)
+# yellowFace = colorfinder()
+# A = yellowFace[0]
+# a = yellowFace[1]
+# B = yellowFace[2]
+# d = yellowFace[3]
+# up = yellowFace[4]
+# b = yellowFace[5]
+# D = yellowFace[6]
+# c = yellowFace[7]
+# C = yellowFace[8]
+# print(yellowFace)
 
-space = input("press space to continue")
-while space != " ":
-    space = input("press Space then Enter to continue")
-#Done with Yellow
-
-    
-
-redFace = colorfinder()
-E = redFace[0]
-e = redFace[1]
-F = redFace[2]
-h = redFace[3]
-front = redFace[4]
-f = redFace[5]
-H = redFace[6]
-g = redFace[7]
-G = redFace[8]
-print(redFace)
-
-space = input("press space to continue")
-while space != " ":
-    space = input("press Space then Enter to continue")
-
-#Done With Red
-
+# space = input("press space to continue")
+# while space != " ":
+#     space = input("press Space then Enter to continue")
+# #Done with Yellow
 
     
 
+# redFace = colorfinder()
+# E = redFace[0]
+# e = redFace[1]
+# F = redFace[2]
+# h = redFace[3]
+# front = redFace[4]
+# f = redFace[5]
+# H = redFace[6]
+# g = redFace[7]
+# G = redFace[8]
+# print(redFace)
+
+# space = input("press space to continue")
+# while space != " ":
+#     space = input("press Space then Enter to continue")
+
+# #Done With Red
+
+
     
-whiteFace = colorfinder()
-U = whiteFace[0]
-u = whiteFace[1]
-V = whiteFace[2]
-x = whiteFace[3]
-down = whiteFace[4]
-v = whiteFace[5]
-X = whiteFace[6]
-w = whiteFace[7]
-W = whiteFace[8]
-print(whiteFace)
+
+    
+# whiteFace = colorfinder()
+# U = whiteFace[0]
+# u = whiteFace[1]
+# V = whiteFace[2]
+# x = whiteFace[3]
+# down = whiteFace[4]
+# v = whiteFace[5]
+# X = whiteFace[6]
+# w = whiteFace[7]
+# W = whiteFace[8]
+# print(whiteFace)
 
 
-space = input("press space to continue")
-while space != " ":
-    space = input("press Space then Enter to continue")
+# space = input("press space to continue")
+# while space != " ":
+#     space = input("press Space then Enter to continue")
 
-#Done with white
-
-
-orangeFace = colorfinder()
-O = orangeFace[0]
-o = orangeFace[1]
-P = orangeFace[2]
-n = orangeFace[3]
-back = orangeFace[4]
-p = orangeFace[5]
-N = orangeFace[6]
-m = orangeFace[7]
-M = orangeFace[8]
-print(orangeFace)
-
-space = input("press space to continue")
-while space != " ":
-    space = input("press Space then Enter to continue")
-
-#Done with Orange
+# #Done with white
 
 
-blueFace = colorfinder()
-T = blueFace[0]
-t = blueFace[1]
-Q = blueFace[2]
-s = blueFace[3]
-left = blueFace[4]
-q = blueFace[5]
-S = blueFace[6]
-r = blueFace[7]
-R = blueFace[8]
-print(blueFace)
+# orangeFace = colorfinder()
+# O = orangeFace[0]
+# o = orangeFace[1]
+# P = orangeFace[2]
+# n = orangeFace[3]
+# back = orangeFace[4]
+# p = orangeFace[5]
+# N = orangeFace[6]
+# m = orangeFace[7]
+# M = orangeFace[8]
+# print(orangeFace)
 
-space = input("press space to continue")
-while space != " ":
-    space = input("press Space then Enter to continue")
+# space = input("press space to continue")
+# while space != " ":
+#     space = input("press Space then Enter to continue")
 
-#Done with blue
-
-
-greenFace = colorfinder()
-J = greenFace[0]
-j = greenFace[1]
-K = greenFace[2]
-i = greenFace[3]
-right = greenFace[4]
-k = greenFace[5]
-I = greenFace[6]
-l = greenFace[7]
-L = greenFace[8]
-print(greenFace)
-
-space = input("press space to continue")
-while space != " ":
-    space = input("press Space then Enter to continue")
-
-#Done With green
+# #Done with Orange
 
 
+# blueFace = colorfinder()
+# T = blueFace[0]
+# t = blueFace[1]
+# Q = blueFace[2]
+# s = blueFace[3]
+# left = blueFace[4]
+# q = blueFace[5]
+# S = blueFace[6]
+# r = blueFace[7]
+# R = blueFace[8]
+# print(blueFace)
 
-main()
+# space = input("press space to continue")
+# while space != " ":
+#     space = input("press Space then Enter to continue")
+
+# #Done with blue
+
+
+# greenFace = colorfinder()
+# J = greenFace[0]
+# j = greenFace[1]
+# K = greenFace[2]
+# i = greenFace[3]
+# right = greenFace[4]
+# k = greenFace[5]
+# I = greenFace[6]
+# l = greenFace[7]
+# L = greenFace[8]
+# print(greenFace)
+
+# space = input("press space to continue")
+# while space != " ":
+#     space = input("press Space then Enter to continue")
+
+# #Done With green
+
+
+
+# main()
+
+
+AlteredYPermutation()
