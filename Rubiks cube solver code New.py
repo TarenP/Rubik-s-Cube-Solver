@@ -1981,27 +1981,28 @@ def cornerSwapper(cornerSolveList):
 
         counter = counter + 1
     if odd == True:
-        flipLeft()
+        print("odd")
+        # flipLeft()
 
-        Lturn()
-        Uprimeturn()
-        Uprimeturn()
-        Lprimeturn()
-        Uprimeturn()
-        Uprimeturn()
-        Lturn()
-        Fprimeturn()
-        Lprimeturn()
-        Uprimeturn()
-        Lturn()
-        Uturn()
-        Lturn()
-        Fturn()
-        Lprimeturn()
-        Lprimeturn()
-        Uturn()
+        # Lturn()
+        # Uprimeturn()
+        # Uprimeturn()
+        # Lprimeturn()
+        # Uprimeturn()
+        # Uprimeturn()
+        # Lturn()
+        # Fprimeturn()
+        # Lprimeturn()
+        # Uprimeturn()
+        # Lturn()
+        # Uturn()
+        # Lturn()
+        # Fturn()
+        # Lprimeturn()
+        # Lprimeturn()
+        # Uturn()
 
-        flipRight()
+        # flipRight()
 
 def cornerMain():
     cList = cornerActions()
@@ -2575,52 +2576,52 @@ print("Place Red face forward and Yellow facing up.")
 
 # #Done With green
 
-A = "green"
-a = "green"
-B = "red"
+A = "blue"
+a = "red"
+B = "green"
 d = "green"
-b = "yellow"
-D = "white"
-c = "orange"
-C = "yellow"
-Q = "yellow"
-q = "orange"
-R = "blue"
-t = "yellow"
-r = "orange"
-T = "white"
-s = "white"
-S = "blue"
-E = "orange"
-e = "yellow"
-F = "blue"
-h = "blue"
-f = "red"
-H = "orange"
-g = "red"
-G = "orange"
-I = "red"
-i = "green"
-J = "blue"
-l = "white"
+b = "green"
+D = "yellow"
+c = "green"
+C = "red"
+Q = "white"
+q = "red"
+R = "orange"
+t = "white"
+r = "yellow"
+T = "yellow"
+s = "red"
+S = "red"
+E = "blue"
+e = "white"
+F = "green"
+h = "green"
+f = "yellow"
+H = "green"
+g = "blue"
+G = "white"
+I = "yellow"
+i = "orange"
+J = "white"
+l = "orange"
 j = "blue"
-L = "white"
-k = "white"
-K = "green"
-M = "white"
-m = "red"
+L = "blue"
+k = "orange"
+K = "blue"
+M = "orange"
+m = "yellow"
 N = "orange"
 p = "yellow"
-n = "red"
-P = "red"
-o = "white"
+n = "orange"
+P = "yellow"
+o = "red"
 O = "green"
-U = "yellow"
-u = "blue"
-V = "green"
-x = "green"
-v = "orange"
-X = "red"
-w = "blue"
-W = "yellow"
+U = "white"
+u = "white"
+V = "red"
+x = "blue"
+v = "blue"
+X = "orange"
+w = "white"
+W = "red"
 main()
