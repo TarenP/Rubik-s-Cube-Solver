@@ -219,6 +219,54 @@ def cornerActions():
     everythingSolved = False
     cornerSolveList = []
 
+    print(A)
+    print(a)
+    print(B)
+    print(d)
+    print(b)
+    print(D)
+    print(c)
+    print(C)
+    print(Q)
+    print(q)
+    print(R)
+    print(t)
+    print(r)
+    print(T)
+    print(s)
+    print(S)
+    print(E)
+    print(e)
+    print(F)
+    print(h)
+    print(f)
+    print(H)
+    print(g)
+    print(G)
+    print(I)
+    print(i)
+    print(J)
+    print(l)
+    print(j)
+    print(L)
+    print(k)
+    print(K)
+    print(M)
+    print(m)
+    print(N)
+    print(p)
+    print(n)
+    print(P)
+    print(o)
+    print(O)
+    print(U)
+    print(u)
+    print(V)
+    print(x)
+    print(v)
+    print(X)
+    print(w)
+    print(W)
 
     #Use a list of the moves to the positions the bank pieces need to go.
     while everythingSolved == False:
@@ -1036,16 +1084,7 @@ def scrambleTurn(matrix):
             [matrix[4][0], matrix[3][1], matrix[2][1], matrix[1][1], matrix[0][0]],
             [matrix[4][1], matrix[3][2], matrix[1][2], matrix[0][1]],
             [matrix[4][2], matrix[3][3], matrix[2][2], matrix[1][3], matrix[0][2]],
-            [matrix[1][4], matrix[2][3], matrix[3][4]]]
-    print(turned)
-    return turned
-
-def scramblePrimeTurn(matrix):
-    turned = [[matrix[1][4], matrix[2][3], matrix[3][4]],
-            [matrix[0][2], matrix[1][3], matrix[2][2], matrix[3][3], matrix[4][2]],
-            [matrix[0][1], matrix[1][2], matrix[3][2], matrix[4][1]],
-            [matrix[0][0], matrix[1][1], matrix[2][1], matrix[3][1], matrix[4][0]],
-            [matrix[1][0], matrix[2][0], matrix[3][0]]]
+            [matrix[3][4], matrix[2][3], matrix[1][4]]]
     print(turned)
     return turned
 
@@ -1132,7 +1171,7 @@ def cubeScrambler(num):
                 [s, x, v, k],
                 [T, X, w, W, K],
                 [O, o, P]]
-        randomNum = random.randint(1, 12)
+        randomNum = random.randint(1, 6)
         if (randomNum == 1):
             Rturn()
             Rref = scrambleTurn(Rside)      
@@ -1153,33 +1192,10 @@ def cubeScrambler(num):
             k = Rref[3][2]
             K = Rref[3][3]
             P = Rref[3][4]
-            V = Rref[4][0]
-            v = Rref[4][1]
             W = Rref[4][2]
+            v = Rref[4][1]
+            V = Rref[4][0]
         elif(randomNum == 2):
-            Rprimeturn()
-            Rref = scramblePrimeTurn(Rside)      
-            C = Rref[0][0]
-            b = Rref[0][1]
-            B = Rref[0][2]
-            F = Rref[1][0]
-            I = Rref[1][1]
-            i = Rref[1][2]
-            J = Rref[1][3]
-            M = Rref[1][4]
-            f = Rref[2][0]
-            l = Rref[2][1]
-            j = Rref[2][2]
-            p = Rref[2][3]
-            G = Rref[3][0]
-            L = Rref[3][1]
-            k = Rref[3][2]
-            K = Rref[3][3]
-            P = Rref[3][4]
-            V = Rref[4][0]
-            v = Rref[4][1]
-            W = Rref[4][2]
-        elif(randomNum == 3):
             Lturn()
             Lref = scrambleTurn(Lside)   
             A = Lref[0][0]
@@ -1199,33 +1215,10 @@ def cubeScrambler(num):
             s = Lref[3][2]
             S = Lref[3][3]
             H = Lref[3][4]
-            U = Lref[4][0]
+            U = Lref[4][2]
             x = Lref[4][1]
-            X = Lref[4][2]
-        elif(randomNum == 4):
-            Lprimeturn()
-            Lref = scramblePrimeTurn(Lside)   
-            A = Lref[0][0]
-            d = Lref[0][1]
-            D = Lref[0][2]
-            N = Lref[1][0]
-            Q = Lref[1][1]
-            q = Lref[1][2]
-            R = Lref[1][3]
-            E = Lref[1][4]
-            n = Lref[2][0]
-            t = Lref[2][1]
-            r = Lref[2][2]
-            h = Lref[2][3]
-            O = Lref[3][0]
-            T = Lref[3][1]
-            s = Lref[3][2]
-            S = Lref[3][3]
-            H = Lref[3][4]
-            U = Lref[4][0]
-            x = Lref[4][1]
-            X = Lref[4][2]
-        elif(randomNum == 5):
+            X = Lref[4][0]
+        elif(randomNum == 3):
             Fturn()
             Fref = scrambleTurn(Fside)   
             D = Fref[0][0]
@@ -1248,30 +1241,7 @@ def cubeScrambler(num):
             U = Fref[4][0]
             u = Fref[4][1]
             V = Fref[4][2]
-        elif(randomNum == 6):
-            Fprimeturn()
-            Fref = scramblePrimeTurn(Fside)   
-            D = Fref[0][0]
-            c = Fref[0][1]
-            C = Fref[0][2]
-            R = Fref[1][0]
-            E = Fref[1][1]
-            e = Fref[1][2]
-            F = Fref[1][3]
-            I = Fref[1][4]
-            r = Fref[2][0]
-            h = Fref[2][1]
-            f = Fref[2][2]
-            l = Fref[2][3]
-            S = Fref[3][0]
-            H = Fref[3][1]
-            g = Fref[3][2]
-            G = Fref[3][3]
-            L = Fref[3][4]
-            U = Fref[4][0]
-            u = Fref[4][1]
-            V = Fref[4][2]
-        elif(randomNum == 7):
+        elif(randomNum == 4):
             Bturn()
             Bref = scrambleTurn(Bside)   
             B = Bref[0][0]
@@ -1294,30 +1264,7 @@ def cubeScrambler(num):
             W = Bref[4][0]
             w = Bref[4][1]
             X = Bref[4][2]
-        elif(randomNum == 8):
-            Bprimeturn()
-            Bref = scramblePrimeTurn(Bside)   
-            B = Bref[0][0]
-            a = Bref[0][1]
-            A = Bref[0][2]
-            J = Bref[1][0]
-            M = Bref[1][1]
-            m = Bref[1][2]
-            N = Bref[1][3]
-            Q = Bref[1][4]
-            j = Bref[2][0]
-            p = Bref[2][1]
-            n = Bref[2][2]
-            t = Bref[2][3]
-            K = Bref[3][0]
-            P = Bref[3][1]
-            o = Bref[3][2]
-            O = Bref[3][3]
-            T = Bref[3][4]
-            W = Bref[4][0]
-            w = Bref[4][1]
-            X = Bref[4][2]
-        elif(randomNum == 9):
+        elif(randomNum == 5):
             Uturn()
             Uref = scrambleTurn(Uside)   
             N = Uref[0][0]
@@ -1337,33 +1284,10 @@ def cubeScrambler(num):
             c = Uref[3][2]
             C = Uref[3][3]
             I = Uref[3][4]
-            E = Uref[4][0]
-            e = Uref[4][1]
             F = Uref[4][2]
-        elif(randomNum == 10):
-            Uprimeturn()
-            Uref = scramblePrimeTurn(Uside)   
-            N = Uref[0][0]
-            m = Uref[0][1]
-            M = Uref[0][2]
-            Q = Uref[1][0]
-            A = Uref[1][1]
-            a = Uref[1][2]
-            B = Uref[1][3]
-            J = Uref[1][4]
-            q = Uref[2][0]
-            d = Uref[2][1]
-            b = Uref[2][2]
-            i = Uref[2][3]
-            R = Uref[3][0]
-            D = Uref[3][1]
-            c = Uref[3][2]
-            C = Uref[3][3]
-            I = Uref[3][4]
-            E = Uref[4][0]
             e = Uref[4][1]
-            F = Uref[4][2]
-        elif(randomNum == 11):
+            E = Uref[4][0]
+        elif(randomNum == 6):
             Dturn()
             Dref = scrambleTurn(Dside)   
             H = Dref[0][0]
@@ -1386,38 +1310,10 @@ def cubeScrambler(num):
             O = Dref[4][0]
             o = Dref[4][1]
             P = Dref[4][2]
-        elif(randomNum == 12):
-            Dprimeturn()
-            Dref = scramblePrimeTurn(Dside)   
-            H = Dref[0][0]
-            g = Dref[0][1]
-            G = Dref[0][2]
-            S = Dref[1][0]
-            U = Dref[1][1]
-            u = Dref[1][2]
-            V = Dref[1][3]
-            L = Dref[1][4]
-            s = Dref[2][0]
-            x = Dref[2][1]
-            v = Dref[2][2]
-            k = Dref[2][3]
-            T = Dref[3][0]
-            X = Dref[3][1]
-            w = Dref[3][2]
-            W = Dref[3][3]
-            K = Dref[3][4]
-            O = Dref[4][0]
-            o = Dref[4][1]
-            P = Dref[4][2]
+            
+        
+cubeScrambler(15)
 
-cubeScrambler(8)
-print(A)
-print(a)
-print(B)
-print(d)
-print(b)
-print(D)
-print(c)
-print(C)
 
+main()
 
