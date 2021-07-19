@@ -57,7 +57,6 @@ HSU = ["red", "blue", "white"]
 GLV = ["red", "green", "white"]
 XTO = ["white", "blue", "orange"]
 WKP = ["white", "green", "orange"]
-
 am = ["yellow", "orange"]
 bi = ["yellow", "green"]
 ce = ["yellow", "red"]
@@ -2454,11 +2453,10 @@ def edgeMain():
 
 def main():
     cornerMain()
-    sleep(10)
     edgeMain()
 
 print("Place Red face forward and Yellow facing up.")
-#sleep(5)
+sleep(5)
 
 # yellowFace = colorfinder()
 # A = yellowFace[0]
@@ -2577,52 +2575,52 @@ print("Place Red face forward and Yellow facing up.")
 
 # #Done With green
 
-A = "yellow"
-a = "yellow"
-B = "yellow"
-d = "orange"
-b = "yellow"
-D = "yellow"
-c = "red"
-C = "yellow"
-Q = "blue"
-q = "green"
-R = "blue"
-t = "blue"
-r = "white"
-T = "blue"
-s = "red"
-S = "blue"
-E = "red"
-e = "green"
-F = "green"
-h = "blue"
-f = "yellow"
-H = "red"
-g = "red"
-G = "red"
-I = "orange"
-i = "green"
-J = "red"
-l = "red"
-j = "blue"
-L = "green"
-k = "green"
-K = "green"
-M = "green"
-m = "orange"
-N = "orange"
-p = "yellow"
-n = "orange"
-P = "orange"
-o = "orange"
-O = "orange"
-U = "white"
-u = "white"
-V = "white"
-x = "blue"
-v = "white"
-X = "white"
-w = "white"
-W = "white"
+# A = "yellow"
+# a = "yellow"
+# B = "yellow"
+# d = "orange"
+# b = "yellow"
+# D = "yellow"
+# c = "red"
+# C = "yellow"
+# Q = "blue"
+# q = "green"
+# R = "blue"
+# t = "blue"
+# r = "white"
+# T = "blue"
+# s = "red"
+# S = "blue"
+# E = "red"
+# e = "green"
+# F = "green"
+# h = "blue"
+# f = "yellow"
+# H = "red"
+# g = "red"
+# G = "red"
+# I = "orange"
+# i = "green"
+# J = "red"
+# l = "red"
+# j = "blue"
+# L = "green"
+# k = "green"
+# K = "green"
+# M = "green"
+# m = "orange"
+# N = "orange"
+# p = "yellow"
+# n = "orange"
+# P = "orange"
+# o = "orange"
+# O = "orange"
+# U = "white"
+# u = "white"
+# V = "white"
+# x = "blue"
+# v = "white"
+# X = "white"
+# w = "white"
+# W = "white"
 main()
