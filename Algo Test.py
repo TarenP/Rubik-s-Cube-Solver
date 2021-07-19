@@ -199,6 +199,7 @@ def Jpermutation():
 
 
 def cornerActions():
+    global A, Q, N, B, J, M, D, R, E, C, F, I, H, S, U, G, L, V, X, T, O, W, K, P
     solvedC2 = False
     solvedC3 = False
     solvedC4 = False
@@ -206,30 +207,7 @@ def cornerActions():
     solvedC6 = False
     solvedC7 = False
     solvedC8 = False
-    A = "red"
-    Q = "yellow"
-    N = "green"
-    B = "red"
-    J = "white"
-    M = "green"
-    D = "red"
-    R = "yellow"
-    E = "blue"
-    C = "yellow"
-    F = "orange"
-    I = "blue"
-    H = "yellow"
-    S = "green"
-    U = "orange"
-    G = "orange"
-    L = "blue"
-    V = "white"
-    X = "white"
-    T = "red"
-    O = "blue"
-    W = "green"
-    K = "orange"
-    P = "white"
+    
     mAQN = [A, Q, N]
     mBJM = [B, J, M]
     mDRE = [D, R, E]
@@ -610,6 +588,7 @@ def cornerMain():
     cornerSwapper(cList)
 
 def edgeActions():
+    global a, m, b, i, c, e, d, q, f, l, g, u, h, r, t, n, s, x, k, v, o, w, j, p
     solvedE2 = False
     solvedE3 = False
     solvedE4 = False
@@ -622,30 +601,6 @@ def edgeActions():
     solvedE11 = False
     solvedE12 = False
 
-    a = "yellow"
-    b = "red"
-    c = "green"
-    d = "white"
-    e = "red"
-    f = "orange"
-    g = "red"
-    h = "green"
-    u = "white"
-    v = "white"
-    w = "blue"
-    x = "orange"
-    r = "yellow"
-    q = "orange"
-    t = "orange"
-    s = "yellow"
-    l = "blue"
-    i = "blue"
-    j = "white"
-    k = "blue"
-    p = "green"
-    m = "red"
-    n = "green"
-    o = "yellow"
     mam = [a, m]
     mbi = [b, i]
     mce = [c, e]
@@ -1081,6 +1036,54 @@ def main():
     cornerMain()
     edgeMain()
 
+A = "red"
+a = "white"
+B = "red"
+d = "orange"
+b = "yellow"
+D = "orange"
+c = "red"
+C = "white"
+Q = "yellow"
+q = "blue"
+R = "white"
+t = "white"
+r = "red"
+T = "white"
+s = "orange"
+S = "yellow"
+E = "blue"
+e = "white"
+F = "orange"
+h = "blue"
+f = "blue"
+H = "blue"
+g = "white"
+G = "blue"
+I = "green"
+i = "orange"
+J = "yellow"
+l = "yellow"
+j = "red"
+L = "red"
+k = "red"
+K = "yellow"
+M = "blue"
+m = "orange"
+N = "green"
+p = "green"
+n = "green"
+P = "orange"
+o = "yellow"
+O = "green"
+U = "orange"
+u = "blue"
+V = "white"
+x = "green"
+v = "yellow"
+X = "red"
+w = "green"
+W = "green"
 
 main()
 

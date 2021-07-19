@@ -966,6 +966,8 @@ def lturn():
         turn(2)
         Front = "orange" 
         Top = "yellow"
+    print(Top)
+    print(Front)
 
 def lprimeturn():
     global Front, Top
@@ -1072,6 +1074,8 @@ def lprimeturn():
         primeturn(2)
         Front = "red" 
         Top = "white"
+    print(Top)
+    print(Front)
 
 def dturn():
     global Front, Top
@@ -1178,6 +1182,8 @@ def dturn():
         turn(3)
         Front = "green" 
         Top = "orange"
+    print(Top)
+    print(Front)
 
 def dprimeturn():
     global Front, Top
@@ -1284,6 +1290,8 @@ def dprimeturn():
         primeturn(3)
         Front = "blue" 
         Top = "orange"
+    print(Top)
+    print(Front)
 
 def flipLeft():
     global Front, Top
@@ -1366,6 +1374,8 @@ def flipLeft():
     elif Front == "white" and Top == "orange":
         Front = "green" 
         Top = "orange"
+    print(Top)
+    print(Front)
 
 def flipRight():
     global Front, Top
@@ -1448,6 +1458,9 @@ def flipRight():
     elif Front == "white" and Top == "orange":
         Front = "blue" 
         Top = "orange"
+    
+    print(Top)
+    print(Front)
 
 def AlteredYPermutation():
     Rturn()
@@ -2443,7 +2456,7 @@ def main():
     edgeMain()
 
 print("Place Red face forward and Yellow facing up.")
-sleep(5)
+#sleep(5)
 
 # yellowFace = colorfinder()
 # A = yellowFace[0]
