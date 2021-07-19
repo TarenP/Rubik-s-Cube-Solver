@@ -39,7 +39,7 @@ GPIO.setup(DIR6, GPIO.OUT)
 GPIO.setup(STEP6, GPIO.OUT)
 
 #delay between steps for motor turns
-delay = .01
+delay = .001
     
 
 #Solved cube corners for reference
@@ -1916,6 +1916,15 @@ def cornerActions():
 
     #Use a list of the moves to the positions the bank pieces need to go.
     while everythingSolved == False:
+        print("here")
+        print(A)
+        print(a)
+        print(B)
+        print(d)
+        print(b)
+        print(D)
+        print(c)
+        print(C)
         #print(bankCorner)
         if (mBJM == BJM):
             solvedC2 = True
@@ -2716,4 +2725,5 @@ print(b)
 print(D)
 print(c)
 print(C)
+sleep(1)
 main()
