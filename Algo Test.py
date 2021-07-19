@@ -4,6 +4,7 @@ from PIL import Image
 # import RPi.GPIO as GPIO
 from time import sleep
 import collections
+import random
 
 DIR1 = 20
 STEP1 = 21
@@ -1035,54 +1036,357 @@ def edgeMain():
 def main():
     cornerMain()
     edgeMain()
+def cubeScrambler(num):
+    global A, Q, N, B, J, M, D, R, E, C, F, I, H, S, U, G, L, V, X, T, O, W, K, P
+    global a, m, b, i, c, e, d, q, f, l, g, u, h, r, t, n, s, x, k, v, o, w, j, p
+    A = "yellow"
+    a = "yellow"
+    B = "yellow"
+    d = "yellow"
+    b = "yellow"
+    D = "yellow"
+    c = "yellow"
+    C = "yellow"
+    Q = "blue"
+    q = "blue"
+    R = "blue"
+    t = "blue"
+    r = "blue"
+    T = "blue"
+    s = "blue"
+    S = "blue"
+    E = "red"
+    e = "red"
+    F = "red"
+    h = "red"
+    f = "red"
+    H = "red"
+    g = "red"
+    G = "red"
+    I = "green"
+    i = "green"
+    J = "green"
+    l = "green"
+    j = "green"
+    L = "green"
+    k = "green"
+    K = "green"
+    M = "orange"
+    m = "orange"
+    N = "orange"
+    p = "orange"
+    n = "orange"
+    P = "orange"
+    o = "orange"
+    O = "orange"
+    U = "white"
+    u = "white"
+    V = "white"
+    x = "white"
+    v = "white"
+    X = "white"
+    w = "white"
+    W = "white"
 
-A = "yellow"
-a = "yellow"
-B = "yellow"
-d = "orange"
-b = "yellow"
-D = "yellow"
-c = "red"
-C = "yellow"
-Q = "blue"
-q = "green"
-R = "blue"
-t = "blue"
-r = "white"
-T = "blue"
-s = "red"
-S = "blue"
-E = "red"
-e = "green"
-F = "green"
-h = "blue"
-f = "yellow"
-H = "red"
-g = "red"
-G = "red"
-I = "orange"
-i = "green"
-J = "red"
-l = "red"
-j = "blue"
-L = "green"
-k = "green"
-K = "green"
-M = "green"
-m = "orange"
-N = "orange"
-p = "yellow"
-n = "orange"
-P = "orange"
-o = "orange"
-O = "orange"
-U = "white"
-u = "white"
-V = "white"
-x = "blue"
-v = "white"
-X = "white"
-w = "white"
-W = "white"
-main()
+
+    for ii in range(num):
+        Rlist = [B, b, C, F, f, G, V, v, W, P, p, M]
+        Llist = [A, d, D, E, h, H, U, x, X, O, n, N]
+        Flist = [D, c, C, I, l, L, V, u, U, S, r, R]
+        Blist = [A, a, B, J, j, K, W, w, X, T, t, Q]
+        Ulist = [Q, q, R, E, e, F, I, i, J, M, m, N]
+        Dlist = [T, s, S, H, g, G, L, k, K, P, o, O]
+        randomNum = random.randint(1, 12)
+        if (randomNum == 1):
+            Rturn()
+            temp = Rlist[0]
+            del Rlist[0]
+            Rlist.insert(11, temp)
+            temp = Rlist[0]
+            del Rlist[0]
+            Rlist.insert(11, temp)
+            temp = Rlist[0]
+            del Rlist[0]
+            Rlist.insert(11, temp)
+            print(Rlist)
+            B = Rlist[0]
+            b = Rlist[1]
+            C = Rlist[2]
+            F = Rlist[3]
+            f = Rlist[4]
+            G = Rlist[5]
+            V = Rlist[6]
+            v = Rlist[7]
+            W = Rlist[8]
+            P = Rlist[9]
+            p = Rlist[10]
+            M = Rlist[11]
+        elif(randomNum == 2):
+            Rprimeturn()
+            temp = Rlist[11]
+            del Rlist[11]
+            Rlist.insert(0, temp)
+            temp = Rlist[11]
+            del Rlist[11]
+            Rlist.insert(0, temp)
+            temp = Rlist[11]
+            del Rlist[11]
+            Rlist.insert(0, temp)
+            print(Rlist)
+            B = Rlist[0]
+            b = Rlist[1]
+            C = Rlist[2]
+            F = Rlist[3]
+            f = Rlist[4]
+            G = Rlist[5]
+            V = Rlist[6]
+            v = Rlist[7]
+            W = Rlist[8]
+            P = Rlist[9]
+            p = Rlist[10]
+            M = Rlist[11]
+        elif(randomNum == 3):
+            Lturn()
+            temp = Llist[11]
+            del Llist[11]
+            Llist.insert(0, temp)
+            temp = Llist[11]
+            del Llist[11]
+            Llist.insert(0, temp)
+            temp = Llist[11]
+            del Llist[11]
+            Llist.insert(0, temp)
+            print(Llist)
+            A = Llist[0]
+            d = Llist[1]
+            D = Llist[2]
+            E = Llist[3]
+            h = Llist[4]
+            H = Llist[5]
+            U = Llist[6]
+            x = Llist[7]
+            X = Llist[8]
+            O = Llist[9]
+            n = Llist[10]
+            N = Llist[11]
+        elif(randomNum == 4):
+            Lprimeturn()
+            temp = Llist[0]
+            del Llist[0]
+            Llist.append(temp)
+            temp = Llist[0]
+            del Llist[0]
+            Llist.append(temp)
+            temp = Llist[0]
+            del Llist[0]
+            Llist.append(temp)
+            print(Llist)
+            A = Llist[0]
+            d = Llist[1]
+            D = Llist[2]
+            E = Llist[3]
+            h = Llist[4]
+            H = Llist[5]
+            U = Llist[6]
+            x = Llist[7]
+            X = Llist[8]
+            O = Llist[9]
+            n = Llist[10]
+            N = Llist[11]
+        elif(randomNum == 5):
+            Fturn()
+            temp = Flist[11]
+            del Flist[11]
+            Flist.insert(0, temp)
+            temp = Flist[11]
+            del Flist[11]
+            Flist.insert(0, temp)
+            temp = Flist[11]
+            del Flist[11]
+            Flist.insert(0, temp)
+            print(Flist)
+            D = Flist[0]
+            c = Flist[1]
+            C = Flist[2]
+            I = Flist[3]
+            l = Flist[4]
+            L = Flist[5]
+            V = Flist[6]
+            u = Flist[7]
+            U = Flist[8]
+            S = Flist[9]
+            r = Flist[10]
+            R = Flist[11]
+        elif(randomNum == 6):
+            Fprimeturn()
+            temp = Flist[0]
+            del Flist[0]
+            Flist.append(temp)
+            temp = Flist[0]
+            del Flist[0]
+            Flist.append(temp)
+            temp = Flist[0]
+            del Flist[0]
+            Flist.append(temp)
+            print(Flist)
+            D = Flist[0]
+            c = Flist[1]
+            C = Flist[2]
+            I = Flist[3]
+            l = Flist[4]
+            L = Flist[5]
+            V = Flist[6]
+            u = Flist[7]
+            U = Flist[8]
+            S = Flist[9]
+            r = Flist[10]
+            R = Flist[11]
+        elif(randomNum == 7):
+            Bturn()
+            temp = Blist[0]
+            del Blist[0]
+            Blist.insert(11, temp)
+            temp = Blist[0]
+            del Blist[0]
+            Blist.insert(11, temp)
+            temp = Blist[0]
+            del Blist[0]
+            Blist.insert(11, temp)
+            print(Blist)
+            A = Blist[0]
+            a = Blist[1]
+            B = Blist[2]
+            J = Blist[3]
+            j = Blist[4]
+            K = Blist[5]
+            W = Blist[6]
+            w = Blist[7]
+            X = Blist[8]
+            T = Blist[9]
+            t = Blist[10]
+            Q = Blist[11]
+        elif(randomNum == 8):
+            Bprimeturn()
+            temp = Blist[11]
+            del Blist[11]
+            Blist.insert(0, temp)
+            temp = Blist[11]
+            del Blist[11]
+            Blist.insert(0, temp)
+            temp = Blist[11]
+            del Blist[11]
+            Blist.insert(0, temp)
+            print(Blist)
+            A = Blist[0]
+            a = Blist[1]
+            B = Blist[2]
+            J = Blist[3]
+            j = Blist[4]
+            K = Blist[5]
+            W = Blist[6]
+            w = Blist[7]
+            X = Blist[8]
+            T = Blist[9]
+            t = Blist[10]
+            Q = Blist[11]
+        elif(randomNum == 9):
+            Uturn()
+            temp = Ulist[0]
+            del Ulist[0]
+            Ulist.insert(11, temp)
+            temp = Ulist[0]
+            del Ulist[0]
+            Ulist.insert(11, temp)
+            temp = Ulist[0]
+            del Ulist[0]
+            Ulist.insert(11, temp)
+            print(Ulist)
+            Q = Ulist[0]
+            q = Ulist[1]
+            R = Ulist[2]
+            E = Ulist[3]
+            e = Ulist[4]
+            F = Ulist[5]
+            I = Ulist[6]
+            i = Ulist[7]
+            J = Ulist[8]
+            M = Ulist[9]
+            m = Ulist[10]
+            N = Ulist[11]
+        elif(randomNum == 10):
+            Uprimeturn()
+            temp = Ulist[11]
+            del Ulist[11]
+            Ulist.insert(0, temp)
+            temp = Ulist[11]
+            del Ulist[11]
+            Ulist.insert(0, temp)
+            temp = Ulist[11]
+            del Ulist[11]
+            Ulist.insert(0, temp)
+            print(Ulist)
+            Q = Ulist[0]
+            q = Ulist[1]
+            R = Ulist[2]
+            E = Ulist[3]
+            e = Ulist[4]
+            F = Ulist[5]
+            I = Ulist[6]
+            i = Ulist[7]
+            J = Ulist[8]
+            M = Ulist[9]
+            m = Ulist[10]
+            N = Ulist[11]
+        elif(randomNum == 11):
+            Dturn()
+            temp = Dlist[11]
+            del Dlist[11]
+            Dlist.insert(0, temp)
+            temp = Dlist[11]
+            del Dlist[11]
+            Dlist.insert(0, temp)
+            temp = Dlist[11]
+            del Dlist[11]
+            Dlist.insert(0, temp)
+            print(Dlist)
+            T = Dlist[0]
+            s = Dlist[1]
+            S = Dlist[2]
+            H = Dlist[3]
+            g = Dlist[4]
+            G = Dlist[5]
+            L = Dlist[6]
+            k = Dlist[7]
+            K = Dlist[8]
+            P = Dlist[9]
+            o = Dlist[10]
+            O = Dlist[11]
+        elif(randomNum == 12):
+            Dprimeturn()
+            temp = Dlist[0]
+            del Dlist[0]
+            Dlist.insert(11, temp)
+            temp = Dlist[0]
+            del Dlist[0]
+            Dlist.insert(11, temp)
+            temp = Dlist[0]
+            del Dlist[0]
+            Dlist.insert(11, temp)
+            print(Dlist)
+            T = Dlist[0]
+            s = Dlist[1]
+            S = Dlist[2]
+            H = Dlist[3]
+            g = Dlist[4]
+            G = Dlist[5]
+            L = Dlist[6]
+            k = Dlist[7]
+            K = Dlist[8]
+            P = Dlist[9]
+            o = Dlist[10]
+            O = Dlist[11]
+
+cubeScrambler(20)
+print(A)
+print(a)
 
