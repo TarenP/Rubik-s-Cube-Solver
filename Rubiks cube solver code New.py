@@ -2443,7 +2443,7 @@ def main():
     edgeMain()
 
 print("Place Red face forward and Yellow facing up.")
-# sleep(5)
+sleep(5)
 
 # yellowFace = colorfinder()
 # A = yellowFace[0]
@@ -2562,9 +2562,52 @@ print("Place Red face forward and Yellow facing up.")
 
 # #Done With green
 
-
-
-# main()
-
-
-AlteredYPermutation()
+A = "red"
+a = "white"
+B = "red"
+d = "orange"
+b = "yellow"
+D = "orange"
+c = "red"
+C = "white"
+Q = "yellow"
+q = "blue"
+R = "white"
+t = "white"
+r = "red"
+T = "white"
+s = "orange"
+S = "yellow"
+E = "blue"
+e = "white"
+F = "orange"
+h = "blue"
+f = "blue"
+H = "blue"
+g = "white"
+G = "blue"
+I = "green"
+i = "orange"
+J = "yellow"
+l = "yellow"
+j = "red"
+L = "red"
+k = "red"
+K = "yellow"
+M = "blue"
+m = "orange"
+N = "green"
+p = "green"
+n = "green"
+P = "orange"
+o = "yellow"
+O = "green"
+U = "orange"
+u = "blue"
+V = "white"
+x = "green"
+v = "yellow"
+X = "red"
+w = "green"
+W = "green"
+main()
