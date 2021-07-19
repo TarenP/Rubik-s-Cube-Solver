@@ -2564,11 +2564,59 @@ def edgeMain():
 
 def main():
     cornerMain()
-    #edgeMain()
+    edgeMain()
 
 print("Place Red face forward and Yellow facing up.")
 sleep(5)
 
 cubeScrambler(15)
 sleep(5)
+A = "red"
+a = "red"
+B = "yellow"
+d = "red"
+b = "yellow"
+D = "red"
+c = "green"
+C = "yellow"
+Q = "blue"
+q = "blue"
+R = "blue"
+t = "yellow"
+r = "blue"
+T = "blue"
+s = "orange"
+S = "blue"
+E = "white"
+e = "red"
+F = "red"
+h = "white"
+f = "yellow"
+H = "white"
+g = "orange"
+G = "red"
+I = "green"
+i = "red"
+J = "green"
+l = "blue"
+j = "green"
+L = "green"
+k = "green"
+K = "green"
+M = "orange"
+m = "white"
+N = "yellow"
+p = "yellow"
+n = "orange"
+P = "orange"
+o = "white"
+O = "yellow"
+U = "orange"
+u = "green"
+V = "white"
+x = "blue"
+v = "white"
+X = "orange"
+w = "orange"
+W = "white"
 main()
