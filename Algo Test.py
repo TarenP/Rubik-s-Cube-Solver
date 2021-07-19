@@ -51,12 +51,6 @@ sdelay = .03
 #Sensitivity for reseting cube position after turn
 # sensitivity = 3
 
-#Steps for clamping the cube with all four claws
-clamp = 4
-turnClamp = 4
-
-# adjx = 2
-# adjy = 0
 
       
 #camera setup
@@ -1036,6 +1030,29 @@ def edgeMain():
 def main():
     cornerMain()
     edgeMain()
+
+def scrambleTurn(matrix):
+    global A, Q, N, B, J, M, D, R, E, C, F, I, H, S, U, G, L, V, X, T, O, W, K, P
+    global a, m, b, i, c, e, d, q, f, l, g, u, h, r, t, n, s, x, k, v, o, w, j, p
+    turned = [[matrix[3][0], matrix[2][0], matrix[1][0]],
+            [matrix[4][0], matrix[3][1], matrix[2][1], matrix[1][1], matrix[0][0]],
+            [matrix[4][1], matrix[3][2], matrix[1][2], matrix[0][1]],
+            [matrix[4][2], matrix[3][3], matrix[2][2], matrix[1][3], matrix[0][2]],
+            [matrix[1][4], matrix[2][3], matrix[3][4]]]
+    print(turned)
+    return turned
+
+def scramblePrimeTurn(matrix):
+    global A, Q, N, B, J, M, D, R, E, C, F, I, H, S, U, G, L, V, X, T, O, W, K, P
+    global a, m, b, i, c, e, d, q, f, l, g, u, h, r, t, n, s, x, k, v, o, w, j, p
+    turned = [[matrix[1][4], matrix[2][3], matrix[3][4]],
+            [matrix[0][2], matrix[1][3], matrix[2][2], matrix[3][3], matrix[4][2]],
+            [matrix[0][1], matrix[1][2], matrix[3][2], matrix[4][1]],
+            [matrix[0][0], matrix[1][1], matrix[2][1], matrix[3][1], matrix[4][0]],
+            [matrix[1][0], matrix[2][0], matrix[3][0]]]
+    print(turned)
+    return turned
+
 def cubeScrambler(num):
     global A, Q, N, B, J, M, D, R, E, C, F, I, H, S, U, G, L, V, X, T, O, W, K, P
     global a, m, b, i, c, e, d, q, f, l, g, u, h, r, t, n, s, x, k, v, o, w, j, p
@@ -1088,305 +1105,323 @@ def cubeScrambler(num):
     w = "white"
     W = "white"
 
-
     for ii in range(num):
-        Rlist = [B, b, C, F, f, G, V, v, W, P, p, M]
-        Llist = [A, d, D, E, h, H, U, x, X, O, n, N]
-        Flist = [D, c, C, I, l, L, V, u, U, S, r, R]
-        Blist = [A, a, B, J, j, K, W, w, X, T, t, Q]
-        Ulist = [Q, q, R, E, e, F, I, i, J, M, m, N]
-        Dlist = [T, s, S, H, g, G, L, k, K, P, o, O]
+        Rside = [[C, b, B],
+                [F, I, i, J, M],
+                [f, l, j, p],
+                [G, L, k, K, P],
+                [V, v, W]]
+        Lside = [[A, d, D],
+                [N, Q, q, R, E],
+                [n, t, r, h],
+                [O, T, s, S, H],
+                [X, x, U]]
+        Fside = [[D, c, C],
+                [R, E, e, F, I],
+                [r, h, f, l],
+                [S, H, g, G, L],
+                [U, u, V]]
+        Bside = [[B, a, A],
+                [J, M, m, N, Q],
+                [j, p, n, t],
+                [K, P, o, O, T],
+                [W, w, X]]
+        Uside = [[N, m, M],
+                [Q, A, a, B, J],
+                [q, d, b, i],
+                [R, D, c, C, I],
+                [E, e, F]]
+        Dside = [[O, o, P],
+                [T, X, w, W, K],
+                [s, x, v, k],
+                [S, U, u, V, L],
+                [H, g, G]]
         randomNum = random.randint(1, 12)
         if (randomNum == 1):
             Rturn()
-            temp = Rlist[0]
-            del Rlist[0]
-            Rlist.insert(11, temp)
-            temp = Rlist[0]
-            del Rlist[0]
-            Rlist.insert(11, temp)
-            temp = Rlist[0]
-            del Rlist[0]
-            Rlist.insert(11, temp)
-            print(Rlist)
-            B = Rlist[0]
-            b = Rlist[1]
-            C = Rlist[2]
-            F = Rlist[3]
-            f = Rlist[4]
-            G = Rlist[5]
-            V = Rlist[6]
-            v = Rlist[7]
-            W = Rlist[8]
-            P = Rlist[9]
-            p = Rlist[10]
-            M = Rlist[11]
+            Rref = scrambleTurn(Rside)      
+            C = Rref[0][0]
+            b = Rref[0][1]
+            B = Rref[0][2]
+            F = Rref[1][0]
+            I = Rref[1][1]
+            i = Rref[1][2]
+            J = Rref[1][3]
+            M = Rref[1][4]
+            f = Rref[2][0]
+            l = Rref[2][1]
+            j = Rref[2][2]
+            p = Rref[2][3]
+            G = Rref[3][0]
+            L = Rref[3][1]
+            k = Rref[3][2]
+            K = Rref[3][3]
+            P = Rref[3][4]
+            V = Rref[4][0]
+            v = Rref[4][1]
+            W = Rref[4][2]
         elif(randomNum == 2):
             Rprimeturn()
-            temp = Rlist[11]
-            del Rlist[11]
-            Rlist.insert(0, temp)
-            temp = Rlist[11]
-            del Rlist[11]
-            Rlist.insert(0, temp)
-            temp = Rlist[11]
-            del Rlist[11]
-            Rlist.insert(0, temp)
-            print(Rlist)
-            B = Rlist[0]
-            b = Rlist[1]
-            C = Rlist[2]
-            F = Rlist[3]
-            f = Rlist[4]
-            G = Rlist[5]
-            V = Rlist[6]
-            v = Rlist[7]
-            W = Rlist[8]
-            P = Rlist[9]
-            p = Rlist[10]
-            M = Rlist[11]
+            Rref = scramblePrimeTurn(Rside)      
+            C = Rref[0][0]
+            b = Rref[0][1]
+            B = Rref[0][2]
+            F = Rref[1][0]
+            I = Rref[1][1]
+            i = Rref[1][2]
+            J = Rref[1][3]
+            M = Rref[1][4]
+            f = Rref[2][0]
+            l = Rref[2][1]
+            j = Rref[2][2]
+            p = Rref[2][3]
+            G = Rref[3][0]
+            L = Rref[3][1]
+            k = Rref[3][2]
+            K = Rref[3][3]
+            P = Rref[3][4]
+            V = Rref[4][0]
+            v = Rref[4][1]
+            W = Rref[4][2]
         elif(randomNum == 3):
             Lturn()
-            temp = Llist[11]
-            del Llist[11]
-            Llist.insert(0, temp)
-            temp = Llist[11]
-            del Llist[11]
-            Llist.insert(0, temp)
-            temp = Llist[11]
-            del Llist[11]
-            Llist.insert(0, temp)
-            print(Llist)
-            A = Llist[0]
-            d = Llist[1]
-            D = Llist[2]
-            E = Llist[3]
-            h = Llist[4]
-            H = Llist[5]
-            U = Llist[6]
-            x = Llist[7]
-            X = Llist[8]
-            O = Llist[9]
-            n = Llist[10]
-            N = Llist[11]
+            Lref = scrambleTurn(Lside)   
+            A = Lref[0][0]
+            d = Lref[0][1]
+            D = Lref[0][2]
+            N = Lref[1][0]
+            Q = Lref[1][1]
+            q = Lref[1][2]
+            R = Lref[1][3]
+            E = Lref[1][4]
+            n = Lref[2][0]
+            t = Lref[2][1]
+            r = Lref[2][2]
+            h = Lref[2][3]
+            O = Lref[3][0]
+            T = Lref[3][1]
+            s = Lref[3][2]
+            S = Lref[3][3]
+            H = Lref[3][4]
+            X = Lref[4][0]
+            x = Lref[4][1]
+            U = Lref[4][2]
         elif(randomNum == 4):
             Lprimeturn()
-            temp = Llist[0]
-            del Llist[0]
-            Llist.append(temp)
-            temp = Llist[0]
-            del Llist[0]
-            Llist.append(temp)
-            temp = Llist[0]
-            del Llist[0]
-            Llist.append(temp)
-            print(Llist)
-            A = Llist[0]
-            d = Llist[1]
-            D = Llist[2]
-            E = Llist[3]
-            h = Llist[4]
-            H = Llist[5]
-            U = Llist[6]
-            x = Llist[7]
-            X = Llist[8]
-            O = Llist[9]
-            n = Llist[10]
-            N = Llist[11]
+            Lref = scramblePrimeTurn(Lside)   
+            A = Lref[0][0]
+            d = Lref[0][1]
+            D = Lref[0][2]
+            N = Lref[1][0]
+            Q = Lref[1][1]
+            q = Lref[1][2]
+            R = Lref[1][3]
+            E = Lref[1][4]
+            n = Lref[2][0]
+            t = Lref[2][1]
+            r = Lref[2][2]
+            h = Lref[2][3]
+            O = Lref[3][0]
+            T = Lref[3][1]
+            s = Lref[3][2]
+            S = Lref[3][3]
+            H = Lref[3][4]
+            X = Lref[4][0]
+            x = Lref[4][1]
+            U = Lref[4][2]
         elif(randomNum == 5):
             Fturn()
-            temp = Flist[11]
-            del Flist[11]
-            Flist.insert(0, temp)
-            temp = Flist[11]
-            del Flist[11]
-            Flist.insert(0, temp)
-            temp = Flist[11]
-            del Flist[11]
-            Flist.insert(0, temp)
-            print(Flist)
-            D = Flist[0]
-            c = Flist[1]
-            C = Flist[2]
-            I = Flist[3]
-            l = Flist[4]
-            L = Flist[5]
-            V = Flist[6]
-            u = Flist[7]
-            U = Flist[8]
-            S = Flist[9]
-            r = Flist[10]
-            R = Flist[11]
+            Fref = scrambleTurn(Fside)   
+            D = Fref[0][0]
+            c = Fref[0][1]
+            C = Fref[0][2]
+            R = Fref[1][0]
+            E = Fref[1][1]
+            e = Fref[1][2]
+            F = Fref[1][3]
+            I = Fref[1][4]
+            r = Fref[2][0]
+            h = Fref[2][1]
+            f = Fref[2][2]
+            l = Fref[2][3]
+            S = Fref[3][0]
+            H = Fref[3][1]
+            g = Fref[3][2]
+            G = Fref[3][3]
+            L = Fref[3][4]
+            U = Fref[4][0]
+            u = Fref[4][1]
+            V = Fref[4][2]
         elif(randomNum == 6):
             Fprimeturn()
-            temp = Flist[0]
-            del Flist[0]
-            Flist.append(temp)
-            temp = Flist[0]
-            del Flist[0]
-            Flist.append(temp)
-            temp = Flist[0]
-            del Flist[0]
-            Flist.append(temp)
-            print(Flist)
-            D = Flist[0]
-            c = Flist[1]
-            C = Flist[2]
-            I = Flist[3]
-            l = Flist[4]
-            L = Flist[5]
-            V = Flist[6]
-            u = Flist[7]
-            U = Flist[8]
-            S = Flist[9]
-            r = Flist[10]
-            R = Flist[11]
+            Fref = scramblePrimeTurn(Fside)   
+            D = Fref[0][0]
+            c = Fref[0][1]
+            C = Fref[0][2]
+            R = Fref[1][0]
+            E = Fref[1][1]
+            e = Fref[1][2]
+            F = Fref[1][3]
+            I = Fref[1][4]
+            r = Fref[2][0]
+            h = Fref[2][1]
+            f = Fref[2][2]
+            l = Fref[2][3]
+            S = Fref[3][0]
+            H = Fref[3][1]
+            g = Fref[3][2]
+            G = Fref[3][3]
+            L = Fref[3][4]
+            U = Fref[4][0]
+            u = Fref[4][1]
+            V = Fref[4][2]
         elif(randomNum == 7):
             Bturn()
-            temp = Blist[0]
-            del Blist[0]
-            Blist.insert(11, temp)
-            temp = Blist[0]
-            del Blist[0]
-            Blist.insert(11, temp)
-            temp = Blist[0]
-            del Blist[0]
-            Blist.insert(11, temp)
-            print(Blist)
-            A = Blist[0]
-            a = Blist[1]
-            B = Blist[2]
-            J = Blist[3]
-            j = Blist[4]
-            K = Blist[5]
-            W = Blist[6]
-            w = Blist[7]
-            X = Blist[8]
-            T = Blist[9]
-            t = Blist[10]
-            Q = Blist[11]
+            Bref = scrambleTurn(Bside)   
+            B = Bref[0][0]
+            a = Bref[0][1]
+            A = Bref[0][2]
+            J = Bref[1][0]
+            M = Bref[1][1]
+            m = Bref[1][2]
+            N = Bref[1][3]
+            Q = Bref[1][4]
+            j = Bref[2][0]
+            p = Bref[2][1]
+            n = Bref[2][2]
+            t = Bref[2][3]
+            K = Bref[3][0]
+            P = Bref[3][1]
+            o = Bref[3][2]
+            O = Bref[3][3]
+            T = Bref[3][4]
+            W = Bref[4][0]
+            w = Bref[4][1]
+            X = Bref[4][2]
         elif(randomNum == 8):
             Bprimeturn()
-            temp = Blist[11]
-            del Blist[11]
-            Blist.insert(0, temp)
-            temp = Blist[11]
-            del Blist[11]
-            Blist.insert(0, temp)
-            temp = Blist[11]
-            del Blist[11]
-            Blist.insert(0, temp)
-            print(Blist)
-            A = Blist[0]
-            a = Blist[1]
-            B = Blist[2]
-            J = Blist[3]
-            j = Blist[4]
-            K = Blist[5]
-            W = Blist[6]
-            w = Blist[7]
-            X = Blist[8]
-            T = Blist[9]
-            t = Blist[10]
-            Q = Blist[11]
+            Bref = scramblePrimeTurn(Bside)   
+            B = Bref[0][0]
+            a = Bref[0][1]
+            A = Bref[0][2]
+            J = Bref[1][0]
+            M = Bref[1][1]
+            m = Bref[1][2]
+            N = Bref[1][3]
+            Q = Bref[1][4]
+            j = Bref[2][0]
+            p = Bref[2][1]
+            n = Bref[2][2]
+            t = Bref[2][3]
+            K = Bref[3][0]
+            P = Bref[3][1]
+            o = Bref[3][2]
+            O = Bref[3][3]
+            T = Bref[3][4]
+            W = Bref[4][0]
+            w = Bref[4][1]
+            X = Bref[4][2]
         elif(randomNum == 9):
             Uturn()
-            temp = Ulist[0]
-            del Ulist[0]
-            Ulist.insert(11, temp)
-            temp = Ulist[0]
-            del Ulist[0]
-            Ulist.insert(11, temp)
-            temp = Ulist[0]
-            del Ulist[0]
-            Ulist.insert(11, temp)
-            print(Ulist)
-            Q = Ulist[0]
-            q = Ulist[1]
-            R = Ulist[2]
-            E = Ulist[3]
-            e = Ulist[4]
-            F = Ulist[5]
-            I = Ulist[6]
-            i = Ulist[7]
-            J = Ulist[8]
-            M = Ulist[9]
-            m = Ulist[10]
-            N = Ulist[11]
+            Uref = scrambleTurn(Uside)   
+            N = Uref[0][0]
+            m = Uref[0][1]
+            M = Uref[0][2]
+            Q = Uref[1][0]
+            A = Uref[1][1]
+            a = Uref[1][2]
+            B = Uref[1][3]
+            J = Uref[1][4]
+            q = Uref[2][0]
+            d = Uref[2][1]
+            b = Uref[2][2]
+            i = Uref[2][3]
+            R = Uref[3][0]
+            D = Uref[3][1]
+            c = Uref[3][2]
+            C = Uref[3][3]
+            I = Uref[3][4]
+            E = Uref[4][0]
+            e = Uref[4][1]
+            F = Uref[4][2]
         elif(randomNum == 10):
             Uprimeturn()
-            temp = Ulist[11]
-            del Ulist[11]
-            Ulist.insert(0, temp)
-            temp = Ulist[11]
-            del Ulist[11]
-            Ulist.insert(0, temp)
-            temp = Ulist[11]
-            del Ulist[11]
-            Ulist.insert(0, temp)
-            print(Ulist)
-            Q = Ulist[0]
-            q = Ulist[1]
-            R = Ulist[2]
-            E = Ulist[3]
-            e = Ulist[4]
-            F = Ulist[5]
-            I = Ulist[6]
-            i = Ulist[7]
-            J = Ulist[8]
-            M = Ulist[9]
-            m = Ulist[10]
-            N = Ulist[11]
+            Uref = scramblePrimeTurn(Uside)   
+            N = Uref[0][0]
+            m = Uref[0][1]
+            M = Uref[0][2]
+            Q = Uref[1][0]
+            A = Uref[1][1]
+            a = Uref[1][2]
+            B = Uref[1][3]
+            J = Uref[1][4]
+            q = Uref[2][0]
+            d = Uref[2][1]
+            b = Uref[2][2]
+            i = Uref[2][3]
+            R = Uref[3][0]
+            D = Uref[3][1]
+            c = Uref[3][2]
+            C = Uref[3][3]
+            I = Uref[3][4]
+            E = Uref[4][0]
+            e = Uref[4][1]
+            F = Uref[4][2]
         elif(randomNum == 11):
             Dturn()
-            temp = Dlist[11]
-            del Dlist[11]
-            Dlist.insert(0, temp)
-            temp = Dlist[11]
-            del Dlist[11]
-            Dlist.insert(0, temp)
-            temp = Dlist[11]
-            del Dlist[11]
-            Dlist.insert(0, temp)
-            print(Dlist)
-            T = Dlist[0]
-            s = Dlist[1]
-            S = Dlist[2]
-            H = Dlist[3]
-            g = Dlist[4]
-            G = Dlist[5]
-            L = Dlist[6]
-            k = Dlist[7]
-            K = Dlist[8]
-            P = Dlist[9]
-            o = Dlist[10]
-            O = Dlist[11]
+            Dref = scrambleTurn(Dside)   
+            O = Dref[0][0]
+            o = Dref[0][1]
+            P = Dref[0][2]
+            T = Dref[1][0]
+            X = Dref[1][1]
+            w = Dref[1][2]
+            W = Dref[1][3]
+            K = Dref[1][4]
+            s = Dref[2][0]
+            x = Dref[2][1]
+            v = Dref[2][2]
+            k = Dref[2][3]
+            S = Dref[3][0]
+            U = Dref[3][1]
+            u = Dref[3][2]
+            V = Dref[3][3]
+            L = Dref[3][4]
+            H = Dref[4][0]
+            g = Dref[4][1]
+            G = Dref[4][2]
         elif(randomNum == 12):
             Dprimeturn()
-            temp = Dlist[0]
-            del Dlist[0]
-            Dlist.insert(11, temp)
-            temp = Dlist[0]
-            del Dlist[0]
-            Dlist.insert(11, temp)
-            temp = Dlist[0]
-            del Dlist[0]
-            Dlist.insert(11, temp)
-            print(Dlist)
-            T = Dlist[0]
-            s = Dlist[1]
-            S = Dlist[2]
-            H = Dlist[3]
-            g = Dlist[4]
-            G = Dlist[5]
-            L = Dlist[6]
-            k = Dlist[7]
-            K = Dlist[8]
-            P = Dlist[9]
-            o = Dlist[10]
-            O = Dlist[11]
+            Dref = scramblePrimeTurn(Dside)   
+            O = Dref[0][0]
+            o = Dref[0][1]
+            P = Dref[0][2]
+            T = Dref[1][0]
+            X = Dref[1][1]
+            w = Dref[1][2]
+            W = Dref[1][3]
+            K = Dref[1][4]
+            s = Dref[2][0]
+            x = Dref[2][1]
+            v = Dref[2][2]
+            k = Dref[2][3]
+            S = Dref[3][0]
+            U = Dref[3][1]
+            u = Dref[3][2]
+            V = Dref[3][3]
+            L = Dref[3][4]
+            H = Dref[4][0]
+            g = Dref[4][1]
+            G = Dref[4][2]
 
-cubeScrambler(20)
+cubeScrambler(5)
 print(A)
 print(a)
+print(B)
+print(d)
+print(b)
+print(D)
+print(c)
+print(C)
+
 
