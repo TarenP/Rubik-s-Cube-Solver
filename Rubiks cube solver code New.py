@@ -1982,27 +1982,27 @@ def cornerSwapper(cornerSolveList):
         counter = counter + 1
     if odd == True:
         print("odd")
-        # flipLeft()
+        flipLeft()
 
-        # Lturn()
-        # Uprimeturn()
-        # Uprimeturn()
-        # Lprimeturn()
-        # Uprimeturn()
-        # Uprimeturn()
-        # Lturn()
-        # Fprimeturn()
-        # Lprimeturn()
-        # Uprimeturn()
-        # Lturn()
-        # Uturn()
-        # Lturn()
-        # Fturn()
-        # Lprimeturn()
-        # Lprimeturn()
-        # Uturn()
+        Lturn()
+        Uprimeturn()
+        Uprimeturn()
+        Lprimeturn()
+        Uprimeturn()
+        Uprimeturn()
+        Lturn()
+        Fprimeturn()
+        Lprimeturn()
+        Uprimeturn()
+        Lturn()
+        Uturn()
+        Lturn()
+        Fturn()
+        Lprimeturn()
+        Lprimeturn()
+        Uturn()
 
-        # flipRight()
+        flipRight()
 
 def cornerMain():
     cList = cornerActions()
@@ -2453,7 +2453,8 @@ def edgeMain():
     edgeSwapper(eList)
 
 def main():
-    #cornerMain()
+    cornerMain()
+    sleep(10)
     edgeMain()
 
 print("Place Red face forward and Yellow facing up.")
