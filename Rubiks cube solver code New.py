@@ -2564,7 +2564,7 @@ def edgeMain():
 
 def main():
     cornerMain()
-    edgeMain()
+    #edgeMain()
 
 print("Place Red face forward and Yellow facing up.")
 sleep(5)
