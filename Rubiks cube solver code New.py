@@ -39,7 +39,7 @@ GPIO.setup(DIR6, GPIO.OUT)
 GPIO.setup(STEP6, GPIO.OUT)
 
 #delay between steps for motor turns
-delay = .001
+delay = .01
     
 #camera setup
 camera = PiCamera()
@@ -2809,6 +2809,13 @@ def main():
 print("Place Red face forward and Yellow facing up.")
 sleep(5)
 
-cubeScrambler(20)
-
+cubeScrambler(5)
+print(A)
+print(a)
+print(B)
+print(d)
+print(b)
+print(D)
+print(c)
+print(C)
 main()
