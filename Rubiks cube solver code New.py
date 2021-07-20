@@ -39,7 +39,7 @@ GPIO.setup(DIR6, GPIO.OUT)
 GPIO.setup(STEP6, GPIO.OUT)
 
 #delay between steps for motor turns
-delay = .01
+delay = .001
     
 
 #Solved cube corners for reference
@@ -2092,27 +2092,27 @@ def cornerSwapper(cornerSolveList):
         counter = counter + 1
     if odd == True:
         print("odd")
-        # flipLeft()
+        flipLeft()
 
-        # Lturn()
-        # Uprimeturn()
-        # Uprimeturn()
-        # Lprimeturn()
-        # Uprimeturn()
-        # Uprimeturn()
-        # Lturn()
-        # Fprimeturn()
-        # Lprimeturn()
-        # Uprimeturn()
-        # Lturn()
-        # Uturn()
-        # Lturn()
-        # Fturn()
-        # Lprimeturn()
-        # Lprimeturn()
-        # Uturn()
+        Lturn()
+        Uprimeturn()
+        Uprimeturn()
+        Lprimeturn()
+        Uprimeturn()
+        Uprimeturn()
+        Lturn()
+        Fprimeturn()
+        Lprimeturn()
+        Uprimeturn()
+        Lturn()
+        Uturn()
+        Lturn()
+        Fturn()
+        Lprimeturn()
+        Lprimeturn()
+        Uturn()
 
-        # flipRight()
+        flipRight()
 
 def cornerMain():
     cList = cornerActions()
@@ -2190,7 +2190,6 @@ def edgeActions():
                 a = mam[0]
                 m = mam[1]
                 print(mam)
-                print(bankEdge)
             elif(solvedE3 == False):
                 edgeSolveList.append('c')
                 mce2 = bankEdge
@@ -2198,8 +2197,6 @@ def edgeActions():
                 mce = mce2
                 c = mce[0]
                 e = mce[1]
-                print(mce)
-                print(bankEdge)
             elif(solvedE4 == False):
                 edgeSolveList.append('d')
                 mdq2 = bankEdge
@@ -2216,8 +2213,6 @@ def edgeActions():
                 mfl = mfl2
                 f = mfl[0]
                 l = mfl[1]
-                print(mfl)
-                print(bankEdge)
             elif (solvedE6 == False):
                 edgeSolveList.append('g')
                 mgu2 = bankEdge
@@ -2225,8 +2220,6 @@ def edgeActions():
                 mgu = mgu2
                 g = mgu[0]
                 u = mgu[1]
-                print(mgu)
-                print(bankEdge)
             elif (solvedE7 == False):
                 edgeSolveList.append('h')
                 mhr2 = bankEdge
@@ -2234,8 +2227,6 @@ def edgeActions():
                 mhr = mhr2
                 h = mhr[0]
                 r = mhr[1]
-                print(mhr)
-                print(bankEdge)
             elif (solvedE8 == False):
                 edgeSolveList.append('t')
                 mtn2 = bankEdge
@@ -2243,8 +2234,6 @@ def edgeActions():
                 mtn = mtn2
                 t = mtn[0]
                 n = mtn[1]
-                print(mtn)
-                print(bankEdge)
             elif (solvedE9 == False):
                 edgeSolveList.append('s')
                 msx2 = bankEdge
@@ -2252,8 +2241,6 @@ def edgeActions():
                 msx = msx2
                 s = msx[0]
                 x = msx[1]
-                print(msx)
-                print(bankEdge)
             elif (solvedE10 == False):
                 edgeSolveList.append('k')
                 mkv2 = bankEdge
@@ -2261,8 +2248,6 @@ def edgeActions():
                 mkv = mkv2
                 k = mkv[0]
                 v = mkv[1]
-                print(mkv)
-                print(bankEdge)
             elif (solvedE11 == False):
                 edgeSolveList.append('o')
                 mow2 = bankEdge
@@ -2270,8 +2255,6 @@ def edgeActions():
                 mow = mow2
                 o = mow[0]
                 w = mow[1]
-                print(mow)
-                print(bankEdge)
             elif (solvedE12 == False):
                 edgeSolveList.append('j')
                 mjp2 = bankEdge
@@ -2279,8 +2262,6 @@ def edgeActions():
                 mjp = mjp2
                 j = mjp[0]
                 p = mjp[1]
-                print(mjp)
-                print(bankEdge)
             #Swap with an unsolved Edge because it is in the bank place and cannot be solved
     
         elif(collections.Counter(bankEdge) == collections.Counter(am)):
@@ -2564,59 +2545,60 @@ def edgeMain():
 
 def main():
     cornerMain()
-    #edgeMain()
+    sleep(10)
+    edgeMain()
 
 print("Place Red face forward and Yellow facing up.")
 sleep(5)
 
-#cubeScrambler(8)
-#sleep(5)
-A = "green"
-a = "orange"
-B = "orange"
-d = "white"
-b = "yellow"
-D = "blue"
-c = "orange"
-C = "green"
-Q = "orange"
-q = "blue"
-R = "yellow"
-t = "white"
-r = "red"
-T = "white"
-s = "blue"
-S = "yellow"
-E = "orange"
-e = "green"
-F = "red"
-h = "blue"
-f = "yellow"
-H = "orange"
-g = "white"
-G = "yellow"
-I = "white"
-i = "orange"
-J = "white"
-l = "green"
-j = "yellow"
-L = "green"
-k = "green"
-K = "yellow"
-M = "blue"
-m = "blue"
-N = "white"
-p = "red"
-n = "red"
-P = "red"
-o = "orange"
-O = "red"
-U = "green"
-u = "green"
-V = "red"
-x = "yellow"
-v = "red"
-X = "blue"
-w = "white"
-W = "blue"
+cubeScrambler(10)
+sleep(5)
+# A = "green"
+# a = "orange"
+# B = "orange"
+# d = "white"
+# b = "yellow"
+# D = "blue"
+# c = "orange"
+# C = "green"
+# Q = "orange"
+# q = "blue"
+# R = "yellow"
+# t = "white"
+# r = "red"
+# T = "white"
+# s = "blue"
+# S = "yellow"
+# E = "orange"
+# e = "green"
+# F = "red"
+# h = "blue"
+# f = "yellow"
+# H = "orange"
+# g = "white"
+# G = "yellow"
+# I = "white"
+# i = "orange"
+# J = "white"
+# l = "green"
+# j = "yellow"
+# L = "green"
+# k = "green"
+# K = "yellow"
+# M = "blue"
+# m = "blue"
+# N = "white"
+# p = "red"
+# n = "red"
+# P = "red"
+# o = "orange"
+# O = "red"
+# U = "green"
+# u = "green"
+# V = "red"
+# x = "yellow"
+# v = "red"
+# X = "blue"
+# w = "white"
+# W = "blue"
 main()
