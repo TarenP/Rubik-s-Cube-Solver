@@ -2115,7 +2115,6 @@ def cornerSwapper(cornerSolveList):
 def cornerMain():
     cList = cornerActions()
     print(cList)
-    sleep(20)
     cornerSwapper(cList)
 
 def edgeActions():
@@ -2551,7 +2550,7 @@ print("Place Red face forward and Yellow facing up.")
 sleep(5)
 
 cubeScrambler(10)
-sleep(5)
+sleep(10)
 # A = "green"
 # a = "orange"
 # B = "orange"
