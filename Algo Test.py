@@ -1310,10 +1310,57 @@ def cubeScrambler(num):
             O = Dref[4][0]
             o = Dref[4][1]
             P = Dref[4][2]
-            
-        
-cubeScrambler(15)
 
+        
+#cubeScrambler(15)
+A = "green"
+a = "orange"
+B = "orange"
+d = "white"
+b = "yellow"
+D = "blue"
+c = "orange"
+C = "green"
+Q = "orange"
+q = "blue"
+R = "yellow"
+t = "white"
+r = "red"
+T = "white"
+s = "blue"
+S = "yellow"
+E = "orange"
+e = "green"
+F = "red"
+h = "blue"
+f = "yellow"
+H = "orange"
+g = "white"
+G = "yellow"
+I = "white"
+i = "orange"
+J = "white"
+l = "green"
+j = "yellow"
+L = "green"
+k = "green"
+K = "yellow"
+M = "blue"
+m = "blue"
+N = "white"
+p = "red"
+n = "red"
+P = "red"
+o = "orange"
+O = "red"
+U = "green"
+u = "green"
+V = "red"
+x = "yellow"
+v = "red"
+X = "blue"
+w = "white"
+W = "blue"
 
 main()
 
