@@ -39,7 +39,7 @@ GPIO.setup(DIR6, GPIO.OUT)
 GPIO.setup(STEP6, GPIO.OUT)
 
 #delay between steps for motor turns
-delay = .001
+delay = .0007
     
 
 #Solved cube corners for reference
@@ -2534,7 +2534,6 @@ def edgeMain():
 
 def main():
     cornerMain()
-    sleep(10)
     edgeMain()
 
 print("Place Red face forward and Yellow facing up.")
