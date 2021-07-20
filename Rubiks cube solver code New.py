@@ -2032,8 +2032,6 @@ def cornerSwapper(cornerSolveList):
             AlteredYPermutation()
             Fprimeturn()
             Rturn()
-        elif letter == 'N':
-            AlteredYPermutation()
         elif letter == 'O':
             Dprimeturn()
             Rturn()
