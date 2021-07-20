@@ -2115,6 +2115,7 @@ def cornerSwapper(cornerSolveList):
 def cornerMain():
     cList = cornerActions()
     print(cList)
+    sleep(20)
     cornerSwapper(cList)
 
 def edgeActions():
