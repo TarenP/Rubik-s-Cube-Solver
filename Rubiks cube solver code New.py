@@ -1769,15 +1769,6 @@ def cornerActions():
 
     #Use a list of the moves to the positions the bank pieces need to go.
     while everythingSolved == False:
-        print("here")
-        print(A)
-        print(a)
-        print(B)
-        print(d)
-        print(b)
-        print(D)
-        print(c)
-        print(C)
         #print(bankCorner)
         if (mBJM == BJM):
             solvedC2 = True
@@ -2431,7 +2422,7 @@ def edgeSwapper(edgeSolveList):
             Lprimeturn()
             Tpermutation()
             Lturn()
-        elif letter == 'J':
+        elif letter == 'j':
             dturn()
             Lturn()
             Tpermutation()
@@ -2527,7 +2518,7 @@ def edgeSwapper(edgeSolveList):
             Lprimeturn()
             Lprimeturn()
             Dprimeturn()
-        elif letter == 'X':
+        elif letter == 'x':
             Lturn()
             Lturn()
             Tpermutation()
@@ -2549,54 +2540,7 @@ def main():
 print("Place Red face forward and Yellow facing up.")
 sleep(5)
 
-#cubeScrambler(10)
-#sleep(10)
-A = "red"
-a = "yellow"
-B = "orange"
-d = "red"
-b = "red"
-D = "yellow"
-c = "blue"
-C = "white"
-Q = "white"
-q = "white"
-R = "orange"
-t = "blue"
-r = "yellow"
-T = "green"
-s = "green"
-S = "orange"
-E = "blue"
-e = "white"
-F = "green"
-h = "red"
-f = "orange"
-H = "white"
-g = "white"
-G = "yellow"
-I = "red"
-i = "blue"
-J = "white"
-l = "blue"
-j = "green"
-L = "red"
-k = "green"
-K = "green"
-M = "blue"
-m = "orange"
-N = "blue"
-p = "yellow"
-n = "yellow"
-P = "yellow"
-o = "orange"
-O = "yellow"
-U = "green"
-u = "green"
-V = "blue"
-x = "red"
-v = "orange"
-X = "red"
-w = "white"
-W = "orange"
+cubeScrambler(10)
+sleep(5)
+
 main()

@@ -540,8 +540,6 @@ def cornerSwapper(cornerSolveList):
             AlteredYPermutation()
             Fprimeturn()
             Rturn()
-        elif letter == 'N':
-            AlteredYPermutation()
         elif letter == 'O':
             Dprimeturn()
             Rturn()
@@ -964,7 +962,7 @@ def edgeSwapper(edgeSolveList):
             Lprimeturn()
             Tpermutation()
             Lturn()
-        elif letter == 'J':
+        elif letter == 'j':
             dturn()
             Lturn()
             Tpermutation()
@@ -1060,7 +1058,7 @@ def edgeSwapper(edgeSolveList):
             Lprimeturn()
             Lprimeturn()
             Dprimeturn()
-        elif letter == 'X':
+        elif letter == 'x':
             Lturn()
             Lturn()
             Tpermutation()
